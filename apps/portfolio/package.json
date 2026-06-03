@@ -8,7 +8,7 @@
     "start": "next start --port 3001",
     "lint": "eslint",
     "test": "vitest run",
-    "pdf": "python3 scripts/pdf/generate.py vi && python3 scripts/pdf/generate.py en"
+    "pdf": "python3 scripts/pdf/generate.py vi && python3 scripts/pdf/generate.py en && python3 scripts/pdf/og.py"
   },
   "dependencies": {
     "@kidcenter/ui": "workspace:*",
