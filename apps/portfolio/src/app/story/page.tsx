@@ -10,13 +10,21 @@ export const metadata: Metadata = {
     "Observe. Understand. Explain. — the story of a curious explorer, visual thinker and emerging scientific thinker growing at the intersection of science, art and language.",
 };
 
-const MEDAL: Record<string, string> = {
-  gold: "#D4A017",
-  silver: "#9CA3AF",
-  bronze: "#B45309",
-  none: "#9CA3AF",
-};
 const RANK: Record<string, number> = { gold: 0, silver: 1, bronze: 2, none: 3 };
+const MEDAL_EMOJI: Record<string, string> = {
+  gold: "🥇",
+  silver: "🥈",
+  bronze: "🥉",
+  none: "🏅",
+};
+
+// Drop the redundant "Silver Medal — " / "1st Place — " prefix so each line reads
+// short; the medal emoji already carries that information.
+function shortName(title: string): string {
+  return title
+    .replace(/^(Gold|Silver|Bronze)\s+Medal\s+—\s+/, "")
+    .replace(/^\d+(st|nd|rd|th)\s+Place(\s*\(Team\))?\s+—\s+/, "");
+}
 
 function Eyebrow({ children }: { children: React.ReactNode }) {
   return (
@@ -581,31 +589,70 @@ export default function StoryPage() {
             Milestones along the way
           </h2>
         </div>
-        <div className="mx-auto grid max-w-4xl gap-5 sm:grid-cols-3">
+        {/* medal tally */}
+        <div className="mx-auto mb-6 grid max-w-4xl grid-cols-2 gap-3 sm:grid-cols-4">
+          {(
+            [
+              ["🥇", "Gold", "gold"],
+              ["🥈", "Silver", "silver"],
+              ["🥉", "Bronze", "bronze"],
+              ["🏅", "Honours", "all"],
+            ] as [string, string, string][]
+          ).map(([emoji, label, key]) => {
+            const n =
+              key === "all"
+                ? achievements.length
+                : achievements.filter((a) => a.medal === key).length;
+            return (
+              <div
+                key={key}
+                className="break-avoid rounded-3xl border border-black/5 bg-cream p-5 text-center shadow-sm"
+              >
+                <p className="text-2xl leading-none" aria-hidden>
+                  {emoji}
+                </p>
+                <p className="mt-2 font-display text-3xl font-extrabold tabular-nums text-ink">
+                  {n}
+                </p>
+                <p className="text-sm font-semibold text-ink/55">{label}</p>
+              </div>
+            );
+          })}
+        </div>
+        {/* grouped lists — roomy cards */}
+        <div className="mx-auto grid max-w-4xl items-start gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {cats.map(([cat, label]) => {
             const grp = achievements
               .filter((a) => a.category === cat)
               .sort((a, b) => RANK[a.medal] - RANK[b.medal]);
             if (grp.length === 0) return null;
             return (
-              <div key={cat} className="break-avoid">
-                <h3 className="mb-2 font-display text-lg font-bold text-ink">
-                  {label}
-                </h3>
-                <ul className="space-y-1.5">
+              <div
+                key={cat}
+                className="break-avoid rounded-3xl border border-black/5 bg-cream p-6 shadow-sm"
+              >
+                <div className="mb-2 flex items-baseline justify-between gap-3">
+                  <h3 className="font-display text-lg font-bold text-ink">
+                    {label}
+                  </h3>
+                  <span className="text-sm font-semibold tabular-nums text-ink/35">
+                    {grp.length}
+                  </span>
+                </div>
+                <ul className="divide-y divide-black/5">
                   {grp.map((a, i) => (
-                    <li key={i} className="flex gap-2 text-sm leading-snug">
-                      <span
-                        aria-hidden
-                        className="mt-1.5 inline-block h-2 w-2 shrink-0 rounded-full"
-                        style={{ background: MEDAL[a.medal] }}
-                      />
-                      <span className="text-ink/75">
-                        {a.title.en}
-                        {a.year ? (
-                          <span className="text-ink/40"> · {a.year}</span>
-                        ) : null}
+                    <li key={i} className="flex items-baseline gap-3 py-3">
+                      <span aria-hidden className="shrink-0 text-base leading-none">
+                        {MEDAL_EMOJI[a.medal]}
                       </span>
+                      <span className="leading-snug text-ink/80">
+                        {shortName(a.title.en)}
+                      </span>
+                      {a.year ? (
+                        <span className="ml-auto shrink-0 pl-2 text-sm tabular-nums text-ink/40">
+                          {a.year}
+                        </span>
+                      ) : null}
                     </li>
                   ))}
                 </ul>
