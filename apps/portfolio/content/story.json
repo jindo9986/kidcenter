@@ -1,317 +1,396 @@
 {
   "hero": {
     "name": "Đào Đình Hữu (Tin)",
-    "roles": ["Curious Explorer", "Visual Thinker", "Emerging Scientific Thinker"],
-    "subtitle": "Exploring the world through Science, Art and Language.",
-    "motto": ["Observe.", "Understand.", "Explain."]
+    "roles": [
+      { "vi": "Người ham khám phá", "en": "Curious Explorer" },
+      { "vi": "Tư duy bằng hình ảnh", "en": "Visual Thinker" },
+      { "vi": "Tư duy khoa học đang hình thành", "en": "Emerging Scientific Thinker" }
+    ],
+    "subtitle": {
+      "vi": "Khám phá thế giới qua Khoa học, Nghệ thuật và Ngôn ngữ.",
+      "en": "Exploring the world through Science, Art and Language."
+    },
+    "motto": [
+      { "vi": "Quan sát", "en": "Observe" },
+      { "vi": "Thấu hiểu", "en": "Understand" },
+      { "vi": "Diễn giải", "en": "Explain" }
+    ]
   },
   "welcome": {
-    "eyebrow": "Welcome",
-    "lead": "Every child has achievements.",
+    "eyebrow": { "vi": "Lời chào", "en": "Welcome" },
+    "lead": { "vi": "Đứa trẻ nào cũng có thành tích.", "en": "Every child has achievements." },
     "lines": [
-      "Some have medals.",
-      "Some have excellent grades.",
-      "Some have talents in sports, music or the arts."
+      { "vi": "Có bạn có huy chương.", "en": "Some have medals." },
+      { "vi": "Có bạn điểm số xuất sắc.", "en": "Some have excellent grades." },
+      { "vi": "Có bạn giỏi thể thao, âm nhạc hay nghệ thuật.", "en": "Some have talents in sports, music or the arts." }
     ],
-    "turn": "But behind every achievement lies a deeper story.",
+    "turn": {
+      "vi": "Nhưng đằng sau mỗi thành tích là một câu chuyện sâu sắc hơn.",
+      "en": "But behind every achievement lies a deeper story."
+    },
     "paras": [
-      "This site is not primarily about medals, scores or awards. It is about a journey —",
-      "a journey of curiosity, of learning, of discovering how the world works and how knowledge can be shared with others."
+      { "vi": "Trang này không chủ yếu nói về huy chương, điểm số hay giải thưởng. Nó kể về một hành trình —", "en": "This site is not primarily about medals, scores or awards. It is about a journey —" },
+      { "vi": "hành trình của sự tò mò, của việc học, của khám phá cách thế giới vận hành và cách chia sẻ tri thức với mọi người.", "en": "a journey of curiosity, of learning, of discovering how the world works and how knowledge can be shared with others." }
     ]
   },
   "story": {
-    "eyebrow": "The story behind the journey",
-    "title": "Before achievement, there was curiosity",
+    "eyebrow": { "vi": "Câu chuyện phía sau hành trình", "en": "The story behind the journey" },
+    "title": { "vi": "Trước thành tích là sự tò mò", "en": "Before achievement, there was curiosity" },
     "intro": [
-      "Before Olympiads. Before competitions. Before awards. Tin was simply a child who loved asking questions.",
-      "He was fascinated by nature, animals, dinosaurs, science documentaries, books and the countless mysteries hidden in everyday life. Unlike many children who ask a question and quickly move on, Tin wanted to go deeper."
+      { "vi": "Trước các kỳ Olympic. Trước những cuộc thi. Trước các giải thưởng. Tin chỉ đơn giản là một cậu bé thích đặt câu hỏi.", "en": "Before Olympiads. Before competitions. Before awards. Tin was simply a child who loved asking questions." },
+      { "vi": "Cậu say mê thiên nhiên, động vật, khủng long, phim tài liệu khoa học, sách và vô vàn điều bí ẩn ẩn giấu trong cuộc sống thường ngày. Khác với nhiều bạn hỏi xong là quên ngay, Tin luôn muốn tìm hiểu sâu hơn.", "en": "He was fascinated by nature, animals, dinosaurs, science documentaries, books and the countless mysteries hidden in everyday life. Unlike many children who ask a question and quickly move on, Tin wanted to go deeper." }
     ],
     "questions": [
-      "Why does this happen?",
-      "How does it work?",
-      "What causes it?",
-      "What if we changed it?"
+      { "vi": "Vì sao điều này xảy ra?", "en": "Why does this happen?" },
+      { "vi": "Nó hoạt động thế nào?", "en": "How does it work?" },
+      { "vi": "Nguyên nhân là gì?", "en": "What causes it?" },
+      { "vi": "Nếu thay đổi thì sao?", "en": "What if we changed it?" }
     ],
     "beats": [
       {
-        "title": "Nature sparked curiosity",
-        "body": "Walking outdoors, observing insects, watching animals, exploring plants — looking carefully at details most people overlook. These experiences nurtured his strongest characteristic: observation — the ability to slow down, notice detail and stay curious."
+        "title": { "vi": "Thiên nhiên khơi nguồn tò mò", "en": "Nature sparked curiosity" },
+        "body": { "vi": "Đi dạo ngoài trời, quan sát côn trùng, ngắm động vật, khám phá cây cỏ — chú ý kỹ những chi tiết mà phần lớn mọi người bỏ qua. Những trải nghiệm ấy nuôi dưỡng phẩm chất mạnh nhất của cậu: khả năng quan sát — biết chậm lại, để ý từng chi tiết và giữ mãi sự tò mò.", "en": "Walking outdoors, observing insects, watching animals, exploring plants — looking carefully at details most people overlook. These experiences nurtured his strongest characteristic: observation — the ability to slow down, notice detail and stay curious." }
       },
       {
-        "title": "Reading expanded the world",
-        "body": "As curiosity grew, books became essential. Reading turned questions into understanding and opened doors to science, history, technology, nature and exploration — and became a tool for learning independently. Every answer often led to new questions."
+        "title": { "vi": "Đọc sách mở rộng thế giới", "en": "Reading expanded the world" },
+        "body": { "vi": "Khi sự tò mò lớn dần, sách trở nên thiết yếu. Đọc sách biến câu hỏi thành sự thấu hiểu, mở ra cánh cửa tới khoa học, lịch sử, công nghệ, thiên nhiên và khám phá — và trở thành công cụ để tự học. Mỗi câu trả lời lại dẫn tới những câu hỏi mới.", "en": "As curiosity grew, books became essential. Reading turned questions into understanding and opened doors to science, history, technology, nature and exploration — and became a tool for learning independently. Every answer often led to new questions." }
       },
       {
-        "title": "Drawing became a way of thinking",
-        "body": "For Tin, drawing is not simply expression — it is a way of observing and understanding. Drawing dinosaurs, animals and biology taught him to observe carefully, recognise patterns, understand structures and visualise information."
+        "title": { "vi": "Vẽ trở thành một cách tư duy", "en": "Drawing became a way of thinking" },
+        "body": { "vi": "Với Tin, vẽ không chỉ để thể hiện — đó là cách để quan sát và thấu hiểu. Vẽ khủng long, động vật và sinh học dạy cậu quan sát tỉ mỉ, nhận ra quy luật, hiểu cấu trúc và hình dung thông tin.", "en": "For Tin, drawing is not simply expression — it is a way of observing and understanding. Drawing dinosaurs, animals and biology taught him to observe carefully, recognise patterns, understand structures and visualise information." }
       },
       {
-        "title": "Science became the language of understanding",
-        "body": "Curiosity led to observation, observation to questions, questions to reading, reading to understanding — and understanding led naturally to science: a method to test ideas, seek evidence, analyse information and explain phenomena."
+        "title": { "vi": "Khoa học trở thành ngôn ngữ của sự thấu hiểu", "en": "Science became the language of understanding" },
+        "body": { "vi": "Tò mò dẫn tới quan sát, quan sát dẫn tới câu hỏi, câu hỏi dẫn tới đọc sách, đọc sách dẫn tới thấu hiểu — và thấu hiểu dẫn một cách tự nhiên tới khoa học: một phương pháp để kiểm chứng ý tưởng, tìm bằng chứng, phân tích thông tin và giải thích hiện tượng.", "en": "Curiosity led to observation, observation to questions, questions to reading, reading to understanding — and understanding led naturally to science: a method to test ideas, seek evidence, analyse information and explain phenomena." }
       }
     ]
   },
   "philosophy": {
-    "eyebrow": "Core learning philosophy",
-    "title": "Observe → Understand → Explain",
-    "intro": "Rather than memorising information, Tin enjoys understanding ideas deeply enough to explain them to others.",
+    "eyebrow": { "vi": "Triết lý học tập cốt lõi", "en": "Core learning philosophy" },
+    "title": { "vi": "Quan sát → Thấu hiểu → Diễn giải", "en": "Observe → Understand → Explain" },
+    "intro": { "vi": "Thay vì học thuộc thông tin, Tin thích hiểu ý tưởng đủ sâu để có thể giải thích lại cho người khác.", "en": "Rather than memorising information, Tin enjoys understanding ideas deeply enough to explain them to others." },
     "steps": [
-      { "name": "Observe", "through": "Through curiosity, nature, exploration and visual observation." },
-      { "name": "Understand", "through": "Through science, mathematics, reading and investigation." },
-      { "name": "Explain", "through": "Through writing, speaking, drawing and communication." }
+      { "name": { "vi": "Quan sát", "en": "Observe" }, "through": { "vi": "Qua sự tò mò, thiên nhiên, khám phá và quan sát bằng hình ảnh.", "en": "Through curiosity, nature, exploration and visual observation." } },
+      { "name": { "vi": "Thấu hiểu", "en": "Understand" }, "through": { "vi": "Qua khoa học, toán học, đọc sách và tìm tòi.", "en": "Through science, mathematics, reading and investigation." } },
+      { "name": { "vi": "Diễn giải", "en": "Explain" }, "through": { "vi": "Qua viết, nói, vẽ và giao tiếp.", "en": "Through writing, speaking, drawing and communication." } }
     ]
   },
   "combination": {
-    "eyebrow": "An uncommon combination",
-    "title": "Science × Art × Language",
+    "eyebrow": { "vi": "Một tổ hợp hiếm gặp", "en": "An uncommon combination" },
+    "title": { "vi": "Khoa học × Nghệ thuật × Ngôn ngữ", "en": "Science × Art × Language" },
     "intro": [
-      "One of the most distinctive aspects of Tin's profile is the combination of three areas that rarely develop together."
+      { "vi": "Một trong những điểm nổi bật nhất ở Tin là sự kết hợp của ba lĩnh vực hiếm khi cùng phát triển.", "en": "One of the most distinctive aspects of Tin's profile is the combination of three areas that rarely develop together." }
     ],
     "domains": [
       {
-        "name": "Science",
-        "role": "analytical thinking",
-        "body": "Science provides analytical thinking and understanding — a method for investigating how the world works, testing ideas and explaining what he finds."
+        "name": { "vi": "Khoa học", "en": "Science" },
+        "role": { "vi": "tư duy phân tích", "en": "analytical thinking" },
+        "body": { "vi": "Khoa học mang lại tư duy phân tích và sự thấu hiểu — một phương pháp để tìm hiểu cách thế giới vận hành, kiểm chứng ý tưởng và giải thích những gì cậu khám phá.", "en": "Science provides analytical thinking and understanding — a method for investigating how the world works, testing ideas and explaining what he finds." }
       },
       {
-        "name": "Art",
-        "role": "observation & visualisation",
-        "body": "Art develops observation and visualisation — turning what he notices into images, recognising patterns and making abstract ideas tangible."
+        "name": { "vi": "Nghệ thuật", "en": "Art" },
+        "role": { "vi": "quan sát & hình dung", "en": "observation & visualisation" },
+        "body": { "vi": "Nghệ thuật phát triển khả năng quan sát và hình dung — biến những gì cậu nhận thấy thành hình ảnh, nhận ra quy luật và khiến ý tưởng trừu tượng trở nên cụ thể.", "en": "Art develops observation and visualisation — turning what he notices into images, recognising patterns and making abstract ideas tangible." }
       },
       {
-        "name": "Language",
-        "role": "communication & expression",
-        "body": "Language builds communication and expression — connecting ideas, reasoning through complexity and sharing knowledge clearly."
+        "name": { "vi": "Ngôn ngữ", "en": "Language" },
+        "role": { "vi": "giao tiếp & diễn đạt", "en": "communication & expression" },
+        "body": { "vi": "Ngôn ngữ xây dựng khả năng giao tiếp và diễn đạt — kết nối ý tưởng, lập luận qua những vấn đề phức tạp và chia sẻ tri thức một cách rõ ràng.", "en": "Language builds communication and expression — connecting ideas, reasoning through complexity and sharing knowledge clearly." }
       }
     ],
-    "conclusion": "Together, these disciplines create a unique combination: the ability not only to understand knowledge, but to communicate it clearly."
+    "conclusion": { "vi": "Cùng nhau, ba lĩnh vực này tạo nên một tổ hợp độc đáo: không chỉ hiểu được tri thức, mà còn truyền đạt nó một cách rõ ràng.", "en": "Together, these disciplines create a unique combination: the ability not only to understand knowledge, but to communicate it clearly." }
   },
   "visual": {
-    "eyebrow": "A visual thinker",
-    "title": "Thinking through images",
-    "cycle": ["Observe", "Visualise", "Understand", "Communicate"],
-    "note": "Tin often thinks visually — understanding systems, structures and relationships through images. This combination of visual thinking and scientific reasoning has become one of the defining characteristics of his learning style.",
+    "eyebrow": { "vi": "Người tư duy bằng hình ảnh", "en": "A visual thinker" },
+    "title": { "vi": "Tư duy qua hình ảnh", "en": "Thinking through images" },
+    "cycle": [
+      { "vi": "Quan sát", "en": "Observe" },
+      { "vi": "Hình dung", "en": "Visualise" },
+      { "vi": "Thấu hiểu", "en": "Understand" },
+      { "vi": "Truyền đạt", "en": "Communicate" }
+    ],
+    "note": { "vi": "Tin thường tư duy bằng hình ảnh — hiểu các hệ thống, cấu trúc và mối liên hệ thông qua hình ảnh. Sự kết hợp giữa tư duy hình ảnh và lập luận khoa học đã trở thành một nét đặc trưng trong cách học của cậu.", "en": "Tin often thinks visually — understanding systems, structures and relationships through images. This combination of visual thinking and scientific reasoning has become one of the defining characteristics of his learning style." },
     "reflects": [
-      "Scientific curiosity",
-      "Biological observation",
-      "Pattern recognition",
-      "Attention to detail"
+      { "vi": "Tò mò khoa học", "en": "Scientific curiosity" },
+      { "vi": "Quan sát sinh học", "en": "Biological observation" },
+      { "vi": "Nhận diện quy luật", "en": "Pattern recognition" },
+      { "vi": "Chú ý chi tiết", "en": "Attention to detail" }
     ]
   },
   "curiosity": {
-    "eyebrow": "Curiosity in the world",
-    "title": "Learning happens everywhere",
+    "eyebrow": { "vi": "Tò mò với thế giới", "en": "Curiosity in the world" },
+    "title": { "vi": "Học ở khắp mọi nơi", "en": "Learning happens everywhere" },
     "intro": [
-      "Some of Tin's most important learning experiences did not happen inside a classroom.",
-      "They happened in museums, science centers, zoos, aquariums, exhibitions and countless moments of exploration beyond school.",
-      "Wherever he goes, curiosity tends to lead the way."
+      { "vi": "Một số trải nghiệm học tập quan trọng nhất của Tin không diễn ra trong lớp học.", "en": "Some of Tin's most important learning experiences did not happen inside a classroom." },
+      { "vi": "Chúng diễn ra ở bảo tàng, trung tâm khoa học, sở thú, thủy cung, triển lãm và vô vàn khoảnh khắc khám phá bên ngoài trường học.", "en": "They happened in museums, science centers, zoos, aquariums, exhibitions and countless moments of exploration beyond school." },
+      { "vi": "Đi đến đâu, sự tò mò cũng dẫn lối cho cậu.", "en": "Wherever he goes, curiosity tends to lead the way." }
     ],
     "becomes": [
-      "A museum visit becomes an investigation.",
-      "A zoo becomes a biology lesson.",
-      "A painting becomes a question.",
-      "A fossil becomes a story about life on Earth millions of years ago."
+      { "vi": "Một chuyến thăm bảo tàng trở thành một cuộc tìm tòi.", "en": "A museum visit becomes an investigation." },
+      { "vi": "Một buổi đi sở thú trở thành một bài học sinh học.", "en": "A zoo becomes a biology lesson." },
+      { "vi": "Một bức tranh trở thành một câu hỏi.", "en": "A painting becomes a question." },
+      { "vi": "Một hóa thạch trở thành câu chuyện về sự sống trên Trái Đất hàng triệu năm trước.", "en": "A fossil becomes a story about life on Earth millions of years ago." }
     ],
     "observing": [
-      "Rather than simply looking, Tin enjoys observing.",
-      "Rather than simply observing, he wants to understand."
+      { "vi": "Thay vì chỉ nhìn, Tin thích quan sát.", "en": "Rather than simply looking, Tin enjoys observing." },
+      { "vi": "Thay vì chỉ quan sát, cậu muốn thấu hiểu.", "en": "Rather than simply observing, he wants to understand." }
     ],
     "everyday": {
-      "title": "Seeing science in everyday places",
-      "intro": "Whether standing beneath the skeleton of a sperm whale, examining microscopic structures, observing reptiles up close or exploring the story of human origins, Tin approaches the world with the same mindset:",
-      "questions": ["How does this work?", "Why is it like this?", "What can I learn from it?"],
-      "close": "These experiences helped transform curiosity from a personality trait into a habit of learning."
+      "title": { "vi": "Nhìn thấy khoa học ở những nơi thường ngày", "en": "Seeing science in everyday places" },
+      "intro": { "vi": "Dù đứng dưới bộ xương cá nhà táng, soi các cấu trúc hiển vi, quan sát loài bò sát ở cự ly gần hay tìm hiểu câu chuyện nguồn gốc loài người, Tin luôn tiếp cận thế giới với cùng một tâm thế:", "en": "Whether standing beneath the skeleton of a sperm whale, examining microscopic structures, observing reptiles up close or exploring the story of human origins, Tin approaches the world with the same mindset:" },
+      "questions": [
+        { "vi": "Cái này hoạt động ra sao?", "en": "How does this work?" },
+        { "vi": "Vì sao nó lại như vậy?", "en": "Why is it like this?" },
+        { "vi": "Mình học được gì từ nó?", "en": "What can I learn from it?" }
+      ],
+      "close": { "vi": "Những trải nghiệm ấy biến sự tò mò từ một nét tính cách thành một thói quen học tập.", "en": "These experiences helped transform curiosity from a personality trait into a habit of learning." }
     },
     "beyond": {
-      "title": "Beyond the classroom",
-      "intro": "Learning for Tin is not limited to textbooks. It happens through:",
+      "title": { "vi": "Vượt ra ngoài lớp học", "en": "Beyond the classroom" },
+      "intro": { "vi": "Việc học của Tin không bó hẹp trong sách giáo khoa. Nó diễn ra qua:", "en": "Learning for Tin is not limited to textbooks. It happens through:" },
       "places": [
-        "Natural history museums",
-        "Science exhibitions",
-        "Zoos and aquariums",
-        "Art galleries",
-        "Books",
-        "Travel",
-        "Everyday observations"
+        { "vi": "Bảo tàng lịch sử tự nhiên", "en": "Natural history museums" },
+        { "vi": "Triển lãm khoa học", "en": "Science exhibitions" },
+        { "vi": "Sở thú và thủy cung", "en": "Zoos and aquariums" },
+        { "vi": "Phòng tranh nghệ thuật", "en": "Art galleries" },
+        { "vi": "Sách", "en": "Books" },
+        { "vi": "Du lịch", "en": "Travel" },
+        { "vi": "Quan sát thường ngày", "en": "Everyday observations" }
       ],
-      "close": "Each experience adds another piece to a growing understanding of the world."
+      "close": { "vi": "Mỗi trải nghiệm thêm một mảnh ghép vào hiểu biết ngày một lớn dần về thế giới.", "en": "Each experience adds another piece to a growing understanding of the world." }
     },
     "mindset": {
-      "title": "Building a scientific mindset",
-      "intro": "Many of the interests that later developed into academic strengths can be traced back to these experiences.",
+      "title": { "vi": "Xây dựng tư duy khoa học", "en": "Building a scientific mindset" },
+      "intro": { "vi": "Nhiều sở thích về sau trở thành thế mạnh học tập đều có thể truy về những trải nghiệm này.", "en": "Many of the interests that later developed into academic strengths can be traced back to these experiences." },
       "links": [
-        { "from": "A fascination with animals", "to": "biology" },
-        { "from": "A fascination with fossils", "to": "prehistoric life and dinosaurs" },
-        { "from": "A fascination with observation", "to": "drawing" },
-        { "from": "A fascination with understanding", "to": "science" }
+        { "from": { "vi": "Niềm say mê động vật", "en": "A fascination with animals" }, "to": { "vi": "sinh học", "en": "biology" } },
+        { "from": { "vi": "Niềm say mê hóa thạch", "en": "A fascination with fossils" }, "to": { "vi": "sự sống tiền sử và khủng long", "en": "prehistoric life and dinosaurs" } },
+        { "from": { "vi": "Niềm say mê quan sát", "en": "A fascination with observation" }, "to": { "vi": "hội họa", "en": "drawing" } },
+        { "from": { "vi": "Niềm say mê thấu hiểu", "en": "A fascination with understanding" }, "to": { "vi": "khoa học", "en": "science" } }
       ],
-      "close": "Over time, curiosity became something more than interest. It became a way of thinking."
+      "close": { "vi": "Theo thời gian, tò mò trở thành điều gì đó hơn cả sở thích. Nó trở thành một cách tư duy.", "en": "Over time, curiosity became something more than interest. It became a way of thinking." }
     },
     "reveal": {
-      "title": "What these experiences reveal",
-      "intro": "These moments reveal several characteristics that continue to appear throughout Tin's academic journey:",
+      "title": { "vi": "Những trải nghiệm ấy cho thấy điều gì", "en": "What these experiences reveal" },
+      "intro": { "vi": "Những khoảnh khắc này hé lộ một số phẩm chất xuất hiện xuyên suốt hành trình học tập của Tin:", "en": "These moments reveal several characteristics that continue to appear throughout Tin's academic journey:" },
       "traits": [
-        { "name": "Curiosity", "body": "A genuine desire to explore and understand." },
-        { "name": "Observation", "body": "The habit of noticing details others might miss." },
-        { "name": "Wonder", "body": "The ability to remain fascinated by new discoveries." },
-        { "name": "Connection", "body": "Connecting experiences, ideas and knowledge across different fields." },
-        { "name": "Lifelong learning", "body": "The understanding that learning can happen anywhere." }
+        { "name": { "vi": "Tò mò", "en": "Curiosity" }, "body": { "vi": "Khát khao thật sự được khám phá và thấu hiểu.", "en": "A genuine desire to explore and understand." } },
+        { "name": { "vi": "Quan sát", "en": "Observation" }, "body": { "vi": "Thói quen để ý những chi tiết người khác dễ bỏ qua.", "en": "The habit of noticing details others might miss." } },
+        { "name": { "vi": "Ngạc nhiên thích thú", "en": "Wonder" }, "body": { "vi": "Khả năng luôn say mê trước những khám phá mới.", "en": "The ability to remain fascinated by new discoveries." } },
+        { "name": { "vi": "Kết nối", "en": "Connection" }, "body": { "vi": "Kết nối trải nghiệm, ý tưởng và tri thức giữa các lĩnh vực khác nhau.", "en": "Connecting experiences, ideas and knowledge across different fields." } },
+        { "name": { "vi": "Học tập suốt đời", "en": "Lifelong learning" }, "body": { "vi": "Hiểu rằng việc học có thể diễn ra ở bất cứ đâu.", "en": "The understanding that learning can happen anywhere." } }
       ]
     }
   },
   "growth": {
-    "eyebrow": "A four-year growth journey",
-    "title": "Consistent, year after year",
-    "intro": "One of the strongest indicators of future potential is consistency over time. Across four years of primary school, teachers repeatedly observed the same strengths.",
+    "eyebrow": { "vi": "Hành trình bốn năm trưởng thành", "en": "A four-year growth journey" },
+    "title": { "vi": "Bền bỉ, năm này qua năm khác", "en": "Consistent, year after year" },
+    "intro": { "vi": "Một trong những chỉ dấu rõ nhất của tiềm năng tương lai là sự bền bỉ theo thời gian. Suốt bốn năm tiểu học, các thầy cô nhiều lần ghi nhận cùng những thế mạnh ấy.", "en": "One of the strongest indicators of future potential is consistency over time. Across four years of primary school, teachers repeatedly observed the same strengths." },
     "stages": [
       {
-        "grade": "Grade 1",
-        "theme": "Curious Learner",
-        "body": "Teachers first recognised curiosity, confidence and independence — a child with well-developed problem-solving and reasoning skills who enjoys a challenge.",
-        "strengths": ["Curiosity", "Independence", "Confidence", "Problem solving"]
+        "grade": { "vi": "Lớp 1", "en": "Grade 1" },
+        "theme": { "vi": "Người học tò mò", "en": "Curious Learner" },
+        "body": { "vi": "Thầy cô đầu tiên nhận ra sự tò mò, tự tin và độc lập — một cậu bé có kỹ năng giải quyết vấn đề và lập luận tốt, lại thích thử thách.", "en": "Teachers first recognised curiosity, confidence and independence — a child with well-developed problem-solving and reasoning skills who enjoys a challenge." },
+        "strengths": [
+          { "vi": "Tò mò", "en": "Curiosity" },
+          { "vi": "Độc lập", "en": "Independence" },
+          { "vi": "Tự tin", "en": "Confidence" },
+          { "vi": "Giải quyết vấn đề", "en": "Problem solving" }
+        ]
       },
       {
-        "grade": "Grade 2",
-        "theme": "Independent Learner",
-        "body": "Active in science discussions and independent in English comprehension — scientific curiosity supported by critical thinking and independent learning habits.",
-        "strengths": ["Scientific curiosity", "Participation", "Critical thinking", "Independence"]
+        "grade": { "vi": "Lớp 2", "en": "Grade 2" },
+        "theme": { "vi": "Người học độc lập", "en": "Independent Learner" },
+        "body": { "vi": "Tích cực trong các buổi thảo luận khoa học và tự lập trong đọc hiểu tiếng Anh — sự tò mò khoa học được hỗ trợ bởi tư duy phản biện và thói quen tự học.", "en": "Active in science discussions and independent in English comprehension — scientific curiosity supported by critical thinking and independent learning habits." },
+        "strengths": [
+          { "vi": "Tò mò khoa học", "en": "Scientific curiosity" },
+          { "vi": "Tích cực phát biểu", "en": "Participation" },
+          { "vi": "Tư duy phản biện", "en": "Critical thinking" },
+          { "vi": "Độc lập", "en": "Independence" }
+        ]
       },
       {
-        "grade": "Grade 3",
-        "theme": "Collaborative Leader",
-        "body": "Leadership emerged naturally — assuming roles in groupwork, mentoring less confident classmates with compassion, and always willing to help.",
-        "strengths": ["Leadership", "Mentorship", "Empathy", "Collaboration"]
+        "grade": { "vi": "Lớp 3", "en": "Grade 3" },
+        "theme": { "vi": "Người dẫn dắt biết hợp tác", "en": "Collaborative Leader" },
+        "body": { "vi": "Khả năng dẫn dắt xuất hiện một cách tự nhiên — nhận vai trò trong làm việc nhóm, ân cần kèm cặp các bạn còn rụt rè, và luôn sẵn lòng giúp đỡ.", "en": "Leadership emerged naturally — assuming roles in groupwork, mentoring less confident classmates with compassion, and always willing to help." },
+        "strengths": [
+          { "vi": "Lãnh đạo", "en": "Leadership" },
+          { "vi": "Dìu dắt", "en": "Mentorship" },
+          { "vi": "Đồng cảm", "en": "Empathy" },
+          { "vi": "Hợp tác", "en": "Collaboration" }
+        ]
       },
       {
-        "grade": "Grade 4",
-        "theme": "Emerging Scientific Thinker",
-        "body": "Planning investigations, making thoughtful predictions, working with consistent accuracy — approaching tasks with independence, focus and genuine scientific curiosity.",
-        "strengths": ["Scientific thinking", "Investigation", "Analysis", "Independence"]
+        "grade": { "vi": "Lớp 4", "en": "Grade 4" },
+        "theme": { "vi": "Tư duy khoa học chớm nở", "en": "Emerging Scientific Thinker" },
+        "body": { "vi": "Lên kế hoạch tìm tòi, đưa ra dự đoán có suy xét, làm việc với độ chính xác ổn định — tiếp cận nhiệm vụ với sự độc lập, tập trung và lòng tò mò khoa học thật sự.", "en": "Planning investigations, making thoughtful predictions, working with consistent accuracy — approaching tasks with independence, focus and genuine scientific curiosity." },
+        "strengths": [
+          { "vi": "Tư duy khoa học", "en": "Scientific thinking" },
+          { "vi": "Tìm tòi", "en": "Investigation" },
+          { "vi": "Phân tích", "en": "Analysis" },
+          { "vi": "Độc lập", "en": "Independence" }
+        ]
       }
     ],
     "pattern": [
-      "Curious Learner",
-      "Independent Learner",
-      "Collaborative Leader",
-      "Emerging Scientific Thinker"
+      { "vi": "Người học tò mò", "en": "Curious Learner" },
+      { "vi": "Người học độc lập", "en": "Independent Learner" },
+      { "vi": "Người dẫn dắt biết hợp tác", "en": "Collaborative Leader" },
+      { "vi": "Tư duy khoa học chớm nở", "en": "Emerging Scientific Thinker" }
     ]
   },
   "teachers": {
-    "eyebrow": "Voices from teachers",
-    "title": "What teachers saw, four years running",
+    "eyebrow": { "vi": "Lời thầy cô", "en": "Voices from teachers" },
+    "title": { "vi": "Điều thầy cô thấy, suốt bốn năm liền", "en": "What teachers saw, four years running" },
     "entries": [
       {
-        "grade": "Grade 1",
-        "label": "Curious Learner",
+        "grade": { "vi": "Lớp 1", "en": "Grade 1" },
+        "label": { "vi": "Người học tò mò", "en": "Curious Learner" },
         "name": "Elizabeth Moran",
-        "role": "General comment",
+        "role": { "vi": "Nhận xét chung", "en": "General comment" },
         "quotes": [
-          "A motivated and independent learner.",
-          "He enjoys a challenge.",
-          "He has well-developed problem-solving and reasoning skills."
+          { "vi": "Một người học chủ động và độc lập.", "en": "A motivated and independent learner." },
+          { "vi": "Cậu bé thích thử thách.", "en": "He enjoys a challenge." },
+          { "vi": "Cậu có kỹ năng giải quyết vấn đề và lập luận phát triển tốt.", "en": "He has well-developed problem-solving and reasoning skills." }
         ],
-        "themes": ["Curiosity", "Independence", "Confidence", "Problem solving"]
+        "themes": [
+          { "vi": "Tò mò", "en": "Curiosity" },
+          { "vi": "Độc lập", "en": "Independence" },
+          { "vi": "Tự tin", "en": "Confidence" },
+          { "vi": "Giải quyết vấn đề", "en": "Problem solving" }
+        ]
       },
       {
-        "grade": "Grade 2",
-        "label": "Developing Learner",
+        "grade": { "vi": "Lớp 2", "en": "Grade 2" },
+        "label": { "vi": "Người học tiến bộ", "en": "Developing Learner" },
         "name": "Eva F. Christie · Rossany B. Vargas",
-        "role": "Science & English",
+        "role": { "vi": "Khoa học & Tiếng Anh", "en": "Science & English" },
         "quotes": [
-          "Always puts his hand up to take part in science discussions.",
-          "He independently deduces meaning and recognises the opinions of the writer."
+          { "vi": "Luôn giơ tay tham gia các buổi thảo luận khoa học.", "en": "Always puts his hand up to take part in science discussions." },
+          { "vi": "Cậu tự suy luận ý nghĩa và nhận ra quan điểm của tác giả.", "en": "He independently deduces meaning and recognises the opinions of the writer." }
         ],
-        "themes": ["Scientific curiosity", "Critical thinking", "Independent learning"]
+        "themes": [
+          { "vi": "Tò mò khoa học", "en": "Scientific curiosity" },
+          { "vi": "Tư duy phản biện", "en": "Critical thinking" },
+          { "vi": "Tự học", "en": "Independent learning" }
+        ]
       },
       {
-        "grade": "Grade 3",
-        "label": "Collaborative Leader",
+        "grade": { "vi": "Lớp 3", "en": "Grade 3" },
+        "label": { "vi": "Người dẫn dắt biết hợp tác", "en": "Collaborative Leader" },
         "name": "Rumbidzai Katsande",
-        "role": "General comment",
+        "role": { "vi": "Nhận xét chung", "en": "General comment" },
         "quotes": [
-          "He naturally assumes leadership roles in groupwork.",
-          "He takes pride in mentoring less confident learners with compassion.",
-          "He is kind, thoughtful and always willing to assist."
+          { "vi": "Cậu tự nhiên đảm nhận vai trò dẫn dắt trong làm việc nhóm.", "en": "He naturally assumes leadership roles in groupwork." },
+          { "vi": "Cậu tự hào khi ân cần kèm cặp những bạn còn thiếu tự tin.", "en": "He takes pride in mentoring less confident learners with compassion." },
+          { "vi": "Cậu tử tế, chu đáo và luôn sẵn lòng giúp đỡ.", "en": "He is kind, thoughtful and always willing to assist." }
         ],
-        "themes": ["Leadership", "Mentorship", "Empathy", "Collaboration"]
+        "themes": [
+          { "vi": "Lãnh đạo", "en": "Leadership" },
+          { "vi": "Dìu dắt", "en": "Mentorship" },
+          { "vi": "Đồng cảm", "en": "Empathy" },
+          { "vi": "Hợp tác", "en": "Collaboration" }
+        ]
       },
       {
-        "grade": "Grade 4",
-        "label": "Emerging Scientific Thinker",
+        "grade": { "vi": "Lớp 4", "en": "Grade 4" },
+        "label": { "vi": "Tư duy khoa học chớm nở", "en": "Emerging Scientific Thinker" },
         "name": "Alasdair Iain Warner",
-        "role": "Science teacher",
+        "role": { "vi": "Giáo viên Khoa học", "en": "Science teacher" },
         "quotes": [
-          "He applies his knowledge effectively when planning investigations.",
-          "He can make thoughtful predictions based on his understanding.",
-          "His work is consistently accurate.",
-          "His enthusiasm and scientific curiosity are a pleasure to see."
+          { "vi": "Cậu vận dụng kiến thức hiệu quả khi lên kế hoạch tìm tòi.", "en": "He applies his knowledge effectively when planning investigations." },
+          { "vi": "Cậu đưa ra những dự đoán có suy xét dựa trên hiểu biết của mình.", "en": "He can make thoughtful predictions based on his understanding." },
+          { "vi": "Bài làm của cậu luôn chính xác.", "en": "His work is consistently accurate." },
+          { "vi": "Sự nhiệt huyết và tò mò khoa học của cậu thật đáng quý.", "en": "His enthusiasm and scientific curiosity are a pleasure to see." }
         ],
-        "themes": ["Scientific thinking", "Investigation", "Analysis", "Curiosity"]
+        "themes": [
+          { "vi": "Tư duy khoa học", "en": "Scientific thinking" },
+          { "vi": "Tìm tòi", "en": "Investigation" },
+          { "vi": "Phân tích", "en": "Analysis" },
+          { "vi": "Tò mò", "en": "Curiosity" }
+        ]
       }
     ],
-    "consistent": "Across four years and multiple subjects, the same qualities recur: curiosity, independent learning, scientific thinking, leadership and kindness."
+    "consistent": { "vi": "Suốt bốn năm và ở nhiều môn học, cùng những phẩm chất ấy lặp lại: tò mò, tự học, tư duy khoa học, khả năng dẫn dắt và lòng tử tế.", "en": "Across four years and multiple subjects, the same qualities recur: curiosity, independent learning, scientific thinking, leadership and kindness." }
   },
   "capabilities": {
-    "eyebrow": "Core capability map",
-    "title": "How he learns",
+    "eyebrow": { "vi": "Bản đồ năng lực cốt lõi", "en": "Core capability map" },
+    "title": { "vi": "Cách cậu học", "en": "How he learns" },
     "items": [
-      { "name": "Scientific Thinking", "stars": 5 },
-      { "name": "Visual Thinking", "stars": 5 },
-      { "name": "Logical Reasoning", "stars": 5 },
-      { "name": "Independent Learning", "stars": 5 },
-      { "name": "Reading & Analysis", "stars": 5 },
-      { "name": "Communication", "stars": 4 },
-      { "name": "Leadership", "stars": 4 },
-      { "name": "Character", "stars": 5 }
+      { "name": { "vi": "Tư duy khoa học", "en": "Scientific Thinking" }, "stars": 5 },
+      { "name": { "vi": "Tư duy hình ảnh", "en": "Visual Thinking" }, "stars": 5 },
+      { "name": { "vi": "Lập luận logic", "en": "Logical Reasoning" }, "stars": 5 },
+      { "name": { "vi": "Tự học", "en": "Independent Learning" }, "stars": 5 },
+      { "name": { "vi": "Đọc hiểu & phân tích", "en": "Reading & Analysis" }, "stars": 5 },
+      { "name": { "vi": "Giao tiếp", "en": "Communication" }, "stars": 4 },
+      { "name": { "vi": "Lãnh đạo", "en": "Leadership" }, "stars": 4 },
+      { "name": { "vi": "Phẩm chất", "en": "Character" }, "stars": 5 }
     ]
   },
   "academic": {
-    "eyebrow": "Academic excellence & consistency",
-    "title": "Sustained excellence, not isolated success",
+    "eyebrow": { "vi": "Xuất sắc & bền bỉ trong học tập", "en": "Academic excellence & consistency" },
+    "title": { "vi": "Xuất sắc bền vững, không phải thành công đơn lẻ", "en": "Sustained excellence, not isolated success" },
     "grade4": [
-      { "subject": "Mathematics", "score": "10" },
-      { "subject": "Science", "score": "10" },
-      { "subject": "English", "score": "10" },
-      { "subject": "Vietnamese", "score": "10" },
-      { "subject": "History & Geography", "score": "10" },
-      { "subject": "ICT", "score": "9.3" }
+      { "subject": { "vi": "Toán", "en": "Mathematics" }, "score": "10" },
+      { "subject": { "vi": "Khoa học", "en": "Science" }, "score": "10" },
+      { "subject": { "vi": "Tiếng Anh", "en": "English" }, "score": "10" },
+      { "subject": { "vi": "Tiếng Việt", "en": "Vietnamese" }, "score": "10" },
+      { "subject": { "vi": "Lịch sử & Địa lý", "en": "History & Geography" }, "score": "10" },
+      { "subject": { "vi": "Tin học", "en": "ICT" }, "score": "9.3" }
     ],
     "strengths": [
-      { "name": "Science", "stars": 5 },
-      { "name": "Mathematics", "stars": 5 },
-      { "name": "English", "stars": 5 },
-      { "name": "Vietnamese", "stars": 5 },
-      { "name": "History & Geography", "stars": 5 },
-      { "name": "ICT", "stars": 5 }
+      { "name": { "vi": "Khoa học", "en": "Science" }, "stars": 5 },
+      { "name": { "vi": "Toán", "en": "Mathematics" }, "stars": 5 },
+      { "name": { "vi": "Tiếng Anh", "en": "English" }, "stars": 5 },
+      { "name": { "vi": "Tiếng Việt", "en": "Vietnamese" }, "stars": 5 },
+      { "name": { "vi": "Lịch sử & Địa lý", "en": "History & Geography" }, "stars": 5 },
+      { "name": { "vi": "Tin học", "en": "ICT" }, "stars": 5 }
     ],
-    "excellentYears": ["Grade 1", "Grade 2", "Grade 3", "Grade 4"],
-    "excellentNote": "Four consecutive years as an Excellent Student — consistency, discipline and a long-term commitment to learning.",
+    "excellentNote": { "vi": "Bốn năm liền là Học sinh Xuất sắc — sự bền bỉ, kỷ luật và cam kết học tập lâu dài.", "en": "Four consecutive years as an Excellent Student — consistency, discipline and a long-term commitment to learning." },
     "naturalScience": ["2024–2025", "2025–2026"],
-    "naturalScienceNote": "Outstanding Student in Natural Sciences — sustained passion and engagement in scientific learning.",
-    "cambridge": ["Confident", "Responsible", "Reflective", "Innovative", "Engaged"],
-    "cambridgeNote": "Highest achievement level on every Cambridge Learner Attribute."
+    "naturalScienceNote": { "vi": "Học sinh Tinh hoa môn Khoa học Tự nhiên — niềm đam mê và sự gắn bó bền bỉ với học tập khoa học.", "en": "Outstanding Student in Natural Sciences — sustained passion and engagement in scientific learning." },
+    "cambridge": [
+      { "vi": "Tự tin", "en": "Confident" },
+      { "vi": "Trách nhiệm", "en": "Responsible" },
+      { "vi": "Biết suy ngẫm", "en": "Reflective" },
+      { "vi": "Sáng tạo", "en": "Innovative" },
+      { "vi": "Chủ động", "en": "Engaged" }
+    ],
+    "cambridgeNote": { "vi": "Đạt mức cao nhất ở mọi Phẩm chất người học Cambridge.", "en": "Highest achievement level on every Cambridge Learner Attribute." }
   },
   "forward": {
-    "eyebrow": "Future direction",
-    "title": "Science × Art × Communication",
+    "eyebrow": { "vi": "Hướng đi tương lai", "en": "Future direction" },
+    "title": { "vi": "Khoa học × Nghệ thuật × Truyền thông", "en": "Science × Art × Communication" },
     "intro": [
-      "A natural future direction for Tin is Science Illustration and Science Communication.",
-      "His combination of scientific curiosity, visual thinking and communication gives him a strong foundation for helping others understand complex ideas through engaging visuals and storytelling."
+      { "vi": "Một hướng đi tự nhiên cho Tin là Minh hoạ Khoa học và Truyền thông Khoa học.", "en": "A natural future direction for Tin is Science Illustration and Science Communication." },
+      { "vi": "Sự kết hợp giữa tò mò khoa học, tư duy hình ảnh và khả năng truyền đạt cho cậu một nền tảng vững chắc để giúp người khác hiểu những ý tưởng phức tạp qua hình ảnh hấp dẫn và lối kể chuyện.", "en": "His combination of scientific curiosity, visual thinking and communication gives him a strong foundation for helping others understand complex ideas through engaging visuals and storytelling." }
     ],
     "projects": [
-      "Dinosaur Scientific Illustration",
-      "Biology Sketchbooks",
-      "Educational Infographics",
-      "Science Storytelling",
-      "STEM Communication",
-      "Nature Education Projects",
-      "Visual Learning Resources"
+      { "vi": "Minh hoạ khoa học về khủng long", "en": "Dinosaur Scientific Illustration" },
+      { "vi": "Sổ ký họa sinh học", "en": "Biology Sketchbooks" },
+      { "vi": "Đồ họa thông tin giáo dục", "en": "Educational Infographics" },
+      { "vi": "Kể chuyện khoa học", "en": "Science Storytelling" },
+      { "vi": "Truyền thông STEM", "en": "STEM Communication" },
+      { "vi": "Dự án giáo dục thiên nhiên", "en": "Nature Education Projects" },
+      { "vi": "Học liệu trực quan", "en": "Visual Learning Resources" }
     ],
-    "close": "Tin's journey is still at an early stage. The goal is not simply to collect achievements — it is to keep developing curiosity, understanding and the ability to contribute meaningfully to others."
+    "close": { "vi": "Hành trình của Tin vẫn còn ở chặng đầu. Mục tiêu không chỉ là gom góp thành tích — mà là tiếp tục nuôi dưỡng sự tò mò, sự thấu hiểu và khả năng đóng góp ý nghĩa cho mọi người.", "en": "Tin's journey is still at an early stage. The goal is not simply to collect achievements — it is to keep developing curiosity, understanding and the ability to contribute meaningfully to others." }
   },
   "motto": {
-    "lines": ["Learn deeply.", "Think carefully.", "Stay curious.", "Share knowledge."],
-    "reflection": ["Nature", "Observation", "Art", "Understanding", "Science", "Communication"],
-    "statement": "Tin is a curious explorer, visual thinker and emerging scientific thinker who combines Science, Art and Language to better understand the world — and to help others understand it too."
+    "lines": [
+      { "vi": "Học sâu.", "en": "Learn deeply." },
+      { "vi": "Nghĩ kỹ.", "en": "Think carefully." },
+      { "vi": "Giữ sự tò mò.", "en": "Stay curious." },
+      { "vi": "Chia sẻ tri thức.", "en": "Share knowledge." }
+    ],
+    "reflection": [
+      { "vi": "Thiên nhiên", "en": "Nature" },
+      { "vi": "Quan sát", "en": "Observation" },
+      { "vi": "Nghệ thuật", "en": "Art" },
+      { "vi": "Thấu hiểu", "en": "Understanding" },
+      { "vi": "Khoa học", "en": "Science" },
+      { "vi": "Truyền đạt", "en": "Communication" }
+    ],
+    "statement": { "vi": "Tin là một người ham khám phá, tư duy bằng hình ảnh và có tư duy khoa học đang hình thành, kết hợp Khoa học, Nghệ thuật và Ngôn ngữ để hiểu thế giới rõ hơn — và giúp người khác cũng hiểu được.", "en": "Tin is a curious explorer, visual thinker and emerging scientific thinker who combines Science, Art and Language to better understand the world — and to help others understand it too." }
   }
 }

@@ -1,120 +1,120 @@
 import fs from "node:fs";
 import path from "node:path";
+import type { L } from "@/lib/schemas";
 
 export interface Rating {
-  name: string;
+  name: L;
   stars: number;
 }
 
 export interface Story {
   hero: {
     name: string;
-    roles: string[];
-    subtitle: string;
-    motto: string[];
+    roles: L[];
+    subtitle: L;
+    motto: L[];
   };
   welcome: {
-    eyebrow: string;
-    lead: string;
-    lines: string[];
-    turn: string;
-    paras: string[];
+    eyebrow: L;
+    lead: L;
+    lines: L[];
+    turn: L;
+    paras: L[];
   };
   story: {
-    eyebrow: string;
-    title: string;
-    intro: string[];
-    questions: string[];
-    beats: { title: string; body: string }[];
+    eyebrow: L;
+    title: L;
+    intro: L[];
+    questions: L[];
+    beats: { title: L; body: L }[];
   };
   philosophy: {
-    eyebrow: string;
-    title: string;
-    intro: string;
-    steps: { name: string; through: string }[];
+    eyebrow: L;
+    title: L;
+    intro: L;
+    steps: { name: L; through: L }[];
   };
   combination: {
-    eyebrow: string;
-    title: string;
-    intro: string[];
-    domains: { name: string; role: string; body: string }[];
-    conclusion: string;
+    eyebrow: L;
+    title: L;
+    intro: L[];
+    domains: { name: L; role: L; body: L }[];
+    conclusion: L;
   };
   visual: {
-    eyebrow: string;
-    title: string;
-    cycle: string[];
-    note: string;
-    reflects: string[];
+    eyebrow: L;
+    title: L;
+    cycle: L[];
+    note: L;
+    reflects: L[];
   };
   curiosity: {
-    eyebrow: string;
-    title: string;
-    intro: string[];
-    becomes: string[];
-    observing: string[];
-    everyday: { title: string; intro: string; questions: string[]; close: string };
-    beyond: { title: string; intro: string; places: string[]; close: string };
+    eyebrow: L;
+    title: L;
+    intro: L[];
+    becomes: L[];
+    observing: L[];
+    everyday: { title: L; intro: L; questions: L[]; close: L };
+    beyond: { title: L; intro: L; places: L[]; close: L };
     mindset: {
-      title: string;
-      intro: string;
-      links: { from: string; to: string }[];
-      close: string;
+      title: L;
+      intro: L;
+      links: { from: L; to: L }[];
+      close: L;
     };
     reveal: {
-      title: string;
-      intro: string;
-      traits: { name: string; body: string }[];
+      title: L;
+      intro: L;
+      traits: { name: L; body: L }[];
     };
   };
   growth: {
-    eyebrow: string;
-    title: string;
-    intro: string;
-    stages: { grade: string; theme: string; body: string; strengths: string[] }[];
-    pattern: string[];
+    eyebrow: L;
+    title: L;
+    intro: L;
+    stages: { grade: L; theme: L; body: L; strengths: L[] }[];
+    pattern: L[];
   };
   teachers: {
-    eyebrow: string;
-    title: string;
+    eyebrow: L;
+    title: L;
     entries: {
-      grade: string;
-      label: string;
+      grade: L;
+      label: L;
       name: string;
-      role: string;
-      quotes: string[];
-      themes: string[];
+      role: L;
+      quotes: L[];
+      themes: L[];
     }[];
-    consistent: string;
+    consistent: L;
   };
   capabilities: {
-    eyebrow: string;
-    title: string;
+    eyebrow: L;
+    title: L;
     items: Rating[];
   };
   academic: {
-    eyebrow: string;
-    title: string;
-    grade4: { subject: string; score: string }[];
+    eyebrow: L;
+    title: L;
+    grade4: { subject: L; score: string }[];
     strengths: Rating[];
-    excellentYears: string[];
-    excellentNote: string;
+    excellentNote: L;
     naturalScience: string[];
-    naturalScienceNote: string;
-    cambridge: string[];
-    cambridgeNote: string;
+    naturalScienceNote: L;
+    cambridge: L[];
+    cambridgeNote: L;
   };
   forward: {
-    eyebrow: string;
-    title: string;
-    intro: string[];
-    projects: string[];
-    close: string;
+    eyebrow: L;
+    title: L;
+    intro: L[];
+    projects: L[];
+    close: L;
   };
   motto: {
-    lines: string[];
-    reflection: string[];
-    statement: string;
+    lines: L[];
+    reflection: L[];
+    statement: L;
   };
 }
 
