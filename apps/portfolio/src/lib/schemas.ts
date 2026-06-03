@@ -78,6 +78,20 @@ export type YearRecord = z.infer<typeof yearRecordSchema>;
 export const academicSchema = z.array(yearRecordSchema);
 export type Academic = z.infer<typeof academicSchema>;
 
+// Signature strength — the rare combination converging into one direction.
+export const signaturePieceSchema = z.object({
+  icon: z.string(),
+  label: L,
+  detail: L,
+});
+export type SignaturePiece = z.infer<typeof signaturePieceSchema>;
+export const signatureSchema = z.object({
+  thesis: L,
+  pieces: z.array(signaturePieceSchema),
+  outcome: signaturePieceSchema,
+});
+export type Signature = z.infer<typeof signatureSchema>;
+
 // Overall assessment (synthesised verdict + future fit).
 export const overallSchema = z.object({
   verdict: L,

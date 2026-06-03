@@ -1,0 +1,30 @@
+{
+  "thesis": {
+    "vi": "T",
+    "en": "T"
+  },
+  "pieces": [
+    {
+      "icon": "🔬",
+      "label": {
+        "vi": "Logic",
+        "en": "Logic"
+      },
+      "detail": {
+        "vi": "d",
+        "en": "d"
+      }
+    }
+  ],
+  "outcome": {
+    "icon": "✨",
+    "label": {
+      "vi": "Science Illustration",
+      "en": "Science Illustration"
+    },
+    "detail": {
+      "vi": "o",
+      "en": "o"
+    }
+  }
+}

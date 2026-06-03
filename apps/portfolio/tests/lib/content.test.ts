@@ -4,6 +4,7 @@ import {
   getProfile,
   getAchievements,
   getAcademic,
+  getSignature,
   getOverall,
   getSkillsRadar,
   getCharacter,
@@ -40,6 +41,12 @@ describe("content loaders", () => {
     expect(ac[0].honors[0].label.vi).toBe("Học sinh Xuất sắc");
     expect(ac[0].honors[0].note?.en).toBe("Rare");
     expect(ac[1].honors).toEqual([]); // default when omitted
+  });
+
+  it("loads the signature (rare combination)", () => {
+    const s = getSignature(DIR);
+    expect(s.pieces).toHaveLength(1);
+    expect(s.outcome.label.en).toBe("Science Illustration");
   });
 
   it("loads the overall assessment", () => {

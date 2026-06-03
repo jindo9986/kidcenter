@@ -2,6 +2,7 @@ import {
   getProfile,
   getAchievements,
   getAcademic,
+  getSignature,
   getOverall,
   getSkillsRadar,
   getCharacter,
@@ -16,6 +17,7 @@ import { Hero } from "@/components/Hero";
 import { Section } from "@/components/Section";
 import { Snapshot, type Stat } from "@/components/Snapshot";
 import { OverallEval } from "@/components/OverallEval";
+import { Signature } from "@/components/Signature";
 import { Strengths } from "@/components/Strengths";
 import { RadarChart } from "@/components/RadarChart";
 import { Achievements } from "@/components/Achievements";
@@ -56,6 +58,7 @@ export default function Home() {
   const profile = getProfile();
   const achievements = getAchievements();
   const academic = getAcademic();
+  const signature = getSignature();
   const overall = getOverall();
   const skillsRadar = getSkillsRadar();
   const character = getCharacter();
@@ -93,6 +96,7 @@ export default function Home() {
   const navItems: NavItem[] = [
     { id: "about", label: { vi: "Giới thiệu", en: "About" } },
     { id: "strengths", label: { vi: "Điểm mạnh", en: "Strengths" } },
+    { id: "signature", label: { vi: "Độc đáo", en: "Signature" } },
     { id: "radar", label: { vi: "Năng lực", en: "Skills" } },
     { id: "achievements", label: { vi: "Thành tích", en: "Achievements" } },
     { id: "academic", label: { vi: "Học tập", en: "Academics" } },
@@ -170,6 +174,17 @@ export default function Home() {
           }}
         >
           <Strengths items={profile.strengths} />
+        </Section>
+
+        <Section
+          id="signature"
+          title={{ vi: "Tổ hợp hiếm có", en: "A Rare Combination" }}
+          subtitle={{
+            vi: "Logic + Nghệ thuật + Ngôn ngữ → một hướng đi rất riêng",
+            en: "Logic + Art + Language → a distinctive direction",
+          }}
+        >
+          <Signature data={signature} />
         </Section>
 
         <Section

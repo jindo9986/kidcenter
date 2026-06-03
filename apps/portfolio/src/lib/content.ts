@@ -4,6 +4,7 @@ import {
   profileSchema,
   achievementsSchema,
   academicSchema,
+  signatureSchema,
   overallSchema,
   skillsRadarSchema,
   characterSchema,
@@ -15,6 +16,7 @@ import {
   type Profile,
   type Achievement,
   type Academic,
+  type Signature,
   type Overall,
   type RadarAxis,
   type Character,
@@ -42,6 +44,10 @@ export function getAchievements(dir: string = DEFAULT_DIR): Achievement[] {
 
 export function getAcademic(dir: string = DEFAULT_DIR): Academic {
   return academicSchema.parse(readJson(dir, "academic.json"));
+}
+
+export function getSignature(dir: string = DEFAULT_DIR): Signature {
+  return signatureSchema.parse(readJson(dir, "signature.json"));
 }
 
 export function getOverall(dir: string = DEFAULT_DIR): Overall {
