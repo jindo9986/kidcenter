@@ -4,6 +4,7 @@ import {
   getProfile,
   getAchievements,
   getAcademic,
+  getOverall,
   getSkillsRadar,
   getCharacter,
   getTeacherInsights,
@@ -39,6 +40,13 @@ describe("content loaders", () => {
     expect(ac[0].honors[0].label.vi).toBe("Học sinh Xuất sắc");
     expect(ac[0].honors[0].note?.en).toBe("Rare");
     expect(ac[1].honors).toEqual([]); // default when omitted
+  });
+
+  it("loads the overall assessment", () => {
+    const o = getOverall(DIR);
+    expect(o.verdict.vi).toBe("V");
+    expect(o.futureFields).toHaveLength(1);
+    expect(o.growthNote?.en).toBe("G");
   });
 
   it("loads the skills radar axes", () => {

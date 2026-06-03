@@ -1,0 +1,20 @@
+{
+  "verdict": {
+    "vi": "V",
+    "en": "V"
+  },
+  "placement": {
+    "vi": "P",
+    "en": "P"
+  },
+  "futureFields": [
+    {
+      "vi": "AI",
+      "en": "AI"
+    }
+  ],
+  "growthNote": {
+    "vi": "G",
+    "en": "G"
+  }
+}

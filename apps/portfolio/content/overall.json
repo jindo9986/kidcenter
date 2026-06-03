@@ -1,0 +1,44 @@
+{
+  "verdict": {
+    "vi": "Đình Hữu là học sinh có năng lực học thuật nổi bật — đặc biệt mạnh về tư duy logic, Khoa học và Công nghệ — sở hữu khả năng tự học, tố chất lãnh đạo tự nhiên và nhân cách tốt.",
+    "en": "Đình Hữu is an academically outstanding student — especially strong in logical thinking, Science and Technology — with independent learning, natural leadership and strong character."
+  },
+  "placement": {
+    "vi": "Thuộc nhóm học sinh có năng lực và tiềm năng phát triển cao; triển vọng xuất sắc ở các chương trình quốc tế bậc trung học và lĩnh vực STEM.",
+    "en": "Among the high-ability, high-potential group; well placed to excel in international secondary programmes and STEM fields."
+  },
+  "futureFields": [
+    {
+      "vi": "Khoa học Máy tính",
+      "en": "Computer Science"
+    },
+    {
+      "vi": "Trí tuệ Nhân tạo",
+      "en": "Artificial Intelligence"
+    },
+    {
+      "vi": "Robotics",
+      "en": "Robotics"
+    },
+    {
+      "vi": "Kỹ thuật",
+      "en": "Engineering"
+    },
+    {
+      "vi": "Khoa học Dữ liệu",
+      "en": "Data Science"
+    },
+    {
+      "vi": "Tài chính Định lượng",
+      "en": "Quantitative Finance"
+    },
+    {
+      "vi": "Nghiên cứu Khoa học",
+      "en": "Scientific Research"
+    }
+  ],
+  "growthNote": {
+    "vi": "Đang rèn: thói quen kiểm tra lại bài để tối ưu độ chính xác — phần năng lực nền tảng đã rất vững.",
+    "en": "Currently developing: a double-check habit to sharpen accuracy — the underlying ability is already strong."
+  }
+}

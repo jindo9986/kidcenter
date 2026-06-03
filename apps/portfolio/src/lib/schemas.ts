@@ -78,6 +78,15 @@ export type YearRecord = z.infer<typeof yearRecordSchema>;
 export const academicSchema = z.array(yearRecordSchema);
 export type Academic = z.infer<typeof academicSchema>;
 
+// Overall assessment (synthesised verdict + future fit).
+export const overallSchema = z.object({
+  verdict: L,
+  placement: L,
+  futureFields: z.array(L),
+  growthNote: L.optional(),
+});
+export type Overall = z.infer<typeof overallSchema>;
+
 // Skills radar (well-roundedness across domains).
 export const radarAxisSchema = z.object({ axis: L, value: z.number() });
 export type RadarAxis = z.infer<typeof radarAxisSchema>;

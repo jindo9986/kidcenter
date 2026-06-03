@@ -2,6 +2,7 @@ import {
   getProfile,
   getAchievements,
   getAcademic,
+  getOverall,
   getSkillsRadar,
   getCharacter,
   getTeacherInsights,
@@ -14,6 +15,7 @@ import type { L } from "@/lib/schemas";
 import { Hero } from "@/components/Hero";
 import { Section } from "@/components/Section";
 import { Snapshot, type Stat } from "@/components/Snapshot";
+import { OverallEval } from "@/components/OverallEval";
 import { Strengths } from "@/components/Strengths";
 import { RadarChart } from "@/components/RadarChart";
 import { Achievements } from "@/components/Achievements";
@@ -54,6 +56,7 @@ export default function Home() {
   const profile = getProfile();
   const achievements = getAchievements();
   const academic = getAcademic();
+  const overall = getOverall();
   const skillsRadar = getSkillsRadar();
   const character = getCharacter();
   const teacherInsights = getTeacherInsights();
@@ -88,12 +91,15 @@ export default function Home() {
   ];
 
   const navItems: NavItem[] = [
-    { id: "about", label: { vi: "Giới thiệu", en: "About" } },
+    { id: "overview", label: { vi: "Tổng quan", en: "Overview" } },
     { id: "strengths", label: { vi: "Điểm mạnh", en: "Strengths" } },
     { id: "radar", label: { vi: "Năng lực", en: "Skills" } },
     { id: "achievements", label: { vi: "Thành tích", en: "Achievements" } },
     { id: "academic", label: { vi: "Học tập", en: "Academics" } },
     { id: "character", label: { vi: "Phẩm chất", en: "Attributes" } },
+    ...(journey.length > 0
+      ? [{ id: "journey", label: { vi: "Hành trình", en: "Journey" } }]
+      : []),
     ...(gallery.length > 0
       ? [{ id: "gallery", label: { vi: "Tranh vẽ", en: "Artwork" } }]
       : []),
@@ -125,6 +131,17 @@ export default function Home() {
         <div className="mb-10">
           <Snapshot stats={stats} />
         </div>
+
+        <Section
+          id="overview"
+          title={{ vi: "Đánh giá tổng thể", en: "Overall Assessment" }}
+          subtitle={{
+            vi: "Tổng hợp từ nhận xét giáo viên & kết quả học tập 4 năm",
+            en: "Synthesised from four years of teacher reports & results",
+          }}
+        >
+          <OverallEval data={overall} />
+        </Section>
 
         <Section id="about" title={{ vi: "Giới thiệu", en: "About" }}>
           <p className="mb-4 leading-relaxed text-ink/70">

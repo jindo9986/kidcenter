@@ -1,1 +1,50 @@
-[]
+[
+  {
+    "date": "2022–2023",
+    "icon": "🌱",
+    "title": {
+      "vi": "Lớp 1 — Bộc lộ năng khiếu sớm",
+      "en": "Grade 1 — Early talent emerges"
+    },
+    "body": {
+      "vi": "Giáo viên ghi nhận 'natural ability in maths', khả năng suy luận, giải quyết vấn đề và tự học tốt ngay từ năm đầu.",
+      "en": "Teachers noted his 'natural ability in maths', with strong reasoning, problem-solving and independent learning from the very first year."
+    }
+  },
+  {
+    "date": "2023–2024",
+    "icon": "🧩",
+    "title": {
+      "vi": "Lớp 2 — Hoàn thiện nền tảng",
+      "en": "Grade 2 — Building the foundation"
+    },
+    "body": {
+      "vi": "Duy trì thành tích cao ở Toán, Khoa học, Tin học; được mô tả tỉ mỉ, cẩn thận và suy nghĩ sâu.",
+      "en": "Kept up high results in Maths, Science and ICT; described as thoughtful, accurate and meticulous."
+    }
+  },
+  {
+    "date": "2024–2025",
+    "icon": "🤝",
+    "title": {
+      "vi": "Lớp 3 — Bứt phá về lãnh đạo",
+      "en": "Grade 3 — Leadership emerges"
+    },
+    "body": {
+      "vi": "Tự nhiên đảm nhận vai trò dẫn dắt nhóm và kèm cặp bạn học; Toán & Khoa học xuất sắc, viết tiếng Anh tiến bộ rõ.",
+      "en": "Naturally took on leadership in group work and mentored peers; excellent in Maths & Science, with clear progress in English writing."
+    }
+  },
+  {
+    "date": "2025–2026",
+    "icon": "🚀",
+    "title": {
+      "vi": "Lớp 4 — Trưởng thành rõ rệt",
+      "en": "Grade 4 — Visible maturity"
+    },
+    "body": {
+      "vi": "Tập trung và hành vi cải thiện, khai thác năng lực hiệu quả hơn; vững vàng với tỷ lệ, phân số, điều tra khoa học và phân tích dữ liệu.",
+      "en": "Improved focus and behaviour, making the most of his abilities; confident with ratio, fractions, scientific investigation and data analysis."
+    }
+  }
+]

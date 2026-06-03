@@ -4,6 +4,7 @@ import {
   profileSchema,
   achievementsSchema,
   academicSchema,
+  overallSchema,
   skillsRadarSchema,
   characterSchema,
   teacherInsightsSchema,
@@ -14,6 +15,7 @@ import {
   type Profile,
   type Achievement,
   type Academic,
+  type Overall,
   type RadarAxis,
   type Character,
   type TeacherInsights,
@@ -40,6 +42,10 @@ export function getAchievements(dir: string = DEFAULT_DIR): Achievement[] {
 
 export function getAcademic(dir: string = DEFAULT_DIR): Academic {
   return academicSchema.parse(readJson(dir, "academic.json"));
+}
+
+export function getOverall(dir: string = DEFAULT_DIR): Overall {
+  return overallSchema.parse(readJson(dir, "overall.json"));
 }
 
 export function getSkillsRadar(dir: string = DEFAULT_DIR): RadarAxis[] {
