@@ -96,6 +96,54 @@ export default function StoryPage() {
       alt: "Tin holding a sweet potato he dug up on a field trip",
     },
   ];
+  // Photo essay — curiosity in the real world (museums, science halls, the zoo).
+  const explore: { src: string; alt: string; caption: string }[] = [
+    {
+      src: "/media/life/life-wonder-reptile.jpg",
+      alt: "Tin pointing wide-eyed at a reptile in a vivarium",
+      caption: "Whoa — what is that?!",
+    },
+    {
+      src: "/media/life/life-whale-skeleton.jpg",
+      alt: "Tin in front of a giant sperm-whale skeleton",
+      caption: "Eye to eye with a sperm whale",
+    },
+    {
+      src: "/media/life/life-evolution-skulls.jpg",
+      alt: "Tin studying a wall of hominid skulls on a timeline",
+      caption: "Tracing human origins, skull by skull",
+    },
+    {
+      src: "/media/life/life-microscope.jpg",
+      alt: "Tin looking through a microscope at a wood sample",
+      caption: "Under the microscope — the grain of wood",
+    },
+    {
+      src: "/media/life/life-marlin.jpg",
+      alt: "Tin standing under a mounted blue marlin",
+      caption: "A blue marlin, longer than he is tall",
+    },
+    {
+      src: "/media/life/life-snake-touch.jpg",
+      alt: "Tin gently touching a snake at the zoo",
+      caption: "First time touching a snake",
+    },
+    {
+      src: "/media/life/life-skeletons.jpg",
+      alt: "Tin looking at a human and an ape skeleton side by side",
+      caption: "Us and our ancestors, side by side",
+    },
+    {
+      src: "/media/life/life-elephants.jpg",
+      alt: "Tin pointing at elephants at the zoo",
+      caption: "Watching the elephants up close",
+    },
+    {
+      src: "/media/life/life-museum-art.jpg",
+      alt: "Tin looking at ink cityscape paintings in an art museum",
+      caption: "Reading a city drawn in ink",
+    },
+  ];
 
   return (
     <main className="bg-cream text-ink">
@@ -452,6 +500,40 @@ export default function StoryPage() {
             >
               {r}
             </span>
+          ))}
+        </div>
+      </section>
+
+      {/* CURIOSITY IN THE WORLD — photo essay */}
+      <section className="px-6 py-16 sm:py-24">
+        <div className="mx-auto max-w-3xl text-center">
+          <Eyebrow>Curiosity in the world</Eyebrow>
+          <h2 className="font-display text-3xl font-bold text-ink sm:text-4xl">
+            Learning happens everywhere
+          </h2>
+          <p className="mx-auto mt-5 max-w-[620px] text-lg text-ink/70">
+            From natural-history halls to the zoo, the same curiosity follows Tin
+            out into the world — skeletons and skulls, microscopes and marlins,
+            snakes and elephants.
+          </p>
+        </div>
+        <div className="mx-auto mt-10 max-w-5xl gap-3 [column-fill:_balance] columns-2 sm:columns-3">
+          {explore.map((p) => (
+            <figure
+              key={p.src}
+              className="mb-3 break-inside-avoid overflow-hidden rounded-2xl bg-white shadow-sm"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={asset(p.src)}
+                alt={p.alt}
+                loading="lazy"
+                className="w-full"
+              />
+              <figcaption className="px-3 py-2 text-xs leading-snug text-ink/55">
+                {p.caption}
+              </figcaption>
+            </figure>
           ))}
         </div>
       </section>
