@@ -1,112 +1,109 @@
-import { Button, Card } from "@kidcenter/ui";
-
-type Highlight = { icon: string; title: string; detail: string };
-type Project = { icon: string; title: string; tag: string; summary: string };
-
-const highlights: Highlight[] = [
-  { icon: "🏅", title: "Giải Nhì", detail: "Cuộc thi vẽ thiếu nhi cấp quận 2025" },
-  { icon: "📚", title: "Đọc 50 cuốn sách", detail: "Thử thách đọc sách 2025" },
-  { icon: "🎹", title: "Piano cấp độ 2", detail: "Hoàn thành chứng chỉ ABRSM" },
-];
-
-const projects: Project[] = [
-  {
-    icon: "🌱",
-    title: "Vườn rau mini",
-    tag: "Khám phá khoa học",
-    summary:
-      "Tự trồng và theo dõi quá trình lớn lên của cây trong 6 tuần, ghi nhật ký bằng hình vẽ.",
-  },
-  {
-    icon: "🤖",
-    title: "Robot giấy",
-    tag: "STEM · Thủ công",
-    summary:
-      "Thiết kế và lắp ráp robot từ vật liệu tái chế, trình bày trước lớp.",
-  },
-  {
-    icon: "🎭",
-    title: "Kể chuyện song ngữ",
-    tag: "Ngôn ngữ",
-    summary:
-      "Quay video kể lại truyện cổ tích bằng cả tiếng Việt và tiếng Anh.",
-  },
-];
-
-const skills = ["Sáng tạo", "Tiếng Anh", "Toán tư duy", "Âm nhạc", "Làm việc nhóm"];
+import {
+  getProfile,
+  getAchievements,
+  getJourney,
+  getGallery,
+  getProjects,
+} from "@/lib/content";
+import { Hero } from "@/components/Hero";
+import { Section } from "@/components/Section";
+import { Timeline } from "@/components/Timeline";
+import { Gallery } from "@/components/Gallery";
+import { ProjectCard } from "@/components/ProjectCard";
+import { Localized } from "@/components/Localized";
+import { LangToggle } from "@/components/LangToggle";
+import { PrintButton } from "@/components/PrintButton";
 
 export default function Home() {
+  const profile = getProfile();
+  const achievements = getAchievements();
+  const journey = getJourney();
+  const gallery = getGallery();
+  const projects = getProjects();
+
   return (
-    <main className="mx-auto w-full max-w-4xl flex-1 px-5 py-10 sm:px-8">
-      {/* Hero */}
-      <section className="mb-10 flex flex-col items-center gap-4 text-center sm:flex-row sm:text-left">
-        <div className="flex h-28 w-28 shrink-0 items-center justify-center rounded-full bg-accent text-5xl shadow-sm">
-          🧒
-        </div>
-        <div className="flex-1">
-          <p className="text-sm font-semibold text-brand">Portfolio của bé</p>
-          <h1 className="font-display text-4xl font-extrabold text-ink">
-            Nguyễn Bảo Na
-          </h1>
-          <p className="mt-1 text-ink/60">
-            6 tuổi · Yêu vẽ, âm nhạc và khám phá thiên nhiên 🌈
+    <>
+      <div className="no-print sticky top-0 z-10 flex items-center justify-end gap-2 border-b border-black/5 bg-cream/80 px-5 py-2 backdrop-blur">
+        <LangToggle />
+        <PrintButton />
+      </div>
+
+      <main className="mx-auto w-full max-w-4xl flex-1 px-5 py-8 sm:px-8">
+        <Hero profile={profile} />
+
+        <Section id="about" title={{ vi: "Giới thiệu", en: "About" }}>
+          <p className="mb-4 leading-relaxed text-ink/70">
+            <Localized value={profile.bio} />
           </p>
-        </div>
-        <div className="flex gap-2">
-          <Button>Tải hồ sơ PDF</Button>
-          <Button variant="ghost">Liên hệ</Button>
-        </div>
-      </section>
+          <div className="flex flex-wrap gap-2">
+            {profile.skills.map((s, i) => (
+              <span
+                key={i}
+                className="rounded-full bg-white px-4 py-1.5 text-sm font-semibold text-ink shadow-sm"
+              >
+                <Localized value={s} />
+              </span>
+            ))}
+          </div>
+        </Section>
 
-      {/* Giới thiệu */}
-      <Card title="Giới thiệu" icon="✨" className="mb-8">
-        <p className="leading-relaxed text-ink/70">
-          Bé Na là một cô bé tò mò và giàu trí tưởng tượng, thích đặt câu hỏi về
-          thế giới xung quanh. Bé học tốt nhất qua trải nghiệm thực tế — trồng
-          cây, làm thủ công và kể chuyện. Hồ sơ này tổng hợp những hoạt động và
-          thành tích nổi bật để ứng tuyển các chương trình học phù hợp.
-        </p>
-      </Card>
+        <Section
+          id="achievements"
+          title={{ vi: "Thành tích nổi bật", en: "Achievements" }}
+        >
+          <div className="grid gap-3 sm:grid-cols-3">
+            {achievements.map((a, i) => (
+              <div
+                key={i}
+                className="break-avoid rounded-3xl border border-black/5 bg-white p-4 shadow-sm"
+              >
+                <div className="mb-1 text-2xl">{a.icon}</div>
+                <p className="text-xs font-semibold text-ink/40">{a.date}</p>
+                <h3 className="font-bold text-ink">
+                  <Localized value={a.title} />
+                </h3>
+                <p className="text-sm text-ink/60">
+                  <Localized value={a.detail} />
+                </p>
+              </div>
+            ))}
+          </div>
+        </Section>
 
-      {/* Thành tích */}
-      <h2 className="mb-3 font-display text-2xl font-bold text-ink">
-        Thành tích nổi bật
-      </h2>
-      <div className="mb-8 grid gap-3 sm:grid-cols-3">
-        {highlights.map((h) => (
-          <Card key={h.title} icon={h.icon} title={h.title}>
-            <p className="text-sm text-ink/60">{h.detail}</p>
-          </Card>
-        ))}
-      </div>
+        <Section
+          id="projects"
+          title={{ vi: "Dự án & Hoạt động", en: "Projects & Activities" }}
+        >
+          <div className="grid gap-4 sm:grid-cols-2">
+            {projects.map((p) => (
+              <ProjectCard key={p.slug} project={p} />
+            ))}
+          </div>
+        </Section>
 
-      {/* Dự án / Hoạt động */}
-      <h2 className="mb-3 font-display text-2xl font-bold text-ink">
-        Dự án & Hoạt động
-      </h2>
-      <div className="mb-8 grid gap-4 sm:grid-cols-2">
-        {projects.map((p) => (
-          <Card key={p.title} icon={p.icon} title={p.title}>
-            <span className="mb-2 inline-block rounded-full bg-brand/10 px-2 py-0.5 text-xs font-semibold text-brand">
-              {p.tag}
-            </span>
-            <p className="text-sm leading-relaxed text-ink/70">{p.summary}</p>
-          </Card>
-        ))}
-      </div>
+        <Section
+          id="journey"
+          title={{ vi: "Hành trình phát triển", en: "Growth Journey" }}
+        >
+          <Timeline items={journey} />
+        </Section>
 
-      {/* Kỹ năng */}
-      <h2 className="mb-3 font-display text-2xl font-bold text-ink">Kỹ năng</h2>
-      <div className="flex flex-wrap gap-2">
-        {skills.map((s) => (
-          <span
-            key={s}
-            className="rounded-full bg-white px-4 py-1.5 text-sm font-semibold text-ink shadow-sm"
-          >
-            {s}
-          </span>
-        ))}
-      </div>
-    </main>
+        <Section
+          id="gallery"
+          title={{ vi: "Thư viện ảnh & video", en: "Media Gallery" }}
+        >
+          <Gallery items={gallery} />
+        </Section>
+
+        <footer className="mt-8 border-t border-black/5 pt-4 text-sm text-ink/50">
+          <span data-lang="vi">Liên hệ: </span>
+          <span data-lang="en">Contact: </span>
+          {profile.parentContact.name}
+          {profile.parentContact.email
+            ? ` · ${profile.parentContact.email}`
+            : ""}
+        </footer>
+      </main>
+    </>
   );
 }
