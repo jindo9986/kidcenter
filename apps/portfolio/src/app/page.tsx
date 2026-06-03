@@ -77,6 +77,25 @@ export default function StoryPage() {
     ["national", "National Olympiads"],
     ["local", "School & City"],
   ];
+  // One real-life photo per story beat (nature → reading → drawing → exploring).
+  const beatImages: { src: string; alt: string }[] = [
+    {
+      src: "/media/life/life-wildflowers.jpg",
+      alt: "Tin crouching to look closely at roadside wildflowers",
+    },
+    {
+      src: "/media/life/life-reading-science.jpg",
+      alt: "Tin reading a science book, ‘100 amazing mysteries of science’",
+    },
+    {
+      src: "/media/dino-sketches.jpg",
+      alt: "Tin’s dinosaur and biology sketches",
+    },
+    {
+      src: "/media/life/life-harvest.jpg",
+      alt: "Tin holding a sweet potato he dug up on a field trip",
+    },
+  ];
 
   return (
     <main className="bg-cream text-ink">
@@ -153,6 +172,36 @@ export default function StoryPage() {
             ))}
           </div>
         </div>
+        {/* childhood — where it all began */}
+        <div className="mx-auto mt-10 max-w-2xl">
+          <div className="grid grid-cols-2 gap-3 sm:gap-4">
+            {[
+              {
+                src: "/media/life/life-dad-shoulders.jpg",
+                alt: "Tin as a smiling toddler riding on his dad’s shoulders",
+              },
+              {
+                src: "/media/life/life-flower.jpg",
+                alt: "Tin as a toddler holding and studying a frangipani flower",
+              },
+            ].map((p) => (
+              <figure
+                key={p.src}
+                className="overflow-hidden rounded-3xl bg-white shadow-md"
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={asset(p.src)}
+                  alt={p.alt}
+                  className="aspect-[4/5] w-full object-cover"
+                />
+              </figure>
+            ))}
+          </div>
+          <figcaption className="mt-3 text-center text-sm text-ink/50">
+            Where it all began — a curious, happy child.
+          </figcaption>
+        </div>
       </section>
 
       {/* THE STORY */}
@@ -178,22 +227,41 @@ export default function StoryPage() {
             ))}
           </div>
         </div>
-        {/* four beats */}
-        <div className="mx-auto mt-10 grid max-w-4xl gap-4 sm:grid-cols-2">
-          {s.story.beats.map((b, i) => (
-            <div
-              key={i}
-              className="break-avoid rounded-3xl border border-black/5 bg-white p-6 shadow-sm"
-            >
-              <div className="mb-2 flex items-center gap-3">
-                <span className="font-display text-2xl font-extrabold text-accent">
-                  {i + 1}
-                </span>
-                <h3 className="font-display text-xl font-bold text-ink">{b.title}</h3>
+        {/* four beats — editorial, real photos alternating left / right */}
+        <div className="mx-auto mt-12 max-w-4xl space-y-12 sm:space-y-16">
+          {s.story.beats.map((b, i) => {
+            const img = beatImages[i];
+            return (
+              <div
+                key={i}
+                className="grid items-center gap-6 sm:gap-10 md:grid-cols-2"
+              >
+                <figure
+                  className={`overflow-hidden rounded-3xl bg-white shadow-md ${
+                    i % 2 === 1 ? "md:order-2" : ""
+                  }`}
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={asset(img.src)}
+                    alt={img.alt}
+                    className="aspect-[4/5] w-full object-cover"
+                  />
+                </figure>
+                <div>
+                  <span className="font-display text-3xl font-extrabold text-accent">
+                    {i + 1}
+                  </span>
+                  <h3 className="mt-1 font-display text-2xl font-bold text-ink sm:text-3xl">
+                    {b.title}
+                  </h3>
+                  <p className="mt-3 text-lg leading-relaxed text-ink/70">
+                    {b.body}
+                  </p>
+                </div>
               </div>
-              <p className="leading-relaxed text-ink/70">{b.body}</p>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
 
