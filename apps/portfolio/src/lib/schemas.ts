@@ -3,6 +3,9 @@ import { z } from "zod";
 export const L = z.object({ vi: z.string(), en: z.string() });
 export type L = z.infer<typeof L>;
 
+export const strengthSchema = z.object({ icon: z.string(), title: L, detail: L });
+export type Strength = z.infer<typeof strengthSchema>;
+
 export const profileSchema = z.object({
   name: z.string(),
   nickname: z.string().optional(),
@@ -10,8 +13,10 @@ export const profileSchema = z.object({
   avatar: z.string(),
   school: L,
   tagline: L,
+  summary: L, // value-proposition line (one sentence)
   bio: L,
   focus: z.array(L), // development direction (e.g. Science, Math)
+  strengths: z.array(strengthSchema),
   personality: z.array(L),
   interests: z.array(L),
   skills: z.array(L),

@@ -52,8 +52,8 @@ export function Hero({ profile }: { profile: Profile }) {
         <p className="mt-0.5 font-medium text-ink/80">
           🏫 <Localized value={profile.school} />
         </p>
-        <p className="mt-1 text-ink/60">
-          <Localized value={profile.tagline} />
+        <p className="mt-2 max-w-xl text-[15px] font-medium leading-relaxed text-ink/75">
+          <Localized value={profile.summary} />
         </p>
         <div className="mt-3 flex flex-wrap justify-center gap-2 sm:justify-start">
           {profile.focus.map((f, i) => (

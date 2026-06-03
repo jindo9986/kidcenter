@@ -11,6 +11,8 @@ import {
 import type { L } from "@/lib/schemas";
 import { Hero } from "@/components/Hero";
 import { Section } from "@/components/Section";
+import { Snapshot, type Stat } from "@/components/Snapshot";
+import { Strengths } from "@/components/Strengths";
 import { Achievements } from "@/components/Achievements";
 import { Academic } from "@/components/Academic";
 import { Character } from "@/components/Character";
@@ -53,6 +55,31 @@ export default function Home() {
   const gallery = getGallery();
   const projects = getProjects();
 
+  // Headline stats, derived from the data so they always stay accurate.
+  const isQGorQT = (c: string) => c === "international" || c === "national";
+  const medalCount = achievements.filter((a) => isQGorQT(a.category)).length;
+  const goldCount = achievements.filter(
+    (a) => isQGorQT(a.category) && a.medal === "gold",
+  ).length;
+  const stats: Stat[] = [
+    {
+      value: String(medalCount),
+      label: { vi: "HC Olympic · QG & QT", en: "Olympiad medals · Nat'l & Int'l" },
+    },
+    {
+      value: String(goldCount),
+      label: { vi: "HC Vàng cấp Quốc gia", en: "National gold medals" },
+    },
+    {
+      value: String(academic.length),
+      label: { vi: "Năm Học sinh Xuất sắc", en: "Years as Excellent Student" },
+    },
+    {
+      value: character.level.code,
+      label: { vi: "Cambridge · mức cao nhất", en: "Cambridge · top level" },
+    },
+  ];
+
   return (
     <>
       <div className="no-print sticky top-0 z-10 flex items-center justify-end gap-2 border-b border-black/5 bg-cream/80 px-5 py-2 backdrop-blur">
@@ -63,6 +90,10 @@ export default function Home() {
       <main className="mx-auto w-full max-w-4xl flex-1 px-5 py-8 sm:px-8">
         <Hero profile={profile} />
 
+        <div className="mb-10">
+          <Snapshot stats={stats} />
+        </div>
+
         <Section id="about" title={{ vi: "Giới thiệu", en: "About" }}>
           <p className="mb-4 leading-relaxed text-ink/70">
             <Localized value={profile.bio} />
@@ -71,10 +102,7 @@ export default function Home() {
             label={{ vi: "Tính cách", en: "Personality" }}
             items={profile.personality}
           />
-          <ChipRow
-            label={{ vi: "Kỹ năng", en: "Skills" }}
-            items={profile.skills}
-          />
+          <ChipRow label={{ vi: "Kỹ năng", en: "Skills" }} items={profile.skills} />
           <ChipRow
             label={{ vi: "Sở thích", en: "Interests" }}
             items={profile.interests}
@@ -82,32 +110,47 @@ export default function Home() {
         </Section>
 
         <Section
+          id="strengths"
+          title={{ vi: "Điểm mạnh nổi bật", en: "Key Strengths" }}
+          subtitle={{
+            vi: "Bốn thế mạnh được chứng minh bằng kết quả thực tế",
+            en: "Four strengths, each backed by real results",
+          }}
+        >
+          <Strengths items={profile.strengths} />
+        </Section>
+
+        <Section
+          id="achievements"
+          title={{ vi: "Thành tích nổi bật", en: "Achievements" }}
+          subtitle={{
+            vi: "Hành trình thi đấu từ cấp trường đến đấu trường quốc tế",
+            en: "A competitive journey from school contests to the international stage",
+          }}
+        >
+          <Achievements items={achievements} />
+        </Section>
+
+        <Section
           id="academic"
           title={{ vi: "Kết quả học tập", en: "Academic Record" }}
+          subtitle={{
+            vi: "Chương trình Cambridge · Vinschool The Harmony",
+            en: "Cambridge programme · Vinschool The Harmony",
+          }}
         >
-          <p className="-mt-2 mb-4 text-sm font-medium text-ink/50">
-            <Localized
-              value={{
-                vi: "Chương trình Cambridge · Vinschool The Harmony",
-                en: "Cambridge programme · Vinschool The Harmony",
-              }}
-            />
-          </p>
           <Academic data={academic} />
         </Section>
 
         <Section
           id="character"
           title={{ vi: "Phẩm chất Cambridge", en: "Cambridge Learner Attributes" }}
+          subtitle={{
+            vi: "Đạt mức cao nhất (C) ở mọi tiêu chí, cả 4 năm học",
+            en: "Top level (C) on every attribute, across all 4 years",
+          }}
         >
           <Character data={character} />
-        </Section>
-
-        <Section
-          id="achievements"
-          title={{ vi: "Thành tích nổi bật", en: "Achievements" }}
-        >
-          <Achievements items={achievements} />
         </Section>
 
         {projects.length > 0 && (
@@ -135,7 +178,11 @@ export default function Home() {
         {gallery.length > 0 && (
           <Section
             id="gallery"
-            title={{ vi: "Thư viện ảnh & video", en: "Media Gallery" }}
+            title={{ vi: "Năng lực sáng tạo", en: "Creative Work" }}
+            subtitle={{
+              vi: "Tranh đoạt giải & ký họa khủng long → Science Visualization",
+              en: "Award-winning art & dinosaur sketches → science visualization",
+            }}
           >
             <Gallery items={gallery} />
           </Section>
@@ -145,22 +192,31 @@ export default function Home() {
           <Section
             id="comments"
             title={{ vi: "Nhận xét của giáo viên", en: "Teacher Comments" }}
+            subtitle={{
+              vi: "Trích học bạ Cambridge · nhấn để mở từng năm",
+              en: "From Cambridge report cards · tap a year to expand",
+            }}
           >
-            <p className="-mt-2 mb-4 text-sm text-ink/45">
-              <span data-lang="vi">Trích học bạ Cambridge · nhấn để mở từng năm</span>
-              <span data-lang="en">From Cambridge report cards · tap a year to expand</span>
-            </p>
             <TeacherComments data={teacherComments} />
           </Section>
         )}
 
-        <footer className="mt-8 border-t border-black/5 pt-4 text-sm text-ink/50">
-          <span data-lang="vi">Liên hệ: </span>
-          <span data-lang="en">Contact: </span>
-          {profile.parentContact.name}
-          {profile.parentContact.email
-            ? ` · ${profile.parentContact.email}`
-            : ""}
+        <footer className="mt-10 break-avoid rounded-3xl border border-brand/10 bg-white p-5 text-center shadow-sm">
+          <p className="font-display text-lg font-bold text-ink">
+            <span data-lang="vi">Tìm hiểu thêm về hành trình của Tin?</span>
+            <span data-lang="en">Want to know more about Tin&apos;s journey?</span>
+          </p>
+          <div className="no-print mt-3 flex justify-center">
+            <PrintButton />
+          </div>
+          <p className="mt-3 text-sm text-ink/55">
+            <span data-lang="vi">Liên hệ: </span>
+            <span data-lang="en">Contact: </span>
+            {profile.parentContact.name}
+            {profile.parentContact.email
+              ? ` · ${profile.parentContact.email}`
+              : ""}
+          </p>
         </footer>
       </main>
     </>

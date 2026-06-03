@@ -8,8 +8,16 @@ const validProfile = {
   avatar: "/media/tin.jpg",
   school: { vi: "Trường", en: "School" },
   tagline: { vi: "Yêu khoa học", en: "Loves science" },
+  summary: { vi: "Tóm tắt", en: "Summary" },
   bio: { vi: "Tin...", en: "Tin is..." },
   focus: [{ vi: "Khoa học", en: "Science" }],
+  strengths: [
+    {
+      icon: "🔬",
+      title: { vi: "Khoa học", en: "Science" },
+      detail: { vi: "Giỏi", en: "Strong" },
+    },
+  ],
   personality: [{ vi: "Độc lập", en: "Independent" }],
   interests: [{ vi: "Vẽ", en: "Drawing" }],
   skills: [{ vi: "Sáng tạo", en: "Creativity" }],

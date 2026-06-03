@@ -5,8 +5,12 @@
   "avatar": "/media/avatar.jpg",
   "school": { "vi": "Trường Test", "en": "Test School" },
   "tagline": { "vi": "Tagline VI", "en": "Tagline EN" },
+  "summary": { "vi": "Tóm tắt VI", "en": "Summary EN" },
   "bio": { "vi": "Bio VI", "en": "Bio EN" },
   "focus": [{ "vi": "Khoa học", "en": "Science" }],
+  "strengths": [
+    { "icon": "🔬", "title": { "vi": "Khoa học", "en": "Science" }, "detail": { "vi": "Giỏi", "en": "Strong" } }
+  ],
   "personality": [{ "vi": "Độc lập", "en": "Independent" }],
   "interests": [{ "vi": "Vẽ", "en": "Drawing" }],
   "skills": [{ "vi": "Sáng tạo", "en": "Creativity" }],

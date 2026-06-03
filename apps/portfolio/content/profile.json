@@ -11,13 +11,51 @@
     "vi": "Đam mê Khoa học & Toán học 🔬",
     "en": "Passionate about Science & Math 🔬"
   },
+  "summary": {
+    "vi": "Cậu bé 10 tuổi say mê Khoa học — chủ nhân nhiều huy chương Olympic Khoa học Quốc gia & Quốc tế, học đều xuất sắc và giàu óc sáng tạo.",
+    "en": "A 10-year-old in love with science — a multiple national and international Science Olympiad medalist, top of his class, and a creative young artist."
+  },
   "bio": {
-    "vi": "Tin là một cậu bé độc lập và kiên định, đam mê Khoa học và Toán học. Em đã giành nhiều huy chương Olympic khoa học trong nước và quốc tế. Tin cũng rất thích vẽ — đặc biệt là khủng long — sở thích đang nuôi dưỡng khả năng trực quan hóa khoa học (science visualization) của em.",
-    "en": "Tin is an independent and determined boy with a deep passion for Science and Math. He has earned numerous national and international science Olympiad medals. Tin also loves drawing — especially dinosaurs — a hobby that is nurturing his science-visualization skills."
+    "vi": "Tin là cậu bé độc lập, kiên định và ham khám phá, đặc biệt say mê Khoa học và Toán học. Em đã chinh phục nhiều huy chương Olympic Khoa học trong nước và quốc tế, đồng thời giữ thành tích học tập xuất sắc suốt 4 năm liền. Ngoài giờ học, Tin mê vẽ — nhất là khủng long — sở thích đang bồi đắp khả năng trực quan hóa khoa học (science visualization) của em.",
+    "en": "Tin is an independent, determined, and curious boy with a deep passion for Science and Math. He has won numerous national and international Science Olympiad medals while staying top of his class for four straight years. Outside class, Tin loves drawing — especially dinosaurs — a hobby that is shaping his science-visualization skills."
   },
   "focus": [
     { "vi": "Khoa học", "en": "Science" },
     { "vi": "Toán học", "en": "Mathematics" }
+  ],
+  "strengths": [
+    {
+      "icon": "🔬",
+      "title": { "vi": "Tư duy Khoa học vượt trội", "en": "Outstanding scientific thinking" },
+      "detail": {
+        "vi": "Huy chương Vàng HKISO, STEMCO và SIMSO; điểm 10 môn Khoa học suốt cả 4 năm.",
+        "en": "Gold at HKISO, STEMCO and SIMSO; a perfect 10 in Science every single year."
+      }
+    },
+    {
+      "icon": "🧮",
+      "title": { "vi": "Nền tảng học thuật toàn diện", "en": "All-round academic excellence" },
+      "detail": {
+        "vi": "Học sinh Xuất sắc 4 năm liền, điểm 10 ở hầu hết môn — cả Toán và Tiếng Anh.",
+        "en": "Excellent Student four years running, with 10/10 across most subjects — Maths and English included."
+      }
+    },
+    {
+      "icon": "🎯",
+      "title": { "vi": "Bản lĩnh thi đấu, kiên định", "en": "A determined competitor" },
+      "detail": {
+        "vi": "Tranh tài ở nhiều đấu trường Quốc gia & Quốc tế; độc lập, cẩn trọng và bền bỉ.",
+        "en": "Competes on national and international stages; independent, careful, and persistent."
+      }
+    },
+    {
+      "icon": "🎨",
+      "title": { "vi": "Sáng tạo & trực quan hóa", "en": "Creative and visual" },
+      "detail": {
+        "vi": "Giải Nhất vẽ tranh cùng loạt ký họa khủng long — nền tảng cho Science Visualization.",
+        "en": "A painting champion whose dinosaur sketches feed his science-visualization skills."
+      }
+    }
   ],
   "personality": [
     { "vi": "Độc lập", "en": "Independent" },
