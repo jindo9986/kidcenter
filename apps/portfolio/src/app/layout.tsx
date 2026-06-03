@@ -27,7 +27,6 @@ export const metadata: Metadata = {
     description: DESC,
     images: ["/og.png"],
   },
-  icons: { icon: "/media/avatar.jpg" },
 };
 
 const noFlash = `try{var l=localStorage.getItem('locale');if(l)document.documentElement.dataset.locale=l;}catch(e){}`;
