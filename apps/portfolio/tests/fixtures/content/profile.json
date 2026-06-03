@@ -1,0 +1,10 @@
+{
+  "name": "Test Kid",
+  "age": 6,
+  "avatar": "/media/avatar.jpg",
+  "tagline": { "vi": "Tagline VI", "en": "Tagline EN" },
+  "bio": { "vi": "Bio VI", "en": "Bio EN" },
+  "interests": [{ "vi": "Vẽ", "en": "Drawing" }],
+  "skills": [{ "vi": "Sáng tạo", "en": "Creativity" }],
+  "parentContact": { "name": "Parent", "email": "p@example.com" }
+}
