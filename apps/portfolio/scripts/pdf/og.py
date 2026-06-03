@@ -52,15 +52,14 @@ if os.path.exists(av_path):
 
 # right column
 cx = ax + AV + 55
-top = 120
+top = 152
 
-d.text((cx, top), "HỒ SƠ NĂNG LỰC", font=font("SemiBold", 26), fill=GOLD)
 name = profile["name"] + (f' ({profile["nickname"]})' if profile.get("nickname") else "")
-d.text((cx, top + 38), name, font=font("ExtraBold", 60), fill=WHITE)
+d.text((cx, top), name, font=font("ExtraBold", 60), fill=WHITE)
 
 bd = profile["birthDate"]; y = bd.split("-")[0]
 age = datetime.date.today().year - int(y) - ((datetime.date.today().month, datetime.date.today().day) < tuple(int(x) for x in bd.split("-")[1:3]))
-d.text((cx, top + 112), f"{age} tuổi · {profile['school']['vi']}",
+d.text((cx, top + 76), f"{age} years old · Vinschool The Harmony",
        font=font("Medium", 27), fill=BRAND_L)
 
 # wrapped summary
@@ -78,9 +77,9 @@ def wrap(text, fnt, maxw):
 
 sumfnt = font("Medium", 28)
 maxw = W - cx - 70
-tagline = "Yêu Khoa học, Toán học và Nghệ thuật — hướng tới Science Illustration."
+tagline = "Loving science, maths and art — exploring science illustration."
 lines = wrap(tagline, sumfnt, maxw)[:2]
-sy = top + 168
+sy = top + 128
 for ln in lines:
     d.text((cx, sy), ln, font=sumfnt, fill=(235, 234, 250))
     sy += 39
@@ -88,8 +87,8 @@ for ln in lines:
 # stat pills
 qq = [a for a in ach if a["category"] in ("international", "national")]
 stats = [
-    f"{len(qq)} HC Olympic QG & QT",
-    f"{len(academic)} năm Học sinh Xuất sắc",
+    f"{len(qq)} Olympiad medals",
+    f"Excellent Student · {len(academic)} yrs",
     f"Cambridge: {character['level']['code']}",
 ]
 pf = font("SemiBold", 23)

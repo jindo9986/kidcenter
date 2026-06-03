@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-const TITLE = "Đào Đình Hữu (Tin) · Hồ sơ năng lực";
+const TITLE = "Đào Đình Hữu (Tin)";
 const DESC =
-  "Hồ sơ năng lực của Đào Đình Hữu (Tin), 10 tuổi — nhiều huy chương Olympic Khoa học Quốc gia & Quốc tế, Học sinh Xuất sắc 4 năm liền, đam mê vẽ và hướng tới Science Illustration.";
+  "A curious 10-year-old who loves science, maths and art — exploring where logic meets drawing in science illustration.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.huudaodinh.site"),
@@ -14,8 +14,9 @@ export const metadata: Metadata = {
     title: TITLE,
     description: DESC,
     url: "/",
-    siteName: "Hồ sơ năng lực · Đào Đình Hữu (Tin)",
-    locale: "vi_VN",
+    siteName: "Đào Đình Hữu (Tin)",
+    locale: "en_US",
+    alternateLocale: "vi_VN",
     images: [
       { url: "/og.png", width: 1200, height: 630, alt: "Đào Đình Hữu (Tin)" },
     ],
