@@ -39,7 +39,7 @@
       { "subject": { "vi": "Toán (Cambridge)", "en": "Math (Cambridge)" }, "score": "9" },
       { "subject": { "vi": "Khoa học tự nhiên (Cambridge)", "en": "Science (Cambridge)" }, "score": "10" },
       { "subject": { "vi": "Tiếng Anh (Cambridge)", "en": "English (Cambridge)" }, "score": "9" },
-      { "subject": { "vi": "Tin học (Cambridge)", "en": "Computing (Cambridge)" }, "level": "T" },
+      { "subject": { "vi": "Tin học (Cambridge)", "en": "Computing (Cambridge)" }, "score": "9" },
       { "subject": { "vi": "Việt Nam học", "en": "Vietnam Studies" }, "level": "Đ" },
       { "subject": { "vi": "Mĩ thuật", "en": "Art" }, "level": "T" },
       { "subject": { "vi": "Âm nhạc", "en": "Music" }, "level": "T" },
