@@ -14,3 +14,28 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans, system-ui, sans-serif);
 }
+
+/* Bilingual visibility */
+html[data-locale="vi"] [data-lang="en"] {
+  display: none;
+}
+html[data-locale="en"] [data-lang="vi"] {
+  display: none;
+}
+
+/* Print / PDF export */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: #fff;
+    color: #000;
+  }
+  .break-avoid {
+    break-inside: avoid;
+  }
+  @page {
+    margin: 16mm;
+  }
+}
