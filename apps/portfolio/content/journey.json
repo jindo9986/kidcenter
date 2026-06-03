@@ -1,0 +1,20 @@
+[
+  {
+    "date": "2024-09-01",
+    "icon": "🌱",
+    "title": { "vi": "Những nét vẽ đầu tiên", "en": "First brushstrokes" },
+    "body": { "vi": "Na bắt đầu mê vẽ, phủ kín nhà bằng tranh màu sáp.", "en": "Na fell in love with drawing, filling the house with crayon art." }
+  },
+  {
+    "date": "2025-01-15",
+    "icon": "🎹",
+    "title": { "vi": "Giai điệu đầu tiên", "en": "First melody" },
+    "body": { "vi": "Sau nhiều buổi tập, Na chơi trọn bản nhạc đầu tiên trên piano.", "en": "After many practice sessions, Na played her first full piece on the piano." }
+  },
+  {
+    "date": "2025-04-20",
+    "icon": "🏅",
+    "title": { "vi": "Lên sân khấu nhận giải", "en": "On stage for an award" },
+    "body": { "vi": "Bức tranh của Na đoạt giải Nhì cấp quận — lần đầu tự tin đứng trước đám đông.", "en": "Na's painting won 2nd prize district-wide — her first confident moment on stage." }
+  }
+]

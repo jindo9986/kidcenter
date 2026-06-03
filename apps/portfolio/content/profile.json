@@ -1,0 +1,29 @@
+{
+  "name": "Nguyễn Bảo Na",
+  "age": 6,
+  "avatar": "/media/avatar.png",
+  "tagline": {
+    "vi": "Yêu vẽ, âm nhạc và khám phá thiên nhiên 🌈",
+    "en": "Loves drawing, music, and exploring nature 🌈"
+  },
+  "bio": {
+    "vi": "Bé Na là một cô bé tò mò và giàu trí tưởng tượng, thích đặt câu hỏi về thế giới xung quanh. Bé học tốt nhất qua trải nghiệm thực tế — trồng cây, làm thủ công và kể chuyện.",
+    "en": "Na is a curious, imaginative child who loves asking questions about the world. She learns best through hands-on experiences — growing plants, crafting, and storytelling."
+  },
+  "interests": [
+    { "vi": "Vẽ", "en": "Drawing" },
+    { "vi": "Âm nhạc", "en": "Music" },
+    { "vi": "Thiên nhiên", "en": "Nature" }
+  ],
+  "skills": [
+    { "vi": "Sáng tạo", "en": "Creativity" },
+    { "vi": "Tiếng Anh", "en": "English" },
+    { "vi": "Toán tư duy", "en": "Logical thinking" },
+    { "vi": "Âm nhạc", "en": "Music" },
+    { "vi": "Làm việc nhóm", "en": "Teamwork" }
+  ],
+  "parentContact": {
+    "name": "Phụ huynh bé Na",
+    "email": "daodinhhieu@gmail.com"
+  }
+}

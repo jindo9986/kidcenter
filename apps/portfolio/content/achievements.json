@@ -1,0 +1,20 @@
+[
+  {
+    "date": "2025-04-20",
+    "icon": "🏅",
+    "title": { "vi": "Giải Nhì", "en": "2nd Prize" },
+    "detail": { "vi": "Cuộc thi vẽ thiếu nhi cấp quận 2025", "en": "District children's drawing contest 2025" }
+  },
+  {
+    "date": "2025-03-10",
+    "icon": "📚",
+    "title": { "vi": "Đọc 50 cuốn sách", "en": "Read 50 books" },
+    "detail": { "vi": "Thử thách đọc sách 2025", "en": "2025 reading challenge" }
+  },
+  {
+    "date": "2025-01-15",
+    "icon": "🎹",
+    "title": { "vi": "Piano cấp độ 2", "en": "Piano Level 2" },
+    "detail": { "vi": "Hoàn thành chứng chỉ ABRSM", "en": "Completed ABRSM certificate" }
+  }
+]
