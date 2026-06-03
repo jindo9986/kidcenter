@@ -39,6 +39,31 @@ function Prose({ children }: { children: React.ReactNode }) {
   );
 }
 
+// Capability ratings — a quick-read visual summary for the Core capabilities section.
+const CAP_RATINGS: { name: string; stars: number }[] = [
+  { name: "Scientific Thinking", stars: 5 },
+  { name: "Visual Thinking", stars: 5 },
+  { name: "Logical Reasoning", stars: 5 },
+  { name: "Reading & Analysis", stars: 4 },
+  { name: "Communication", stars: 4 },
+  { name: "Leadership", stars: 4 },
+];
+
+function Stars({ n }: { n: number }) {
+  return (
+    <span
+      className="shrink-0 text-lg leading-none tracking-tight"
+      aria-label={`${n} out of 5`}
+    >
+      {[1, 2, 3, 4, 5].map((i) => (
+        <span key={i} aria-hidden className={i <= n ? "text-accent" : "text-ink/15"}>
+          ★
+        </span>
+      ))}
+    </span>
+  );
+}
+
 export default function StoryPage() {
   const s = getStory();
   const achievements = getAchievements();
@@ -181,6 +206,83 @@ export default function StoryPage() {
             ))}
           </div>
         </div>
+        {/* Venn: where the three domains overlap */}
+        <figure className="mx-auto mt-10 max-w-md">
+          <svg
+            viewBox="0 0 440 430"
+            className="w-full"
+            role="img"
+            aria-label="Venn diagram — Science, Art and Language overlap in science illustration"
+          >
+            <g style={{ mixBlendMode: "multiply" }}>
+              <circle
+                cx="220"
+                cy="160"
+                r="122"
+                fill="var(--color-brand)"
+                fillOpacity="0.20"
+                stroke="var(--color-brand)"
+                strokeOpacity="0.55"
+                strokeWidth="1.5"
+              />
+              <circle
+                cx="150"
+                cy="280"
+                r="122"
+                fill="var(--color-teal)"
+                fillOpacity="0.20"
+                stroke="var(--color-teal)"
+                strokeOpacity="0.55"
+                strokeWidth="1.5"
+              />
+              <circle
+                cx="290"
+                cy="280"
+                r="122"
+                fill="var(--color-ink)"
+                fillOpacity="0.13"
+                stroke="var(--color-ink)"
+                strokeOpacity="0.5"
+                strokeWidth="1.5"
+              />
+            </g>
+            {/* domain labels (in each pure lobe) */}
+            <g className="font-display" textAnchor="middle">
+              <text x="220" y="92" fontSize="24" fontWeight="800" fill="var(--color-brand)">
+                Science
+              </text>
+              <text x="220" y="112" fontSize="11.5" fill="var(--color-brand)" opacity="0.75">
+                investigate · reason
+              </text>
+
+              <text x="86" y="316" fontSize="24" fontWeight="800" fill="var(--color-teal)">
+                Art
+              </text>
+              <text x="86" y="336" fontSize="11.5" fill="var(--color-teal)" opacity="0.8">
+                observe · visualise
+              </text>
+
+              <text x="356" y="316" fontSize="24" fontWeight="800" fill="var(--color-ink)">
+                Language
+              </text>
+              <text x="356" y="336" fontSize="11.5" fill="var(--color-ink)" opacity="0.6">
+                analyse · communicate
+              </text>
+
+              {/* the three-way overlap */}
+              <text x="220" y="236" fontSize="15" fontWeight="800" fill="var(--color-ink)">
+                Science
+              </text>
+              <text x="220" y="255" fontSize="15" fontWeight="800" fill="var(--color-ink)">
+                Illustration
+              </text>
+            </g>
+          </svg>
+          <figcaption className="mt-4 text-center text-sm text-ink/55">
+            Where the three overlap — science illustration &amp; science
+            communication.
+          </figcaption>
+        </figure>
         <div className="mx-auto mt-10 grid max-w-5xl gap-4 md:grid-cols-3">
           {s.combination.domains.map((d, i) => (
             <div
@@ -310,6 +412,22 @@ export default function StoryPage() {
           <h2 className="mb-8 font-display text-3xl font-bold text-ink sm:text-4xl">
             How he learns
           </h2>
+        </div>
+        {/* at-a-glance capability ratings */}
+        <div className="mx-auto mb-10 max-w-3xl rounded-3xl border border-black/5 bg-cream p-6 shadow-sm sm:p-8">
+          <div className="grid gap-x-10 gap-y-1 sm:grid-cols-2">
+            {CAP_RATINGS.map((c) => (
+              <div
+                key={c.name}
+                className="flex items-center justify-between gap-4 border-b border-black/5 py-3 last:border-0 sm:[&:nth-last-of-type(2)]:border-0"
+              >
+                <span className="font-display text-base font-semibold text-ink sm:text-lg">
+                  {c.name}
+                </span>
+                <Stars n={c.stars} />
+              </div>
+            ))}
+          </div>
         </div>
         <div className="mx-auto grid max-w-4xl gap-4 sm:grid-cols-2">
           {s.capabilities.map((c, i) => (
