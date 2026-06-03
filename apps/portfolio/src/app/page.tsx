@@ -23,6 +23,7 @@ import { ProjectCard } from "@/components/ProjectCard";
 import { Localized } from "@/components/Localized";
 import { LangToggle } from "@/components/LangToggle";
 import { PrintButton } from "@/components/PrintButton";
+import { SectionNav, type NavItem } from "@/components/SectionNav";
 
 function ChipRow({ label, items }: { label: L; items: L[] }) {
   if (items.length === 0) return null;
@@ -80,12 +81,36 @@ export default function Home() {
     },
   ];
 
+  const navItems: NavItem[] = [
+    { id: "about", label: { vi: "Giới thiệu", en: "About" } },
+    { id: "strengths", label: { vi: "Điểm mạnh", en: "Strengths" } },
+    { id: "achievements", label: { vi: "Thành tích", en: "Achievements" } },
+    { id: "academic", label: { vi: "Học tập", en: "Academics" } },
+    { id: "character", label: { vi: "Phẩm chất", en: "Attributes" } },
+    ...(gallery.length > 0
+      ? [{ id: "gallery", label: { vi: "Tranh vẽ", en: "Artwork" } }]
+      : []),
+    ...(teacherComments.length > 0
+      ? [{ id: "comments", label: { vi: "Nhận xét", en: "Comments" } }]
+      : []),
+  ];
+
   return (
     <>
-      <div className="no-print sticky top-0 z-10 flex items-center justify-end gap-2 border-b border-black/5 bg-cream/80 px-5 py-2 backdrop-blur">
-        <LangToggle />
-        <PrintButton />
-      </div>
+      <header className="no-print sticky top-0 z-20 border-b border-black/5 bg-cream/90 backdrop-blur">
+        <div className="mx-auto flex w-full max-w-4xl items-center justify-between gap-2 px-5 pt-2 sm:px-8">
+          <span className="truncate font-display text-sm font-bold text-ink/80">
+            Đào Đình Hữu (Tin)
+          </span>
+          <div className="flex items-center gap-2">
+            <LangToggle />
+            <PrintButton />
+          </div>
+        </div>
+        <div className="mx-auto w-full max-w-4xl px-5 pb-1.5 sm:px-8">
+          <SectionNav items={navItems} />
+        </div>
+      </header>
 
       <main className="mx-auto w-full max-w-4xl flex-1 px-5 py-8 sm:px-8">
         <Hero profile={profile} />
