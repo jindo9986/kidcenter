@@ -1021,6 +1021,19 @@ export default function StoryPage() {
             </p>
           </div>
         </div>
+        <div className="mx-auto mt-12 max-w-[680px] space-y-4 text-center text-lg leading-relaxed text-ink/75">
+          <p>
+            Behind every achievement is a community of support — teachers who
+            inspired curiosity, friends who learned alongside him, and a family
+            that encouraged exploration, reading and lifelong learning from an
+            early age.
+          </p>
+          <p>
+            This letter is a reminder that while achievements can be measured,
+            gratitude, kindness and character are equally important parts of the
+            journey.
+          </p>
+        </div>
       </section>
 
       {/* MOTTO / FINAL */}
