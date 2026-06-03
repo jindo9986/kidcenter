@@ -4,8 +4,12 @@
     "year": "2025-2026",
     "civility": "100/100",
     "honors": [
-      { "vi": "Học sinh Xuất sắc", "en": "Excellent Student" },
-      { "vi": "Tinh hoa Khoa học Tự nhiên", "en": "Natural Science Star Award" }
+      { "icon": "🏆", "label": { "vi": "Học sinh Xuất sắc", "en": "Excellent Student" } },
+      {
+        "icon": "⭐",
+        "label": { "vi": "Natural Science Star Award", "en": "Natural Science Star Award" },
+        "note": { "vi": "Học sinh Tinh hoa Khoa học Tự nhiên — chỉ ~2% học sinh Vinschool đạt được", "en": "Top Natural Science honour — awarded to only ~2% of Vinschool students" }
+      }
     ],
     "subjects": [
       { "subject": { "vi": "Tiếng Việt", "en": "Vietnamese" }, "score": "10" },
@@ -21,8 +25,12 @@
     "year": "2024-2025",
     "civility": "100/100",
     "honors": [
-      { "vi": "Học sinh Xuất sắc", "en": "Excellent Student" },
-      { "vi": "Tinh hoa Khoa học Tự nhiên", "en": "Natural Science Star Award" }
+      { "icon": "🏆", "label": { "vi": "Học sinh Xuất sắc", "en": "Excellent Student" } },
+      {
+        "icon": "⭐",
+        "label": { "vi": "Natural Science Star Award", "en": "Natural Science Star Award" },
+        "note": { "vi": "Học sinh Tinh hoa Khoa học Tự nhiên — chỉ ~2% học sinh Vinschool đạt được", "en": "Top Natural Science honour — awarded to only ~2% of Vinschool students" }
+      }
     ],
     "subjects": [
       { "subject": { "vi": "Tiếng Việt", "en": "Vietnamese" }, "score": "10" },
@@ -37,7 +45,7 @@
     "year": "2023-2024",
     "civility": "100/100",
     "honors": [
-      { "vi": "Học sinh Xuất sắc", "en": "Excellent Student" }
+      { "icon": "🏆", "label": { "vi": "Học sinh Xuất sắc", "en": "Excellent Student" } }
     ],
     "subjects": [
       { "subject": { "vi": "Tiếng Việt", "en": "Vietnamese" }, "score": "9" },
@@ -52,7 +60,7 @@
     "year": "2022-2023",
     "civility": "99/100",
     "honors": [
-      { "vi": "Học sinh Xuất sắc", "en": "Excellent Student" }
+      { "icon": "🏆", "label": { "vi": "Học sinh Xuất sắc", "en": "Excellent Student" } }
     ],
     "subjects": [
       { "subject": { "vi": "Tiếng Việt", "en": "Vietnamese" }, "score": "10" },

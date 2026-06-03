@@ -57,13 +57,21 @@ export const subjectResultSchema = z.object({
 });
 export type SubjectResult = z.infer<typeof subjectResultSchema>;
 
+/** An honor/title earned in a school year (with optional rarity note + icon). */
+export const honorSchema = z.object({
+  label: L,
+  note: L.optional(),
+  icon: z.string().optional(),
+});
+export type Honor = z.infer<typeof honorSchema>;
+
 /** One school-year report card. */
 export const yearRecordSchema = z.object({
   grade: L,
   year: z.string().optional(),
   civility: z.string().optional(),
   subjects: z.array(subjectResultSchema),
-  honors: z.array(L).default([]),
+  honors: z.array(honorSchema).default([]),
 });
 export type YearRecord = z.infer<typeof yearRecordSchema>;
 

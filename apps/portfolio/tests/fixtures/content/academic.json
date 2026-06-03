@@ -3,7 +3,9 @@
     "grade": { "vi": "Lớp 2", "en": "Grade 2" },
     "year": "2025-2026",
     "civility": "100/100",
-    "honors": [{ "vi": "Học sinh Xuất sắc", "en": "Outstanding Student" }],
+    "honors": [
+      { "icon": "⭐", "label": { "vi": "Học sinh Xuất sắc", "en": "Outstanding Student" }, "note": { "vi": "Hiếm", "en": "Rare" } }
+    ],
     "subjects": [
       { "subject": { "vi": "Toán", "en": "Math" }, "score": "10" },
       { "subject": { "vi": "Mĩ thuật", "en": "Art" }, "level": "T" }

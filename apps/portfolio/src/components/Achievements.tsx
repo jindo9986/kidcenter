@@ -19,6 +19,14 @@ const CATEGORY_ORDER: AchievementCategory[] = [
   "local",
 ];
 
+// Highest award first within each group: gold → silver → bronze → none.
+const MEDAL_RANK: Record<Medal, number> = {
+  gold: 0,
+  silver: 1,
+  bronze: 2,
+  none: 3,
+};
+
 const CATEGORY_LABEL: Record<AchievementCategory, L> = {
   international: { vi: "Giải Quốc tế", en: "International" },
   national: { vi: "Giải Quốc gia", en: "National" },
@@ -54,7 +62,9 @@ export function Achievements({ items }: { items: Achievement[] }) {
   return (
     <div className="grid gap-4">
       {CATEGORY_ORDER.map((cat) => {
-        const group = items.filter((a) => a.category === cat);
+        const group = items
+          .filter((a) => a.category === cat)
+          .sort((a, b) => MEDAL_RANK[a.medal] - MEDAL_RANK[b.medal]);
         if (group.length === 0) return null;
         return (
           <div

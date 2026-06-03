@@ -34,7 +34,8 @@ describe("content loaders", () => {
     expect(ac[0].grade.vi).toBe("Lớp 2");
     expect(ac[0].subjects[0].score).toBe("10");
     expect(ac[0].subjects[1].level).toBe("T");
-    expect(ac[0].honors[0].vi).toBe("Học sinh Xuất sắc");
+    expect(ac[0].honors[0].label.vi).toBe("Học sinh Xuất sắc");
+    expect(ac[0].honors[0].note?.en).toBe("Rare");
     expect(ac[1].honors).toEqual([]); // default when omitted
   });
 

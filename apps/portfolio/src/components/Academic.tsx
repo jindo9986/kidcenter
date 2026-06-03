@@ -61,6 +61,32 @@ export function Academic({ data }: { data: AcademicType }) {
             )}
           </div>
 
+          {/* Honors — promoted to the top, gold-accented so they stand out. */}
+          {rec.honors.length > 0 && (
+            <ul className="mb-4 grid gap-2 sm:grid-cols-2">
+              {rec.honors.map((h, k) => (
+                <li
+                  key={k}
+                  className="break-avoid flex items-start gap-2.5 rounded-2xl border border-accent/40 bg-accent/12 px-3 py-2"
+                >
+                  <span className="text-xl leading-6" aria-hidden>
+                    {h.icon ?? "🏆"}
+                  </span>
+                  <div>
+                    <p className="font-bold leading-snug text-ink">
+                      <Localized value={h.label} />
+                    </p>
+                    {h.note && (
+                      <p className="mt-0.5 text-xs leading-snug text-ink/60">
+                        <Localized value={h.note} />
+                      </p>
+                    )}
+                  </div>
+                </li>
+              ))}
+            </ul>
+          )}
+
           <ul className="flex flex-wrap gap-2">
             {rec.subjects.map((s, j) => (
               <li
@@ -74,19 +100,6 @@ export function Academic({ data }: { data: AcademicType }) {
               </li>
             ))}
           </ul>
-
-          {rec.honors.length > 0 && (
-            <ul className="mt-3 space-y-1">
-              {rec.honors.map((h, k) => (
-                <li key={k} className="flex items-start gap-2 text-sm">
-                  <span aria-hidden>🏆</span>
-                  <span className="font-medium text-ink/80">
-                    <Localized value={h} />
-                  </span>
-                </li>
-              ))}
-            </ul>
-          )}
         </div>
       ))}
     </div>
