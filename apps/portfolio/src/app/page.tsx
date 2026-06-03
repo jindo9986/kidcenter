@@ -32,6 +32,7 @@ import { Localized } from "@/components/Localized";
 import { LangToggle } from "@/components/LangToggle";
 import { PrintButton } from "@/components/PrintButton";
 import { SectionNav, type NavItem } from "@/components/SectionNav";
+import Link from "next/link";
 
 function ChipRow({ label, items }: { label: L; items: L[] }) {
   if (items.length === 0) return null;
@@ -121,6 +122,13 @@ export default function Home() {
             Đào Đình Hữu (Tin)
           </span>
           <div className="flex items-center gap-2">
+            <Link
+              href="/story"
+              className="hidden rounded-full border border-brand/20 px-3 py-1.5 text-sm font-semibold text-brand transition-colors hover:bg-brand/5 sm:inline-flex"
+            >
+              <span data-lang="vi">Câu chuyện ↗</span>
+              <span data-lang="en">Story ↗</span>
+            </Link>
             <LangToggle />
             <PrintButton compact />
           </div>
@@ -308,8 +316,15 @@ export default function Home() {
             <span data-lang="vi">Tìm hiểu thêm về hành trình của Tin?</span>
             <span data-lang="en">Want to know more about Tin&apos;s journey?</span>
           </p>
-          <div className="no-print mt-3 flex justify-center">
+          <div className="no-print mt-3 flex flex-wrap justify-center gap-2">
             <PrintButton />
+            <Link
+              href="/story"
+              className="inline-flex min-h-11 items-center justify-center rounded-2xl border border-brand/25 px-4 text-base font-semibold text-brand transition-colors hover:bg-brand/5"
+            >
+              <span data-lang="vi">Đọc dạng câu chuyện →</span>
+              <span data-lang="en">Read the story →</span>
+            </Link>
           </div>
           <p className="mt-3 text-sm text-ink/55">
             <span data-lang="vi">Liên hệ: </span>

@@ -1,0 +1,241 @@
+{
+  "hero": {
+    "name": "Đào Đình Hữu (Tin)",
+    "lines": [
+      "A Curious Explorer.",
+      "A Visual Thinker."
+    ],
+    "motto": [
+      "Observe.",
+      "Understand.",
+      "Explain."
+    ]
+  },
+  "summary": {
+    "lead": "Tin is a curious learner, a visual thinker and an emerging science communicator.",
+    "paras": [
+      "His journey began not with competitions or awards, but with a deep fascination for the natural world. From an early age he enjoyed exploring nature, observing living things and asking how the world works.",
+      "Over time, this curiosity grew into three interconnected strengths — and into a learner who not only enjoys discovering knowledge, but enjoys sharing it.",
+      "Today his results in Science, Mathematics, ICT, reading, art and communication reflect a deeper story: a lifelong learner driven by curiosity, creativity and continuous growth."
+    ],
+    "threads": [
+      {
+        "label": "Observation",
+        "through": "through art"
+      },
+      {
+        "label": "Understanding",
+        "through": "through science"
+      },
+      {
+        "label": "Communication",
+        "through": "through language"
+      }
+    ]
+  },
+  "story": {
+    "eyebrow": "The story behind the journey",
+    "title": "It began with wonder",
+    "paras": [
+      "Before science competitions, medals or recognition, Tin was simply a child who loved exploring. Many of his earliest memories were shaped by nature — observing plants, insects, animals and the small details most people overlook.",
+      "Rather than accepting things at face value, he naturally wanted to know more.",
+      "Books became a favourite tool for discovery — a way of travelling beyond his surroundings into history, science, nature and technology. Alongside reading, drawing became another way of learning.",
+      "His fascination with dinosaurs, animals and biology pushed him to study details carefully and turn observation into images. Over time, three strengths began to grow together."
+    ],
+    "questions": [
+      "Why?",
+      "How?",
+      "What happens next?"
+    ],
+    "chain": [
+      "Questions led to exploration.",
+      "Exploration led to reading.",
+      "Reading led to understanding.",
+      "Understanding led to more questions."
+    ],
+    "drawLines": [
+      "He drew to observe.",
+      "He drew to understand.",
+      "He drew to remember."
+    ]
+  },
+  "combination": {
+    "eyebrow": "An uncommon combination",
+    "title": "Science × Art × Language",
+    "intro": [
+      "Most learners develop strengths in one domain.",
+      "Tin is gradually developing three that rarely grow together."
+    ],
+    "domains": [
+      {
+        "name": "Science",
+        "role": "investigate & reason",
+        "body": "Science satisfies his curiosity about how the world works. It gives him a framework for asking questions, testing ideas and understanding complex systems — and it is the main lens through which he sees the world."
+      },
+      {
+        "name": "Art",
+        "role": "observe & visualise",
+        "body": "Through drawing, Tin learns to notice patterns, structures, forms and details others may miss. Art turns information into images and makes abstract ideas tangible."
+      },
+      {
+        "name": "Language",
+        "role": "analyse & communicate",
+        "body": "Through reading, writing and reasoning, Tin connects ideas, works through complexity and shares what he understands. Language bridges understanding and expression."
+      }
+    ],
+    "conclusion": "Together they create a powerful combination: the ability not only to understand ideas, but to communicate them."
+  },
+  "growth": {
+    "eyebrow": "A four-year growth journey",
+    "title": "Consistent, year after year",
+    "intro": "Across four years of primary school, teacher feedback reveals a clear and coherent trajectory.",
+    "stages": [
+      {
+        "grade": "Grade 1",
+        "theme": "Curiosity & Potential",
+        "body": "Teachers first recognised strong logical thinking, mathematical intuition and independent learning habits — confidence in reasoning and exploring ideas on his own.",
+        "strengths": [
+          "Curiosity",
+          "Logical thinking",
+          "Independent learning",
+          "Confidence"
+        ]
+      },
+      {
+        "grade": "Grade 2",
+        "theme": "Discipline & Responsibility",
+        "body": "As expectations rose, his habits strengthened: accuracy, attention to detail and a careful approach. Natural ability was now supported by discipline and consistency.",
+        "strengths": [
+          "Responsibility",
+          "Accuracy",
+          "Focus",
+          "Attention to detail"
+        ]
+      },
+      {
+        "grade": "Grade 3",
+        "theme": "Leadership & Collaboration",
+        "body": "Leadership emerged naturally — supporting classmates, collaborating well and lifting the group. Academic strength was now paired with people skills.",
+        "strengths": [
+          "Leadership",
+          "Teamwork",
+          "Mentoring",
+          "Collaboration"
+        ]
+      },
+      {
+        "grade": "Grade 4",
+        "theme": "Maturity & Higher-Level Thinking",
+        "body": "Greater academic maturity: stronger self-management, scientific investigation, data analysis and analytical reasoning — using his strengths intentionally, not just relying on talent.",
+        "strengths": [
+          "Scientific reasoning",
+          "Analytical thinking",
+          "Self-management",
+          "Maturity"
+        ]
+      }
+    ],
+    "pattern": [
+      "Curiosity",
+      "Discipline",
+      "Leadership",
+      "Maturity"
+    ],
+    "patternAlt": [
+      "Potential",
+      "Capability",
+      "Influence",
+      "Character"
+    ]
+  },
+  "visual": {
+    "eyebrow": "A visual thinker",
+    "title": "Observe → Understand → Explain",
+    "chain": [
+      "When Tin draws, he observes.",
+      "When he observes, he notices patterns.",
+      "When he notices patterns, he asks questions.",
+      "When he asks questions, he learns.",
+      "When he learns, he wants to explain."
+    ],
+    "note": "His artwork — biological studies, dinosaurs and scientific subjects — reflects not only artistic interest but intellectual curiosity. For Tin, drawing is a way of thinking.",
+    "cycle": [
+      "Observe",
+      "Understand",
+      "Explain"
+    ]
+  },
+  "capabilities": [
+    {
+      "name": "Scientific thinking",
+      "body": "His strongest domain. He enjoys investigating questions, analysing evidence, finding patterns and understanding how systems work."
+    },
+    {
+      "name": "Logical reasoning",
+      "body": "Through Maths and ICT he breaks complex problems into parts and builds clear, logical solutions."
+    },
+    {
+      "name": "Visual thinking",
+      "body": "Drawing is a primary learning tool: observe carefully, recognise patterns, organise information, simplify complexity, and communicate ideas visually."
+    },
+    {
+      "name": "Reading & knowledge building",
+      "body": "Books let him explore ideas beyond the classroom, deepen understanding and build independent learning habits — strengthening reasoning and vocabulary."
+    },
+    {
+      "name": "Communication",
+      "body": "He increasingly enjoys sharing ideas through discussion, presentations, podcasts and creative projects — turning understanding into communication."
+    }
+  ],
+  "academic": {
+    "eyebrow": "Academic consistency",
+    "title": "Sustained excellence, not isolated success",
+    "items": [
+      {
+        "k": "Science",
+        "v": "A perfect 10 across all four primary years."
+      },
+      {
+        "k": "Mathematics",
+        "v": "Consistently outstanding."
+      },
+      {
+        "k": "Language",
+        "v": "Strong reading, comprehension and reasoning."
+      },
+      {
+        "k": "Cambridge attributes",
+        "v": "Highest level (C) on all five: Confident · Responsible · Reflective · Innovative · Engaged."
+      }
+    ]
+  },
+  "forward": {
+    "eyebrow": "Looking forward",
+    "title": "Where this could lead",
+    "intro": [
+      "Tin is drawn to the intersection of Science, Art and Communication.",
+      "One area he hopes to explore is Science Illustration and Science Communication — turning complex ideas into visual stories that are accurate, engaging and easy to understand."
+    ],
+    "projects": [
+      "Science Illustration",
+      "Dinosaur & Biology Sketchbooks",
+      "Educational Infographics",
+      "Science Storytelling",
+      "Motion Graphics for Learning",
+      "STEM Communication for Children"
+    ],
+    "close": "By combining observation, understanding and communication, Tin hopes to help others discover the same joy of learning that has shaped his own journey."
+  },
+  "motto": {
+    "lines": [
+      "Observe deeply.",
+      "Understand clearly.",
+      "Explain generously."
+    ],
+    "because": [
+      "Because curiosity begins with noticing.",
+      "Understanding grows through learning.",
+      "And knowledge becomes meaningful when it can be shared."
+    ]
+  }
+}
