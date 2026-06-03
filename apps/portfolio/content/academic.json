@@ -1,73 +1,239 @@
 [
   {
-    "grade": { "vi": "Lớp 4", "en": "Grade 4" },
+    "grade": {
+      "vi": "Lớp 4",
+      "en": "Grade 4"
+    },
     "year": "2025-2026",
     "civility": "100/100",
     "honors": [
-      { "icon": "🏆", "label": { "vi": "Học sinh Xuất sắc", "en": "Excellent Student" } },
+      {
+        "icon": "🏆",
+        "label": {
+          "vi": "Học sinh Xuất sắc",
+          "en": "Excellent Student"
+        }
+      },
       {
         "icon": "⭐",
-        "label": { "vi": "Natural Science Star Award", "en": "Natural Science Star Award" },
-        "note": { "vi": "Học sinh Tinh hoa Khoa học Tự nhiên — chỉ ~2% học sinh Vinschool đạt được", "en": "Top Natural Science honour — awarded to only ~2% of Vinschool students" }
+        "label": {
+          "vi": "Tinh hoa Khoa học Tự nhiên",
+          "en": "Natural Science Star Award"
+        }
       }
     ],
     "subjects": [
-      { "subject": { "vi": "Tiếng Việt", "en": "Vietnamese" }, "score": "10" },
-      { "subject": { "vi": "Toán (Cambridge)", "en": "Math (Cambridge)" }, "score": "10" },
-      { "subject": { "vi": "Khoa học tự nhiên (Cambridge)", "en": "Science (Cambridge)" }, "score": "10" },
-      { "subject": { "vi": "Tiếng Anh (Cambridge)", "en": "English (Cambridge)" }, "score": "10" },
-      { "subject": { "vi": "Tin học (Cambridge)", "en": "Computing (Cambridge)" }, "score": "9" },
-      { "subject": { "vi": "Lịch sử - Địa lý", "en": "History & Geography" }, "score": "10" }
+      {
+        "subject": {
+          "vi": "Tiếng Việt",
+          "en": "Vietnamese"
+        },
+        "score": "10"
+      },
+      {
+        "subject": {
+          "vi": "Toán (Cambridge)",
+          "en": "Math (Cambridge)"
+        },
+        "score": "10"
+      },
+      {
+        "subject": {
+          "vi": "Khoa học tự nhiên (Cambridge)",
+          "en": "Science (Cambridge)"
+        },
+        "score": "10"
+      },
+      {
+        "subject": {
+          "vi": "Tiếng Anh (Cambridge)",
+          "en": "English (Cambridge)"
+        },
+        "score": "10"
+      },
+      {
+        "subject": {
+          "vi": "Tin học (Cambridge)",
+          "en": "Computing (Cambridge)"
+        },
+        "score": "9"
+      },
+      {
+        "subject": {
+          "vi": "Lịch sử - Địa lý",
+          "en": "History & Geography"
+        },
+        "score": "10"
+      }
     ]
   },
   {
-    "grade": { "vi": "Lớp 3", "en": "Grade 3" },
+    "grade": {
+      "vi": "Lớp 3",
+      "en": "Grade 3"
+    },
     "year": "2024-2025",
     "civility": "100/100",
     "honors": [
-      { "icon": "🏆", "label": { "vi": "Học sinh Xuất sắc", "en": "Excellent Student" } },
+      {
+        "icon": "🏆",
+        "label": {
+          "vi": "Học sinh Xuất sắc",
+          "en": "Excellent Student"
+        }
+      },
       {
         "icon": "⭐",
-        "label": { "vi": "Natural Science Star Award", "en": "Natural Science Star Award" },
-        "note": { "vi": "Học sinh Tinh hoa Khoa học Tự nhiên — chỉ ~2% học sinh Vinschool đạt được", "en": "Top Natural Science honour — awarded to only ~2% of Vinschool students" }
+        "label": {
+          "vi": "Tinh hoa Khoa học Tự nhiên",
+          "en": "Natural Science Star Award"
+        }
       }
     ],
     "subjects": [
-      { "subject": { "vi": "Tiếng Việt", "en": "Vietnamese" }, "score": "10" },
-      { "subject": { "vi": "Toán (Cambridge)", "en": "Math (Cambridge)" }, "score": "10" },
-      { "subject": { "vi": "Khoa học tự nhiên (Cambridge)", "en": "Science (Cambridge)" }, "score": "10" },
-      { "subject": { "vi": "Tiếng Anh (Cambridge)", "en": "English (Cambridge)" }, "score": "9" },
-      { "subject": { "vi": "Tin học (Cambridge)", "en": "Computing (Cambridge)" }, "score": "9" }
+      {
+        "subject": {
+          "vi": "Tiếng Việt",
+          "en": "Vietnamese"
+        },
+        "score": "10"
+      },
+      {
+        "subject": {
+          "vi": "Toán (Cambridge)",
+          "en": "Math (Cambridge)"
+        },
+        "score": "10"
+      },
+      {
+        "subject": {
+          "vi": "Khoa học tự nhiên (Cambridge)",
+          "en": "Science (Cambridge)"
+        },
+        "score": "10"
+      },
+      {
+        "subject": {
+          "vi": "Tiếng Anh (Cambridge)",
+          "en": "English (Cambridge)"
+        },
+        "score": "9"
+      },
+      {
+        "subject": {
+          "vi": "Tin học (Cambridge)",
+          "en": "Computing (Cambridge)"
+        },
+        "score": "9"
+      }
     ]
   },
   {
-    "grade": { "vi": "Lớp 2", "en": "Grade 2" },
+    "grade": {
+      "vi": "Lớp 2",
+      "en": "Grade 2"
+    },
     "year": "2023-2024",
     "civility": "100/100",
     "honors": [
-      { "icon": "🏆", "label": { "vi": "Học sinh Xuất sắc", "en": "Excellent Student" } }
+      {
+        "icon": "🏆",
+        "label": {
+          "vi": "Học sinh Xuất sắc",
+          "en": "Excellent Student"
+        }
+      }
     ],
     "subjects": [
-      { "subject": { "vi": "Tiếng Việt", "en": "Vietnamese" }, "score": "9" },
-      { "subject": { "vi": "Toán (Cambridge)", "en": "Math (Cambridge)" }, "score": "9" },
-      { "subject": { "vi": "Khoa học tự nhiên (Cambridge)", "en": "Science (Cambridge)" }, "score": "10" },
-      { "subject": { "vi": "Tiếng Anh (Cambridge)", "en": "English (Cambridge)" }, "score": "9" },
-      { "subject": { "vi": "Tin học (Cambridge)", "en": "Computing (Cambridge)" }, "score": "9" }
+      {
+        "subject": {
+          "vi": "Tiếng Việt",
+          "en": "Vietnamese"
+        },
+        "score": "9"
+      },
+      {
+        "subject": {
+          "vi": "Toán (Cambridge)",
+          "en": "Math (Cambridge)"
+        },
+        "score": "9"
+      },
+      {
+        "subject": {
+          "vi": "Khoa học tự nhiên (Cambridge)",
+          "en": "Science (Cambridge)"
+        },
+        "score": "10"
+      },
+      {
+        "subject": {
+          "vi": "Tiếng Anh (Cambridge)",
+          "en": "English (Cambridge)"
+        },
+        "score": "9"
+      },
+      {
+        "subject": {
+          "vi": "Tin học (Cambridge)",
+          "en": "Computing (Cambridge)"
+        },
+        "score": "9"
+      }
     ]
   },
   {
-    "grade": { "vi": "Lớp 1", "en": "Grade 1" },
+    "grade": {
+      "vi": "Lớp 1",
+      "en": "Grade 1"
+    },
     "year": "2022-2023",
     "civility": "99/100",
     "honors": [
-      { "icon": "🏆", "label": { "vi": "Học sinh Xuất sắc", "en": "Excellent Student" } }
+      {
+        "icon": "🏆",
+        "label": {
+          "vi": "Học sinh Xuất sắc",
+          "en": "Excellent Student"
+        }
+      }
     ],
     "subjects": [
-      { "subject": { "vi": "Tiếng Việt", "en": "Vietnamese" }, "score": "10" },
-      { "subject": { "vi": "Toán (Cambridge)", "en": "Math (Cambridge)" }, "score": "10" },
-      { "subject": { "vi": "Khoa học tự nhiên (Cambridge)", "en": "Science (Cambridge)" }, "score": "10" },
-      { "subject": { "vi": "Tiếng Anh (Cambridge)", "en": "English (Cambridge)" }, "score": "10" },
-      { "subject": { "vi": "Tin học (Cambridge)", "en": "Computing (Cambridge)" }, "score": "9" }
+      {
+        "subject": {
+          "vi": "Tiếng Việt",
+          "en": "Vietnamese"
+        },
+        "score": "10"
+      },
+      {
+        "subject": {
+          "vi": "Toán (Cambridge)",
+          "en": "Math (Cambridge)"
+        },
+        "score": "10"
+      },
+      {
+        "subject": {
+          "vi": "Khoa học tự nhiên (Cambridge)",
+          "en": "Science (Cambridge)"
+        },
+        "score": "10"
+      },
+      {
+        "subject": {
+          "vi": "Tiếng Anh (Cambridge)",
+          "en": "English (Cambridge)"
+        },
+        "score": "10"
+      },
+      {
+        "subject": {
+          "vi": "Tin học (Cambridge)",
+          "en": "Computing (Cambridge)"
+        },
+        "score": "9"
+      }
     ]
   }
 ]

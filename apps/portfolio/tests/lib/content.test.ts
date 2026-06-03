@@ -4,6 +4,7 @@ import {
   getProfile,
   getAchievements,
   getAcademic,
+  getSkillsRadar,
   getCharacter,
   getTeacherComments,
   getJourney,
@@ -37,6 +38,13 @@ describe("content loaders", () => {
     expect(ac[0].honors[0].label.vi).toBe("Học sinh Xuất sắc");
     expect(ac[0].honors[0].note?.en).toBe("Rare");
     expect(ac[1].honors).toEqual([]); // default when omitted
+  });
+
+  it("loads the skills radar axes", () => {
+    const r = getSkillsRadar(DIR);
+    expect(r).toHaveLength(2);
+    expect(r[0].axis.en).toBe("Science");
+    expect(r[0].value).toBe(100);
   });
 
   it("loads the Cambridge character report", () => {

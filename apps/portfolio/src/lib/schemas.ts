@@ -78,6 +78,11 @@ export type YearRecord = z.infer<typeof yearRecordSchema>;
 export const academicSchema = z.array(yearRecordSchema);
 export type Academic = z.infer<typeof academicSchema>;
 
+// Skills radar (well-roundedness across domains).
+export const radarAxisSchema = z.object({ axis: L, value: z.number() });
+export type RadarAxis = z.infer<typeof radarAxisSchema>;
+export const skillsRadarSchema = z.array(radarAxisSchema);
+
 // Cambridge learner attributes (Character / Ability report).
 export const characterAttributeSchema = z.object({ keyword: L, desc: L });
 export type CharacterAttribute = z.infer<typeof characterAttributeSchema>;

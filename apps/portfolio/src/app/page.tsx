@@ -2,6 +2,7 @@ import {
   getProfile,
   getAchievements,
   getAcademic,
+  getSkillsRadar,
   getCharacter,
   getTeacherComments,
   getJourney,
@@ -13,6 +14,7 @@ import { Hero } from "@/components/Hero";
 import { Section } from "@/components/Section";
 import { Snapshot, type Stat } from "@/components/Snapshot";
 import { Strengths } from "@/components/Strengths";
+import { RadarChart } from "@/components/RadarChart";
 import { Achievements } from "@/components/Achievements";
 import { Academic } from "@/components/Academic";
 import { Character } from "@/components/Character";
@@ -50,6 +52,7 @@ export default function Home() {
   const profile = getProfile();
   const achievements = getAchievements();
   const academic = getAcademic();
+  const skillsRadar = getSkillsRadar();
   const character = getCharacter();
   const teacherComments = getTeacherComments();
   const journey = getJourney();
@@ -84,6 +87,7 @@ export default function Home() {
   const navItems: NavItem[] = [
     { id: "about", label: { vi: "Giới thiệu", en: "About" } },
     { id: "strengths", label: { vi: "Điểm mạnh", en: "Strengths" } },
+    { id: "radar", label: { vi: "Năng lực", en: "Skills" } },
     { id: "achievements", label: { vi: "Thành tích", en: "Achievements" } },
     { id: "academic", label: { vi: "Học tập", en: "Academics" } },
     { id: "character", label: { vi: "Phẩm chất", en: "Attributes" } },
@@ -143,6 +147,19 @@ export default function Home() {
           }}
         >
           <Strengths items={profile.strengths} />
+        </Section>
+
+        <Section
+          id="radar"
+          title={{ vi: "Bản đồ năng lực", en: "Skills Map" }}
+          subtitle={{
+            vi: "Một hồ sơ toàn diện — mạnh ở Khoa học, vững đều các mặt",
+            en: "A well-rounded profile — peak in Science, strong across the board",
+          }}
+        >
+          <div className="break-avoid rounded-3xl border border-black/5 bg-white p-5 shadow-sm">
+            <RadarChart data={skillsRadar} />
+          </div>
         </Section>
 
         <Section
