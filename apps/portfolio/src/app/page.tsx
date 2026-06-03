@@ -178,10 +178,10 @@ export default function Home() {
 
         <Section
           id="signature"
-          title={{ vi: "Tổ hợp hiếm có", en: "A Rare Combination" }}
+          title={{ vi: "Một tổ hợp ít gặp", en: "An Uncommon Combination" }}
           subtitle={{
-            vi: "Logic + Nghệ thuật + Ngôn ngữ → một hướng đi rất riêng",
-            en: "Logic + Art + Language → a distinctive direction",
+            vi: "Logic + Nghệ thuật + Ngôn ngữ → một hướng đi nhiều hứa hẹn",
+            en: "Logic + Art + Language → a promising direction",
           }}
         >
           <Signature data={signature} />

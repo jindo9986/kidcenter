@@ -1,7 +1,7 @@
 {
   "thesis": {
-    "vi": "Điều hiếm có ở Tin là cùng lúc sở hữu ba mảng năng lực thường tách rời nhau: tư duy logic (Khoa học, Toán, Tin học), năng lực nghệ thuật vượt trội — đặc biệt vẽ sinh học và khủng long — cùng song ngữ Anh–Việt. Khi ba mảnh ghép này hội tụ, chúng tạo nên nền tảng lý tưởng cho Science Illustration (minh họa khoa học): kể câu chuyện khoa học bằng hình ảnh vừa chính xác vừa sống động. Đây chính là hướng Tin đang theo đuổi trong các dự án sắp tới.",
-    "en": "What makes Tin rare is holding three abilities that seldom go together: logical thinking (Science, Maths, ICT), outstanding artistic skill — especially biological art and dinosaurs — and English–Vietnamese bilingualism. Where these three pieces meet, they form an ideal foundation for Science Illustration: telling science stories through visuals that are both accurate and vivid. This is the direction Tin is pursuing in his upcoming projects."
+    "vi": "Một điểm thú vị ở Tin là em cùng lúc phát triển ba mảng vốn ít đi cùng nhau: tư duy logic (Khoa học, Toán, Tin học), khả năng vẽ — nhất là sinh học và khủng long — và năng lực ngôn ngữ, tức là đọc sâu, hiểu sâu và biết suy luận. Khi đặt cạnh nhau, ba mảng này có thể là một nền tảng tốt cho Science Illustration (minh họa khoa học): kể câu chuyện khoa học bằng hình ảnh chính xác và dễ hiểu. Đây là hướng Tin đang muốn thử sức trong các dự án tới.",
+    "en": "An interesting thing about Tin is that he is developing three areas that rarely go together: logical thinking (Science, Maths, ICT), drawing — especially biology and dinosaurs — and language ability, meaning deep reading, deep understanding and reasoning. Put side by side, these could be a good foundation for Science Illustration: telling science stories through accurate, easy-to-grasp visuals. This is the direction Tin would like to explore in his upcoming projects."
   },
   "pieces": [
     {
@@ -27,14 +27,14 @@
       }
     },
     {
-      "icon": "🗣️",
+      "icon": "📖",
       "label": {
-        "vi": "Song ngữ",
-        "en": "Bilingual"
+        "vi": "Đọc hiểu & suy luận",
+        "en": "Reading & reasoning"
       },
       "detail": {
-        "vi": "Tiếng Anh · Tiếng Việt",
-        "en": "English · Vietnamese"
+        "vi": "Đọc sâu, phân tích và lập luận mạch lạc",
+        "en": "Deep reading, analysis and clear reasoning"
       }
     }
   ],
