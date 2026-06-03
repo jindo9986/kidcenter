@@ -1,0 +1,17 @@
+/*
+ * Shared KidCenter design tokens (Tailwind v4 @theme).
+ * Apps import this after `@import "tailwindcss";` so the tokens
+ * become utilities (bg-brand, text-ink, ...).
+ */
+@theme {
+  --color-brand: #4f46e5;
+  --color-brand-dark: #4338ca;
+  --color-accent: #fcd34d;
+  --color-ink: #1f2937;
+  --color-cream: #fffaf2;
+
+  --font-display: "Baloo 2", "Comic Sans MS", system-ui, sans-serif;
+
+  --radius-2xl: 1rem;
+  --radius-3xl: 1.5rem;
+}
