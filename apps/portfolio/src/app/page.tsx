@@ -104,7 +104,7 @@ export default function Home() {
           </span>
           <div className="flex items-center gap-2">
             <LangToggle />
-            <PrintButton />
+            <PrintButton compact />
           </div>
         </div>
         <div className="mx-auto w-full max-w-4xl px-5 pb-1.5 sm:px-8">
