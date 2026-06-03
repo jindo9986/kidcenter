@@ -9,9 +9,23 @@ export function Hero({ profile }: { profile: Profile }) {
     ? `${profile.name} (${profile.nickname})`
     : profile.name;
 
+  // Faint indigo graph-paper texture over warm paper (DESIGN.md hero treatment).
+  const graphPaper =
+    "linear-gradient(0deg, rgba(255,253,247,.55), rgba(255,253,247,.55))," +
+    "repeating-linear-gradient(0deg, transparent, transparent 23px, rgba(55,48,163,.06) 24px)," +
+    "repeating-linear-gradient(90deg, transparent, transparent 23px, rgba(55,48,163,.06) 24px)";
+
   return (
-    <section className="mb-10 flex flex-col items-center gap-5 text-center sm:flex-row sm:text-left">
-      <div className="flex h-32 w-32 shrink-0 items-center justify-center overflow-hidden rounded-full bg-accent text-6xl shadow-sm ring-4 ring-brand/10">
+    <section
+      className="mb-10 flex flex-col items-center gap-5 rounded-[28px] border border-brand/10 p-6 text-center sm:flex-row sm:p-7 sm:text-left"
+      style={{ background: graphPaper }}
+    >
+      <div
+        className="flex h-32 w-32 shrink-0 items-center justify-center overflow-hidden rounded-full text-6xl shadow-sm ring-4 ring-white"
+        style={{
+          background: "radial-gradient(circle at 30% 30%, #fde68a, var(--color-accent))",
+        }}
+      >
         {/* Avatar image with graceful fallback to alt text. Uses <img> (not
             next/image) to stay fully offline/file-based. */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
