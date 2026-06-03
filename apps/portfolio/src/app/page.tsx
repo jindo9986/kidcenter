@@ -91,21 +91,22 @@ export default function Home() {
   ];
 
   const navItems: NavItem[] = [
-    { id: "overview", label: { vi: "Tổng quan", en: "Overview" } },
+    { id: "about", label: { vi: "Giới thiệu", en: "About" } },
     { id: "strengths", label: { vi: "Điểm mạnh", en: "Strengths" } },
     { id: "radar", label: { vi: "Năng lực", en: "Skills" } },
     { id: "achievements", label: { vi: "Thành tích", en: "Achievements" } },
     { id: "academic", label: { vi: "Học tập", en: "Academics" } },
     { id: "character", label: { vi: "Phẩm chất", en: "Attributes" } },
-    ...(journey.length > 0
-      ? [{ id: "journey", label: { vi: "Hành trình", en: "Journey" } }]
-      : []),
     ...(gallery.length > 0
       ? [{ id: "gallery", label: { vi: "Tranh vẽ", en: "Artwork" } }]
+      : []),
+    ...(journey.length > 0
+      ? [{ id: "journey", label: { vi: "Hành trình", en: "Journey" } }]
       : []),
     ...(teacherComments.length > 0
       ? [{ id: "comments", label: { vi: "Nhận xét", en: "Comments" } }]
       : []),
+    { id: "overview", label: { vi: "Đánh giá", en: "Overview" } },
   ];
 
   return (
@@ -131,17 +132,6 @@ export default function Home() {
         <div className="mb-10">
           <Snapshot stats={stats} />
         </div>
-
-        <Section
-          id="overview"
-          title={{ vi: "Đánh giá tổng thể", en: "Overall Assessment" }}
-          subtitle={{
-            vi: "Tổng hợp từ nhận xét giáo viên & kết quả học tập 4 năm",
-            en: "Synthesised from four years of teacher reports & results",
-          }}
-        >
-          <OverallEval data={overall} />
-        </Section>
 
         <Section id="about" title={{ vi: "Giới thiệu", en: "About" }}>
           <p className="mb-4 leading-relaxed text-ink/70">
@@ -228,15 +218,6 @@ export default function Home() {
           </Section>
         )}
 
-        {journey.length > 0 && (
-          <Section
-            id="journey"
-            title={{ vi: "Hành trình phát triển", en: "Growth Journey" }}
-          >
-            <Timeline items={journey} />
-          </Section>
-        )}
-
         {gallery.length > 0 && (
           <Section
             id="gallery"
@@ -247,6 +228,19 @@ export default function Home() {
             }}
           >
             <Gallery items={gallery} />
+          </Section>
+        )}
+
+        {journey.length > 0 && (
+          <Section
+            id="journey"
+            title={{ vi: "Hành trình phát triển", en: "Growth Journey" }}
+            subtitle={{
+              vi: "Xu hướng phát triển nhất quán qua 4 năm, Lớp 1 → Lớp 4",
+              en: "A consistent trajectory across four years, Grade 1 → Grade 4",
+            }}
+          >
+            <Timeline items={journey} />
           </Section>
         )}
 
@@ -269,6 +263,17 @@ export default function Home() {
             </details>
           </Section>
         )}
+
+        <Section
+          id="overview"
+          title={{ vi: "Đánh giá tổng thể", en: "Overall Assessment" }}
+          subtitle={{
+            vi: "Kết luận tổng hợp từ nhận xét giáo viên & kết quả học tập 4 năm",
+            en: "An overall conclusion synthesised from four years of reports & results",
+          }}
+        >
+          <OverallEval data={overall} />
+        </Section>
 
         <footer className="mt-10 break-avoid rounded-3xl border border-brand/10 bg-white p-5 text-center shadow-sm">
           <p className="font-display text-lg font-bold text-ink">

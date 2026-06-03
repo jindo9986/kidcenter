@@ -16,8 +16,8 @@
     "en": "A 10-year-old in love with science — a multiple national and international Science Olympiad medalist, top of his class, and a creative young artist."
   },
   "bio": {
-    "vi": "Tin là cậu bé độc lập, kiên định và ham khám phá, đặc biệt say mê Khoa học và Toán học. Em đã chinh phục nhiều huy chương Olympic Khoa học trong nước và quốc tế, đồng thời giữ thành tích học tập xuất sắc suốt 4 năm liền. Ngoài giờ học, Tin mê vẽ — nhất là khủng long — sở thích đang bồi đắp khả năng trực quan hóa khoa học (science visualization) của em.",
-    "en": "Tin is an independent, determined, and curious boy with a deep passion for Science and Math. He has won numerous national and international Science Olympiad medals while staying top of his class for four straight years. Outside class, Tin loves drawing — especially dinosaurs — a hobby that is shaping his science-visualization skills."
+    "vi": "Tin là cậu bé độc lập, kiên định và ham khám phá. Suốt 4 năm, các thầy cô liên tục ghi nhận tư duy logic, năng khiếu Toán – Khoa học và khả năng tự học của em, cùng tinh thần trách nhiệm, sự tử tế và tố chất lãnh đạo tự nhiên khi làm việc nhóm. Ngoài Khoa học, Toán và Tin học, Tin mê vẽ — từ khủng long đến truyện tranh — thử sức với Motion Graphic và chơi cầu lông.",
+    "en": "Tin is an independent, determined and curious boy. Across four years, teachers have consistently noted his logical thinking, talent in Maths and Science, and capacity for independent learning — alongside responsibility, kindness and a natural flair for leadership in group work. Beyond Science, Maths and ICT, Tin loves drawing — from dinosaurs to comics — experiments with motion graphics, and plays badminton."
   },
   "focus": [
     { "vi": "Khoa học", "en": "Science" },
@@ -59,20 +59,26 @@
   ],
   "personality": [
     { "vi": "Độc lập", "en": "Independent" },
-    { "vi": "Thận trọng", "en": "Careful" },
-    { "vi": "Ấm áp", "en": "Warm" },
+    { "vi": "Trách nhiệm", "en": "Responsible" },
+    { "vi": "Tỉ mỉ, cẩn thận", "en": "Meticulous" },
+    { "vi": "Tử tế & sẻ chia", "en": "Kind & caring" },
+    { "vi": "Lãnh đạo tự nhiên", "en": "Natural leader" },
     { "vi": "Kiên định", "en": "Determined" }
   ],
   "interests": [
     { "vi": "Khoa học", "en": "Science" },
-    { "vi": "Toán học", "en": "Mathematics" },
-    { "vi": "Vẽ khủng long", "en": "Drawing dinosaurs" }
+    { "vi": "Vẽ khủng long", "en": "Drawing dinosaurs" },
+    { "vi": "Vẽ truyện tranh", "en": "Comic drawing" },
+    { "vi": "Motion Graphic", "en": "Motion graphics" },
+    { "vi": "Cầu lông", "en": "Badminton" }
   ],
   "skills": [
-    { "vi": "Tư duy khoa học", "en": "Scientific thinking" },
+    { "vi": "Tư duy logic & giải quyết vấn đề", "en": "Logic & problem-solving" },
+    { "vi": "Tư duy Khoa học", "en": "Scientific thinking" },
     { "vi": "Toán học", "en": "Mathematics" },
-    { "vi": "Vẽ → Trực quan hóa khoa học", "en": "Drawing → Science visualization" },
-    { "vi": "Tiếng Anh", "en": "English" }
+    { "vi": "Lập trình (Tin học)", "en": "Coding (ICT)" },
+    { "vi": "Tiếng Anh", "en": "English" },
+    { "vi": "Vẽ & Trực quan hóa", "en": "Drawing & visualization" }
   ],
   "parentContact": {
     "name": "Phụ huynh bé Tin",
