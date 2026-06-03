@@ -2,9 +2,11 @@ import type { RadarAxis } from "@/lib/schemas";
 
 const SIZE = 320;
 const CENTER = SIZE / 2;
-const R = 108; // max polygon radius
-const LABEL_R = R + 24;
+const R = 100; // max polygon radius
+const LABEL_R = R + 22;
 const RINGS = [0.25, 0.5, 0.75, 1];
+// Horizontal padding so side axis labels (Nghệ thuật, Tiếng Anh…) aren't clipped.
+const PAD_X = 56;
 
 export function RadarChart({ data }: { data: RadarAxis[] }) {
   const n = data.length;
@@ -28,7 +30,7 @@ export function RadarChart({ data }: { data: RadarAxis[] }) {
   return (
     <div className="mx-auto max-w-sm break-avoid">
       <svg
-        viewBox={`0 0 ${SIZE} ${SIZE}`}
+        viewBox={`${-PAD_X} 0 ${SIZE + 2 * PAD_X} ${SIZE}`}
         className="h-auto w-full"
         role="img"
         aria-label="Skills radar"
