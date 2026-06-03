@@ -43,14 +43,26 @@ export const achievementSchema = z.object({
 export const achievementsSchema = z.array(achievementSchema);
 export type Achievement = z.infer<typeof achievementSchema>;
 
-export const gradeSchema = z.object({ subject: L, score: z.number() });
-export type Grade = z.infer<typeof gradeSchema>;
-
-export const academicSchema = z.object({
-  year: z.string(),
-  grades: z.array(gradeSchema),
-  honors: z.array(L),
+/** One subject result: a numeric score string (e.g. "10", "9") or a
+ *  qualitative level ("T" = Tốt/Excellent, "Đ" = Đạt/Pass). */
+export const subjectResultSchema = z.object({
+  subject: L,
+  score: z.string().optional(),
+  level: z.string().optional(),
 });
+export type SubjectResult = z.infer<typeof subjectResultSchema>;
+
+/** One school-year report card. */
+export const yearRecordSchema = z.object({
+  grade: L,
+  year: z.string().optional(),
+  civility: z.string().optional(),
+  subjects: z.array(subjectResultSchema),
+  honors: z.array(L).default([]),
+});
+export type YearRecord = z.infer<typeof yearRecordSchema>;
+
+export const academicSchema = z.array(yearRecordSchema);
 export type Academic = z.infer<typeof academicSchema>;
 
 export const journeyItemSchema = z.object({

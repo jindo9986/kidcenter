@@ -1,15 +1,66 @@
-{
-  "year": "2025-2026",
-  "grades": [
-    { "subject": { "vi": "Toán", "en": "Math" }, "score": 10 },
-    { "subject": { "vi": "Khoa học", "en": "Science" }, "score": 10 },
-    { "subject": { "vi": "Tiếng Anh", "en": "English" }, "score": 10 },
-    { "subject": { "vi": "Tiếng Việt", "en": "Vietnamese" }, "score": 10 },
-    { "subject": { "vi": "Lịch sử - Địa lý", "en": "History & Geography" }, "score": 10 },
-    { "subject": { "vi": "Tin học", "en": "Computing" }, "score": 9 }
-  ],
-  "honors": [
-    { "vi": "Học sinh Xuất sắc năm học 2025 - 2026", "en": "Outstanding Student, 2025 - 2026" },
-    { "vi": "Học sinh Tinh hoa môn Khoa học Tự nhiên năm học 2025 - 2026", "en": "Elite Student in Natural Sciences, 2025 - 2026" }
-  ]
-}
+[
+  {
+    "grade": { "vi": "Lớp 4 (Cambridge)", "en": "Grade 4 (Cambridge)" },
+    "year": "2025-2026",
+    "honors": [
+      { "vi": "Học sinh Xuất sắc năm học 2025 - 2026", "en": "Outstanding Student, 2025 - 2026" },
+      { "vi": "Học sinh Tinh hoa môn Khoa học Tự nhiên năm học 2025 - 2026", "en": "Elite Student in Natural Sciences, 2025 - 2026" }
+    ],
+    "subjects": [
+      { "subject": { "vi": "Toán", "en": "Math" }, "score": "10" },
+      { "subject": { "vi": "Khoa học", "en": "Science" }, "score": "10" },
+      { "subject": { "vi": "Tiếng Anh", "en": "English" }, "score": "10" },
+      { "subject": { "vi": "Tiếng Việt", "en": "Vietnamese" }, "score": "10" },
+      { "subject": { "vi": "Lịch sử - Địa lý", "en": "History & Geography" }, "score": "10" },
+      { "subject": { "vi": "Tin học", "en": "Computing" }, "score": "9" }
+    ]
+  },
+  {
+    "grade": { "vi": "Lớp 3", "en": "Grade 3" },
+    "year": "2024-2025",
+    "civility": "100/100",
+    "subjects": [
+      { "subject": { "vi": "Tiếng Việt", "en": "Vietnamese" }, "score": "10" },
+      { "subject": { "vi": "Toán (Cambridge)", "en": "Math (Cambridge)" }, "score": "10" },
+      { "subject": { "vi": "Khoa học tự nhiên (Cambridge)", "en": "Science (Cambridge)" }, "score": "10" },
+      { "subject": { "vi": "Tiếng Anh (Cambridge)", "en": "English (Cambridge)" }, "score": "9" },
+      { "subject": { "vi": "Tin học (Cambridge)", "en": "Computing (Cambridge)" }, "score": "9" },
+      { "subject": { "vi": "Việt Nam học", "en": "Vietnam Studies" }, "level": "Đ" },
+      { "subject": { "vi": "Mĩ thuật", "en": "Art" }, "level": "T" },
+      { "subject": { "vi": "Âm nhạc", "en": "Music" }, "level": "T" },
+      { "subject": { "vi": "Thể chất", "en": "Physical Education" }, "level": "T" }
+    ]
+  },
+  {
+    "grade": { "vi": "Lớp 2", "en": "Grade 2" },
+    "civility": "100/100",
+    "subjects": [
+      { "subject": { "vi": "Tiếng Việt", "en": "Vietnamese" }, "score": "9" },
+      { "subject": { "vi": "Toán (Cambridge)", "en": "Math (Cambridge)" }, "score": "9" },
+      { "subject": { "vi": "Khoa học tự nhiên (Cambridge)", "en": "Science (Cambridge)" }, "score": "10" },
+      { "subject": { "vi": "Tiếng Anh (Cambridge)", "en": "English (Cambridge)" }, "score": "9" },
+      { "subject": { "vi": "Tin học (Cambridge)", "en": "Computing (Cambridge)" }, "level": "T" },
+      { "subject": { "vi": "Việt Nam học", "en": "Vietnam Studies" }, "level": "Đ" },
+      { "subject": { "vi": "Mĩ thuật", "en": "Art" }, "level": "T" },
+      { "subject": { "vi": "Âm nhạc", "en": "Music" }, "level": "T" },
+      { "subject": { "vi": "Thể chất", "en": "Physical Education" }, "level": "T" }
+    ]
+  },
+  {
+    "grade": { "vi": "Lớp 1", "en": "Grade 1" },
+    "year": "2023-2024",
+    "civility": "99/100",
+    "subjects": [
+      { "subject": { "vi": "Tiếng Việt", "en": "Vietnamese" }, "score": "10" },
+      { "subject": { "vi": "Toán (Cambridge)", "en": "Math (Cambridge)" }, "score": "10" },
+      { "subject": { "vi": "Khoa học tự nhiên (Cambridge)", "en": "Science (Cambridge)" }, "score": "10" },
+      { "subject": { "vi": "Tiếng Anh (Cambridge)", "en": "English (Cambridge)" }, "score": "10" },
+      { "subject": { "vi": "Tin học", "en": "Computing" }, "score": "9" },
+      { "subject": { "vi": "Việt Nam học", "en": "Vietnam Studies" }, "level": "Đ" },
+      { "subject": { "vi": "Mỹ thuật", "en": "Art" }, "level": "T" },
+      { "subject": { "vi": "Âm nhạc", "en": "Music" }, "level": "T" },
+      { "subject": { "vi": "Giáo dục Kĩ năng Phẩm chất", "en": "Skills & Character" }, "level": "T" },
+      { "subject": { "vi": "Thể chất", "en": "Physical Education" }, "level": "T" }
+    ]
+  }
+]

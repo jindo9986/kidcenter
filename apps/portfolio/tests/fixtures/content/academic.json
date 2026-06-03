@@ -1,8 +1,18 @@
-{
-  "year": "2025-2026",
-  "grades": [
-    { "subject": { "vi": "Toán", "en": "Math" }, "score": 10 },
-    { "subject": { "vi": "Tin học", "en": "Computing" }, "score": 9 }
-  ],
-  "honors": [{ "vi": "Học sinh Xuất sắc", "en": "Outstanding Student" }]
-}
+[
+  {
+    "grade": { "vi": "Lớp 2", "en": "Grade 2" },
+    "year": "2025-2026",
+    "civility": "100/100",
+    "honors": [{ "vi": "Học sinh Xuất sắc", "en": "Outstanding Student" }],
+    "subjects": [
+      { "subject": { "vi": "Toán", "en": "Math" }, "score": "10" },
+      { "subject": { "vi": "Mĩ thuật", "en": "Art" }, "level": "T" }
+    ]
+  },
+  {
+    "grade": { "vi": "Lớp 1", "en": "Grade 1" },
+    "subjects": [
+      { "subject": { "vi": "Tin học", "en": "Computing" }, "score": "9" }
+    ]
+  }
+]

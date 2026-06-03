@@ -26,11 +26,14 @@ describe("content loaders", () => {
     expect(a[2].medal).toBe("none");
   });
 
-  it("loads academic record", () => {
+  it("loads academic records as an array of year report cards", () => {
     const ac = getAcademic(DIR);
-    expect(ac.year).toBe("2025-2026");
-    expect(ac.grades).toHaveLength(2);
-    expect(ac.honors[0].vi).toBe("Học sinh Xuất sắc");
+    expect(ac).toHaveLength(2);
+    expect(ac[0].grade.vi).toBe("Lớp 2");
+    expect(ac[0].subjects[0].score).toBe("10");
+    expect(ac[0].subjects[1].level).toBe("T");
+    expect(ac[0].honors[0].vi).toBe("Học sinh Xuất sắc");
+    expect(ac[1].honors).toEqual([]); // default when omitted
   });
 
   it("loads journey and gallery as arrays", () => {

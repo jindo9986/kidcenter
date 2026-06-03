@@ -42,12 +42,18 @@ describe("schemas", () => {
     ).toThrow();
   });
 
-  it("validates academic grades and honors", () => {
-    const a = academicSchema.parse({
-      year: "2025-2026",
-      grades: [{ subject: { vi: "Toán", en: "Math" }, score: 10 }],
-      honors: [{ vi: "Giỏi", en: "Excellent" }],
-    });
-    expect(a.grades[0].score).toBe(10);
+  it("validates academic year records (array) with score or level", () => {
+    const a = academicSchema.parse([
+      {
+        grade: { vi: "Lớp 1", en: "Grade 1" },
+        subjects: [
+          { subject: { vi: "Toán", en: "Math" }, score: "10" },
+          { subject: { vi: "Mĩ thuật", en: "Art" }, level: "T" },
+        ],
+      },
+    ]);
+    expect(a[0].subjects[0].score).toBe("10");
+    expect(a[0].subjects[1].level).toBe("T");
+    expect(a[0].honors).toEqual([]); // default
   });
 });
