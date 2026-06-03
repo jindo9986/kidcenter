@@ -26,9 +26,8 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - name: Build portfolio (static export)
+        # Custom domain (www.huudaodinh.site) serves at the root, so no basePath.
         run: pnpm --filter @kidcenter/portfolio build
-        env:
-          NEXT_PUBLIC_BASE_PATH: /kidcenter
       - uses: actions/upload-pages-artifact@v3
         with:
           path: apps/portfolio/out
