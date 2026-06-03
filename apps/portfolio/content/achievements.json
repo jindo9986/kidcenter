@@ -11,7 +11,7 @@
   { "category": "national", "medal": "bronze", "year": "2026", "title": { "vi": "Huy chương Đồng Olympic Thiên văn học CISO", "en": "Bronze Medal — CISO Astronomy Olympiad" } },
 
   { "category": "local", "medal": "silver", "year": "2026", "title": { "vi": "Huy chương Bạc Olympic Khoa học ASMO (TP Hà Nội)", "en": "Silver Medal — ASMO Science Olympiad (Hanoi City)" } },
-  { "category": "local", "medal": "gold", "title": { "vi": "Giải Nhất Edurun — đơn nam khối 4", "en": "1st Place — Edurun, Boys' Singles (Grade 4)" } },
-  { "category": "local", "medal": "silver", "title": { "vi": "Giải Nhì Cầu lông — đơn nam khối 4", "en": "2nd Place — Badminton, Boys' Singles (Grade 4)" } },
-  { "category": "local", "medal": "none", "title": { "vi": "Podcast Xanh — Top 15 bài thi xuất sắc nhất trường", "en": "Green Podcast — Top 15 best entries in school" } }
+  { "category": "local", "medal": "gold", "year": "2026",  "title": { "vi": "Giải Nhất Edurun — đơn nam khối 4", "en": "1st Place — Edurun, Boys' Singles (Grade 4)" } },
+  { "category": "local", "medal": "silver", "year": "2026",  "title": { "vi": "Giải Nhì Cầu lông — đơn nam khối 4", "en": "2nd Place — Badminton, Boys' Singles (Grade 4)" } },
+  { "category": "local", "medal": "none", "year": "2026",  "title": { "vi": "Podcast Xanh — Top 15 bài thi xuất sắc nhất trường", "en": "Green Podcast — Top 15 best entries in school" } }
 ]
