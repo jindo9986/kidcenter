@@ -1,0 +1,8 @@
+{
+  "level": { "code": "C", "vi": "Đạt thường xuyên", "en": "Consistently" },
+  "scaleNote": { "vi": "R·S·O·C", "en": "R·S·O·C" },
+  "allYearsNote": { "vi": "Cả 4 năm", "en": "All 4 years" },
+  "attributes": [
+    { "keyword": { "vi": "Tự tin", "en": "Confident" }, "desc": { "vi": "...", "en": "Confident in working with information and ideas" } }
+  ]
+}

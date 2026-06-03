@@ -4,6 +4,8 @@ import {
   getProfile,
   getAchievements,
   getAcademic,
+  getCharacter,
+  getTeacherComments,
   getJourney,
   getGallery,
   getProjects,
@@ -34,6 +36,20 @@ describe("content loaders", () => {
     expect(ac[0].subjects[1].level).toBe("T");
     expect(ac[0].honors[0].vi).toBe("Học sinh Xuất sắc");
     expect(ac[1].honors).toEqual([]); // default when omitted
+  });
+
+  it("loads the Cambridge character report", () => {
+    const c = getCharacter(DIR);
+    expect(c.level.code).toBe("C");
+    expect(c.attributes[0].keyword.en).toBe("Confident");
+  });
+
+  it("loads teacher comments per year", () => {
+    const tc = getTeacherComments(DIR);
+    expect(tc).toHaveLength(1);
+    expect(tc[0].comments[0].teacher).toBe("Eva");
+    expect(tc[0].general?.text).toContain("Motivated");
+    expect(tc[0].goals).toBe("Read daily.");
   });
 
   it("loads journey and gallery as arrays", () => {

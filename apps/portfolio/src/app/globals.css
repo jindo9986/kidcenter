@@ -48,6 +48,16 @@ html[data-locale="en"] [data-lang="vi"] {
   .break-avoid {
     break-inside: avoid;
   }
+  /* Expand all collapsible <details> so the PDF shows every teacher comment */
+  details:not([open]) > *:not(summary) {
+    display: block !important;
+  }
+  summary {
+    list-style: none;
+  }
+  summary > span:last-child {
+    display: none; /* hide the ▾ chevron in print */
+  }
   @page {
     margin: 16mm;
   }

@@ -1,0 +1,67 @@
+{
+  "level": {
+    "code": "C",
+    "vi": "Đạt thường xuyên",
+    "en": "Consistently"
+  },
+  "scaleNote": {
+    "vi": "Thang đánh giá Cambridge: R · S · O · C (C là mức cao nhất)",
+    "en": "Cambridge scale: R · S · O · C (C = highest)"
+  },
+  "allYearsNote": {
+    "vi": "Đạt mức C ở tất cả tiêu chí, cả 4 năm học",
+    "en": "Achieved C on every attribute, across all 4 years"
+  },
+  "attributes": [
+    {
+      "keyword": {
+        "vi": "Tự tin",
+        "en": "Confident"
+      },
+      "desc": {
+        "vi": "Tự tin khi làm việc với thông tin và ý tưởng",
+        "en": "Confident in working with information and ideas"
+      }
+    },
+    {
+      "keyword": {
+        "vi": "Trách nhiệm",
+        "en": "Responsible"
+      },
+      "desc": {
+        "vi": "Có trách nhiệm với bản thân, với người khác và biết tôn trọng",
+        "en": "Responsible for self, responsible to and respectful of others"
+      }
+    },
+    {
+      "keyword": {
+        "vi": "Suy ngẫm",
+        "en": "Reflective"
+      },
+      "desc": {
+        "vi": "Biết suy ngẫm trong học tập, phát triển khả năng tự học",
+        "en": "Reflective as a learner, developing ability to learn"
+      }
+    },
+    {
+      "keyword": {
+        "vi": "Đổi mới",
+        "en": "Innovative"
+      },
+      "desc": {
+        "vi": "Đổi mới và sẵn sàng cho những thử thách mới, tương lai",
+        "en": "Innovative and equipped for new and future challenges"
+      }
+    },
+    {
+      "keyword": {
+        "vi": "Dấn thân",
+        "en": "Engaged"
+      },
+      "desc": {
+        "vi": "Gắn kết về trí tuệ và xã hội, sẵn sàng tạo ra sự khác biệt",
+        "en": "Engaged intellectually and socially, ready to make a difference"
+      }
+    }
+  ]
+}

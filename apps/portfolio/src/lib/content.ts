@@ -4,12 +4,16 @@ import {
   profileSchema,
   achievementsSchema,
   academicSchema,
+  characterSchema,
+  teacherCommentsSchema,
   journeySchema,
   mediaSchema,
   projectMetaSchema,
   type Profile,
   type Achievement,
   type Academic,
+  type Character,
+  type YearComments,
   type JourneyMilestone,
   type MediaItem,
   type Project,
@@ -32,6 +36,14 @@ export function getAchievements(dir: string = DEFAULT_DIR): Achievement[] {
 
 export function getAcademic(dir: string = DEFAULT_DIR): Academic {
   return academicSchema.parse(readJson(dir, "academic.json"));
+}
+
+export function getCharacter(dir: string = DEFAULT_DIR): Character {
+  return characterSchema.parse(readJson(dir, "character.json"));
+}
+
+export function getTeacherComments(dir: string = DEFAULT_DIR): YearComments[] {
+  return teacherCommentsSchema.parse(readJson(dir, "teacher-comments.json"));
 }
 
 export function getJourney(dir: string = DEFAULT_DIR): JourneyMilestone[] {

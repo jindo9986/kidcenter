@@ -65,6 +65,36 @@ export type YearRecord = z.infer<typeof yearRecordSchema>;
 export const academicSchema = z.array(yearRecordSchema);
 export type Academic = z.infer<typeof academicSchema>;
 
+// Cambridge learner attributes (Character / Ability report).
+export const characterAttributeSchema = z.object({ keyword: L, desc: L });
+export type CharacterAttribute = z.infer<typeof characterAttributeSchema>;
+
+export const characterSchema = z.object({
+  level: z.object({ code: z.string(), vi: z.string(), en: z.string() }),
+  scaleNote: L,
+  allYearsNote: L,
+  attributes: z.array(characterAttributeSchema),
+});
+export type Character = z.infer<typeof characterSchema>;
+
+// Teacher comments per school year (authentic English quotes).
+export const teacherCommentSchema = z.object({
+  subject: L,
+  teacher: z.string(),
+  text: z.string(),
+});
+export const yearCommentsSchema = z.object({
+  grade: L,
+  year: z.string().optional(),
+  comments: z.array(teacherCommentSchema),
+  general: z
+    .object({ teacher: z.string(), text: z.string() })
+    .optional(),
+  goals: z.string().optional(),
+});
+export const teacherCommentsSchema = z.array(yearCommentsSchema);
+export type YearComments = z.infer<typeof yearCommentsSchema>;
+
 export const journeyItemSchema = z.object({
   date: z.string(),
   icon: z.string(),

@@ -2,6 +2,8 @@ import {
   getProfile,
   getAchievements,
   getAcademic,
+  getCharacter,
+  getTeacherComments,
   getJourney,
   getGallery,
   getProjects,
@@ -11,6 +13,8 @@ import { Hero } from "@/components/Hero";
 import { Section } from "@/components/Section";
 import { Achievements } from "@/components/Achievements";
 import { Academic } from "@/components/Academic";
+import { Character } from "@/components/Character";
+import { TeacherComments } from "@/components/TeacherComments";
 import { Timeline } from "@/components/Timeline";
 import { Gallery } from "@/components/Gallery";
 import { ProjectCard } from "@/components/ProjectCard";
@@ -43,6 +47,8 @@ export default function Home() {
   const profile = getProfile();
   const achievements = getAchievements();
   const academic = getAcademic();
+  const character = getCharacter();
+  const teacherComments = getTeacherComments();
   const journey = getJourney();
   const gallery = getGallery();
   const projects = getProjects();
@@ -91,6 +97,13 @@ export default function Home() {
         </Section>
 
         <Section
+          id="character"
+          title={{ vi: "Phẩm chất Cambridge", en: "Cambridge Learner Attributes" }}
+        >
+          <Character data={character} />
+        </Section>
+
+        <Section
           id="achievements"
           title={{ vi: "Thành tích nổi bật", en: "Achievements" }}
         >
@@ -125,6 +138,19 @@ export default function Home() {
             title={{ vi: "Thư viện ảnh & video", en: "Media Gallery" }}
           >
             <Gallery items={gallery} />
+          </Section>
+        )}
+
+        {teacherComments.length > 0 && (
+          <Section
+            id="comments"
+            title={{ vi: "Nhận xét của giáo viên", en: "Teacher Comments" }}
+          >
+            <p className="-mt-2 mb-4 text-sm text-ink/45">
+              <span data-lang="vi">Trích học bạ Cambridge · nhấn để mở từng năm</span>
+              <span data-lang="en">From Cambridge report cards · tap a year to expand</span>
+            </p>
+            <TeacherComments data={teacherComments} />
           </Section>
         )}
 
