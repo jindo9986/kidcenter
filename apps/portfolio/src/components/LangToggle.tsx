@@ -21,7 +21,13 @@ export function LangToggle() {
   }
 
   return (
-    <Button variant="ghost" size="sm" onClick={toggle} aria-label="Switch language">
+    <Button
+      variant="ghost"
+      size="md"
+      onClick={toggle}
+      aria-label="Switch language"
+      className="min-h-11"
+    >
       🌐 {locale === "vi" ? "EN" : "VI"}
     </Button>
   );
