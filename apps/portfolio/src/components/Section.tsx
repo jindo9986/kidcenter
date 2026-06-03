@@ -13,7 +13,7 @@ export function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section id={id} className="mb-10 scroll-mt-24 sm:scroll-mt-36">
+    <section id={id} className="mb-10 scroll-mt-24">
       <h2 className="font-display text-2xl font-bold text-ink">
         <Localized value={title} />
       </h2>

@@ -112,7 +112,7 @@ export default function Home() {
   return (
     <>
       <header className="no-print sticky top-0 z-20 border-b border-black/5 bg-cream/90 backdrop-blur">
-        <div className="mx-auto flex w-full max-w-4xl items-center justify-between gap-2 px-5 pt-2 sm:px-8">
+        <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-2 px-5 py-2 sm:px-8">
           <span className="truncate font-display text-sm font-bold text-ink/80">
             Đào Đình Hữu (Tin)
           </span>
@@ -121,13 +121,26 @@ export default function Home() {
             <PrintButton compact />
           </div>
         </div>
-        <div className="mx-auto w-full max-w-4xl px-5 pb-1.5 sm:px-8">
-          <SectionNav items={navItems} />
+        {/* Mobile / tablet: horizontal scrollable nav (desktop uses the side TOC) */}
+        <div className="mx-auto w-full max-w-6xl px-5 pb-1.5 sm:px-8 lg:hidden">
+          <SectionNav items={navItems} variant="horizontal" />
         </div>
       </header>
 
-      <main className="mx-auto w-full max-w-4xl flex-1 px-5 py-8 sm:px-8">
-        <Hero profile={profile} />
+      <div className="mx-auto flex w-full max-w-6xl justify-center gap-6 px-5 sm:px-8 lg:gap-10">
+        {/* Desktop: sticky table-of-contents on the left */}
+        <aside className="no-print hidden w-44 shrink-0 pt-8 lg:block">
+          <div className="sticky top-24">
+            <p className="mb-2 px-3 text-xs font-semibold uppercase tracking-wide text-ink/40">
+              <span data-lang="vi">Mục lục</span>
+              <span data-lang="en">Contents</span>
+            </p>
+            <SectionNav items={navItems} variant="vertical" />
+          </div>
+        </aside>
+
+        <main className="w-full min-w-0 max-w-3xl py-8">
+          <Hero profile={profile} />
 
         <div className="mb-10">
           <Snapshot stats={stats} />
@@ -292,7 +305,8 @@ export default function Home() {
               : ""}
           </p>
         </footer>
-      </main>
+        </main>
+      </div>
     </>
   );
 }
