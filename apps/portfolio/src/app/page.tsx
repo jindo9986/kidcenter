@@ -181,7 +181,7 @@ export default function StoryPage() {
                 alt: "Tin as a smiling toddler riding on his dad’s shoulders",
               },
               {
-                src: "/media/life/life-flower.jpg",
+                src: "/media/life/life-flower-v2.jpg",
                 alt: "Tin as a toddler holding and studying a frangipani flower",
               },
             ].map((p) => (
