@@ -5,8 +5,8 @@
   { "category": "national", "medal": "gold", "year": "2026", "title": { "vi": "Huy chương Vàng Olympic Khoa học HKISO", "en": "Gold Medal — HKISO Science Olympiad" } },
   { "category": "national", "medal": "gold", "year": "2026", "title": { "vi": "Huy chương Vàng Olympic Khoa học STEMCO", "en": "Gold Medal — STEMCO Science Olympiad" } },
   { "category": "national", "medal": "gold", "year": "2025", "title": { "vi": "Huy chương Vàng Olympic Khoa học SIMSO", "en": "Gold Medal — SIMSO Science Olympiad" } },
-  { "category": "national", "medal": "gold", "year": "2025", "title": { "vi": "Huy chương Vàng Olympic Khoa học ASIAROPES (vòng Quốc gia)", "en": "Gold Medal — ASIAROPES Science Olympiad (National round)" } },
   { "category": "national", "medal": "silver", "year": "2026", "title": { "vi": "Huy chương Bạc Olympic Toán học HKIMO", "en": "Silver Medal — HKIMO Math Olympiad" } },
+  { "category": "national", "medal": "silver", "year": "2025", "title": { "vi": "Huy chương Bạc Olympic Khoa học ASIAROPES (vòng Quốc gia)", "en": "Silver Medal — ASIAROPES Science Olympiad (National round)" } },
   { "category": "national", "medal": "silver", "year": "2026", "title": { "vi": "Huy chương Bạc Olympic Khoa học ISOCSEA", "en": "Silver Medal — ISOCSEA Science Olympiad" } },
   { "category": "national", "medal": "silver", "year": "2025", "title": { "vi": "Huy chương Bạc Olympic Khoa học ASMO (vòng Quốc gia)", "en": "Silver Medal — ASMO Science Olympiad (National round)" } },
   { "category": "national", "medal": "silver", "year": "2025", "title": { "vi": "Huy chương Bạc Olympic Khoa học HKISO (vòng Quốc gia)", "en": "Silver Medal — HKISO Science Olympiad (National round)" } },
@@ -17,9 +17,9 @@
   { "category": "local", "medal": "bronze", "year": "2025", "title": { "vi": "Huy chương Đồng Olympic Khoa học ASMO (vòng Thành phố)", "en": "Bronze Medal — ASMO Science Olympiad (City round)" } },
   { "category": "local", "medal": "gold", "year": "2024-2025", "title": { "vi": "Giải Nhất — Cuộc thi vẽ tranh Xuân yêu thương", "en": "1st Place — Loving Spring painting contest" } },
   { "category": "local", "medal": "gold", "year": "2023-2024", "title": { "vi": "Giải Nhất — Tuyển chọn đội tuyển bơi của trường", "en": "1st Place — School swim team trials" } },
-  { "category": "local", "medal": "gold", "title": { "vi": "Giải Nhất Edurun — đơn nam khối 4", "en": "1st Place — Edurun, Boys' Singles (Grade 4)" } },
+  { "category": "local", "medal": "gold", "year": "2025-2026", "title": { "vi": "Giải Nhất Edurun — đơn nam khối 4", "en": "1st Place — Edurun, Boys' Singles (Grade 4)" } },
   { "category": "local", "medal": "silver", "year": "2022-2023", "title": { "vi": "Giải Nhì đồng đội — Edurun cự ly 100m", "en": "2nd Place (Team) — Edurun 100m" } },
-  { "category": "local", "medal": "silver", "title": { "vi": "Giải Nhì Cầu lông — đơn nam khối 4", "en": "2nd Place — Badminton, Boys' Singles (Grade 4)" } },
+  { "category": "local", "medal": "silver", "year": "2025-2026", "title": { "vi": "Giải Nhì Cầu lông — đơn nam khối 4", "en": "2nd Place — Badminton, Boys' Singles (Grade 4)" } },
   { "category": "local", "medal": "bronze", "year": "2023-2024", "title": { "vi": "Giải Ba — Bơi ếch nam (cấp trường)", "en": "3rd Place — Boys' Breaststroke (School)" } },
-  { "category": "local", "medal": "none", "title": { "vi": "Podcast Xanh — Top 15 bài thi xuất sắc nhất trường", "en": "Green Podcast — Top 15 best entries in school" } }
+  { "category": "local", "medal": "none", "year": "2025-2026", "title": { "vi": "Podcast Xanh — Top 15 bài thi xuất sắc nhất trường", "en": "Green Podcast — Top 15 best entries in school" } }
 ]

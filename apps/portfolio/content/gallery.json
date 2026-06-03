@@ -1,1 +1,7 @@
-[]
+[
+  { "type": "image", "src": "/media/art-tet-2025.jpg", "caption": { "vi": "Tranh đoạt Giải Nhất — Tết Xum Vầy 2025", "en": "1st-prize painting — Tết Xum Vầy 2025" } },
+  { "type": "image", "src": "/media/dino-trex.jpg", "caption": { "vi": "Khủng long T-Rex (bút chì)", "en": "T-Rex (pencil)" } },
+  { "type": "image", "src": "/media/dino-head.jpg", "caption": { "vi": "Đầu khủng long (bút chì)", "en": "Dinosaur head (pencil)" } },
+  { "type": "image", "src": "/media/dino-trex-grid.jpg", "caption": { "vi": "T-Rex trên giấy ô ly (bút chì)", "en": "T-Rex on grid paper (pencil)" } },
+  { "type": "image", "src": "/media/dino-sketches.jpg", "caption": { "vi": "Phác họa khủng long (bút chì)", "en": "Dinosaur sketches (pencil)" } }
+]
