@@ -36,9 +36,10 @@ export function SectionNav({ items }: { items: NavItem[] }) {
   return (
     <nav
       aria-label="Mục lục"
-      className="-mx-5 overflow-x-auto px-5 sm:mx-0 sm:px-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+      className="-mx-5 overflow-x-auto px-5 sm:mx-0 sm:overflow-visible sm:px-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
     >
-      <ul className="flex gap-1.5 whitespace-nowrap py-1">
+      {/* Mobile: single scrollable row. Desktop: wrap so all items stay visible. */}
+      <ul className="flex gap-1.5 py-1 sm:flex-wrap">
         {items.map((it) => (
           <li key={it.id}>
             <button
@@ -47,8 +48,8 @@ export function SectionNav({ items }: { items: NavItem[] }) {
               aria-current={active === it.id ? "true" : undefined}
               className={
                 active === it.id
-                  ? "rounded-full bg-brand px-3 py-1.5 text-sm font-semibold text-white"
-                  : "rounded-full px-3 py-1.5 text-sm font-medium text-ink/55 transition-colors hover:bg-black/5"
+                  ? "whitespace-nowrap rounded-full bg-brand px-3 py-1.5 text-sm font-semibold text-white"
+                  : "whitespace-nowrap rounded-full px-3 py-1.5 text-sm font-medium text-ink/55 transition-colors hover:bg-black/5"
               }
             >
               <Localized value={it.label} />
