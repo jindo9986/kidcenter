@@ -144,6 +144,21 @@ export default function StoryPage() {
       caption: "Reading a city drawn in ink",
     },
   ];
+  // Real proud moments behind the medals.
+  const awards: { src: string; alt: string }[] = [
+    {
+      src: "/media/life/life-award-stage.jpg",
+      alt: "Tin on stage with his Science Star Award certificate and trophy",
+    },
+    {
+      src: "/media/life/life-award-ceremony.jpg",
+      alt: "Tin in an áo dài holding the Science Star Award at the end-of-year ceremony",
+    },
+    {
+      src: "/media/life/life-award-classroom.jpg",
+      alt: "Tin with his certificate and gifts at the class Wall of Fame",
+    },
+  ];
 
   return (
     <main className="bg-cream text-ink">
@@ -735,6 +750,27 @@ export default function StoryPage() {
             Milestones along the way
           </h2>
         </div>
+        {/* the proud moments behind the medals */}
+        <div className="mx-auto mb-3 grid max-w-4xl grid-cols-3 gap-3">
+          {awards.map((p) => (
+            <figure
+              key={p.src}
+              className="overflow-hidden rounded-2xl bg-cream shadow-sm"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={asset(p.src)}
+                alt={p.alt}
+                loading="lazy"
+                className="aspect-[3/4] w-full object-cover"
+              />
+            </figure>
+          ))}
+        </div>
+        <p className="mx-auto mb-8 max-w-[620px] text-center text-sm text-ink/55">
+          Excellent Student &amp; Natural Sciences Star — celebrated in class, on
+          stage, and at the end-of-year ceremony.
+        </p>
         {/* medal tally */}
         <div className="mx-auto mb-6 grid max-w-4xl grid-cols-2 gap-3 sm:grid-cols-4">
           {(
@@ -833,6 +869,46 @@ export default function StoryPage() {
           <p className="mt-8 font-display text-xl font-medium italic text-ink/80">
             {s.forward.close}
           </p>
+        </div>
+      </section>
+
+      {/* A NOTE HOME — the hand-made thank-you card */}
+      <section className="bg-white px-6 py-16 sm:py-24">
+        <div className="mx-auto grid max-w-4xl items-center gap-8 md:grid-cols-2">
+          <figure className="overflow-hidden rounded-3xl bg-cream shadow-md">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={asset("/media/life/life-card-thankyou.jpg")}
+              alt="A hand-made pop-up card that reads ‘Dear Mom and Dad … thank you for supporting me’"
+              loading="lazy"
+              className="w-full"
+            />
+          </figure>
+          <div>
+            <Eyebrow>A note home</Eyebrow>
+            <h2 className="font-display text-3xl font-bold text-ink sm:text-4xl">
+              “Thank you for supporting me”
+            </h2>
+            <blockquote className="mt-5 space-y-3 border-l-2 border-accent/50 pl-5 text-lg italic leading-relaxed text-ink/75">
+              <p>Dear Mom and Dad,</p>
+              <p>
+                I am almost finished with this year — thank you for caring for me
+                every day. This year I enjoyed science with Mr.&nbsp;Alasdair and
+                won many medals.
+              </p>
+              <p>
+                I am very proud of myself because I won the Science Star Award for
+                the second time — because of your help. Thank you for supporting
+                me.
+              </p>
+              <p className="not-italic font-display font-semibold text-ink/80">
+                — Your son, Đình Hữu
+              </p>
+            </blockquote>
+            <p className="mt-5 text-sm text-ink/50">
+              A hand-made pop-up card for his parents at the end of the year.
+            </p>
+          </div>
         </div>
       </section>
 
