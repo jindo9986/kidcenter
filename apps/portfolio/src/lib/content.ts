@@ -6,6 +6,7 @@ import {
   academicSchema,
   skillsRadarSchema,
   characterSchema,
+  teacherInsightsSchema,
   teacherCommentsSchema,
   journeySchema,
   mediaSchema,
@@ -15,6 +16,7 @@ import {
   type Academic,
   type RadarAxis,
   type Character,
+  type TeacherInsights,
   type YearComments,
   type JourneyMilestone,
   type MediaItem,
@@ -46,6 +48,10 @@ export function getSkillsRadar(dir: string = DEFAULT_DIR): RadarAxis[] {
 
 export function getCharacter(dir: string = DEFAULT_DIR): Character {
   return characterSchema.parse(readJson(dir, "character.json"));
+}
+
+export function getTeacherInsights(dir: string = DEFAULT_DIR): TeacherInsights {
+  return teacherInsightsSchema.parse(readJson(dir, "teacher-insights.json"));
 }
 
 export function getTeacherComments(dir: string = DEFAULT_DIR): YearComments[] {

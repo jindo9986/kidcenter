@@ -1,0 +1,24 @@
+{
+  "intro": {
+    "vi": "Tổng hợp",
+    "en": "Synthesis"
+  },
+  "themes": [
+    {
+      "icon": "🔬",
+      "label": {
+        "vi": "Khoa học",
+        "en": "Science"
+      }
+    }
+  ],
+  "quotes": [
+    {
+      "text": "A pleasure to teach.",
+      "attribution": {
+        "vi": "Cô A · Lớp 1",
+        "en": "Ms A · Grade 1"
+      }
+    }
+  ]
+}

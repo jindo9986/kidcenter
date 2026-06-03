@@ -95,6 +95,16 @@ export const characterSchema = z.object({
 });
 export type Character = z.infer<typeof characterSchema>;
 
+// Teacher insights — a synthesis of the teacher comments (strength themes + quotes).
+export const insightThemeSchema = z.object({ icon: z.string(), label: L });
+export const insightQuoteSchema = z.object({ text: z.string(), attribution: L });
+export const teacherInsightsSchema = z.object({
+  intro: L,
+  themes: z.array(insightThemeSchema),
+  quotes: z.array(insightQuoteSchema),
+});
+export type TeacherInsights = z.infer<typeof teacherInsightsSchema>;
+
 // Teacher comments per school year (authentic English quotes).
 export const teacherCommentSchema = z.object({
   subject: L,

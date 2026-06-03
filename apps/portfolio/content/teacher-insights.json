@@ -1,0 +1,80 @@
+{
+  "intro": {
+    "vi": "Tổng hợp từ nhận xét của các giáo viên Cambridge suốt 4 năm, những điểm mạnh được thầy cô nhắc đến nhiều nhất:",
+    "en": "Synthesised from four years of Cambridge teacher reports, here are the strengths teachers mention most often:"
+  },
+  "themes": [
+    {
+      "icon": "🔬",
+      "label": {
+        "vi": "Tư duy Khoa học xuất sắc",
+        "en": "Outstanding science thinking"
+      }
+    },
+    {
+      "icon": "🧮",
+      "label": {
+        "vi": "Năng khiếu Toán học",
+        "en": "Natural maths ability"
+      }
+    },
+    {
+      "icon": "🎯",
+      "label": {
+        "vi": "Tự giác & độc lập",
+        "en": "Self-driven & independent"
+      }
+    },
+    {
+      "icon": "🔍",
+      "label": {
+        "vi": "Tỉ mỉ, chính xác",
+        "en": "Meticulous & accurate"
+      }
+    },
+    {
+      "icon": "🤝",
+      "label": {
+        "vi": "Lãnh đạo & sẻ chia",
+        "en": "Leadership & kindness"
+      }
+    },
+    {
+      "icon": "💻",
+      "label": {
+        "vi": "Vững Tin học",
+        "en": "Strong in ICT"
+      }
+    }
+  ],
+  "quotes": [
+    {
+      "text": "His enthusiasm and scientific curiosity are a pleasure to see.",
+      "attribution": {
+        "vi": "Thầy Alasdair I. Warner · Khoa học, Lớp 3",
+        "en": "Mr Alasdair I. Warner · Science, Grade 3"
+      }
+    },
+    {
+      "text": "Đào Đình Hữu has natural ability in maths. His mental maths are of a high standard.",
+      "attribution": {
+        "vi": "Cô Elizabeth Moran · Toán, Lớp 1",
+        "en": "Ms Elizabeth Moran · Maths, Grade 1"
+      }
+    },
+    {
+      "text": "He naturally assumes leadership roles in groupwork and takes pride in mentoring less confident learners with compassion. He is a pleasure to teach!",
+      "attribution": {
+        "vi": "Cô Rumbidzai Katsande · GVCN Lớp 3",
+        "en": "Ms Rumbidzai Katsande · Form teacher, Grade 3"
+      }
+    },
+    {
+      "text": "Đình Hữu consistently exhibits exceptional focus and dedication in ICT, resulting in outstanding academic performance.",
+      "attribution": {
+        "vi": "Thầy Michael A. L. Borja · Tin học, Lớp 2",
+        "en": "Mr Michael A. L. Borja · ICT, Grade 2"
+      }
+    }
+  ]
+}

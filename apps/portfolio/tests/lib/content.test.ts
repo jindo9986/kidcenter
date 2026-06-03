@@ -6,6 +6,7 @@ import {
   getAcademic,
   getSkillsRadar,
   getCharacter,
+  getTeacherInsights,
   getTeacherComments,
   getJourney,
   getGallery,
@@ -51,6 +52,13 @@ describe("content loaders", () => {
     const c = getCharacter(DIR);
     expect(c.level.code).toBe("C");
     expect(c.attributes[0].keyword.en).toBe("Confident");
+  });
+
+  it("loads teacher insights (themes + quotes)", () => {
+    const ins = getTeacherInsights(DIR);
+    expect(ins.themes[0].icon).toBe("🔬");
+    expect(ins.quotes[0].text).toContain("pleasure");
+    expect(ins.quotes[0].attribution.en).toContain("Grade 1");
   });
 
   it("loads teacher comments per year", () => {

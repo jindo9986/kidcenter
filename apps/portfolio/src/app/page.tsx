@@ -4,6 +4,7 @@ import {
   getAcademic,
   getSkillsRadar,
   getCharacter,
+  getTeacherInsights,
   getTeacherComments,
   getJourney,
   getGallery,
@@ -18,6 +19,7 @@ import { RadarChart } from "@/components/RadarChart";
 import { Achievements } from "@/components/Achievements";
 import { Academic } from "@/components/Academic";
 import { Character } from "@/components/Character";
+import { TeacherInsights } from "@/components/TeacherInsights";
 import { TeacherComments } from "@/components/TeacherComments";
 import { Timeline } from "@/components/Timeline";
 import { Gallery } from "@/components/Gallery";
@@ -54,6 +56,7 @@ export default function Home() {
   const academic = getAcademic();
   const skillsRadar = getSkillsRadar();
   const character = getCharacter();
+  const teacherInsights = getTeacherInsights();
   const teacherComments = getTeacherComments();
   const journey = getJourney();
   const gallery = getGallery();
@@ -235,11 +238,18 @@ export default function Home() {
             id="comments"
             title={{ vi: "Nhận xét của giáo viên", en: "Teacher Comments" }}
             subtitle={{
-              vi: "Trích học bạ Cambridge · nhấn để mở từng năm",
-              en: "From Cambridge report cards · tap a year to expand",
+              vi: "Phân tích điểm mạnh từ học bạ Cambridge 4 năm",
+              en: "Strengths synthesised from four years of Cambridge reports",
             }}
           >
-            <TeacherComments data={teacherComments} />
+            <TeacherInsights data={teacherInsights} />
+            <details className="break-avoid">
+              <summary className="mb-3 cursor-pointer list-none text-sm font-semibold text-brand">
+                <span data-lang="vi">▸ Xem nhận xét chi tiết theo năm</span>
+                <span data-lang="en">▸ Read the full comments by year</span>
+              </summary>
+              <TeacherComments data={teacherComments} />
+            </details>
           </Section>
         )}
 
