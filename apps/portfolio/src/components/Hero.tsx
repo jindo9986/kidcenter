@@ -1,5 +1,6 @@
 import type { Profile } from "@/lib/schemas";
 import { computeAge, formatDateDMY } from "@/lib/date";
+import { asset } from "@/lib/asset";
 import { Localized } from "./Localized";
 
 export function Hero({ profile }: { profile: Profile }) {
@@ -30,7 +31,7 @@ export function Hero({ profile }: { profile: Profile }) {
             next/image) to stay fully offline/file-based. */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src={profile.avatar}
+          src={asset(profile.avatar)}
           alt={profile.name}
           className="h-full w-full object-cover"
         />

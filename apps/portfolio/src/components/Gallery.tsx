@@ -1,4 +1,5 @@
 import type { MediaItem } from "@/lib/schemas";
+import { asset } from "@/lib/asset";
 import { Localized } from "./Localized";
 
 export function Gallery({ items }: { items: MediaItem[] }) {
@@ -12,13 +13,13 @@ export function Gallery({ items }: { items: MediaItem[] }) {
           {item.type === "image" ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img
-              src={item.src}
+              src={asset(item.src)}
               alt=""
               className="aspect-square w-full object-cover"
             />
           ) : (
             <video
-              src={item.src}
+              src={asset(item.src)}
               controls
               className="aspect-square w-full object-cover"
             />
