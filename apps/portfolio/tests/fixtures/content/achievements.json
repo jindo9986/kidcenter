@@ -1,1 +1,5 @@
-[{ "date": "2025-05-01", "icon": "🏅", "title": { "vi": "Giải Nhì", "en": "2nd Prize" }, "detail": { "vi": "Cuộc thi vẽ", "en": "Drawing contest" } }]
+[
+  { "category": "international", "medal": "silver", "year": "2025", "title": { "vi": "HC bạc Test", "en": "Silver Test" } },
+  { "category": "national", "medal": "gold", "year": "2026", "title": { "vi": "HC vàng Test", "en": "Gold Test" } },
+  { "category": "local", "title": { "vi": "Giải trường", "en": "School prize" } }
+]

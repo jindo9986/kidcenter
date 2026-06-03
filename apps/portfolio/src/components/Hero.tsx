@@ -1,12 +1,19 @@
 import type { Profile } from "@/lib/schemas";
+import { computeAge, formatDateDMY } from "@/lib/date";
 import { Localized } from "./Localized";
 
 export function Hero({ profile }: { profile: Profile }) {
+  const age = computeAge(profile.birthDate);
+  const dob = formatDateDMY(profile.birthDate);
+  const displayName = profile.nickname
+    ? `${profile.name} (${profile.nickname})`
+    : profile.name;
+
   return (
-    <section className="mb-10 flex flex-col items-center gap-4 text-center sm:flex-row sm:text-left">
-      <div className="flex h-28 w-28 shrink-0 items-center justify-center overflow-hidden rounded-full bg-accent text-5xl shadow-sm">
-        {/* Avatar image with graceful fallback to broken-image alt text.
-            Uses <img> (not next/image) to stay fully offline/file-based. */}
+    <section className="mb-10 flex flex-col items-center gap-5 text-center sm:flex-row sm:text-left">
+      <div className="flex h-32 w-32 shrink-0 items-center justify-center overflow-hidden rounded-full bg-accent text-6xl shadow-sm ring-4 ring-brand/10">
+        {/* Avatar image with graceful fallback to alt text. Uses <img> (not
+            next/image) to stay fully offline/file-based. */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={profile.avatar}
@@ -15,15 +22,34 @@ export function Hero({ profile }: { profile: Profile }) {
         />
       </div>
       <div className="flex-1">
-        <p className="text-sm font-semibold text-brand">Portfolio</p>
+        <p className="text-sm font-semibold uppercase tracking-wide text-brand">
+          Portfolio
+        </p>
         <h1 className="font-display text-4xl font-extrabold text-ink">
-          {profile.name}
+          {displayName}
         </h1>
         <p className="mt-1 text-ink/60">
-          {profile.age} <span data-lang="vi">tuổi</span>
+          {age} <span data-lang="vi">tuổi</span>
           <span data-lang="en">years old</span> ·{" "}
+          <span data-lang="vi">Sinh {dob}</span>
+          <span data-lang="en">Born {dob}</span>
+        </p>
+        <p className="mt-0.5 font-medium text-ink/80">
+          🏫 <Localized value={profile.school} />
+        </p>
+        <p className="mt-1 text-ink/60">
           <Localized value={profile.tagline} />
         </p>
+        <div className="mt-3 flex flex-wrap justify-center gap-2 sm:justify-start">
+          {profile.focus.map((f, i) => (
+            <span
+              key={i}
+              className="rounded-full bg-brand px-3 py-1 text-xs font-bold text-white"
+            >
+              <Localized value={f} />
+            </span>
+          ))}
+        </div>
       </div>
     </section>
   );

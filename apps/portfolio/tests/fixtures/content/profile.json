@@ -1,9 +1,13 @@
 {
   "name": "Test Kid",
-  "age": 6,
+  "nickname": "TK",
+  "birthDate": "2016-02-23",
   "avatar": "/media/avatar.jpg",
+  "school": { "vi": "Trường Test", "en": "Test School" },
   "tagline": { "vi": "Tagline VI", "en": "Tagline EN" },
   "bio": { "vi": "Bio VI", "en": "Bio EN" },
+  "focus": [{ "vi": "Khoa học", "en": "Science" }],
+  "personality": [{ "vi": "Độc lập", "en": "Independent" }],
   "interests": [{ "vi": "Vẽ", "en": "Drawing" }],
   "skills": [{ "vi": "Sáng tạo", "en": "Creativity" }],
   "parentContact": { "name": "Parent", "email": "p@example.com" }

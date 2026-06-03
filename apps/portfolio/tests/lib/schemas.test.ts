@@ -1,27 +1,53 @@
 import { describe, it, expect } from "vitest";
-import { profileSchema, achievementsSchema } from "@/lib/schemas";
+import { profileSchema, achievementsSchema, academicSchema } from "@/lib/schemas";
+
+const validProfile = {
+  name: "Tin",
+  nickname: "Tin",
+  birthDate: "2016-02-23",
+  avatar: "/media/tin.jpg",
+  school: { vi: "Trường", en: "School" },
+  tagline: { vi: "Yêu khoa học", en: "Loves science" },
+  bio: { vi: "Tin...", en: "Tin is..." },
+  focus: [{ vi: "Khoa học", en: "Science" }],
+  personality: [{ vi: "Độc lập", en: "Independent" }],
+  interests: [{ vi: "Vẽ", en: "Drawing" }],
+  skills: [{ vi: "Sáng tạo", en: "Creativity" }],
+  parentContact: { name: "Bố Tin" },
+};
 
 describe("schemas", () => {
   it("accepts a valid profile", () => {
-    const ok = {
-      name: "Na",
-      age: 6,
-      avatar: "/media/na.jpg",
-      tagline: { vi: "Yêu vẽ", en: "Loves drawing" },
-      bio: { vi: "Bé Na...", en: "Na is..." },
-      interests: [{ vi: "Vẽ", en: "Drawing" }],
-      skills: [{ vi: "Sáng tạo", en: "Creativity" }],
-      parentContact: { name: "Mẹ Na" },
-    };
-    expect(profileSchema.parse(ok).age).toBe(6);
+    expect(profileSchema.parse(validProfile).birthDate).toBe("2016-02-23");
   });
 
-  it("rejects a profile missing a localized field", () => {
-    const bad = { name: "Na", age: 6, avatar: "x", tagline: { vi: "x" } };
+  it("rejects a profile missing the school field", () => {
+    const { school: _omit, ...bad } = validProfile;
+    void _omit;
     expect(() => profileSchema.parse(bad)).toThrow();
   });
 
-  it("rejects achievements that are not an array", () => {
-    expect(() => achievementsSchema.parse({})).toThrow();
+  it("defaults achievement medal to 'none' when omitted", () => {
+    const parsed = achievementsSchema.parse([
+      { category: "local", title: { vi: "x", en: "x" } },
+    ]);
+    expect(parsed[0].medal).toBe("none");
+  });
+
+  it("rejects an unknown achievement category", () => {
+    expect(() =>
+      achievementsSchema.parse([
+        { category: "galactic", title: { vi: "x", en: "x" } },
+      ]),
+    ).toThrow();
+  });
+
+  it("validates academic grades and honors", () => {
+    const a = academicSchema.parse({
+      year: "2025-2026",
+      grades: [{ subject: { vi: "Toán", en: "Math" }, score: 10 }],
+      honors: [{ vi: "Giỏi", en: "Excellent" }],
+    });
+    expect(a.grades[0].score).toBe(10);
   });
 });

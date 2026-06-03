@@ -3,11 +3,13 @@ import path from "node:path";
 import {
   profileSchema,
   achievementsSchema,
+  academicSchema,
   journeySchema,
   mediaSchema,
   projectMetaSchema,
   type Profile,
   type Achievement,
+  type Academic,
   type JourneyMilestone,
   type MediaItem,
   type Project,
@@ -26,6 +28,10 @@ export function getProfile(dir: string = DEFAULT_DIR): Profile {
 
 export function getAchievements(dir: string = DEFAULT_DIR): Achievement[] {
   return achievementsSchema.parse(readJson(dir, "achievements.json"));
+}
+
+export function getAcademic(dir: string = DEFAULT_DIR): Academic {
+  return academicSchema.parse(readJson(dir, "academic.json"));
 }
 
 export function getJourney(dir: string = DEFAULT_DIR): JourneyMilestone[] {

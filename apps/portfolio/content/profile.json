@@ -1,29 +1,43 @@
 {
-  "name": "Nguyễn Bảo Na",
-  "age": 6,
+  "name": "Đào Đình Hữu",
+  "nickname": "Tin",
+  "birthDate": "2016-02-23",
   "avatar": "/media/avatar.png",
+  "school": {
+    "vi": "Tiểu học Vinschool The Harmony",
+    "en": "Vinschool The Harmony Primary School"
+  },
   "tagline": {
-    "vi": "Yêu vẽ, âm nhạc và khám phá thiên nhiên 🌈",
-    "en": "Loves drawing, music, and exploring nature 🌈"
+    "vi": "Đam mê Khoa học & Toán học 🔬",
+    "en": "Passionate about Science & Math 🔬"
   },
   "bio": {
-    "vi": "Bé Na là một cô bé tò mò và giàu trí tưởng tượng, thích đặt câu hỏi về thế giới xung quanh. Bé học tốt nhất qua trải nghiệm thực tế — trồng cây, làm thủ công và kể chuyện.",
-    "en": "Na is a curious, imaginative child who loves asking questions about the world. She learns best through hands-on experiences — growing plants, crafting, and storytelling."
+    "vi": "Tin là một cậu bé độc lập và kiên định, đam mê Khoa học và Toán học. Em đã giành nhiều huy chương Olympic khoa học trong nước và quốc tế. Tin cũng rất thích vẽ — đặc biệt là khủng long — sở thích đang nuôi dưỡng khả năng trực quan hóa khoa học (science visualization) của em.",
+    "en": "Tin is an independent and determined boy with a deep passion for Science and Math. He has earned numerous national and international science Olympiad medals. Tin also loves drawing — especially dinosaurs — a hobby that is nurturing his science-visualization skills."
   },
+  "focus": [
+    { "vi": "Khoa học", "en": "Science" },
+    { "vi": "Toán học", "en": "Mathematics" }
+  ],
+  "personality": [
+    { "vi": "Độc lập", "en": "Independent" },
+    { "vi": "Thận trọng", "en": "Careful" },
+    { "vi": "Ấm áp", "en": "Warm" },
+    { "vi": "Kiên định", "en": "Determined" }
+  ],
   "interests": [
-    { "vi": "Vẽ", "en": "Drawing" },
-    { "vi": "Âm nhạc", "en": "Music" },
-    { "vi": "Thiên nhiên", "en": "Nature" }
+    { "vi": "Khoa học", "en": "Science" },
+    { "vi": "Toán học", "en": "Mathematics" },
+    { "vi": "Vẽ khủng long", "en": "Drawing dinosaurs" }
   ],
   "skills": [
-    { "vi": "Sáng tạo", "en": "Creativity" },
-    { "vi": "Tiếng Anh", "en": "English" },
-    { "vi": "Toán tư duy", "en": "Logical thinking" },
-    { "vi": "Âm nhạc", "en": "Music" },
-    { "vi": "Làm việc nhóm", "en": "Teamwork" }
+    { "vi": "Tư duy khoa học", "en": "Scientific thinking" },
+    { "vi": "Toán học", "en": "Mathematics" },
+    { "vi": "Vẽ → Trực quan hóa khoa học", "en": "Drawing → Science visualization" },
+    { "vi": "Tiếng Anh", "en": "English" }
   ],
   "parentContact": {
-    "name": "Phụ huynh bé Na",
+    "name": "Phụ huynh bé Tin",
     "email": "daodinhhieu@gmail.com"
   }
 }

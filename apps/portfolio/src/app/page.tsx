@@ -1,12 +1,16 @@
 import {
   getProfile,
   getAchievements,
+  getAcademic,
   getJourney,
   getGallery,
   getProjects,
 } from "@/lib/content";
+import type { L } from "@/lib/schemas";
 import { Hero } from "@/components/Hero";
 import { Section } from "@/components/Section";
+import { Achievements } from "@/components/Achievements";
+import { Academic } from "@/components/Academic";
 import { Timeline } from "@/components/Timeline";
 import { Gallery } from "@/components/Gallery";
 import { ProjectCard } from "@/components/ProjectCard";
@@ -14,9 +18,31 @@ import { Localized } from "@/components/Localized";
 import { LangToggle } from "@/components/LangToggle";
 import { PrintButton } from "@/components/PrintButton";
 
+function ChipRow({ label, items }: { label: L; items: L[] }) {
+  if (items.length === 0) return null;
+  return (
+    <div className="mb-3">
+      <p className="mb-1.5 text-sm font-semibold text-ink/50">
+        <Localized value={label} />
+      </p>
+      <div className="flex flex-wrap gap-2">
+        {items.map((it, i) => (
+          <span
+            key={i}
+            className="rounded-full bg-white px-4 py-1.5 text-sm font-semibold text-ink shadow-sm"
+          >
+            <Localized value={it} />
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function Home() {
   const profile = getProfile();
   const achievements = getAchievements();
+  const academic = getAcademic();
   const journey = getJourney();
   const gallery = getGallery();
   const projects = getProjects();
@@ -35,65 +61,64 @@ export default function Home() {
           <p className="mb-4 leading-relaxed text-ink/70">
             <Localized value={profile.bio} />
           </p>
-          <div className="flex flex-wrap gap-2">
-            {profile.skills.map((s, i) => (
-              <span
-                key={i}
-                className="rounded-full bg-white px-4 py-1.5 text-sm font-semibold text-ink shadow-sm"
-              >
-                <Localized value={s} />
-              </span>
-            ))}
-          </div>
+          <ChipRow
+            label={{ vi: "Tính cách", en: "Personality" }}
+            items={profile.personality}
+          />
+          <ChipRow
+            label={{ vi: "Kỹ năng", en: "Skills" }}
+            items={profile.skills}
+          />
+          <ChipRow
+            label={{ vi: "Sở thích", en: "Interests" }}
+            items={profile.interests}
+          />
+        </Section>
+
+        <Section
+          id="academic"
+          title={{ vi: "Kết quả học tập", en: "Academic Record" }}
+        >
+          <Academic data={academic} />
         </Section>
 
         <Section
           id="achievements"
           title={{ vi: "Thành tích nổi bật", en: "Achievements" }}
         >
-          <div className="grid gap-3 sm:grid-cols-3">
-            {achievements.map((a, i) => (
-              <div
-                key={i}
-                className="break-avoid rounded-3xl border border-black/5 bg-white p-4 shadow-sm"
-              >
-                <div className="mb-1 text-2xl">{a.icon}</div>
-                <p className="text-xs font-semibold text-ink/40">{a.date}</p>
-                <h3 className="font-bold text-ink">
-                  <Localized value={a.title} />
-                </h3>
-                <p className="text-sm text-ink/60">
-                  <Localized value={a.detail} />
-                </p>
-              </div>
-            ))}
-          </div>
+          <Achievements items={achievements} />
         </Section>
 
-        <Section
-          id="projects"
-          title={{ vi: "Dự án & Hoạt động", en: "Projects & Activities" }}
-        >
-          <div className="grid gap-4 sm:grid-cols-2">
-            {projects.map((p) => (
-              <ProjectCard key={p.slug} project={p} />
-            ))}
-          </div>
-        </Section>
+        {projects.length > 0 && (
+          <Section
+            id="projects"
+            title={{ vi: "Dự án & Hoạt động", en: "Projects & Activities" }}
+          >
+            <div className="grid gap-4 sm:grid-cols-2">
+              {projects.map((p) => (
+                <ProjectCard key={p.slug} project={p} />
+              ))}
+            </div>
+          </Section>
+        )}
 
-        <Section
-          id="journey"
-          title={{ vi: "Hành trình phát triển", en: "Growth Journey" }}
-        >
-          <Timeline items={journey} />
-        </Section>
+        {journey.length > 0 && (
+          <Section
+            id="journey"
+            title={{ vi: "Hành trình phát triển", en: "Growth Journey" }}
+          >
+            <Timeline items={journey} />
+          </Section>
+        )}
 
-        <Section
-          id="gallery"
-          title={{ vi: "Thư viện ảnh & video", en: "Media Gallery" }}
-        >
-          <Gallery items={gallery} />
-        </Section>
+        {gallery.length > 0 && (
+          <Section
+            id="gallery"
+            title={{ vi: "Thư viện ảnh & video", en: "Media Gallery" }}
+          >
+            <Gallery items={gallery} />
+          </Section>
+        )}
 
         <footer className="mt-8 border-t border-black/5 pt-4 text-sm text-ink/50">
           <span data-lang="vi">Liên hệ: </span>

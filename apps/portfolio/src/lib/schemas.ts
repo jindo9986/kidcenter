@@ -5,10 +5,14 @@ export type L = z.infer<typeof L>;
 
 export const profileSchema = z.object({
   name: z.string(),
-  age: z.number(),
+  nickname: z.string().optional(),
+  birthDate: z.string(), // ISO yyyy-mm-dd
   avatar: z.string(),
+  school: L,
   tagline: L,
   bio: L,
+  focus: z.array(L), // development direction (e.g. Science, Math)
+  personality: z.array(L),
   interests: z.array(L),
   skills: z.array(L),
   parentContact: z.object({
@@ -19,14 +23,35 @@ export const profileSchema = z.object({
 });
 export type Profile = z.infer<typeof profileSchema>;
 
+export const medalEnum = z.enum(["gold", "silver", "bronze", "none"]);
+export type Medal = z.infer<typeof medalEnum>;
+
+export const achievementCategoryEnum = z.enum([
+  "international",
+  "national",
+  "local",
+]);
+export type AchievementCategory = z.infer<typeof achievementCategoryEnum>;
+
 export const achievementSchema = z.object({
-  date: z.string(),
-  icon: z.string(),
+  category: achievementCategoryEnum,
+  medal: medalEnum.default("none"),
+  year: z.string().optional(),
   title: L,
-  detail: L,
+  detail: L.optional(),
 });
 export const achievementsSchema = z.array(achievementSchema);
 export type Achievement = z.infer<typeof achievementSchema>;
+
+export const gradeSchema = z.object({ subject: L, score: z.number() });
+export type Grade = z.infer<typeof gradeSchema>;
+
+export const academicSchema = z.object({
+  year: z.string(),
+  grades: z.array(gradeSchema),
+  honors: z.array(L),
+});
+export type Academic = z.infer<typeof academicSchema>;
 
 export const journeyItemSchema = z.object({
   date: z.string(),

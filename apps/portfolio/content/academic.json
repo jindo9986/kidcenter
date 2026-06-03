@@ -1,0 +1,15 @@
+{
+  "year": "2025-2026",
+  "grades": [
+    { "subject": { "vi": "Toán", "en": "Math" }, "score": 10 },
+    { "subject": { "vi": "Khoa học", "en": "Science" }, "score": 10 },
+    { "subject": { "vi": "Tiếng Anh", "en": "English" }, "score": 10 },
+    { "subject": { "vi": "Tiếng Việt", "en": "Vietnamese" }, "score": 10 },
+    { "subject": { "vi": "Lịch sử - Địa lý", "en": "History & Geography" }, "score": 10 },
+    { "subject": { "vi": "Tin học", "en": "Computing" }, "score": 9 }
+  ],
+  "honors": [
+    { "vi": "Học sinh Xuất sắc năm học 2025 - 2026", "en": "Outstanding Student, 2025 - 2026" },
+    { "vi": "Học sinh Tinh hoa môn Khoa học Tự nhiên năm học 2025 - 2026", "en": "Elite Student in Natural Sciences, 2025 - 2026" }
+  ]
+}
