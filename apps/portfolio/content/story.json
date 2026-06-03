@@ -213,7 +213,7 @@
       { "subject": "English", "score": "10" },
       { "subject": "Vietnamese", "score": "10" },
       { "subject": "History & Geography", "score": "10" },
-      { "subject": "ICT", "score": "9" }
+      { "subject": "ICT", "score": "9.3" }
     ],
     "strengths": [
       { "name": "Science", "stars": 5 },
@@ -221,7 +221,7 @@
       { "name": "English", "stars": 5 },
       { "name": "Vietnamese", "stars": 5 },
       { "name": "History & Geography", "stars": 5 },
-      { "name": "ICT", "stars": 4 }
+      { "name": "ICT", "stars": 5 }
     ],
     "excellentYears": ["Grade 1", "Grade 2", "Grade 3", "Grade 4"],
     "excellentNote": "Four consecutive years as an Excellent Student — consistency, discipline and a long-term commitment to learning.",

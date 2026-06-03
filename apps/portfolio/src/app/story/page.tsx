@@ -525,7 +525,7 @@ export default function StoryPage() {
                 >
                   <span className="text-ink/75">{g.subject}</span>
                   <span
-                    className={`flex h-8 w-8 items-center justify-center rounded-full font-display text-sm font-bold tabular-nums ${
+                    className={`flex h-8 min-w-8 items-center justify-center rounded-full px-2 font-display text-sm font-bold tabular-nums ${
                       g.score === "10"
                         ? "bg-brand text-white"
                         : "bg-accent/20 text-ink"
