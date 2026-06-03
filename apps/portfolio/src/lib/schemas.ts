@@ -20,7 +20,7 @@ export const profileSchema = z.object({
   personality: z.array(L),
   interests: z.array(L),
   skills: z.array(L),
-  parentContact: z.object({
+  contact: z.object({
     name: z.string(),
     email: z.string().optional(),
     phone: z.string().optional(),

@@ -314,10 +314,8 @@ export default function Home() {
           <p className="mt-3 text-sm text-ink/55">
             <span data-lang="vi">Liên hệ: </span>
             <span data-lang="en">Contact: </span>
-            {profile.parentContact.name}
-            {profile.parentContact.email
-              ? ` · ${profile.parentContact.email}`
-              : ""}
+            {profile.contact.name}
+            {profile.contact.email ? ` · ${profile.contact.email}` : ""}
           </p>
         </footer>
         </main>

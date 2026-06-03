@@ -81,8 +81,8 @@
     { "vi": "Đọc hiểu & lập luận", "en": "Reading & reasoning" },
     { "vi": "Vẽ & Trực quan hóa", "en": "Drawing & visualization" }
   ],
-  "parentContact": {
-    "name": "Phụ huynh bé Tin",
-    "email": "daodinhhieu@gmail.com"
+  "contact": {
+    "name": "Đào Đình Hữu (Tin)",
+    "email": "huu043560@stu.vinschool.edu.vn"
   }
 }

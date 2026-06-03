@@ -75,7 +75,7 @@ S = {
     future="Phù hợp định hướng", subject="Môn", civility="Văn minh",
     intl="Giải Quốc tế", natl="Giải Quốc gia", local="Cấp Trường & Thành phố",
     years="năm", age_unit="tuổi", born="Sinh", school_lbl="Trường", page="Trang",
-    focus_lbl="Định hướng",
+    focus_lbl="Định hướng", contact="Liên hệ",
     cam="Chương trình Cambridge · Vinschool The Harmony",
     stat_medals="HC Olympic\nQuốc gia & Quốc tế", stat_gold="HC Vàng\nQuốc gia",
     stat_years="Năm liền\nHọc sinh Xuất sắc", stat_cam="Cambridge\nmức cao nhất",
@@ -91,7 +91,7 @@ S = {
     future="Well suited to", subject="Subject", civility="Civility",
     intl="International", natl="National", local="School & City",
     years="yrs", age_unit="years old", born="Born", school_lbl="School", page="Page",
-    focus_lbl="Focus",
+    focus_lbl="Focus", contact="Contact",
     cam="Cambridge programme · Vinschool The Harmony",
     stat_medals="Olympiad medals\nNat'l & Int'l", stat_gold="National\ngold medals",
     stat_years="Years as\nExcellent Student", stat_cam="Cambridge\ntop level",
@@ -187,7 +187,11 @@ def draw_cover(c, doc):
         c.setFillColor(MUTED); c.setFont("BV-SB", 6.6)
         for j, line in enumerate(lbl.split("\n")):
             c.drawCentredString(x + bw / 2, by + 7 * mm - j * 3.4 * mm, line)
-    # footer note
+    # contact + footer note
+    email = profile.get("contact", {}).get("email", "")
+    if email:
+        c.setFillColor(BRAND); c.setFont("BV-SB", 9.5)
+        c.drawCentredString(cx, 22 * mm, f"{S['contact']}: {email}")
     c.setFillColor(MUTED); c.setFont("BV", 8)
     today = datetime.date.today().strftime("%d/%m/%Y")
     c.drawCentredString(cx, 14 * mm, f"{S['generated']}: {today}  ·  jindo9986.github.io/kidcenter")

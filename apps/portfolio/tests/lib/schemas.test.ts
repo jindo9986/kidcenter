@@ -21,7 +21,7 @@ const validProfile = {
   personality: [{ vi: "Độc lập", en: "Independent" }],
   interests: [{ vi: "Vẽ", en: "Drawing" }],
   skills: [{ vi: "Sáng tạo", en: "Creativity" }],
-  parentContact: { name: "Bố Tin" },
+  contact: { name: "Tin" },
 };
 
 describe("schemas", () => {

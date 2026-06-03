@@ -14,5 +14,5 @@
   "personality": [{ "vi": "Độc lập", "en": "Independent" }],
   "interests": [{ "vi": "Vẽ", "en": "Drawing" }],
   "skills": [{ "vi": "Sáng tạo", "en": "Creativity" }],
-  "parentContact": { "name": "Parent", "email": "p@example.com" }
+  "contact": { "name": "Test Kid", "email": "kid@example.com" }
 }
