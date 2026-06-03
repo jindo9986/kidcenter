@@ -79,6 +79,14 @@ export default function Home() {
           id="academic"
           title={{ vi: "Kết quả học tập", en: "Academic Record" }}
         >
+          <p className="-mt-2 mb-4 text-sm font-medium text-ink/50">
+            <Localized
+              value={{
+                vi: "Chương trình Cambridge · Vinschool The Harmony",
+                en: "Cambridge programme · Vinschool The Harmony",
+              }}
+            />
+          </p>
           <Academic data={academic} />
         </Section>
 
