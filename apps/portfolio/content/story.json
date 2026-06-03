@@ -157,12 +157,6 @@
         { "name": "Connection", "body": "Connecting experiences, ideas and knowledge across different fields." },
         { "name": "Lifelong learning", "body": "The understanding that learning can happen anywhere." }
       ]
-    },
-    "theme": {
-      "title": "A consistent theme",
-      "intro": "Whether exploring a museum, observing wildlife, reading a book, drawing a dinosaur or conducting a science investigation, the underlying pattern remains the same:",
-      "chain": ["Curiosity", "Observation", "Questions", "Understanding", "Learning"],
-      "close": "This pattern has remained remarkably consistent throughout Tin's childhood and continues to shape his growth today."
     }
   },
   "growth": {

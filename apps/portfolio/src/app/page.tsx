@@ -662,25 +662,6 @@ export default function StoryPage() {
             </div>
           ))}
         </div>
-
-        {/* A consistent theme */}
-        <div className="mx-auto mt-16 max-w-[720px] text-center">
-          <h3 className="font-display text-2xl font-bold text-ink sm:text-3xl">
-            {c.theme.title}
-          </h3>
-          <p className="mt-4 text-lg leading-relaxed text-ink/75">
-            {c.theme.intro}
-          </p>
-          <div className="mx-auto mt-7 flex flex-col items-center gap-1.5 font-display text-lg font-bold text-ink">
-            {c.theme.chain.map((step, i) => (
-              <div key={i} className="flex flex-col items-center gap-1.5">
-                {i > 0 && <span className="text-xl leading-none text-accent">↓</span>}
-                <span>{step}</span>
-              </div>
-            ))}
-          </div>
-          <p className="mt-7 text-ink/65">{c.theme.close}</p>
-        </div>
       </section>
 
       {/* GROWTH JOURNEY */}

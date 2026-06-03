@@ -66,7 +66,6 @@ export interface Story {
       intro: string;
       traits: { name: string; body: string }[];
     };
-    theme: { title: string; intro: string; chain: string[]; close: string };
   };
   growth: {
     eyebrow: string;
