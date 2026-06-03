@@ -35,6 +35,12 @@ Monorepo of independent web apps for the kids. Read this before working.
    `document-skills` (pdf/docx/pptx/xlsx — useful for exporting portfolio PDFs),
    `claude-api`.
 
+## Design System
+The portfolio app has a design source of truth at `apps/portfolio/DESIGN.md`
+(direction: Editorial Warm — Fraunces + Be Vietnam Pro, indigo + medal-gold).
+Always read it before making visual/UI changes to the portfolio. Do not deviate
+without explicit user approval. In QA/review, flag UI that doesn't match it.
+
 ## Workflow suggestion
 
 New feature → `superpowers:brainstorm` or `bmad-create-prd` to scope →
