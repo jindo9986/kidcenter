@@ -98,6 +98,73 @@
       "Attention to detail"
     ]
   },
+  "curiosity": {
+    "eyebrow": "Curiosity in the world",
+    "title": "Learning happens everywhere",
+    "intro": [
+      "Some of Tin's most important learning experiences did not happen inside a classroom.",
+      "They happened in museums, science centers, zoos, aquariums, exhibitions and countless moments of exploration beyond school.",
+      "Wherever he goes, curiosity tends to lead the way."
+    ],
+    "becomes": [
+      "A museum visit becomes an investigation.",
+      "A zoo becomes a biology lesson.",
+      "A painting becomes a question.",
+      "A fossil becomes a story about life on Earth millions of years ago."
+    ],
+    "observing": [
+      "Rather than simply looking, Tin enjoys observing.",
+      "Rather than simply observing, he wants to understand."
+    ],
+    "everyday": {
+      "title": "Seeing science in everyday places",
+      "intro": "Whether standing beneath the skeleton of a sperm whale, examining microscopic structures, observing reptiles up close or exploring the story of human origins, Tin approaches the world with the same mindset:",
+      "questions": ["How does this work?", "Why is it like this?", "What can I learn from it?"],
+      "close": "These experiences helped transform curiosity from a personality trait into a habit of learning."
+    },
+    "beyond": {
+      "title": "Beyond the classroom",
+      "intro": "Learning for Tin is not limited to textbooks. It happens through:",
+      "places": [
+        "Natural history museums",
+        "Science exhibitions",
+        "Zoos and aquariums",
+        "Art galleries",
+        "Books",
+        "Travel",
+        "Everyday observations"
+      ],
+      "close": "Each experience adds another piece to a growing understanding of the world."
+    },
+    "mindset": {
+      "title": "Building a scientific mindset",
+      "intro": "Many of the interests that later developed into academic strengths can be traced back to these experiences.",
+      "links": [
+        { "from": "A fascination with animals", "to": "biology" },
+        { "from": "A fascination with fossils", "to": "prehistoric life and dinosaurs" },
+        { "from": "A fascination with observation", "to": "drawing" },
+        { "from": "A fascination with understanding", "to": "science" }
+      ],
+      "close": "Over time, curiosity became something more than interest. It became a way of thinking."
+    },
+    "reveal": {
+      "title": "What these experiences reveal",
+      "intro": "These moments reveal several characteristics that continue to appear throughout Tin's academic journey:",
+      "traits": [
+        { "name": "Curiosity", "body": "A genuine desire to explore and understand." },
+        { "name": "Observation", "body": "The habit of noticing details others might miss." },
+        { "name": "Wonder", "body": "The ability to remain fascinated by new discoveries." },
+        { "name": "Connection", "body": "Connecting experiences, ideas and knowledge across different fields." },
+        { "name": "Lifelong learning", "body": "The understanding that learning can happen anywhere." }
+      ]
+    },
+    "theme": {
+      "title": "A consistent theme",
+      "intro": "Whether exploring a museum, observing wildlife, reading a book, drawing a dinosaur or conducting a science investigation, the underlying pattern remains the same:",
+      "chain": ["Curiosity", "Observation", "Questions", "Understanding", "Learning"],
+      "close": "This pattern has remained remarkably consistent throughout Tin's childhood and continues to shape his growth today."
+    }
+  },
   "growth": {
     "eyebrow": "A four-year growth journey",
     "title": "Consistent, year after year",

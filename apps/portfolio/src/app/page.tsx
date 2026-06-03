@@ -69,6 +69,7 @@ function StarPanel({ items, bg = "bg-cream" }: { items: Rating[]; bg?: string })
 
 export default function StoryPage() {
   const s = getStory();
+  const c = s.curiosity;
   const achievements = getAchievements();
   const gallery = getGallery();
   const art = gallery.filter((g) => g.src.includes("dino")).slice(0, 4);
@@ -519,19 +520,37 @@ export default function StoryPage() {
         </div>
       </section>
 
-      {/* CURIOSITY IN THE WORLD — photo essay */}
+      {/* CURIOSITY IN THE WORLD */}
       <section className="px-6 py-16 sm:py-24">
         <div className="mx-auto max-w-3xl text-center">
-          <Eyebrow>Curiosity in the world</Eyebrow>
+          <Eyebrow>{c.eyebrow}</Eyebrow>
           <h2 className="font-display text-3xl font-bold text-ink sm:text-4xl">
-            Learning happens everywhere
+            {c.title}
           </h2>
-          <p className="mx-auto mt-5 max-w-[620px] text-lg text-ink/70">
-            From natural-history halls to the zoo, the same curiosity follows Tin
-            out into the world — skeletons and skulls, microscopes and marlins,
-            snakes and elephants.
-          </p>
+          <div className="mx-auto mt-5 max-w-[640px] space-y-4 text-lg leading-relaxed text-ink/75">
+            {c.intro.map((p, i) => (
+              <p key={i}>{p}</p>
+            ))}
+          </div>
         </div>
+        {/* "becomes" — small grid */}
+        <div className="mx-auto mt-8 grid max-w-3xl gap-3 sm:grid-cols-2">
+          {c.becomes.map((b, i) => (
+            <p
+              key={i}
+              className="break-avoid rounded-2xl border border-black/5 bg-white px-5 py-4 text-center font-display text-lg text-ink/80 shadow-sm"
+            >
+              {b}
+            </p>
+          ))}
+        </div>
+        <div className="mx-auto mt-7 max-w-[600px] space-y-1 text-center font-display text-xl italic text-brand">
+          {c.observing.map((p, i) => (
+            <p key={i}>{p}</p>
+          ))}
+        </div>
+
+        {/* photo essay */}
         <div className="mx-auto mt-10 max-w-5xl gap-3 [column-fill:_balance] columns-2 sm:columns-3">
           {explore.map((p) => (
             <figure
@@ -550,6 +569,117 @@ export default function StoryPage() {
               </figcaption>
             </figure>
           ))}
+        </div>
+
+        {/* Seeing science in everyday places */}
+        <div className="mx-auto mt-16 max-w-[720px] text-center">
+          <h3 className="font-display text-2xl font-bold text-ink sm:text-3xl">
+            {c.everyday.title}
+          </h3>
+          <p className="mt-4 text-lg leading-relaxed text-ink/75">
+            {c.everyday.intro}
+          </p>
+          <div className="mt-6 flex flex-wrap justify-center gap-2.5">
+            {c.everyday.questions.map((q, i) => (
+              <span
+                key={i}
+                className="rounded-full bg-accent/15 px-4 py-1.5 font-display text-base font-bold italic text-ink/80 sm:text-lg"
+              >
+                {q}
+              </span>
+            ))}
+          </div>
+          <p className="mt-6 font-display text-lg font-medium italic text-ink/75">
+            {c.everyday.close}
+          </p>
+        </div>
+
+        {/* Beyond the classroom */}
+        <div className="mx-auto mt-16 max-w-[720px] text-center">
+          <h3 className="font-display text-2xl font-bold text-ink sm:text-3xl">
+            {c.beyond.title}
+          </h3>
+          <p className="mt-4 text-lg leading-relaxed text-ink/75">
+            {c.beyond.intro}
+          </p>
+          <div className="mt-6 flex flex-wrap justify-center gap-2">
+            {c.beyond.places.map((p, i) => (
+              <span
+                key={i}
+                className="rounded-full border border-brand/15 bg-brand/8 px-4 py-1.5 text-sm font-semibold text-brand"
+              >
+                {p}
+              </span>
+            ))}
+          </div>
+          <p className="mt-6 text-ink/65">{c.beyond.close}</p>
+        </div>
+
+        {/* Building a scientific mindset */}
+        <div className="mx-auto mt-16 max-w-[720px] text-center">
+          <h3 className="font-display text-2xl font-bold text-ink sm:text-3xl">
+            {c.mindset.title}
+          </h3>
+          <p className="mt-4 text-lg leading-relaxed text-ink/75">
+            {c.mindset.intro}
+          </p>
+        </div>
+        <div className="mx-auto mt-6 max-w-2xl space-y-2.5">
+          {c.mindset.links.map((l, i) => (
+            <div
+              key={i}
+              className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 rounded-2xl border border-black/5 bg-white px-5 py-3 text-center shadow-sm"
+            >
+              <span className="text-ink/70">{l.from}</span>
+              <span className="text-accent">→</span>
+              <span className="font-display text-lg font-bold text-brand">
+                {l.to}
+              </span>
+            </div>
+          ))}
+        </div>
+        <p className="mx-auto mt-6 max-w-[640px] text-center font-display text-lg font-medium italic text-ink/80">
+          {c.mindset.close}
+        </p>
+
+        {/* What these experiences reveal */}
+        <div className="mx-auto mt-16 max-w-[720px] text-center">
+          <h3 className="font-display text-2xl font-bold text-ink sm:text-3xl">
+            {c.reveal.title}
+          </h3>
+          <p className="mt-4 text-lg leading-relaxed text-ink/75">
+            {c.reveal.intro}
+          </p>
+        </div>
+        <div className="mx-auto mt-6 grid max-w-4xl gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {c.reveal.traits.map((t, i) => (
+            <div
+              key={i}
+              className="break-avoid rounded-3xl border border-black/5 bg-white p-6 shadow-sm"
+            >
+              <p className="font-display text-xl font-bold text-brand">{t.name}</p>
+              <p className="mt-1.5 leading-relaxed text-ink/70">{t.body}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* A consistent theme */}
+        <div className="mx-auto mt-16 max-w-[720px] text-center">
+          <h3 className="font-display text-2xl font-bold text-ink sm:text-3xl">
+            {c.theme.title}
+          </h3>
+          <p className="mt-4 text-lg leading-relaxed text-ink/75">
+            {c.theme.intro}
+          </p>
+          <div className="mx-auto mt-7 flex flex-col items-center gap-1.5 font-display text-lg font-bold text-ink">
+            {c.theme.chain.map((step, i) => (
+              <div key={i} className="flex flex-col items-center gap-1.5">
+                {i > 0 && <span className="text-xl leading-none text-accent">↓</span>}
+                <span>{step}</span>
+              </div>
+            ))}
+          </div>
+          <p className="mt-7 text-ink/65">{c.theme.close}</p>
         </div>
       </section>
 

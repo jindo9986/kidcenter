@@ -47,6 +47,27 @@ export interface Story {
     note: string;
     reflects: string[];
   };
+  curiosity: {
+    eyebrow: string;
+    title: string;
+    intro: string[];
+    becomes: string[];
+    observing: string[];
+    everyday: { title: string; intro: string; questions: string[]; close: string };
+    beyond: { title: string; intro: string; places: string[]; close: string };
+    mindset: {
+      title: string;
+      intro: string;
+      links: { from: string; to: string }[];
+      close: string;
+    };
+    reveal: {
+      title: string;
+      intro: string;
+      traits: { name: string; body: string }[];
+    };
+    theme: { title: string; intro: string; chain: string[]; close: string };
+  };
   growth: {
     eyebrow: string;
     title: string;
