@@ -33,6 +33,7 @@
   },
   {
     "grade": { "vi": "Lớp 2", "en": "Grade 2" },
+    "year": "2023-2024",
     "civility": "100/100",
     "subjects": [
       { "subject": { "vi": "Tiếng Việt", "en": "Vietnamese" }, "score": "9" },
@@ -48,7 +49,7 @@
   },
   {
     "grade": { "vi": "Lớp 1", "en": "Grade 1" },
-    "year": "2023-2024",
+    "year": "2022-2023",
     "civility": "99/100",
     "subjects": [
       { "subject": { "vi": "Tiếng Việt", "en": "Vietnamese" }, "score": "10" },
