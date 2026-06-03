@@ -1,20 +1,37 @@
 import fs from "node:fs";
 import path from "node:path";
 
+export interface Rating {
+  name: string;
+  stars: number;
+}
+
 export interface Story {
-  hero: { name: string; lines: string[]; motto: string[] };
-  summary: {
+  hero: {
+    name: string;
+    roles: string[];
+    subtitle: string;
+    motto: string[];
+  };
+  welcome: {
+    eyebrow: string;
     lead: string;
+    lines: string[];
+    turn: string;
     paras: string[];
-    threads: { label: string; through: string }[];
   };
   story: {
     eyebrow: string;
     title: string;
-    paras: string[];
+    intro: string[];
     questions: string[];
-    chain: string[];
-    drawLines: string[];
+    beats: { title: string; body: string }[];
+  };
+  philosophy: {
+    eyebrow: string;
+    title: string;
+    intro: string;
+    steps: { name: string; through: string }[];
   };
   combination: {
     eyebrow: string;
@@ -23,26 +40,49 @@ export interface Story {
     domains: { name: string; role: string; body: string }[];
     conclusion: string;
   };
+  visual: {
+    eyebrow: string;
+    title: string;
+    cycle: string[];
+    note: string;
+    reflects: string[];
+  };
   growth: {
     eyebrow: string;
     title: string;
     intro: string;
     stages: { grade: string; theme: string; body: string; strengths: string[] }[];
     pattern: string[];
-    patternAlt: string[];
   };
-  visual: {
+  teachers: {
     eyebrow: string;
     title: string;
-    chain: string[];
-    note: string;
-    cycle: string[];
+    entries: {
+      grade: string;
+      label: string;
+      name: string;
+      role: string;
+      quotes: string[];
+      themes: string[];
+    }[];
+    consistent: string;
   };
-  capabilities: { name: string; body: string }[];
+  capabilities: {
+    eyebrow: string;
+    title: string;
+    items: Rating[];
+  };
   academic: {
     eyebrow: string;
     title: string;
-    items: { k: string; v: string }[];
+    grade4: { subject: string; score: string }[];
+    strengths: Rating[];
+    excellentYears: string[];
+    excellentNote: string;
+    naturalScience: string[];
+    naturalScienceNote: string;
+    cambridge: string[];
+    cambridgeNote: string;
   };
   forward: {
     eyebrow: string;
@@ -51,7 +91,11 @@ export interface Story {
     projects: string[];
     close: string;
   };
-  motto: { lines: string[]; because: string[] };
+  motto: {
+    lines: string[];
+    reflection: string[];
+    statement: string;
+  };
 }
 
 export function getStory(): Story {

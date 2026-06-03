@@ -1,18 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getStory } from "@/lib/story";
-import {
-  getAchievements,
-  getAcademic,
-  getCharacter,
-  getGallery,
-} from "@/lib/content";
+import { getStory, type Rating } from "@/lib/story";
+import { getAchievements, getGallery } from "@/lib/content";
 import { asset } from "@/lib/asset";
 
 export const metadata: Metadata = {
   title: "Đào Đình Hữu (Tin) — The Story",
   description:
-    "Observe. Understand. Explain. — the story of a curious explorer and visual thinker growing at the intersection of science, art and language.",
+    "Observe. Understand. Explain. — the story of a curious explorer, visual thinker and emerging scientific thinker growing at the intersection of science, art and language.",
 };
 
 const MEDAL: Record<string, string> = {
@@ -31,24 +26,6 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
   );
 }
 
-function Prose({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="mx-auto max-w-[680px] space-y-5 text-lg leading-relaxed text-ink/75">
-      {children}
-    </div>
-  );
-}
-
-// Capability ratings — a quick-read visual summary for the Core capabilities section.
-const CAP_RATINGS: { name: string; stars: number }[] = [
-  { name: "Scientific Thinking", stars: 5 },
-  { name: "Visual Thinking", stars: 5 },
-  { name: "Logical Reasoning", stars: 5 },
-  { name: "Reading & Analysis", stars: 4 },
-  { name: "Communication", stars: 4 },
-  { name: "Leadership", stars: 4 },
-];
-
 function Stars({ n }: { n: number }) {
   return (
     <span
@@ -64,17 +41,37 @@ function Stars({ n }: { n: number }) {
   );
 }
 
+function StarPanel({ items, bg = "bg-cream" }: { items: Rating[]; bg?: string }) {
+  return (
+    <div
+      className={`mx-auto max-w-3xl rounded-3xl border border-black/5 ${bg} p-6 shadow-sm sm:p-8`}
+    >
+      <div className="grid gap-x-10 gap-y-1 sm:grid-cols-2">
+        {items.map((c) => (
+          <div
+            key={c.name}
+            className="flex items-center justify-between gap-4 border-b border-black/5 py-3 last:border-0 sm:[&:nth-last-of-type(2)]:border-0"
+          >
+            <span className="font-display text-base font-semibold text-ink sm:text-lg">
+              {c.name}
+            </span>
+            <Stars n={c.stars} />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function StoryPage() {
   const s = getStory();
   const achievements = getAchievements();
-  const academic = getAcademic();
-  const character = getCharacter();
   const gallery = getGallery();
   const art = gallery.filter((g) => g.src.includes("dino")).slice(0, 4);
   const cats: [string, string][] = [
     ["international", "International Olympiads"],
     ["national", "National Olympiads"],
-    ["local", "School, City, Sports & Arts"],
+    ["local", "School & City"],
   ];
 
   return (
@@ -111,9 +108,15 @@ export default function StoryPage() {
           <h1 className="font-display text-5xl font-extrabold leading-[1.05] text-ink sm:text-6xl">
             {s.hero.name}
           </h1>
-          <p className="mt-5 font-display text-2xl italic text-brand sm:text-3xl">
-            {s.hero.lines.join(" ")}
+          <p className="mt-5 flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1 font-display text-xl italic text-brand sm:text-2xl">
+            {s.hero.roles.map((r, i) => (
+              <span key={i} className="flex items-center gap-2.5">
+                {i > 0 && <span className="not-italic text-accent">·</span>}
+                {r}
+              </span>
+            ))}
           </p>
+          <p className="mt-4 text-base text-ink/60 sm:text-lg">{s.hero.subtitle}</p>
           <p className="mt-7 flex flex-wrap items-center justify-center gap-x-3 text-sm font-bold uppercase tracking-[0.25em] text-ink/50">
             {s.hero.motto.map((m, i) => (
               <span key={i} className="flex items-center gap-3">
@@ -125,67 +128,99 @@ export default function StoryPage() {
         </div>
       </header>
 
-      {/* EXECUTIVE SUMMARY */}
-      <section className="px-6 py-16 sm:py-20">
-        <div className="mx-auto max-w-[720px]">
-          <p className="text-center font-display text-2xl font-medium leading-snug text-ink sm:text-[28px]">
-            {s.summary.lead}
+      {/* WELCOME */}
+      <section className="bg-white px-6 py-16 sm:py-24">
+        <div className="mx-auto max-w-[680px] text-center">
+          <Eyebrow>{s.welcome.eyebrow}</Eyebrow>
+          <p className="font-display text-3xl font-bold leading-tight text-ink sm:text-4xl">
+            {s.welcome.lead}
           </p>
-          <div className="mt-8 space-y-5 text-lg leading-relaxed text-ink/75">
-            {s.summary.paras.map((p, i) => (
-              <p key={i}>{p}</p>
+          <div className="mt-5 space-y-1 text-lg text-ink/55">
+            {s.welcome.lines.map((l, i) => (
+              <p key={i}>{l}</p>
             ))}
           </div>
-          <div className="mt-10 grid gap-3 sm:grid-cols-3">
-            {s.summary.threads.map((t, i) => (
-              <div
-                key={i}
-                className="break-avoid rounded-2xl border border-brand/10 bg-white p-4 text-center shadow-sm"
-              >
-                <p className="font-display text-lg font-bold text-brand">
-                  {t.label}
-                </p>
-                <p className="text-sm text-ink/55">{t.through}</p>
-              </div>
+          <p className="mt-8 font-display text-2xl font-medium italic text-brand sm:text-[26px]">
+            {s.welcome.turn}
+          </p>
+          <div className="mt-6 space-y-1 text-lg leading-relaxed text-ink/75">
+            {s.welcome.paras.map((p, i) => (
+              <p key={i}>{p}</p>
             ))}
           </div>
         </div>
       </section>
 
       {/* THE STORY */}
-      <section className="bg-white px-6 py-16 sm:py-24">
+      <section className="px-6 py-16 sm:py-24">
         <div className="mx-auto max-w-[720px] text-center">
           <Eyebrow>{s.story.eyebrow}</Eyebrow>
           <h2 className="mb-8 font-display text-3xl font-bold text-ink sm:text-4xl">
             {s.story.title}
           </h2>
-        </div>
-        <Prose>
-          <p>{s.story.paras[0]}</p>
-          <p>{s.story.paras[1]}</p>
-          <div className="flex flex-wrap justify-center gap-3 py-2">
+          <div className="space-y-5 text-left text-lg leading-relaxed text-ink/75">
+            {s.story.intro.map((p, i) => (
+              <p key={i}>{p}</p>
+            ))}
+          </div>
+          <div className="mt-7 flex flex-wrap justify-center gap-2.5">
             {s.story.questions.map((q, i) => (
               <span
                 key={i}
-                className="rounded-full bg-accent/15 px-4 py-1.5 font-display text-xl font-bold italic text-ink/80"
+                className="rounded-full bg-accent/15 px-4 py-1.5 font-display text-base font-bold italic text-ink/80 sm:text-lg"
               >
                 {q}
               </span>
             ))}
           </div>
-          <p>{s.story.paras[2]}</p>
-          <p>{s.story.paras[3]}</p>
-        </Prose>
-        {/* he drew to... */}
-        <div className="mx-auto mt-10 grid max-w-[680px] gap-2 sm:grid-cols-3">
-          {s.story.drawLines.map((l, i) => (
-            <p
+        </div>
+        {/* four beats */}
+        <div className="mx-auto mt-10 grid max-w-4xl gap-4 sm:grid-cols-2">
+          {s.story.beats.map((b, i) => (
+            <div
               key={i}
-              className="break-avoid rounded-2xl bg-cream px-4 py-3 text-center font-display text-lg italic text-ink/80"
+              className="break-avoid rounded-3xl border border-black/5 bg-white p-6 shadow-sm"
             >
-              {l}
-            </p>
+              <div className="mb-2 flex items-center gap-3">
+                <span className="font-display text-2xl font-extrabold text-accent">
+                  {i + 1}
+                </span>
+                <h3 className="font-display text-xl font-bold text-ink">{b.title}</h3>
+              </div>
+              <p className="leading-relaxed text-ink/70">{b.body}</p>
+            </div>
           ))}
+        </div>
+      </section>
+
+      {/* CORE LEARNING PHILOSOPHY */}
+      <section className="bg-white px-6 py-16 sm:py-24">
+        <div className="mx-auto max-w-3xl text-center">
+          <Eyebrow>{s.philosophy.eyebrow}</Eyebrow>
+          <h2 className="font-display text-3xl font-bold text-ink sm:text-4xl">
+            <span className="text-brand">Observe</span> →{" "}
+            <span className="text-teal">Understand</span> →{" "}
+            <span className="text-accent">Explain</span>
+          </h2>
+          <p className="mx-auto mt-5 max-w-[620px] text-lg text-ink/70">
+            {s.philosophy.intro}
+          </p>
+        </div>
+        <div className="mx-auto mt-10 grid max-w-4xl gap-4 sm:grid-cols-3">
+          {s.philosophy.steps.map((st, i) => {
+            const tone = ["text-brand", "text-teal", "text-accent"][i];
+            return (
+              <div
+                key={i}
+                className="break-avoid rounded-3xl border border-black/5 bg-cream p-6 text-center shadow-sm"
+              >
+                <p className={`font-display text-2xl font-extrabold ${tone}`}>
+                  {st.name}
+                </p>
+                <p className="mt-2 leading-relaxed text-ink/70">{st.through}</p>
+              </div>
+            );
+          })}
         </div>
       </section>
 
@@ -246,13 +281,12 @@ export default function StoryPage() {
                 strokeWidth="1.5"
               />
             </g>
-            {/* domain labels (in each pure lobe) */}
             <g className="font-display" textAnchor="middle">
               <text x="220" y="92" fontSize="24" fontWeight="800" fill="var(--color-brand)">
                 Science
               </text>
               <text x="220" y="112" fontSize="11.5" fill="var(--color-brand)" opacity="0.75">
-                investigate · reason
+                analyse · understand
               </text>
 
               <text x="86" y="316" fontSize="24" fontWeight="800" fill="var(--color-teal)">
@@ -266,10 +300,9 @@ export default function StoryPage() {
                 Language
               </text>
               <text x="356" y="336" fontSize="11.5" fill="var(--color-ink)" opacity="0.6">
-                analyse · communicate
+                communicate · express
               </text>
 
-              {/* the three-way overlap */}
               <text x="220" y="236" fontSize="15" fontWeight="800" fill="var(--color-ink)">
                 Science
               </text>
@@ -302,6 +335,55 @@ export default function StoryPage() {
         </p>
       </section>
 
+      {/* VISUAL THINKER */}
+      <section className="bg-white px-6 py-16 sm:py-24">
+        <div className="mx-auto max-w-3xl text-center">
+          <Eyebrow>{s.visual.eyebrow}</Eyebrow>
+          <h2 className="font-display text-3xl font-bold text-ink sm:text-4xl">
+            {s.visual.title}
+          </h2>
+        </div>
+        {/* cycle chain */}
+        <div className="mx-auto mt-8 flex max-w-3xl flex-wrap items-center justify-center gap-x-3 gap-y-2 font-display text-lg font-bold text-ink sm:text-xl">
+          {s.visual.cycle.map((c, i) => (
+            <span key={i} className="flex items-center gap-3">
+              {i > 0 && <span className="text-accent">→</span>}
+              {c}
+            </span>
+          ))}
+        </div>
+        <p className="mx-auto mt-8 max-w-[680px] text-center text-lg leading-relaxed text-ink/70">
+          {s.visual.note}
+        </p>
+        {art.length > 0 && (
+          <div className="mx-auto mt-10 grid max-w-4xl grid-cols-2 gap-3 sm:grid-cols-4">
+            {art.map((a, i) => (
+              <figure
+                key={i}
+                className="break-avoid overflow-hidden rounded-2xl bg-cream shadow-sm"
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={asset(a.src)}
+                  alt={a.caption.en}
+                  className="aspect-square w-full object-cover"
+                />
+              </figure>
+            ))}
+          </div>
+        )}
+        <div className="mx-auto mt-8 flex max-w-2xl flex-wrap justify-center gap-2">
+          {s.visual.reflects.map((r, i) => (
+            <span
+              key={i}
+              className="rounded-full border border-teal/20 bg-teal/8 px-4 py-1.5 text-sm font-semibold text-teal"
+            >
+              {r}
+            </span>
+          ))}
+        </div>
+      </section>
+
       {/* GROWTH JOURNEY */}
       <section className="bg-brand px-6 py-16 text-white sm:py-24">
         <div className="mx-auto max-w-3xl text-center">
@@ -311,9 +393,7 @@ export default function StoryPage() {
           <h2 className="font-display text-3xl font-bold sm:text-4xl">
             {s.growth.title}
           </h2>
-          <p className="mx-auto mt-4 max-w-[620px] text-white/70">
-            {s.growth.intro}
-          </p>
+          <p className="mx-auto mt-4 max-w-[620px] text-white/70">{s.growth.intro}</p>
         </div>
         <div className="mx-auto mt-10 grid max-w-5xl gap-4 sm:grid-cols-2">
           {s.growth.stages.map((st, i) => (
@@ -323,7 +403,7 @@ export default function StoryPage() {
             >
               <div className="flex items-baseline gap-3">
                 <span className="font-display text-3xl font-extrabold text-accent">
-                  {String(i + 1)}
+                  {i + 1}
                 </span>
                 <div>
                   <p className="text-sm font-semibold uppercase tracking-wide text-white/60">
@@ -346,100 +426,76 @@ export default function StoryPage() {
             </div>
           ))}
         </div>
-        {/* pattern arc */}
-        <div className="mx-auto mt-10 max-w-3xl">
-          <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 font-display text-lg font-bold sm:text-xl">
-            {s.growth.pattern.map((p, i) => (
-              <span key={i} className="flex items-center gap-3">
-                {i > 0 && <span className="text-accent">→</span>}
-                {p}
-              </span>
-            ))}
-          </div>
-          <p className="mt-2 text-center text-sm text-white/55">
-            {s.growth.patternAlt.join(" → ")}
-          </p>
-        </div>
-      </section>
-
-      {/* VISUAL THINKER */}
-      <section className="px-6 py-16 sm:py-24">
-        <div className="mx-auto max-w-3xl text-center">
-          <Eyebrow>{s.visual.eyebrow}</Eyebrow>
-          <h2 className="font-display text-3xl font-bold text-ink sm:text-4xl">
-            <span className="text-brand">Observe</span> →{" "}
-            <span className="text-teal">Understand</span> →{" "}
-            <span className="text-accent">Explain</span>
-          </h2>
-        </div>
-        <div className="mx-auto mt-8 max-w-[640px] space-y-2 text-center">
-          {s.visual.chain.map((c, i) => (
-            <p
-              key={i}
-              className="font-display text-lg italic text-ink/75"
-              style={{ opacity: 0.6 + i * 0.08 }}
-            >
-              {c}
-            </p>
+        <div className="mx-auto mt-10 flex max-w-4xl flex-wrap items-center justify-center gap-x-3 gap-y-2 font-display text-base font-bold sm:text-lg">
+          {s.growth.pattern.map((p, i) => (
+            <span key={i} className="flex items-center gap-3">
+              {i > 0 && <span className="text-accent">→</span>}
+              {p}
+            </span>
           ))}
         </div>
-        <p className="mx-auto mt-8 max-w-[680px] text-center text-lg leading-relaxed text-ink/70">
-          {s.visual.note}
-        </p>
-        {art.length > 0 && (
-          <div className="mx-auto mt-10 grid max-w-4xl grid-cols-2 gap-3 sm:grid-cols-4">
-            {art.map((a, i) => (
-              <figure
-                key={i}
-                className="break-avoid overflow-hidden rounded-2xl bg-white shadow-sm"
-              >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={asset(a.src)}
-                  alt={a.caption.en}
-                  className="aspect-square w-full object-cover"
-                />
-              </figure>
-            ))}
-          </div>
-        )}
       </section>
 
-      {/* CORE CAPABILITIES */}
-      <section className="bg-white px-6 py-16 sm:py-20">
+      {/* VOICES FROM TEACHERS */}
+      <section className="px-6 py-16 sm:py-24">
         <div className="mx-auto max-w-3xl text-center">
-          <Eyebrow>Core capabilities</Eyebrow>
+          <Eyebrow>{s.teachers.eyebrow}</Eyebrow>
           <h2 className="mb-8 font-display text-3xl font-bold text-ink sm:text-4xl">
-            How he learns
+            {s.teachers.title}
           </h2>
         </div>
-        {/* at-a-glance capability ratings */}
-        <div className="mx-auto mb-10 max-w-3xl rounded-3xl border border-black/5 bg-cream p-6 shadow-sm sm:p-8">
-          <div className="grid gap-x-10 gap-y-1 sm:grid-cols-2">
-            {CAP_RATINGS.map((c) => (
-              <div
-                key={c.name}
-                className="flex items-center justify-between gap-4 border-b border-black/5 py-3 last:border-0 sm:[&:nth-last-of-type(2)]:border-0"
-              >
-                <span className="font-display text-base font-semibold text-ink sm:text-lg">
-                  {c.name}
-                </span>
-                <Stars n={c.stars} />
+        <div className="mx-auto grid max-w-5xl gap-4 sm:grid-cols-2">
+          {s.teachers.entries.map((e, i) => (
+            <div
+              key={i}
+              className="break-avoid rounded-3xl border border-black/5 bg-white p-6 shadow-sm"
+            >
+              <div className="mb-3 flex items-baseline justify-between gap-3">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-wide text-brand">
+                    {e.grade} · {e.label}
+                  </p>
+                  <p className="font-display text-lg font-bold text-ink">{e.name}</p>
+                  <p className="text-sm text-ink/45">{e.role}</p>
+                </div>
               </div>
-            ))}
-          </div>
-        </div>
-        <div className="mx-auto grid max-w-4xl gap-4 sm:grid-cols-2">
-          {s.capabilities.map((c, i) => (
-            <div key={i} className="break-avoid border-t border-brand/15 pt-4">
-              <h3 className="font-display text-xl font-bold text-ink">{c.name}</h3>
-              <p className="mt-1.5 leading-relaxed text-ink/70">{c.body}</p>
+              <ul className="space-y-2.5 border-l-2 border-accent/40 pl-4">
+                {e.quotes.map((q, j) => (
+                  <li key={j} className="text-ink/75 italic leading-snug">
+                    “{q}”
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-3 flex flex-wrap gap-1.5">
+                {e.themes.map((t, j) => (
+                  <span
+                    key={j}
+                    className="rounded-full bg-brand/8 px-2.5 py-0.5 text-xs font-semibold text-brand"
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
             </div>
           ))}
         </div>
+        <p className="mx-auto mt-8 max-w-[680px] text-center font-display text-lg font-medium italic text-ink/75">
+          {s.teachers.consistent}
+        </p>
       </section>
 
-      {/* ACADEMIC CONSISTENCY */}
+      {/* CORE CAPABILITY MAP */}
+      <section className="bg-white px-6 py-16 sm:py-20">
+        <div className="mx-auto max-w-3xl text-center">
+          <Eyebrow>{s.capabilities.eyebrow}</Eyebrow>
+          <h2 className="mb-8 font-display text-3xl font-bold text-ink sm:text-4xl">
+            {s.capabilities.title}
+          </h2>
+        </div>
+        <StarPanel items={s.capabilities.items} bg="bg-cream" />
+      </section>
+
+      {/* ACADEMIC EXCELLENCE */}
       <section className="px-6 py-16 sm:py-20">
         <div className="mx-auto max-w-3xl text-center">
           <Eyebrow>{s.academic.eyebrow}</Eyebrow>
@@ -447,25 +503,80 @@ export default function StoryPage() {
             {s.academic.title}
           </h2>
         </div>
-        <div className="mx-auto max-w-3xl divide-y divide-black/5 rounded-3xl border border-black/5 bg-white px-6 shadow-sm">
-          {s.academic.items.map((it, i) => (
-            <div
-              key={i}
-              className="flex flex-col gap-1 py-4 sm:flex-row sm:items-baseline sm:gap-4"
-            >
-              <p className="w-44 shrink-0 font-display text-lg font-bold text-brand">
-                {it.k}
-              </p>
-              <p className="text-ink/75">{it.v}</p>
+        <div className="mx-auto grid max-w-4xl gap-4 md:grid-cols-2">
+          {/* Grade 4 results */}
+          <div className="break-avoid rounded-3xl border border-black/5 bg-white p-6 shadow-sm">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-brand">
+              Grade 4 results
+            </p>
+            <ul className="divide-y divide-black/5">
+              {s.academic.grade4.map((g) => (
+                <li
+                  key={g.subject}
+                  className="flex items-center justify-between py-2.5"
+                >
+                  <span className="text-ink/75">{g.subject}</span>
+                  <span
+                    className={`flex h-8 w-8 items-center justify-center rounded-full font-display text-sm font-bold tabular-nums ${
+                      g.score === "10"
+                        ? "bg-brand text-white"
+                        : "bg-accent/20 text-ink"
+                    }`}
+                  >
+                    {g.score}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          {/* Strength profile */}
+          <div className="break-avoid rounded-3xl border border-black/5 bg-white p-6 shadow-sm">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-brand">
+              Subject strength profile
+            </p>
+            <div className="divide-y divide-black/5">
+              {s.academic.strengths.map((c) => (
+                <div
+                  key={c.name}
+                  className="flex items-center justify-between gap-4 py-2.5"
+                >
+                  <span className="text-ink/75">{c.name}</span>
+                  <Stars n={c.stars} />
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
+        </div>
+        {/* recognitions */}
+        <div className="mx-auto mt-4 grid max-w-4xl gap-4 sm:grid-cols-3">
+          <div className="break-avoid rounded-3xl border border-black/5 bg-white p-5 text-center shadow-sm">
+            <p className="font-display text-3xl font-extrabold text-brand">4×</p>
+            <p className="mt-1 font-display font-bold text-ink">Excellent Student</p>
+            <p className="mt-1 text-sm text-ink/55">{s.academic.excellentNote}</p>
+          </div>
+          <div className="break-avoid rounded-3xl border border-black/5 bg-white p-5 text-center shadow-sm">
+            <p className="font-display text-3xl font-extrabold text-accent">★</p>
+            <p className="mt-1 font-display font-bold text-ink">
+              Natural Sciences Star
+            </p>
+            <p className="mt-1 text-sm text-ink/55">
+              {s.academic.naturalScience.join(" · ")}
+            </p>
+          </div>
+          <div className="break-avoid rounded-3xl border border-black/5 bg-white p-5 text-center shadow-sm">
+            <p className="font-display text-3xl font-extrabold text-teal">C</p>
+            <p className="mt-1 font-display font-bold text-ink">Cambridge — top level</p>
+            <p className="mt-1 text-sm text-ink/55">
+              {s.academic.cambridge.join(" · ")}
+            </p>
+          </div>
         </div>
       </section>
 
       {/* ACHIEVEMENTS */}
       <section className="bg-white px-6 py-16 sm:py-20">
         <div className="mx-auto max-w-3xl text-center">
-          <Eyebrow>Achievements & recognition</Eyebrow>
+          <Eyebrow>Achievements &amp; recognition</Eyebrow>
           <h2 className="mb-8 font-display text-3xl font-bold text-ink sm:text-4xl">
             Milestones along the way
           </h2>
@@ -502,13 +613,9 @@ export default function StoryPage() {
             );
           })}
         </div>
-        <p className="mx-auto mt-8 max-w-[620px] text-center text-sm text-ink/50">
-          Highest level (C) on all five Cambridge attributes — Confident,
-          Responsible, Reflective, Innovative, Engaged ({character.level.en}).
-        </p>
       </section>
 
-      {/* LOOKING FORWARD */}
+      {/* FUTURE DIRECTION */}
       <section className="px-6 py-16 sm:py-24">
         <div className="mx-auto max-w-[720px] text-center">
           <Eyebrow>{s.forward.eyebrow}</Eyebrow>
@@ -536,7 +643,7 @@ export default function StoryPage() {
         </div>
       </section>
 
-      {/* MOTTO */}
+      {/* MOTTO / FINAL */}
       <section className="bg-brand px-6 py-20 text-center text-white sm:py-28">
         <div className="mx-auto max-w-2xl">
           {s.motto.lines.map((l, i) => (
@@ -547,11 +654,18 @@ export default function StoryPage() {
               {l}
             </p>
           ))}
-          <div className="mx-auto mt-8 max-w-md space-y-1 text-white/70">
-            {s.motto.because.map((b, i) => (
-              <p key={i}>{b}</p>
+          {/* final reflection chain */}
+          <div className="mx-auto mt-10 flex max-w-xl flex-wrap items-center justify-center gap-x-2.5 gap-y-1.5 text-sm font-bold uppercase tracking-[0.18em] text-white/70">
+            {s.motto.reflection.map((r, i) => (
+              <span key={i} className="flex items-center gap-2.5">
+                {i > 0 && <span className="text-accent">→</span>}
+                {r}
+              </span>
             ))}
           </div>
+          <p className="mx-auto mt-8 max-w-xl font-display text-lg italic leading-relaxed text-white/85">
+            {s.motto.statement}
+          </p>
           <div className="no-print mt-10 flex flex-wrap items-center justify-center gap-3">
             <a
               href={asset("/ho-so-nang-luc-en.pdf")}
