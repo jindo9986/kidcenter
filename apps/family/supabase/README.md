@@ -15,6 +15,8 @@ Run each file's contents in the Supabase SQL editor:
    allowlisted sign-in.
 4. `migrations/0004_kid_mode.sql` — child can generate own task instances +
    `auto_complete_task` RPC for no-approval activities.
+5. `migrations/0005_allowlist_admin.sql` — parents manage their family's email
+   allowlist from the app (Quyền truy cập screen).
 
 ## 3. Seed the family + allowlist
 ```sql

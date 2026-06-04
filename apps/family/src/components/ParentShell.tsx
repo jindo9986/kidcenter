@@ -15,6 +15,7 @@ const NAV = [
   { href: "/points", label: "Điểm", icon: "⭐" },
   { href: "/rewards", label: "Phần thưởng", icon: "🎁" },
   { href: "/members", label: "Thành viên", icon: "👨‍👩‍👧" },
+  { href: "/access", label: "Quyền", icon: "🔑" },
 ];
 
 function ParentNav() {
