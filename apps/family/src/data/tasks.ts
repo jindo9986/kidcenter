@@ -31,6 +31,21 @@ export async function listToday(
   return (data ?? []) as TaskInstanceWithActivity[];
 }
 
+export async function listInstancesInRange(
+  memberId: string,
+  start: string,
+  end: string,
+): Promise<TaskInstanceWithActivity[]> {
+  const { data, error } = await supabase
+    .from("task_instances")
+    .select("*, activities(*)")
+    .eq("member_id", memberId)
+    .gte("due_date", start)
+    .lte("due_date", end);
+  if (error) throw error;
+  return (data ?? []) as TaskInstanceWithActivity[];
+}
+
 export async function listSubmitted(familyId: string): Promise<TaskInstanceWithActivity[]> {
   const { data, error } = await supabase
     .from("task_instances")

@@ -1,9 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Button, Card } from "@kidcenter/ui";
 import { Spinner } from "@/components/Spinner";
-import { useAuth } from "@/app/providers";
 import { useAsync } from "@/lib/useAsync";
 import { signOut } from "@/lib/session";
 import { todayISO } from "@/lib/date";
@@ -21,58 +20,17 @@ import {
 } from "@/data/tasks";
 import { balanceOf, listLedger } from "@/data/points";
 import { listActiveRewards, requestRedemption } from "@/data/rewards";
-import { KidSelect } from "./KidSelect";
 import type { Member } from "@/data/db-types";
 
-const STORAGE_KEY = "family.kid";
-
-// `member` is provided when a child is self-signed-in (Google-linked). Otherwise
-// this runs in shared-device mode: pick a child (optional PIN) then play.
-export function ChildHome({ member }: { member?: Member }) {
-  const auth = useAuth();
-  const familyId = member?.family_id ?? auth.member?.family_id ?? "";
-  const [selected, setSelected] = useState<Member | null>(member ?? null);
-
-  useEffect(() => {
-    if (member) return;
-    const raw = sessionStorage.getItem(STORAGE_KEY);
-    if (raw) {
-      try {
-        // Restore the shared-device selection from sessionStorage on mount.
-        // eslint-disable-next-line react-hooks/set-state-in-effect
-        setSelected(JSON.parse(raw) as Member);
-      } catch {
-        /* ignore */
-      }
-    }
-  }, [member]);
-
-  function pick(c: Member) {
-    sessionStorage.setItem(STORAGE_KEY, JSON.stringify(c));
-    setSelected(c);
-  }
-  function exit() {
-    sessionStorage.removeItem(STORAGE_KEY);
-    setSelected(null);
-  }
-
-  if (!selected) return <KidSelect familyId={familyId} onSelect={pick} />;
-  return (
-    <ChildShell child={selected} onExit={member ? () => void signOut() : exit} selfLogin={!!member} />
-  );
+// The signed-in child (every member has their own Google login — no shared-device
+// picker or PIN).
+export function ChildHome({ member }: { member: Member }) {
+  return <ChildShell child={member} />;
 }
 
 type Tab = "today" | "points" | "store" | "board";
 
-function ChildShell({
-  child,
-  onExit,
-  selfLogin,
-}: {
-  child: Member;
-  onExit: () => void;
-  selfLogin: boolean;
-}) {
+function ChildShell({ child }: { child: Member }) {
   const [tab, setTab] = useState<Tab>("today");
   const tabs: { key: Tab; label: string; icon: string }[] = [
     { key: "today", label: "Hôm nay", icon: "📋" },
@@ -88,8 +46,8 @@ function ChildShell({
           <p className="text-xs text-ink/50">Người chơi</p>
           <p className="font-display text-xl font-bold text-ink">🧒 {child.display_name}</p>
         </div>
-        <Button variant="ghost" size="sm" onClick={onExit}>
-          {selfLogin ? "Đăng xuất" : "Đổi bé"}
+        <Button variant="ghost" size="sm" onClick={() => void signOut()}>
+          Đăng xuất
         </Button>
       </header>
 

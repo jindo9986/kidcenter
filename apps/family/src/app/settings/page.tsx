@@ -7,8 +7,12 @@ import { ParentShell } from "@/components/ParentShell";
 const SECTIONS = [
   { href: "/activities", icon: "📋", title: "Hoạt động", desc: "Nhóm việc, hoạt động, điểm, lịch lặp lại" },
   { href: "/rewards", icon: "🎁", title: "Phần thưởng", desc: "Cửa hàng đổi điểm" },
-  { href: "/members", icon: "👨‍👩‍👧", title: "Thành viên", desc: "Thêm/sửa bé, đặt PIN" },
-  { href: "/access", icon: "🔑", title: "Quyền truy cập", desc: "Email Google được phép đăng nhập" },
+  {
+    href: "/access",
+    icon: "🔑",
+    title: "Thành viên & quyền",
+    desc: "Email Google được phép đăng nhập (bố mẹ / con)",
+  },
 ];
 
 export default function SettingsPage() {

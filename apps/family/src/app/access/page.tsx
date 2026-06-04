@@ -53,10 +53,10 @@ function AccessInner() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="font-display text-2xl font-bold text-ink">Quyền truy cập</h1>
+        <h1 className="font-display text-2xl font-bold text-ink">Thành viên &amp; quyền</h1>
         <p className="text-sm text-ink/60">
-          Chỉ những email Google trong danh sách này mới đăng nhập được. Lần đăng nhập
-          đầu, hệ thống tự tạo thành viên đúng vai trò.
+          Mỗi thành viên (bố mẹ và con) đăng nhập bằng Gmail. Thêm email vào đây với
+          đúng vai trò — lần đăng nhập đầu hệ thống tự tạo hồ sơ thành viên.
         </p>
       </div>
 
@@ -121,8 +121,8 @@ function AccessInner() {
       )}
 
       <p className="text-xs text-ink/50">
-        Lưu ý: xoá email khỏi danh sách không xoá thành viên đã tạo, chỉ chặn lần đăng
-        nhập mới. Quản lý hồ sơ bé ở mục Thành viên.
+        Lưu ý: xoá email chỉ chặn lần đăng nhập mới, không xoá hồ sơ thành viên đã
+        tạo. Tên hiển thị lấy theo tài khoản Google của mỗi người.
       </p>
     </div>
   );

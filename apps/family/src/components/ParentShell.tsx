@@ -18,7 +18,7 @@ const TABS = [
     href: "/settings",
     label: "Cài đặt",
     icon: "⚙️",
-    match: ["/settings", "/activities", "/rewards", "/members", "/access"],
+    match: ["/settings", "/activities", "/rewards", "/access"],
   },
 ];
 
