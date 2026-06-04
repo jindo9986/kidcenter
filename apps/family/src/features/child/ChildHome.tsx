@@ -136,12 +136,15 @@ function TodayView({ child }: { child: Member }) {
               <span className="font-bold text-brand">✓</span>
             ) : t.status === "submitted" ? (
               <span className="text-xs text-ink/50">Đang chờ duyệt…</span>
-            ) : t.status === "rejected" ? (
-              <span className="text-xs text-red-600">Bị từ chối</span>
             ) : (
-              <Button size="sm" disabled={busy === t.id} onClick={() => void done(t)}>
-                Xong
-              </Button>
+              <div className="flex shrink-0 flex-col items-end gap-1">
+                {t.status === "rejected" && (
+                  <span className="text-xs text-red-600">Bị từ chối</span>
+                )}
+                <Button size="sm" disabled={busy === t.id} onClick={() => void done(t)}>
+                  {t.status === "rejected" ? "Làm lại" : "Xong"}
+                </Button>
+              </div>
             )}
           </Card>
         );
