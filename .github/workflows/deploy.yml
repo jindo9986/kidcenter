@@ -28,6 +28,16 @@ jobs:
       - name: Build portfolio (static export)
         # Custom domain (www.huudaodinh.site) serves at the root, so no basePath.
         run: pnpm --filter @kidcenter/portfolio build
+      - name: Build family app (static export, served at /quest)
+        env:
+          NEXT_PUBLIC_BASE_PATH: /quest
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+        run: pnpm --filter @kidcenter/family build
+      - name: Assemble family into portfolio/out/quest
+        run: |
+          rm -rf apps/portfolio/out/quest
+          cp -r apps/family/out apps/portfolio/out/quest
       - uses: actions/upload-pages-artifact@v3
         with:
           path: apps/portfolio/out
