@@ -60,20 +60,20 @@ function RewardsInner() {
         <form onSubmit={add} className="space-y-3">
           <div className="flex gap-2">
             <input
-              className={`${inputCls} w-16 text-center`}
+              className={`${inputCls} w-12 shrink-0 px-2 text-center`}
               placeholder="🍦"
               value={icon}
               onChange={(e) => setIcon(e.target.value)}
             />
             <input
-              className={`${inputCls} flex-1`}
+              className={`${inputCls} min-w-0 flex-1`}
               placeholder="Tên phần thưởng"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
             />
             <input
-              className={`${inputCls} w-28`}
-              placeholder="Giá (điểm)"
+              className={`${inputCls} w-24 shrink-0`}
+              placeholder="Giá"
               inputMode="numeric"
               value={cost}
               onChange={(e) => setCost(e.target.value)}
@@ -93,13 +93,13 @@ function RewardsInner() {
           {data.map((r) => (
             <Card key={r.id}>
               <div className="flex items-center justify-between gap-2">
-                <div>
-                  <p className="font-semibold text-ink">
+                <div className="min-w-0">
+                  <p className="truncate font-semibold text-ink">
                     {r.icon} {r.title}
                   </p>
                   <p className="text-sm text-brand">{r.cost_points} điểm{!r.active && " · ⏸ Tắt"}</p>
                 </div>
-                <div className="flex gap-1">
+                <div className="flex shrink-0 gap-1">
                   <Button
                     size="sm"
                     variant="ghost"
