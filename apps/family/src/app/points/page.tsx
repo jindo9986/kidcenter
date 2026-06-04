@@ -8,6 +8,7 @@ import { useAuth } from "@/app/providers";
 import { useAsync } from "@/lib/useAsync";
 import { listChildren } from "@/data/members";
 import { balanceOf, listLedger, addManualTxn } from "@/data/points";
+import { formatDateTime } from "@/lib/date";
 
 export default function PointsPage() {
   return (
@@ -133,7 +134,7 @@ function PointsInner() {
                 <div>
                   <p className="text-sm font-medium text-ink">{t.reason || SOURCE_LABEL[t.source]}</p>
                   <p className="text-xs text-ink/50">
-                    {SOURCE_LABEL[t.source]} · {t.created_at.slice(0, 10)}
+                    {SOURCE_LABEL[t.source]} · {formatDateTime(t.created_at)}
                   </p>
                 </div>
                 <span

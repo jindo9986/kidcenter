@@ -5,7 +5,7 @@ import { Button, Card } from "@kidcenter/ui";
 import { Spinner } from "@/components/Spinner";
 import { useAsync } from "@/lib/useAsync";
 import { signOut } from "@/lib/session";
-import { todayISO } from "@/lib/date";
+import { todayISO, formatDateTime } from "@/lib/date";
 import { toActivityLite } from "@/lib/adapters";
 import { generateInstances } from "@/domain/recurrence";
 import { canAfford } from "@/domain/points";
@@ -170,8 +170,11 @@ function PointsView({ child }: { child: Member }) {
           key={t.id}
           className="flex items-center justify-between rounded-2xl bg-white px-4 py-3 shadow-sm"
         >
-          <span className="text-sm text-ink">{t.reason || "Điểm"}</span>
-          <span className={"font-bold " + (t.delta >= 0 ? "text-brand" : "text-red-600")}>
+          <div className="min-w-0">
+            <p className="truncate text-sm text-ink">{t.reason || "Điểm"}</p>
+            <p className="text-xs text-ink/50">{formatDateTime(t.created_at)}</p>
+          </div>
+          <span className={"shrink-0 font-bold " + (t.delta >= 0 ? "text-brand" : "text-red-600")}>
             {t.delta >= 0 ? "+" : ""}
             {t.delta}
           </span>

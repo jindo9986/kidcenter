@@ -57,3 +57,11 @@ const FULL_WEEKDAY = ["Chủ nhật", "Thứ 2", "Thứ 3", "Thứ 4", "Thứ 5"
 export function dayLabel(iso: string): string {
   return `${FULL_WEEKDAY[weekdayISO(iso)]}, ${dayNum(iso)}/${Number(iso.slice(5, 7))}`;
 }
+
+const p2 = (n: number) => String(n).padStart(2, "0");
+
+// A timestamptz (UTC ISO) rendered in the viewer's local time as "HH:mm · dd/mm/yyyy".
+export function formatDateTime(iso: string): string {
+  const d = new Date(iso);
+  return `${p2(d.getHours())}:${p2(d.getMinutes())} · ${p2(d.getDate())}/${p2(d.getMonth() + 1)}/${d.getFullYear()}`;
+}
