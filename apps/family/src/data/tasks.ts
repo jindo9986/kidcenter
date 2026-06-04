@@ -50,6 +50,12 @@ export async function submitTask(id: string): Promise<void> {
   if (error) throw error;
 }
 
+// No-approval activities: award points immediately via the security-definer RPC.
+export async function autoCompleteTask(id: string): Promise<void> {
+  const { error } = await supabase.rpc("auto_complete_task", { p_instance: id });
+  if (error) throw error;
+}
+
 export async function rejectTask(id: string, deciderId: string): Promise<void> {
   const { error } = await supabase
     .from("task_instances")

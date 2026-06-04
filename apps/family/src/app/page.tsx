@@ -43,9 +43,17 @@ function Dashboard({ familyId }: { familyId: string }) {
 
   return (
     <div className="space-y-6">
-      <section>
-        <h1 className="font-display text-2xl font-bold text-ink">Tổng quan</h1>
-        <p className="text-sm text-ink/60">Điểm và việc cần duyệt của các bé.</p>
+      <section className="flex items-start justify-between gap-3">
+        <div>
+          <h1 className="font-display text-2xl font-bold text-ink">Tổng quan</h1>
+          <p className="text-sm text-ink/60">Điểm và việc cần duyệt của các bé.</p>
+        </div>
+        <Link
+          href="/kid"
+          className="shrink-0 rounded-2xl bg-accent px-4 py-2 text-sm font-semibold text-ink shadow-sm"
+        >
+          🧒 Chế độ trẻ
+        </Link>
       </section>
 
       <Link href="/approvals" className="block">

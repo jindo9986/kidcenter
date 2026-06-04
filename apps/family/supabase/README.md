@@ -13,6 +13,8 @@ Run each file's contents in the Supabase SQL editor:
 2. `migrations/0002_rls.sql` — helper functions + row-level security policies.
 3. `migrations/0003_provision_trigger.sql` — auto-link/create a member on first
    allowlisted sign-in.
+4. `migrations/0004_kid_mode.sql` — child can generate own task instances +
+   `auto_complete_task` RPC for no-approval activities.
 
 ## 3. Seed the family + allowlist
 ```sql
