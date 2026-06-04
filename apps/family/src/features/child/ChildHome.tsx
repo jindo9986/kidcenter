@@ -23,15 +23,23 @@ import { listActiveRewards, requestRedemption } from "@/data/rewards";
 import { ScheduleView } from "./ScheduleView";
 import type { Member } from "@/data/db-types";
 
-// The signed-in child (every member has their own Google login — no shared-device
-// picker or PIN).
+// Self-signed-in child: their own Google login, exit = sign out.
 export function ChildHome({ member }: { member: Member }) {
-  return <ChildShell child={member} />;
+  return <ChildShell child={member} onExit={() => void signOut()} exitLabel="Đăng xuất" />;
 }
 
 type Tab = "today" | "schedule" | "points" | "store" | "board";
 
-function ChildShell({ child }: { child: Member }) {
+// Reused by the parent "kid mode" (/kid) where onExit returns to the picker.
+export function ChildShell({
+  child,
+  onExit,
+  exitLabel,
+}: {
+  child: Member;
+  onExit: () => void;
+  exitLabel: string;
+}) {
   const [tab, setTab] = useState<Tab>("today");
   const tabs: { key: Tab; label: string; icon: string }[] = [
     { key: "today", label: "Hôm nay", icon: "📋" },
@@ -48,8 +56,8 @@ function ChildShell({ child }: { child: Member }) {
           <p className="text-xs text-ink/50">Người chơi</p>
           <p className="font-display text-xl font-bold text-ink">🧒 {child.display_name}</p>
         </div>
-        <Button variant="ghost" size="sm" onClick={() => void signOut()}>
-          Đăng xuất
+        <Button variant="ghost" size="sm" onClick={onExit}>
+          {exitLabel}
         </Button>
       </header>
 
