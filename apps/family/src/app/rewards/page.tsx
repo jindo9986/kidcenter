@@ -10,7 +10,7 @@ import { listRewards, insertReward, updateReward, deleteReward } from "@/data/re
 
 export default function RewardsPage() {
   return (
-    <ParentShell>
+    <ParentShell back="/settings">
       <RewardsInner />
     </ParentShell>
   );

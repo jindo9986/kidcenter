@@ -11,7 +11,7 @@ import type { Role } from "@/domain/types";
 
 export default function AccessPage() {
   return (
-    <ParentShell>
+    <ParentShell back="/settings">
       <AccessInner />
     </ParentShell>
   );

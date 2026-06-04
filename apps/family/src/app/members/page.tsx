@@ -12,7 +12,7 @@ import type { Member } from "@/data/db-types";
 
 export default function MembersPage() {
   return (
-    <ParentShell>
+    <ParentShell back="/settings">
       <MembersInner />
     </ParentShell>
   );

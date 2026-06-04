@@ -22,7 +22,7 @@ import type { Recurrence } from "@/domain/types";
 
 export default function ActivitiesPage() {
   return (
-    <ParentShell>
+    <ParentShell back="/settings">
       <ActivitiesInner />
     </ParentShell>
   );
