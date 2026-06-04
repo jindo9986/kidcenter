@@ -20,6 +20,7 @@ import {
 } from "@/data/tasks";
 import { balanceOf, listLedger } from "@/data/points";
 import { listActiveRewards, requestRedemption } from "@/data/rewards";
+import { ScheduleView } from "./ScheduleView";
 import type { Member } from "@/data/db-types";
 
 // The signed-in child (every member has their own Google login — no shared-device
@@ -28,12 +29,13 @@ export function ChildHome({ member }: { member: Member }) {
   return <ChildShell child={member} />;
 }
 
-type Tab = "today" | "points" | "store" | "board";
+type Tab = "today" | "schedule" | "points" | "store" | "board";
 
 function ChildShell({ child }: { child: Member }) {
   const [tab, setTab] = useState<Tab>("today");
   const tabs: { key: Tab; label: string; icon: string }[] = [
     { key: "today", label: "Hôm nay", icon: "📋" },
+    { key: "schedule", label: "Lịch", icon: "📅" },
     { key: "points", label: "Điểm", icon: "⭐" },
     { key: "store", label: "Cửa hàng", icon: "🎁" },
     { key: "board", label: "Xếp hạng", icon: "🏆" },
@@ -53,6 +55,7 @@ function ChildShell({ child }: { child: Member }) {
 
       <main className="mx-auto max-w-md px-4">
         {tab === "today" && <TodayView child={child} />}
+        {tab === "schedule" && <ScheduleView child={child} />}
         {tab === "points" && <PointsView child={child} />}
         {tab === "store" && <StoreView child={child} />}
         {tab === "board" && <BoardView child={child} />}
