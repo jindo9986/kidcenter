@@ -62,20 +62,24 @@ function AccessInner() {
 
       <Card title="Thêm email được phép" icon="🔑">
         <form onSubmit={add} className="space-y-3">
-          <div className="flex flex-col gap-2 sm:flex-row">
-            <input
-              className={`${inputCls} flex-1`}
-              placeholder="email@gmail.com"
-              type="email"
-              inputMode="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <select className={inputCls} value={role} onChange={(e) => setRole(e.target.value as Role)}>
+          <input
+            className={`${inputCls} w-full`}
+            placeholder="email@gmail.com"
+            type="email"
+            inputMode="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <div className="flex gap-2">
+            <select
+              className={`${inputCls} min-w-0 flex-1`}
+              value={role}
+              onChange={(e) => setRole(e.target.value as Role)}
+            >
               <option value="parent">Bố / mẹ (parent)</option>
               <option value="child">Con (child)</option>
             </select>
-            <Button type="submit" disabled={busy}>
+            <Button type="submit" className="shrink-0" disabled={busy}>
               Thêm
             </Button>
           </div>

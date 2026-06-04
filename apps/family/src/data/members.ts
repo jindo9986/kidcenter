@@ -44,6 +44,13 @@ export async function updateMember(
   if (error) throw error;
 }
 
+// Hard delete: cascades to the member's task instances, point ledger,
+// redemptions and any activities assigned only to them. Not reversible.
+export async function deleteMember(id: string): Promise<void> {
+  const { error } = await supabase.from("members").delete().eq("id", id);
+  if (error) throw error;
+}
+
 export async function setPin(id: string, pinHash: string, pinSalt: string): Promise<void> {
   const { error } = await supabase
     .from("members")

@@ -6,7 +6,7 @@ import { ParentShell } from "@/components/ParentShell";
 import { Spinner } from "@/components/Spinner";
 import { useAuth } from "@/app/providers";
 import { useAsync } from "@/lib/useAsync";
-import { listChildren, insertChild, updateMember, setPin, clearPin } from "@/data/members";
+import { listChildren, insertChild, updateMember, setPin, clearPin, deleteMember } from "@/data/members";
 import { hashPin } from "@/domain/pin";
 import type { Member } from "@/data/db-types";
 
@@ -115,16 +115,41 @@ function ChildRow({ child, onChanged }: { child: Member; onChanged: () => void }
             {child.auth_user_id ? " · Đã liên kết Google" : ""}
           </p>
         </div>
-        <Button
-          variant="ghost"
-          size="sm"
-          onClick={async () => {
-            await updateMember(child.id, { active: false });
-            onChanged();
-          }}
-        >
-          Ẩn
-        </Button>
+        <div className="flex shrink-0 gap-1">
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={async () => {
+              await updateMember(child.id, { active: false });
+              onChanged();
+            }}
+          >
+            Ẩn
+          </Button>
+          <Button
+            variant="ghost"
+            size="sm"
+            disabled={busy}
+            onClick={async () => {
+              if (
+                !window.confirm(
+                  `Xoá hẳn "${child.display_name}"? Toàn bộ nhiệm vụ, lịch sử điểm và ` +
+                    `phần thưởng đã đổi của bé sẽ bị xoá vĩnh viễn, không khôi phục được.`,
+                )
+              )
+                return;
+              setBusy(true);
+              try {
+                await deleteMember(child.id);
+                onChanged();
+              } finally {
+                setBusy(false);
+              }
+            }}
+          >
+            Xoá
+          </Button>
+        </div>
       </div>
 
       <div className="mt-3 flex flex-wrap items-center gap-2">
