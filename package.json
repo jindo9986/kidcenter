@@ -10,7 +10,8 @@
     "lint": "turbo run lint",
     "start": "turbo run start",
     "dev:learning": "pnpm --filter @kidcenter/learning dev",
-    "dev:portfolio": "pnpm --filter @kidcenter/portfolio dev"
+    "dev:portfolio": "pnpm --filter @kidcenter/portfolio dev",
+    "dev:family": "pnpm --filter @kidcenter/family dev"
   },
   "devDependencies": {
     "turbo": "^2.5.8"
