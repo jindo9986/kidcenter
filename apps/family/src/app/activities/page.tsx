@@ -53,7 +53,7 @@ function ActivitiesInner() {
       <ActivityForm
         familyId={familyId}
         types={data.types}
-        children={data.children}
+        kids={data.children}
         onChanged={reload}
       />
 
@@ -187,12 +187,12 @@ function TypeManager({
 function ActivityForm({
   familyId,
   types,
-  children,
+  kids,
   onChanged,
 }: {
   familyId: string;
   types: { id: string; name: string }[];
-  children: { id: string; display_name: string }[];
+  kids: { id: string; display_name: string }[];
   onChanged: () => void;
 }) {
   const [title, setTitle] = useState("");
@@ -302,7 +302,7 @@ function ActivityForm({
             onChange={(e) => setAssignee(e.target.value)}
           >
             <option value="">Giao cho tất cả</option>
-            {children.map((c) => (
+            {kids.map((c) => (
               <option key={c.id} value={c.id}>
                 {c.display_name}
               </option>

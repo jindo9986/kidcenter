@@ -1,5 +1,9 @@
 "use client";
 
+// A small generic data-fetching hook. By design it takes a dynamic dependency
+// array and resets loading/error state when those deps change — patterns the
+// react-hooks lint rules flag for the common case but which are intentional here.
+/* eslint-disable react-hooks/exhaustive-deps, react-hooks/set-state-in-effect */
 import { useCallback, useEffect, useState } from "react";
 
 interface AsyncState<T> {
@@ -9,28 +13,30 @@ interface AsyncState<T> {
   reload: () => void;
 }
 
-// Runs `loader` on mount and whenever a dep changes; exposes reload().
 export function useAsync<T>(loader: () => Promise<T>, deps: unknown[]): AsyncState<T> {
   const [data, setData] = useState<T | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [tick, setTick] = useState(0);
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const run = useCallback(loader, deps);
-
   useEffect(() => {
     let alive = true;
     setLoading(true);
     setError(null);
-    run()
-      .then((d) => alive && setData(d))
-      .catch((e: unknown) => alive && setError(e instanceof Error ? e.message : String(e)))
-      .finally(() => alive && setLoading(false));
+    loader()
+      .then((d) => {
+        if (alive) setData(d);
+      })
+      .catch((e: unknown) => {
+        if (alive) setError(e instanceof Error ? e.message : String(e));
+      })
+      .finally(() => {
+        if (alive) setLoading(false);
+      });
     return () => {
       alive = false;
     };
-  }, [run, tick]);
+  }, [...deps, tick]);
 
   const reload = useCallback(() => setTick((t) => t + 1), []);
   return { data, loading, error, reload };

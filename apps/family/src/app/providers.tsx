@@ -35,6 +35,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   useEffect(() => {
+    // Initial load + subscription to auth changes; refresh() owns its own state.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     void refresh();
     const { data: sub } = supabase.auth.onAuthStateChange(() => {
       void refresh();

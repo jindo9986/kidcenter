@@ -38,6 +38,8 @@ export function ChildHome({ member }: { member?: Member }) {
     const raw = sessionStorage.getItem(STORAGE_KEY);
     if (raw) {
       try {
+        // Restore the shared-device selection from sessionStorage on mount.
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setSelected(JSON.parse(raw) as Member);
       } catch {
         /* ignore */
