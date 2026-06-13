@@ -200,7 +200,7 @@ export default function IntroPage() {
         <div className="relative mx-auto flex max-w-3xl flex-col items-center px-6 pb-16 pt-8 text-center">
           <div className="mb-6 h-28 w-28 overflow-hidden rounded-full shadow-md ring-4 ring-white">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={asset("/media/avatar.jpg")} alt="Đào Đình Hữu (Tin)" className="h-full w-full object-cover" />
+            <img src={asset("/media/life/life-harvest.jpg")} alt="Đào Đình Hữu (Tin)" className="h-full w-full object-cover" />
           </div>
           <p className="mb-3 text-xs font-bold uppercase tracking-[0.22em] text-brand">
             <Localized value={{ vi: "Xin chào", en: "Hello" }} />

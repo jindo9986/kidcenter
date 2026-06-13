@@ -172,7 +172,7 @@ export default function StoryPage() {
           <div className="mb-7 h-28 w-28 overflow-hidden rounded-full shadow-md ring-4 ring-white">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={asset("/media/avatar.jpg")}
+              src={asset("/media/life/life-harvest.jpg")}
               alt="Đào Đình Hữu (Tin)"
               className="h-full w-full object-cover"
             />
