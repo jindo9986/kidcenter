@@ -210,6 +210,7 @@ const OBSERVED = [
 
 const curiosityPhotos = [
   { src: "/media/life/life-wonder-reptile.jpg", alt: "Pointing at a reptile in a vivarium", caption: "Whoa — what is that?!" },
+  { src: "/media/life/life-reading-science.jpg", alt: "Reading a science book", caption: "Hours lost in a science book" },
   { src: "/media/life/life-snake-touch.jpg", alt: "Touching a snake at the zoo", caption: "First time touching a snake" },
   { src: "/media/life/life-whale-skeleton.jpg", alt: "In front of a sperm-whale skeleton", caption: "Eye to eye with a sperm whale" },
   { src: "/media/life/life-marlin.jpg", alt: "Under a mounted blue marlin", caption: "A blue marlin, longer than he is tall" },
@@ -221,6 +222,12 @@ const observationPhotos = [
   { src: "/media/life/life-microscope.jpg", alt: "Looking through a microscope", caption: "Under the microscope — the grain of wood" },
   { src: "/media/life/life-evolution-skulls.jpg", alt: "Studying a wall of hominid skulls", caption: "Tracing human origins, skull by skull" },
   { src: "/media/life/life-museum-art.jpg", alt: "Looking at ink cityscape paintings", caption: "Reading a city drawn in ink" },
+];
+
+const awardPhotos = [
+  { src: "/media/life/life-award-stage.jpg", alt: "On stage with the Science Star Award" },
+  { src: "/media/life/life-award-ceremony.jpg", alt: "Holding the Science Star Award at the ceremony" },
+  { src: "/media/life/life-award-classroom.jpg", alt: "With his certificate at the class Wall of Fame" },
 ];
 
 /* ---------- page ---------- */
@@ -380,7 +387,7 @@ export default function AssessmentPage() {
         </SectionHead>
 
         <div className="mt-8">
-          <FlowChain items={s.visual.cycle.map(en)} />
+          <FlowChain items={["Observe", "Draw", "Examine", "Understand"]} />
         </div>
 
         {dinoArt.length > 0 && (
@@ -408,8 +415,60 @@ export default function AssessmentPage() {
         </p>
       </section>
 
-      {/* 05 — INVESTIGATION → UNDERSTANDING */}
+      {/* STEAM STRENGTHS — Venn (Science · Art · Math) */}
       <section className="px-6 py-16 sm:py-24">
+        <SectionHead eyebrow="His STEAM strengths" title="Where Science, Art & Math meet">
+          <p>
+            Tin&apos;s profile is not one talent but three that reinforce one another. Art trains
+            the eye to observe and visualise; Math gives structure and reasoning; Science turns both
+            into questions and explanations. Where the three overlap is where he is strongest —
+            investigation.
+          </p>
+        </SectionHead>
+        <figure className="mx-auto mt-10 max-w-md">
+          <svg
+            viewBox="0 0 440 430"
+            className="w-full"
+            role="img"
+            aria-label="Venn diagram — Science, Art and Math overlap in scientific inquiry"
+          >
+            <g style={{ mixBlendMode: "multiply" }}>
+              <circle cx="220" cy="160" r="122" fill="var(--color-brand)" fillOpacity="0.20" stroke="var(--color-brand)" strokeOpacity="0.55" strokeWidth="1.5" />
+              <circle cx="150" cy="280" r="122" fill="var(--color-teal)" fillOpacity="0.20" stroke="var(--color-teal)" strokeOpacity="0.55" strokeWidth="1.5" />
+              <circle cx="290" cy="280" r="122" fill="var(--color-ink)" fillOpacity="0.13" stroke="var(--color-ink)" strokeOpacity="0.5" strokeWidth="1.5" />
+            </g>
+            <g className="font-display" textAnchor="middle">
+              <text x="220" y="92" fontSize="24" fontWeight="800" fill="var(--color-brand)">Science</text>
+              <text x="220" y="112" fontSize="11.5" fill="var(--color-brand)" opacity="0.75">analyse · understand</text>
+              <text x="86" y="316" fontSize="24" fontWeight="800" fill="var(--color-teal)">Art</text>
+              <text x="86" y="336" fontSize="11.5" fill="var(--color-teal)" opacity="0.85">observe · visualise</text>
+              <text x="356" y="316" fontSize="24" fontWeight="800" fill="var(--color-ink)">Math</text>
+              <text x="356" y="336" fontSize="11.5" fill="var(--color-ink)" opacity="0.6">reason · structure</text>
+              <text x="220" y="236" fontSize="15" fontWeight="800" fill="var(--color-ink)">Scientific</text>
+              <text x="220" y="255" fontSize="15" fontWeight="800" fill="var(--color-ink)">Inquiry</text>
+            </g>
+          </svg>
+          <figcaption className="mt-4 text-center text-sm text-ink/55">
+            Where Science, Art and Math overlap — visual scientific inquiry.
+          </figcaption>
+        </figure>
+        <div className="mx-auto mt-8 grid max-w-4xl gap-4 md:grid-cols-3">
+          {[
+            { name: "Science", role: "Analyse & understand", body: "Asks why and how; treats knowledge as something to examine, test and understand.", tone: "text-brand" },
+            { name: "Art", role: "Observe & visualise", body: "Draws to slow down and look closely; uses images to build mental models and record discoveries.", tone: "text-teal" },
+            { name: "Math", role: "Reason & structure", body: "Brings logic, prediction and structure — turning scattered facts into systems and causes.", tone: "text-ink" },
+          ].map((d) => (
+            <div key={d.name} className="break-avoid rounded-3xl border border-black/5 bg-white p-6 shadow-sm">
+              <p className={`font-display text-2xl font-bold ${d.tone}`}>{d.name}</p>
+              <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-brand">{d.role}</p>
+              <p className="leading-relaxed text-ink/70">{d.body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 05 — INVESTIGATION → UNDERSTANDING */}
+      <section className="bg-white px-6 py-16 sm:py-24">
         <SectionHead
           n="05"
           eyebrow="Independence & analytical reasoning"
@@ -542,6 +601,18 @@ export default function AssessmentPage() {
             measurably, in the record.
           </p>
         </SectionHead>
+        <div className="mx-auto mt-8 grid max-w-4xl grid-cols-3 gap-3">
+          {awardPhotos.map((p) => (
+            <figure key={p.src} className="overflow-hidden rounded-2xl bg-white shadow-sm">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={asset(p.src)} alt={p.alt} loading="lazy" className="aspect-[3/4] w-full object-cover" />
+            </figure>
+          ))}
+        </div>
+        <p className="mx-auto mt-3 max-w-[620px] text-center text-sm text-ink/55">
+          Recognised in class, on stage and at the end-of-year ceremony — Excellent Student &amp;
+          Natural Sciences Star.
+        </p>
         <div className="mx-auto mt-8 grid max-w-4xl grid-cols-2 gap-3 sm:grid-cols-4">
           {tally.map(([emoji, label, n]) => (
             <div key={label} className="break-avoid rounded-3xl border border-black/5 bg-white p-5 text-center shadow-sm">
