@@ -39,6 +39,7 @@ import { Localized } from "@/components/Localized";
 import { LangToggle } from "@/components/LangToggle";
 import { PrintButton } from "@/components/PrintButton";
 import { SectionNav, type NavItem } from "@/components/SectionNav";
+import { SiteNavLinks } from "@/components/SiteNav";
 import Link from "next/link";
 
 function ChipRow({ label, items }: { label: L; items: L[] }) {
@@ -125,17 +126,8 @@ export default function Home() {
     <>
       <header className="no-print sticky top-0 z-20 border-b border-black/5 bg-cream/90 backdrop-blur">
         <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-2 px-5 py-2 sm:px-8">
-          <span className="truncate font-display text-sm font-bold text-ink/80">
-            Đào Đình Hữu (Tin)
-          </span>
+          <SiteNavLinks />
           <div className="flex items-center gap-2">
-            <Link
-              href="/"
-              className="hidden rounded-full border border-brand/20 px-3 py-1.5 text-sm font-semibold text-brand transition-colors hover:bg-brand/5 sm:inline-flex"
-            >
-              <span data-lang="vi">← Câu chuyện</span>
-              <span data-lang="en">← Story</span>
-            </Link>
             <LangToggle />
             <PrintButton compact />
           </div>
@@ -329,8 +321,8 @@ export default function Home() {
               href="/"
               className="inline-flex min-h-11 items-center justify-center rounded-2xl border border-brand/25 px-4 text-base font-semibold text-brand transition-colors hover:bg-brand/5"
             >
-              <span data-lang="vi">← Về trang câu chuyện</span>
-              <span data-lang="en">← Back to the story</span>
+              <span data-lang="vi">← Về trang Giới thiệu</span>
+              <span data-lang="en">← Back to the intro</span>
             </Link>
           </div>
           <p className="mt-3 text-sm text-ink/55">

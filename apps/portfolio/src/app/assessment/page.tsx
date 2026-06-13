@@ -5,7 +5,7 @@ import { getAchievements, getGallery } from "@/lib/content";
 import type { L } from "@/lib/schemas";
 import { asset } from "@/lib/asset";
 import { Localized } from "@/components/Localized";
-import { LangToggle } from "@/components/LangToggle";
+import { SiteNav } from "@/components/SiteNav";
 import { PrintLink } from "@/components/PrintLink";
 
 export const metadata: Metadata = {
@@ -328,22 +328,7 @@ export default function AssessmentPage() {
 
   return (
     <main className="bg-cream text-ink">
-      {/* top bar */}
-      <div className="no-print mx-auto flex max-w-5xl items-center justify-between gap-2 px-6 py-4 text-sm">
-        <span className="font-display font-bold text-ink/70">
-          <Localized value={{ vi: "Đánh giá độc lập bằng AI", en: "Independent AI Assessment" }} />
-        </span>
-        <div className="flex items-center gap-2">
-          <LangToggle />
-          <Link
-            href="/"
-            className="rounded-full border border-brand/20 px-3 py-1.5 font-semibold text-brand transition-colors hover:bg-brand/5"
-          >
-            <Localized value={{ vi: "← Câu chuyện", en: "← Story" }} />
-          </Link>
-          <PrintLink compact />
-        </div>
-      </div>
+      <SiteNav />
 
       {/* HERO */}
       <header className="relative overflow-hidden border-b border-brand/10" style={{ background: graphPaper }}>
@@ -900,7 +885,7 @@ export default function AssessmentPage() {
               href="/"
               className="rounded-2xl border border-white/30 px-5 py-2.5 font-semibold text-white transition hover:bg-white/10"
             >
-              <Localized value={{ vi: "← Về trang câu chuyện", en: "← Back to the story" }} />
+              <Localized value={{ vi: "← Về trang Giới thiệu", en: "← Back to the intro" }} />
             </Link>
           </div>
           <p className="mx-auto mt-8 max-w-md text-xs leading-relaxed text-white/55">
