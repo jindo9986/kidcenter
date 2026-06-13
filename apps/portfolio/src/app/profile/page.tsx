@@ -184,8 +184,8 @@ export default function Home() {
           id="signature"
           title={{ vi: "Một tổ hợp ít gặp", en: "An Uncommon Combination" }}
           subtitle={{
-            vi: "Logic + Nghệ thuật + Ngôn ngữ → một hướng đi nhiều hứa hẹn",
-            en: "Logic + Art + Language → a promising direction",
+            vi: "Tư duy logic + Nghệ thuật + Suy luận → tư duy nghiên cứu khoa học",
+            en: "Logic + Art + Reasoning → scientific inquiry",
           }}
         >
           <Signature data={signature} />
@@ -255,8 +255,8 @@ export default function Home() {
             id="gallery"
             title={{ vi: "Năng lực sáng tạo", en: "Creative Work" }}
             subtitle={{
-              vi: "Tranh đoạt giải & ký họa khủng long → Science Visualization",
-              en: "Award-winning art & dinosaur sketches → science visualization",
+              vi: "Tranh đoạt giải & ký họa khủng long → quan sát khoa học bằng hình ảnh",
+              en: "Award-winning art & dinosaur sketches → visual scientific observation",
             }}
           >
             <Gallery items={gallery} />

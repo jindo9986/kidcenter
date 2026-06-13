@@ -9,12 +9,12 @@
   },
   "futureFields": [
     {
-      "vi": "Science Illustration (Minh họa Khoa học)",
-      "en": "Science Illustration"
+      "vi": "Nghiên cứu Khoa học",
+      "en": "Scientific Research"
     },
     {
-      "vi": "Truyền thông Khoa học",
-      "en": "Science Communication"
+      "vi": "Khoa học Tự nhiên",
+      "en": "Natural Sciences"
     },
     {
       "vi": "Khoa học Máy tính",
@@ -39,10 +39,6 @@
     {
       "vi": "Tài chính Định lượng",
       "en": "Quantitative Finance"
-    },
-    {
-      "vi": "Nghiên cứu Khoa học",
-      "en": "Scientific Research"
     }
   ],
   "growthNote": {

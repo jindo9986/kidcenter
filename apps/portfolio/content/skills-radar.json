@@ -1,7 +1,7 @@
 [
   { "axis": { "vi": "Khoa học", "en": "Science" }, "value": 100 },
   { "axis": { "vi": "Toán học", "en": "Maths" }, "value": 95 },
-  { "axis": { "vi": "Ngôn ngữ", "en": "Language" }, "value": 92 },
+  { "axis": { "vi": "Đọc hiểu", "en": "Reading" }, "value": 92 },
   { "axis": { "vi": "Tin học", "en": "Computing" }, "value": 88 },
   { "axis": { "vi": "Nghệ thuật", "en": "Art" }, "value": 90 },
   { "axis": { "vi": "Thể thao", "en": "Sports" }, "value": 82 }

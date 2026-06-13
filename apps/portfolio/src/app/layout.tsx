@@ -3,7 +3,7 @@ import "./globals.css";
 
 const TITLE = "Đào Đình Hữu (Tin)";
 const DESC =
-  "A curious 10-year-old who loves science, maths and art — exploring where logic meets drawing in science illustration.";
+  "A curious 10-year-old who loves science, maths and art — observing, investigating and understanding the world through scientific inquiry and visual thinking.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.huudaodinh.site"),

@@ -1,7 +1,7 @@
 {
   "thesis": {
-    "vi": "Một điểm thú vị ở Tin là em cùng lúc phát triển ba mảng vốn ít đi cùng nhau: tư duy logic (Khoa học, Toán, Tin học), khả năng vẽ — nhất là sinh học và khủng long — và năng lực ngôn ngữ, tức là đọc sâu, hiểu sâu và biết suy luận. Khi đặt cạnh nhau, ba mảng này có thể là một nền tảng tốt cho Science Illustration (minh họa khoa học): kể câu chuyện khoa học bằng hình ảnh chính xác và dễ hiểu. Đây là hướng Tin đang muốn thử sức trong các dự án tới.",
-    "en": "An interesting thing about Tin is that he is developing three areas that rarely go together: logical thinking (Science, Maths, ICT), drawing — especially biology and dinosaurs — and language ability, meaning deep reading, deep understanding and reasoning. Put side by side, these could be a good foundation for Science Illustration: telling science stories through accurate, easy-to-grasp visuals. This is the direction Tin would like to explore in his upcoming projects."
+    "vi": "Một điểm thú vị ở Tin là em cùng lúc phát triển ba mảng vốn ít đi cùng nhau: tư duy logic (Khoa học, Toán, Tin học), khả năng vẽ — nhất là sinh học và khủng long — và đọc hiểu & suy luận sâu. Khi đặt cạnh nhau, cả ba cùng hướng về một điểm: tư duy nghiên cứu khoa học — quan sát kỹ, đặt câu hỏi, và dùng việc vẽ như một công cụ để tìm tòi và thấu hiểu thế giới.",
+    "en": "An interesting thing about Tin is that he develops three areas that rarely grow together: logical thinking (Science, Maths, ICT), drawing — especially biology and dinosaurs — and deep reading and reasoning. Put side by side, all three point in one direction: scientific inquiry — observing closely, asking questions, and using drawing as a tool to investigate and understand the world."
   },
   "pieces": [
     {
@@ -41,12 +41,12 @@
   "outcome": {
     "icon": "✨",
     "label": {
-      "vi": "Science Illustration",
-      "en": "Science Illustration"
+      "vi": "Tư duy nghiên cứu khoa học",
+      "en": "Scientific Inquiry"
     },
     "detail": {
-      "vi": "Minh họa khoa học — biến kiến thức thành hình ảnh chính xác, sống động và dễ hiểu.",
-      "en": "Science illustration — turning knowledge into accurate, vivid, easy-to-grasp visuals."
+      "vi": "Biến tò mò thành thấu hiểu — quan sát, tìm tòi và tư duy bằng hình ảnh.",
+      "en": "Curiosity turned into understanding — observe, investigate, and think through images."
     }
   }
 }
