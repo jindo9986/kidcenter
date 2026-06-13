@@ -228,8 +228,8 @@ export default function IntroPage() {
               en: "Sometimes my questions come from a science book. Sometimes from a museum visit, a documentary, a fossil, an animal, a drawing — or even something I notice during an ordinary day.",
             },
             {
-              vi: "Mình thích học điều mới, nhưng còn thích hơn việc thật sự hiểu chúng.",
-              en: "I enjoy learning new things, but I enjoy understanding them even more.",
+              vi: "Việc học với mình diễn ra khá tự nhiên — nhưng mình cũng như bao bạn nhỏ khác, rất thích chạy nhảy và chơi cùng bạn bè. Có một điều khá rõ ở mình từ nhỏ: mình mê đọc sách, và tranh thủ đọc bất cứ khi nào rảnh.",
+              en: "Learning comes fairly naturally to me — but like other kids, I also love running around and playing with friends. One thing has been clear since I was little, though: I love reading, and I sneak in a book whenever I have a free moment.",
             },
           ]}
         />
@@ -313,13 +313,13 @@ export default function IntroPage() {
             <Localized value={{ vi: "Một vài cột mốc", en: "A few milestones" }} />
           </p>
           <h2 className="font-display text-3xl font-bold sm:text-4xl">
-            <Localized value={{ vi: "Niềm vui lớn nhất là việc học", en: "What I enjoy most is the learning" }} />
+            <Localized value={{ vi: "Phần mình thích nhất là lúc khám phá", en: "The part I like best is the discovering" }} />
           </h2>
           <p className="mx-auto mt-4 max-w-[620px] text-white/75">
             <Localized
               value={{
-                vi: "Hai năm qua mình vinh dự nhận giải Tinh hoa Khoa học Tự nhiên ở trường, và tham gia nhiều kỳ Olympic Toán, Khoa học, Thiên văn ở cấp trường, thành phố, quốc gia và quốc tế. Những giải thưởng khiến mình tự hào — nhưng điều mình thích nhất là việc học diễn ra khi chuẩn bị cho chúng.",
-                en: "Over the past two years I have been honoured to receive the Natural Sciences Star Award at school, and to take part in many Mathematics, Science and Astronomy Olympiads at school, city, national and international levels. These awards make me proud — but what I enjoy most is the learning that happens while preparing for them.",
+                vi: "Hai năm qua mình vinh dự nhận giải Tinh hoa Khoa học Tự nhiên ở trường, và tham gia nhiều kỳ Olympic Toán, Khoa học, Thiên văn ở cấp trường, thành phố, quốc gia và quốc tế. Những giải thưởng khiến mình tự hào — nhưng điều mình nhớ nhất là những lúc tự mày mò tìm ra lời giải khi luyện tập.",
+                en: "Over the past two years I have been honoured to receive the Natural Sciences Star Award at school, and to take part in many Mathematics, Science and Astronomy Olympiads at school, city, national and international levels. These awards make me proud — but what I remember most is the moments of figuring things out while preparing.",
               }}
             />
           </p>

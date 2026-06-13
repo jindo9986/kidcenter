@@ -127,10 +127,7 @@ export default function Home() {
       <header className="no-print sticky top-0 z-20 border-b border-black/5 bg-cream/90 backdrop-blur">
         <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-2 px-5 py-2 sm:px-8">
           <SiteNavLinks />
-          <div className="flex items-center gap-2">
-            <LangToggle />
-            <PrintButton compact />
-          </div>
+          <LangToggle />
         </div>
         {/* Mobile / tablet: horizontal scrollable nav (desktop uses the side TOC) */}
         <div className="mx-auto w-full max-w-6xl px-5 pb-1.5 sm:px-8 lg:hidden">
