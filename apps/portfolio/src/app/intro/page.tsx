@@ -133,14 +133,14 @@ const TEACHER_WORDS: L[] = [
 
 const STEPS: L[] = [
   { vi: "Quan sát", en: "Observe" },
+  { vi: "Điều tra", en: "Investigate" },
   { vi: "Thấu hiểu", en: "Understand" },
-  { vi: "Diễn giải", en: "Explain" },
 ];
 
 const TRIAD: { name: string; body: L; tone: string }[] = [
   { name: "Science", body: { vi: "giúp mình thấu hiểu", en: "helps me understand" }, tone: "text-brand" },
-  { name: "Art", body: { vi: "giúp mình hình dung", en: "helps me visualise" }, tone: "text-teal" },
-  { name: "Language", body: { vi: "giúp mình truyền đạt", en: "helps me communicate" }, tone: "text-ink" },
+  { name: "Art", body: { vi: "giúp mình quan sát & hình dung", en: "helps me observe & visualise" }, tone: "text-teal" },
+  { name: "Math", body: { vi: "giúp mình suy luận", en: "helps me reason" }, tone: "text-ink" },
 ];
 
 const observePhotos: { src: string; alt: string; caption: L }[] = [
@@ -418,8 +418,8 @@ export default function IntroPage() {
         <p className="mx-auto mt-10 max-w-[640px] text-center font-display text-lg italic text-ink/75">
           <Localized
             value={{
-              vi: "Mình thường nghĩ bằng hình ảnh trước khi diễn đạt bằng lời.",
-              en: "I often think through images before I explain ideas with words.",
+              vi: "Mình thường tư duy bằng hình ảnh — vẽ giúp mình quan sát và hiểu sâu hơn.",
+              en: "I often think through images — drawing helps me observe and understand more deeply.",
             }}
           />
         </p>
@@ -472,8 +472,8 @@ export default function IntroPage() {
           title={{ vi: "Ba bước đơn giản trong cách mình học", en: "My learning, in three simple steps" }}
           paras={[
             {
-              vi: "Đầu tiên, mình quan sát thế giới bằng sự tò mò. Sau đó, mình cố hiểu nó qua đọc sách, khoa học, toán học và điều tra. Cuối cùng, mình cố diễn giải điều đã học qua viết, nói và vẽ.",
-              en: "First, I observe the world with curiosity. Then I try to understand it through reading, science, mathematics and investigation. Finally, I try to explain what I've learned through writing, speaking and drawing.",
+              vi: "Đầu tiên, mình quan sát thế giới bằng sự tò mò. Sau đó, mình điều tra qua đọc sách, khoa học và toán học. Cuối cùng, mình ghép mọi thứ lại — vẽ và suy luận để thật sự hiểu điều mình tìm ra.",
+              en: "First, I observe the world with curiosity. Then I investigate through reading, science and mathematics. Finally, I bring it together — drawing and reasoning to truly understand what I've found.",
             },
           ]}
         />
@@ -483,8 +483,8 @@ export default function IntroPage() {
         <p className="mx-auto mt-10 max-w-[640px] text-center text-lg leading-relaxed text-ink/75">
           <Localized
             value={{
-              vi: "Cách học này giúp mình kết nối ba điều mình quan tâm sâu sắc — Khoa học, Nghệ thuật và Ngôn ngữ:",
-              en: "This way of learning connects three areas I care deeply about — Science, Art and Language:",
+              vi: "Cách học này giúp mình kết nối ba điều mình quan tâm sâu sắc — Khoa học, Nghệ thuật và Toán:",
+              en: "This way of learning connects three areas I care deeply about — Science, Art and Math:",
             }}
           />
         </p>
@@ -501,8 +501,8 @@ export default function IntroPage() {
         <p className="mx-auto mt-8 max-w-[640px] text-center text-ink/70">
           <Localized
             value={{
-              vi: "Cùng nhau, chúng giúp mình học sâu hơn và chia sẻ điều mình biết với mọi người.",
-              en: "Together, they help me learn more deeply and share what I know with others.",
+              vi: "Cùng nhau, chúng giúp mình học sâu hơn và điều tra thế giới quanh mình.",
+              en: "Together, they help me learn more deeply and investigate the world around me.",
             }}
           />
         </p>
