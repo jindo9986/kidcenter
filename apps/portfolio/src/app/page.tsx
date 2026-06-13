@@ -185,7 +185,7 @@ export default function IntroPage() {
             <Localized value={{ vi: "Tự giới thiệu", en: "A self-introduction" }} />
           </p>
           <h1 className="font-display text-5xl font-extrabold leading-[1.05] text-ink sm:text-6xl">
-            <Localized value={{ vi: "Chào, mình là Tin.", en: "Hi, I'm Tin." }} />
+            <Localized value={{ vi: "Xin chào, mình là Tin.", en: "Hi, I'm Tin." }} />
           </h1>
           <p className="mt-5 max-w-[620px] text-lg leading-relaxed text-ink/70 sm:text-xl">
             <Localized
