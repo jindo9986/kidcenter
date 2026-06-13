@@ -8,7 +8,9 @@ export function LangToggle() {
   const [locale, setLocale] = useState<Locale>("vi");
 
   useEffect(() => {
+    // Sync from the persisted locale on mount (external source).
     const saved = (localStorage.getItem("locale") as Locale | null) ?? "vi";
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setLocale(saved);
     document.documentElement.dataset.locale = saved;
   }, []);
