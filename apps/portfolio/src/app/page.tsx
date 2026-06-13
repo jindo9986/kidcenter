@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getAchievements } from "@/lib/content";
 import type { L } from "@/lib/schemas";
 import { asset } from "@/lib/asset";
 import { Localized } from "@/components/Localized";
@@ -9,10 +8,8 @@ import { SiteNav } from "@/components/SiteNav";
 export const metadata: Metadata = {
   title: "Hi, I'm Tin — Đào Đình Hữu",
   description:
-    "A self-introduction by Đào Đình Hữu (Tin): a curious learner who observes, investigates and tries to understand the world — through science, reading, drawing and maths.",
+    "A self-introduction by Đào Đình Hữu (Tin): a curious learner who really likes understanding things — through science, reading, drawing and maths. Observe. Investigate. Understand.",
 };
-
-const en = (v: L) => v.en;
 
 /* faint indigo graph-paper texture (DESIGN.md hero treatment) */
 const graphPaper =
@@ -101,40 +98,31 @@ function PhotoMasonry({ photos }: { photos: { src: string; alt: string; caption:
 /* ---------- content (bilingual) ---------- */
 
 const QUESTIONS: L[] = [
-  { vi: "Sao nó trông như vậy?", en: "Why does it look like that?" },
-  { vi: "Nó hoạt động thế nào?", en: "How does it work?" },
-  { vi: "Trước đó đã xảy ra chuyện gì?", en: "What happened before?" },
-  { vi: "Sẽ ra sao nếu thay đổi điều gì đó?", en: "What would happen if something changed?" },
+  { vi: "Sao nó lại như vậy?", en: "Why does it work that way?" },
+  { vi: "Chuyện đó đã xảy ra thế nào?", en: "How did it happen?" },
+  { vi: "Trước kia nó ra sao?", en: "What was it like before?" },
+  { vi: "Sẽ thế nào nếu thay đổi điều gì đó?", en: "What would happen if something changed?" },
 ];
 
-const DOMAINS: { icon: string; name: L; body: L }[] = [
-  {
-    icon: "🔬",
-    name: { vi: "Khoa học", en: "Science" },
-    body: { vi: "giúp mình hiểu thế giới vận hành ra sao", en: "helps me understand how the world works" },
-  },
-  {
-    icon: "🏛️",
-    name: { vi: "Lịch sử", en: "History" },
-    body: { vi: "giúp mình hiểu mọi thứ đã đổi thay thế nào theo thời gian", en: "helps me understand how things changed over time" },
-  },
-  {
-    icon: "💻",
-    name: { vi: "Công nghệ", en: "Technology" },
-    body: { vi: "cho mình thấy ý tưởng có thể trở thành hiện thực", en: "shows me how ideas can become real" },
-  },
-  {
-    icon: "📚",
-    name: { vi: "Đọc sách", en: "Reading" },
-    body: { vi: "giúp mình khám phá tất cả những điều đó", en: "helps me explore all of them" },
-  },
+const SCIENCE_METHOD: L[] = [
+  { vi: "Quan sát", en: "Observe" },
+  { vi: "Đặt câu hỏi", en: "Ask" },
+  { vi: "Tìm bằng chứng", en: "Find evidence" },
+  { vi: "Thấu hiểu", en: "Understand" },
+];
+
+const INTERESTS: L[] = [
+  { vi: "Động vật", en: "Animals" },
+  { vi: "Khủng long", en: "Dinosaurs" },
+  { vi: "Thiên nhiên", en: "Nature" },
+  { vi: "Công nghệ", en: "Technology" },
+  { vi: "Cách mọi thứ vận hành", en: "How things work" },
 ];
 
 const TEACHER_WORDS: L[] = [
   { vi: "Tò mò", en: "Curious" },
-  { vi: "Tự chủ", en: "Independent" },
   { vi: "Chu đáo", en: "Thoughtful" },
-  { vi: "Ham học", en: "Eager to learn" },
+  { vi: "Tự chủ", en: "Independent" },
 ];
 
 const THREE_WORDS: L[] = [
@@ -143,7 +131,7 @@ const THREE_WORDS: L[] = [
   { vi: "Thấu hiểu", en: "Understand" },
 ];
 
-const observePhotos: { src: string; alt: string; caption: L }[] = [
+const curiosityPhotos: { src: string; alt: string; caption: L }[] = [
   { src: "/media/life/life-wonder-reptile.jpg", alt: "Pointing at a reptile", caption: { vi: "Ồ — đó là con gì vậy?!", en: "Whoa — what is that?!" } },
   { src: "/media/life/life-microscope.jpg", alt: "Looking through a microscope", caption: { vi: "Dưới kính hiển vi — thớ gỗ", en: "Under the microscope — the grain of wood" } },
   { src: "/media/life/life-whale-skeleton.jpg", alt: "In front of a sperm-whale skeleton", caption: { vi: "Đối diện bộ xương cá nhà táng", en: "Eye to eye with a sperm whale" } },
@@ -159,24 +147,9 @@ const dinoPhotos: { src: string; alt: string; caption: L }[] = [
   { src: "/media/dino-sketches.jpg", alt: "Sketchbook of dinosaur and biology drawings", caption: { vi: "Một trang trong sổ ký hoạ", en: "A page from the sketchbook" } },
 ];
 
-const awardPhotos = [
-  { src: "/media/life/life-award-stage.jpg", alt: "On stage with the Science Star Award" },
-  { src: "/media/life/life-award-ceremony.jpg", alt: "Holding the Science Star Award at the ceremony" },
-  { src: "/media/life/life-award-classroom.jpg", alt: "With his certificate at the class Wall of Fame" },
-];
-
 /* ---------- page ---------- */
 
 export default function IntroPage() {
-  const achievements = getAchievements();
-  const medal = (k: string) => achievements.filter((a) => a.medal === k).length;
-  const tally: [string, L, number][] = [
-    ["🥇", { vi: "Vàng", en: "Gold" }, medal("gold")],
-    ["🥈", { vi: "Bạc", en: "Silver" }, medal("silver")],
-    ["🥉", { vi: "Đồng", en: "Bronze" }, medal("bronze")],
-    ["🏅", { vi: "Tổng giải", en: "Honours" }, achievements.length],
-  ];
-
   return (
     <main className="bg-cream text-ink">
       <SiteNav />
@@ -197,94 +170,88 @@ export default function IntroPage() {
           <p className="mt-5 max-w-[620px] text-lg leading-relaxed text-ink/70 sm:text-xl">
             <Localized
               value={{
-                vi: "Mình là Đào Đình Hữu, nhưng mọi người đều gọi là Tin. Mình thích đặt câu hỏi — đôi khi rất nhiều. Khi thấy điều gì thú vị, mình thường muốn biết thêm về nó.",
-                en: "My name is Đào Đình Hữu, but everyone calls me Tin. I like asking questions — sometimes a lot of them. When I see something interesting, I usually want to know more about it.",
+                vi: "Mình là Đào Đình Hữu, nhưng mọi người đều gọi là Tin. Nếu phải mô tả bản thân trong một câu, mình sẽ nói: mình rất thích hiểu mọi thứ. Từ nhỏ, mình đã thích đặt câu hỏi về thế giới quanh mình.",
+                en: "My name is Đào Đình Hữu, but everyone calls me Tin. If I had to describe myself in one sentence, I'd say I really like understanding things. Ever since I was little, I've enjoyed asking questions about the world around me.",
               }}
             />
           </p>
           <div className="mt-6">
             <Chips items={QUESTIONS} italic />
           </div>
+          <p className="mt-6 max-w-[560px] text-base text-ink/60">
+            <Localized
+              value={{
+                vi: "Mình hỏi không phải lúc nào cũng vì cần câu trả lời ngay — đôi khi chỉ đơn giản vì tò mò.",
+                en: "I don't always ask because I need an answer right away — sometimes simply because I'm curious.",
+              }}
+            />
+          </p>
         </div>
       </header>
 
-      {/* QUESTIONS → INTERESTS */}
+      {/* CURIOSITY → EXPLORING */}
       <section className="bg-white px-6 py-16 sm:py-24">
         <SectionHead
-          eyebrow={{ vi: "Mọi thứ bắt đầu từ câu hỏi", en: "It all starts with a question" }}
-          title={{ vi: "Nhiều điều mình thích học đều khởi đầu như thế", en: "Many things I love learning started this way" }}
+          eyebrow={{ vi: "Tò mò dẫn lối", en: "Curiosity leads the way" }}
+          title={{ vi: "Một câu hỏi mở ra câu hỏi khác", en: "One question leads to another" }}
           paras={[
             {
-              vi: "Một hoá thạch khủng long khiến mình tự hỏi thế giới hàng triệu năm trước trông ra sao. Một con vật khiến mình tò mò nó sinh tồn thế nào trong tự nhiên. Một thí nghiệm khoa học khiến mình muốn biết vì sao lại ra kết quả đó.",
-              en: "A dinosaur fossil makes me wonder what the world looked like millions of years ago. An animal makes me curious about how it survives in nature. A science experiment makes me want to know why the result happened.",
+              vi: "Một hoá thạch có thể khiến mình tự hỏi về sự sống hàng triệu năm trước. Một con vật khiến mình nghĩ xem nó sinh tồn thế nào trong tự nhiên. Một cỗ máy khiến mình tò mò bên trong đang diễn ra điều gì. Ngay cả những thứ bình thường cũng trở nên thú vị khi mình bắt đầu nghĩ về chúng.",
+              en: "A fossil can make me wonder about life millions of years ago. An animal can make me think about how it survives in nature. A machine can make me curious about what's happening inside. Even ordinary things become interesting when I start thinking about them.",
             },
             {
-              vi: "Thậm chí một vật bình thường cũng có thể khiến mình dừng lại và suy nghĩ.",
-              en: "Even an ordinary object can make me stop and think.",
+              vi: "Vì thế, mình hay khám phá một chủ đề lâu hơn dự định rất nhiều. Câu hỏi này dẫn đến câu hỏi khác, rồi câu khác nữa — và trước khi kịp nhận ra, mình đã dành cả tiếng đồng hồ tìm hiểu một điều vừa thu hút mình.",
+              en: "So I often explore a topic for much longer than I planned. One question leads to another, then another — and before I realise it, I've spent an hour learning about something that caught my attention.",
             },
           ]}
         />
+        <PhotoMasonry photos={curiosityPhotos} />
       </section>
 
-      {/* OBSERVING */}
+      {/* SCIENCE */}
       <section className="px-6 py-16 sm:py-24">
         <SectionHead
-          eyebrow={{ vi: "Mình quan sát rất nhiều", en: "I observe a lot" }}
-          title={{ vi: "Nhìn thật kỹ vào từng chi tiết", en: "Looking closely at the details" }}
+          eyebrow={{ vi: "Môn học tự nhiên nhất với mình", en: "The subject that feels most natural" }}
+          title={{ vi: "Khoa học bắt đầu từ sự tò mò", en: "Science begins with curiosity" }}
           paras={[
             {
-              vi: "Khi đến bảo tàng, sở thú, thuỷ cung, trung tâm khoa học hay triển lãm, mình thường ở lại lâu hơn dự định, vì cứ liên tục phát hiện điều mới để ý.",
-              en: "At museums, zoos, aquariums, science centres or exhibitions, I often stay longer than expected, because I keep finding new things to notice.",
-            },
-            {
-              vi: "Có khi mình tìm ra một điều thú vị. Có khi lại tìm ra… thêm thật nhiều câu hỏi.",
-              en: "Sometimes I discover something interesting. Sometimes I discover… even more questions.",
+              vi: "Mình thích việc khoa học bắt đầu từ sự tò mò. Người ta quan sát một điều gì đó, đặt câu hỏi, tìm bằng chứng, rồi dần dần xây nên hiểu biết. Quy trình ấy với mình thật quen thuộc.",
+              en: "I like that science begins with curiosity. People observe something, ask questions, look for evidence, and gradually build understanding. That process feels familiar to me.",
             },
           ]}
         />
-        <PhotoMasonry photos={observePhotos} />
+        <div className="mt-8">
+          <FlowChain items={SCIENCE_METHOD} />
+        </div>
+        <p className="mx-auto mt-10 max-w-[640px] text-center text-lg leading-relaxed text-ink/75">
+          <Localized
+            value={{
+              vi: "Nhiều sở thích của mình đều kết nối với khoa học theo cách nào đó:",
+              en: "Many of my interests connect to science in some way:",
+            }}
+          />
+        </p>
+        <div className="mt-6">
+          <Chips items={INTERESTS} />
+        </div>
       </section>
 
-      {/* CONNECTED WORLD */}
+      {/* READING */}
       <section className="bg-white px-6 py-16 sm:py-24">
         <SectionHead
-          eyebrow={{ vi: "Càng học càng thấy kết nối", en: "The more I learn, the more it connects" }}
-          title={{ vi: "Một thế giới gắn kết với nhau", en: "A connected world" }}
-          paras={[
-            {
-              vi: "Mình thích học về khoa học, động vật, khủng long, lịch sử, công nghệ và thiên nhiên. Càng học, mình càng thấy mọi thứ liên kết với nhau.",
-              en: "I enjoy learning about science, animals, dinosaurs, history, technology and nature. The more I learn, the more connected everything seems.",
-            },
-          ]}
+          eyebrow={{ vi: "Khi muốn tìm hiểu thêm", en: "When I want to learn more" }}
+          title={{ vi: "Một cuốn sách mở ra nhiều cánh cửa", en: "A book opens more doors" }}
         />
-        <div className="mx-auto mt-8 grid max-w-4xl gap-4 sm:grid-cols-2">
-          {DOMAINS.map((d, i) => (
-            <div key={i} className="break-avoid rounded-3xl border border-black/5 bg-cream p-6 shadow-sm">
-              <div className="flex items-baseline gap-2">
-                <span className="text-2xl" aria-hidden>
-                  {d.icon}
-                </span>
-                <p className="font-display text-xl font-bold text-ink">
-                  <Localized value={d.name} />
-                </p>
-              </div>
-              <p className="mt-1.5 leading-relaxed text-ink/70">
-                <Localized value={d.body} />
-              </p>
-            </div>
-          ))}
-        </div>
-        {/* reading */}
-        <div className="mx-auto mt-10 grid max-w-3xl items-center gap-6 sm:grid-cols-2">
+        <div className="mx-auto mt-8 grid max-w-3xl items-center gap-6 sm:grid-cols-2">
           <figure className="overflow-hidden rounded-3xl bg-cream shadow-md">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={asset("/media/life/life-reading-science.jpg")} alt="Reading a science book" loading="lazy" className="aspect-[4/3] w-full object-cover" />
           </figure>
-          <p className="font-display text-lg italic leading-relaxed text-ink/80">
+          <p className="text-lg leading-relaxed text-ink/75">
             <Localized
               value={{
-                vi: "Sách là một trong những cách học mình thích nhất. Đọc xong một chủ đề, mình lại muốn tìm hiểu thêm — có khi một câu trả lời mở ra ba câu hỏi mới.",
-                en: "Books are one of my favourite ways to learn. Finishing one topic, I want to learn even more — sometimes one answer leads to three new questions.",
+                vi: "Đọc sách là một trong những sở thích của mình, vì nó cho mình tiếp tục theo đuổi những câu hỏi mình quan tâm. Một cuốn sách hay hiếm khi là dấu chấm hết cho một chủ đề — thường thì nó lại mở ra thêm thật nhiều điều mình muốn học.",
+                en: "Reading is one of my favourite hobbies, because it lets me keep exploring the questions that interest me. A good book rarely feels like the end of a topic — usually it opens the door to even more things I want to learn.",
               }}
             />
           </p>
@@ -294,16 +261,12 @@ export default function IntroPage() {
       {/* DRAWING */}
       <section className="px-6 py-16 sm:py-24">
         <SectionHead
-          eyebrow={{ vi: "Vẽ cũng là cách học", en: "Drawing is also how I learn" }}
-          title={{ vi: "Vẽ là một cách để chú ý", en: "Drawing is a way of paying attention" }}
+          eyebrow={{ vi: "Vẽ", en: "Drawing" }}
+          title={{ vi: "Vẽ giúp mình quan sát kỹ hơn", en: "Drawing helps me observe more carefully" }}
           paras={[
             {
-              vi: "Nhiều người nghĩ vẽ chỉ là nghệ thuật. Với mình, vẽ còn là cách để chú ý. Khi vẽ một con vật, một con khủng long, hay thứ mình đang tìm hiểu, mình bắt đầu nhận ra những chi tiết trước đó không thấy.",
-              en: "Many people think drawing is only about art. For me, drawing is also a way of paying attention. When I draw an animal, a dinosaur, or something I'm studying, I start noticing details I didn't see before.",
-            },
-            {
-              vi: "Mình nhìn kỹ hơn, so sánh hình dạng và cấu trúc, và cố hiểu các phần ghép với nhau ra sao. Nhiều khi mình hiểu rõ một điều hơn hẳn sau khi vẽ nó — nên nhiều bức vẽ của mình bắt đầu từ quan sát.",
-              en: "I look more carefully, compare shapes and structures, and try to understand how the parts fit together. Often I understand something far better after I draw it — so many of my drawings begin with observation.",
+              vi: "Với mình, vẽ là một cách quan sát kỹ hơn. Khi vẽ một thứ gì đó, mình bắt đầu nhận ra những chi tiết trước đó chưa từng thấy. Càng nhìn kỹ, mình càng hiểu.",
+              en: "For me, drawing is a way of observing more carefully. When I draw something, I start noticing details I didn't see before. The more closely I look, the more I understand.",
             },
           ]}
         />
@@ -320,70 +283,29 @@ export default function IntroPage() {
         </div>
       </section>
 
-      {/* MATHS */}
+      {/* MATHS → science is the one */}
       <section className="bg-white px-6 py-16 sm:py-24">
         <SectionHead
-          eyebrow={{ vi: "Và mình thích Toán", en: "And I enjoy maths" }}
-          title={{ vi: "Niềm vui ở quá trình mày mò", en: "The joy is in figuring it out" }}
+          eyebrow={{ vi: "Toán học", en: "Mathematics" }}
+          title={{ vi: "Thử thách tư duy logic", en: "A logical challenge" }}
           paras={[
             {
-              vi: "Mình thích tìm quy luật, giải bài toán, và khám phá nhiều cách khác nhau để ra đáp án. Có những bài khó mất rất lâu, nhưng mình thích chính quá trình mày mò tìm ra lời giải.",
-              en: "I like finding patterns, solving problems, and discovering different ways to reach an answer. Some hard problems take a long time, but I enjoy the process of figuring them out.",
+              vi: "Mình cũng thích Toán vì nó thử thách mình tư duy logic và giải quyết vấn đề. Nhưng nếu phải chọn một môn thể hiện rõ nhất cách mình học một cách tự nhiên, thì đó là khoa học.",
+              en: "I also enjoy mathematics because it challenges me to think logically and solve problems. But if I had to choose one subject that best represents how I naturally learn, it would be science.",
             },
           ]}
         />
-      </section>
-
-      {/* AWARDS */}
-      <section className="bg-brand px-6 py-16 text-white sm:py-24">
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="mb-3 text-xs font-bold uppercase tracking-[0.22em] text-accent">
-            <Localized value={{ vi: "Một vài cột mốc", en: "A few milestones" }} />
-          </p>
-          <h2 className="font-display text-3xl font-bold sm:text-4xl">
-            <Localized value={{ vi: "Vui nhất là học được điều mới", en: "The best part is learning something new" }} />
-          </h2>
-          <p className="mx-auto mt-4 max-w-[620px] text-white/75">
-            <Localized
-              value={{
-                vi: "Những năm qua mình may mắn nhận được một số giải thưởng học thuật, trong đó có các cuộc thi khoa học và toán học. Những thành tích ấy khiến mình vui — nhưng điều mình thích nhất là học được điều gì đó mới trên hành trình.",
-                en: "Over the years I've been fortunate to receive several academic awards, including recognition in science and mathematics competitions. These achievements make me happy — but what I enjoy most is learning something new along the way.",
-              }}
-            />
-          </p>
-        </div>
-        <div className="mx-auto mt-8 grid max-w-4xl grid-cols-3 gap-3">
-          {awardPhotos.map((p) => (
-            <figure key={p.src} className="overflow-hidden rounded-2xl bg-white/10 shadow-sm">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={asset(p.src)} alt={p.alt} loading="lazy" className="aspect-[3/4] w-full object-cover" />
-            </figure>
-          ))}
-        </div>
-        <div className="mx-auto mt-6 grid max-w-4xl grid-cols-2 gap-3 sm:grid-cols-4">
-          {tally.map(([emoji, label, n]) => (
-            <div key={en(label)} className="break-avoid rounded-3xl border border-white/15 bg-white/10 p-5 text-center backdrop-blur-sm">
-              <p className="text-2xl leading-none" aria-hidden>
-                {emoji}
-              </p>
-              <p className="mt-2 font-display text-3xl font-extrabold tabular-nums">{n}</p>
-              <p className="text-sm font-semibold text-white/70">
-                <Localized value={label} />
-              </p>
-            </div>
-          ))}
-        </div>
       </section>
 
       {/* TEACHERS */}
       <section className="px-6 py-16 sm:py-24">
         <SectionHead
           eyebrow={{ vi: "Thầy cô nói về mình", en: "What my teachers say" }}
-          title={{ vi: "“Tò mò” có lẽ là từ hợp với mình nhất", en: "“Curious” is probably the word that fits me best" }}
+          title={{ vi: "Tò mò là lý do đằng sau nhiều điều", en: "Curiosity is the reason behind it all" }}
           paras={[
             {
-              vi: "Thầy cô thường nhận xét mình tò mò, tự chủ, chu đáo và ham học. Mình nghĩ “tò mò” có lẽ là từ mô tả mình đúng nhất.",
-              en: "My teachers often describe me as curious, independent, thoughtful and eager to learn. I think “curious” is probably the word that describes me best.",
+              vi: "Thầy cô thường nhận xét mình tò mò, chu đáo và tự chủ. Mình nghĩ tò mò có lẽ là lý do đằng sau rất nhiều điều mình thích: nó thôi thúc mình đặt câu hỏi, thôi thúc mình khám phá, và thôi thúc mình tiếp tục học.",
+              en: "My teachers often describe me as curious, thoughtful and independent. I think curiosity is probably the reason behind many of the things I enjoy — it encourages me to ask questions, to explore, and to keep learning.",
             },
           ]}
         />
@@ -392,22 +314,13 @@ export default function IntroPage() {
         </div>
       </section>
 
-      {/* THE PATH — three words */}
+      {/* THREE WORDS */}
       <section className="bg-white px-6 py-16 sm:py-24">
         <SectionHead
-          eyebrow={{ vi: "Nhìn lại", en: "Looking back" }}
-          title={{ vi: "Mọi điều mình thích đều đi theo một lối", en: "The things I love follow the same path" }}
-          paras={[
-            {
-              vi: "Đầu tiên, mình để ý một điều gì đó. Rồi mình đặt câu hỏi về nó. Sau đó mình tìm tòi và khám phá thêm. Cuối cùng, mình hiểu được điều mà trước đây mình chưa hiểu.",
-              en: "First, I notice something. Then I ask questions about it. After that, I investigate and learn more. Finally, I understand something I didn't understand before.",
-            },
-          ]}
+          eyebrow={{ vi: "Hành trình học của mình", en: "My learning journey" }}
+          title={{ vi: "Gói gọn trong ba từ", en: "In three words" }}
         />
-        <p className="mx-auto mt-8 max-w-[640px] text-center text-lg text-ink/60">
-          <Localized value={{ vi: "Nếu gói hành trình học của mình trong ba từ:", en: "If I had to describe my learning journey in three words:" }} />
-        </p>
-        <div className="mt-4">
+        <div className="mt-8">
           <FlowChain items={THREE_WORDS} />
         </div>
       </section>
@@ -418,16 +331,16 @@ export default function IntroPage() {
           <p className="font-display text-3xl font-extrabold leading-tight sm:text-4xl">
             <Localized
               value={{
-                vi: "Vẫn còn rất nhiều điều mình chưa biết. Và đó chính là điều khiến việc học trở nên thú vị.",
-                en: "There is still so much I don't know yet. That's what makes learning exciting.",
+                vi: "Vẫn còn rất nhiều điều mình muốn khám phá. Và đó chính là điều khiến việc học trở nên thú vị.",
+                en: "There is still so much I want to discover. That's what makes learning exciting.",
               }}
             />
           </p>
           <p className="mx-auto mt-6 max-w-xl font-display text-xl italic text-white/90">
             <Localized
               value={{
-                vi: "Mỗi câu trả lời lại như khởi đầu của một câu hỏi mới.",
-                en: "Every answer feels like the beginning of another question.",
+                vi: "Mỗi câu trả lời lại dường như dẫn tới một câu hỏi mới — và mình nghĩ đó chính là lý do mình thích học đến vậy.",
+                en: "Every answer seems to lead to a new question — and I think that's exactly why I enjoy learning so much.",
               }}
             />
           </p>
