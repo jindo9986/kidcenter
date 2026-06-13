@@ -182,7 +182,7 @@ export default function IntroPage() {
             <img src={asset("/media/life/life-harvest.jpg")} alt="Đào Đình Hữu (Tin)" className="h-full w-full object-cover" />
           </div>
           <p className="mb-3 text-xs font-bold uppercase tracking-[0.22em] text-brand">
-            <Localized value={{ vi: "Xin chào", en: "Hello" }} />
+            <Localized value={{ vi: "Tự giới thiệu", en: "A self-introduction" }} />
           </p>
           <h1 className="font-display text-5xl font-extrabold leading-[1.05] text-ink sm:text-6xl">
             <Localized value={{ vi: "Chào, mình là Tin.", en: "Hi, I'm Tin." }} />
