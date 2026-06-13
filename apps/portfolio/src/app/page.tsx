@@ -84,7 +84,7 @@ function FlowChain({ items, dark = false }: { items: L[]; dark?: boolean }) {
 
 function PhotoMasonry({ photos }: { photos: { src: string; alt: string; caption: L }[] }) {
   return (
-    <div className="mx-auto mt-10 max-w-5xl gap-3 [column-fill:_balance] columns-2 sm:columns-3">
+    <div className="mx-auto mt-8 max-w-5xl gap-3 [column-fill:_balance] columns-2 sm:columns-3">
       {photos.map((p) => (
         <figure key={p.src} className="mb-3 break-inside-avoid overflow-hidden rounded-2xl bg-white shadow-sm">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -176,7 +176,7 @@ export default function IntroPage() {
 
       {/* HERO */}
       <header className="relative overflow-hidden border-b border-brand/10" style={{ background: graphPaper }}>
-        <div className="relative mx-auto flex max-w-3xl flex-col items-center px-6 pb-16 pt-8 text-center">
+        <div className="relative mx-auto flex max-w-3xl flex-col items-center px-6 pb-12 pt-8 text-center">
           <div className="mb-6 h-44 w-44 overflow-hidden rounded-full shadow-md ring-4 ring-white sm:h-56 sm:w-56">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={asset("/media/life/life-harvest.jpg")} alt="Đào Đình Hữu (Tin)" className="h-full w-full object-cover" />
@@ -210,7 +210,7 @@ export default function IntroPage() {
       </header>
 
       {/* SCIENCE */}
-      <section className="bg-white px-6 py-16 sm:py-24">
+      <section className="bg-white px-6 py-12 sm:py-16">
         <SectionHead
           eyebrow={{ vi: "Môn học tự nhiên nhất với mình", en: "The subject that feels most natural" }}
           title={{ vi: "Khoa học bắt đầu từ sự tò mò", en: "Science begins with curiosity" }}
@@ -221,10 +221,10 @@ export default function IntroPage() {
             },
           ]}
         />
-        <div className="mt-8">
+        <div className="mt-6">
           <FlowChain items={SCIENCE_METHOD} />
         </div>
-        <p className="mx-auto mt-10 max-w-[640px] text-center text-lg leading-relaxed text-ink/75">
+        <p className="mx-auto mt-8 max-w-[640px] text-center text-lg leading-relaxed text-ink/75">
           <Localized
             value={{
               vi: "Nhiều điều mình thích học đều kết nối với khoa học theo cách nào đó. Càng học, mình càng thấy mọi thứ liên kết với nhau.",
@@ -238,7 +238,7 @@ export default function IntroPage() {
       </section>
 
       {/* READING */}
-      <section className="px-6 py-16 sm:py-24">
+      <section className="px-6 py-12 sm:py-16">
         <SectionHead
           eyebrow={{ vi: "Sở thích yêu thích", en: "A favourite hobby" }}
           title={{ vi: "Đọc để tiếp tục đặt câu hỏi", en: "Reading keeps the questions going" }}
@@ -260,7 +260,7 @@ export default function IntroPage() {
       </section>
 
       {/* OBSERVATION */}
-      <section className="bg-white px-6 py-16 sm:py-24">
+      <section className="bg-white px-6 py-12 sm:py-16">
         <SectionHead
           eyebrow={{ vi: "Một cách học khác", en: "Another way I learn" }}
           title={{ vi: "Quan sát thật kỹ", en: "Observing closely" }}
@@ -279,7 +279,7 @@ export default function IntroPage() {
       </section>
 
       {/* DRAWING */}
-      <section className="px-6 py-16 sm:py-24">
+      <section className="px-6 py-12 sm:py-16">
         <SectionHead
           eyebrow={{ vi: "Vẽ", en: "Drawing" }}
           title={{ vi: "Vẽ cũng là một cách học", en: "Drawing is a way of learning" }}
@@ -294,7 +294,7 @@ export default function IntroPage() {
             },
           ]}
         />
-        <div className="mx-auto mt-10 grid max-w-4xl grid-cols-2 gap-3 sm:grid-cols-4">
+        <div className="mx-auto mt-8 grid max-w-4xl grid-cols-2 gap-3 sm:grid-cols-4">
           {dinoPhotos.map((p) => (
             <figure key={p.src} className="break-avoid overflow-hidden rounded-2xl bg-white shadow-sm">
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -308,7 +308,7 @@ export default function IntroPage() {
       </section>
 
       {/* MATHS */}
-      <section className="bg-white px-6 py-16 sm:py-24">
+      <section className="bg-white px-6 py-12 sm:py-16">
         <SectionHead
           eyebrow={{ vi: "Toán học", en: "Mathematics" }}
           title={{ vi: "Thử thách tư duy logic", en: "A logical challenge" }}
@@ -322,7 +322,7 @@ export default function IntroPage() {
       </section>
 
       {/* AWARDS */}
-      <section className="bg-brand px-6 py-16 text-white sm:py-24">
+      <section className="bg-brand px-6 py-12 text-white sm:py-16">
         <div className="mx-auto max-w-3xl text-center">
           <p className="mb-3 text-xs font-bold uppercase tracking-[0.22em] text-accent">
             <Localized value={{ vi: "Một vài cột mốc", en: "A few milestones" }} />
@@ -371,7 +371,7 @@ export default function IntroPage() {
       </section>
 
       {/* TEACHERS */}
-      <section className="px-6 py-16 sm:py-24">
+      <section className="px-6 py-12 sm:py-16">
         <SectionHead
           eyebrow={{ vi: "Thầy cô nói về mình", en: "What my teachers say" }}
           title={{ vi: "Tò mò, chu đáo, tự chủ và ham học", en: "Curious, thoughtful, independent and eager to learn" }}
@@ -388,7 +388,7 @@ export default function IntroPage() {
       </section>
 
       {/* THE PATH — three words */}
-      <section className="bg-white px-6 py-16 sm:py-24">
+      <section className="bg-white px-6 py-12 sm:py-16">
         <SectionHead
           eyebrow={{ vi: "Nhìn lại", en: "Looking back" }}
           title={{ vi: "Mọi điều mình thích đều đi theo một lối", en: "The things I love follow the same path" }}
@@ -408,7 +408,7 @@ export default function IntroPage() {
       </section>
 
       {/* CLOSING */}
-      <section className="bg-brand px-6 py-20 text-center text-white sm:py-28">
+      <section className="bg-brand px-6 py-16 text-center text-white sm:py-20">
         <div className="mx-auto max-w-2xl">
           <p className="font-display text-3xl font-extrabold leading-tight sm:text-4xl">
             <Localized
