@@ -190,8 +190,8 @@ export default function IntroPage() {
           <p className="mt-5 max-w-[620px] text-lg leading-relaxed text-ink/70 sm:text-xl">
             <Localized
               value={{
-                vi: "Mình là Đào Đình Hữu, nhưng mọi người đều gọi là Tin. Nếu phải mô tả bản thân trong một câu, mình sẽ nói: mình thực sự thích hiểu mọi thứ vận hành ra sao. Từ nhỏ, mình đã tò mò về thế giới quanh mình và hay tự đặt câu hỏi.",
-                en: "My name is Đào Đình Hữu, but everyone calls me Tin. If I had to describe myself in one sentence, I'd say I really enjoy understanding how things work. Ever since I was little, I've been curious about the world around me, and I often find myself asking questions.",
+                vi: "Tên đầy đủ của mình là Đào Đình Hữu. Nếu phải mô tả bản thân trong một câu, mình sẽ nói: mình thực sự thích hiểu mọi thứ vận hành ra sao. Từ nhỏ, mình đã tò mò về thế giới quanh mình và hay tự đặt câu hỏi.",
+                en: "My full name is Đào Đình Hữu. If I had to describe myself in one sentence, I'd say I really enjoy understanding how things work. Ever since I was little, I've been curious about the world around me, and I often find myself asking questions.",
               }}
             />
           </p>
