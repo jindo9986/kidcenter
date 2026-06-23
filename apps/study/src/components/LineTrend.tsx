@@ -1,4 +1,4 @@
-import { toTrendSeries, type RawPoint } from "@/lib/normalize";
+import { toTrendSeries, normalizePct, type RawPoint } from "@/lib/normalize";
 
 // Small-multiple line chart: one subject's DEC (faint) + MAY (solid) percentage
 // across grades 1–4. Every score is normalised to % of that year's scale, so all
@@ -48,6 +48,16 @@ export function LineTrend({ name, points }: { name: string; points: RawPoint[] }
             L{gr}
           </text>
         ))}
+        {/* per-unit scores within each year (faint teal cloud, spread horizontally) */}
+        {points.map((p) =>
+          (p.units ?? []).map((u, j, arr) => {
+            const n = arr.length;
+            const x = Math.min(W - PAD.r, Math.max(PAD.l, xOf(p.grade) + (j - (n - 1) / 2) * 5));
+            return (
+              <circle key={`u${p.grade}-${j}`} cx={x} cy={yOf(normalizePct(u, p.max))} r="1.7" fill="var(--color-teal)" opacity="0.4" />
+            );
+          }),
+        )}
         {/* DEC series (faint), continuous across all grades */}
         {dec.length > 1 && (
           <polyline

@@ -11,6 +11,7 @@ export interface RawPoint {
   dec?: number;
   may?: number;
   max: number;
+  units?: number[];
 }
 export interface TrendPoint {
   grade: number;

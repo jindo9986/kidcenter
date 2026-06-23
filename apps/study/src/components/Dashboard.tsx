@@ -1,7 +1,6 @@
 "use client";
 
 import { LineTrend } from "@/components/LineTrend";
-import { CombinedTrend } from "@/components/CombinedTrend";
 import { RadarChart } from "@/components/RadarChart";
 import type { RawPoint } from "@/lib/normalize";
 import type { StudyData, Theme, FocusArea as FocusAreaT } from "@/lib/study-data";
@@ -101,18 +100,15 @@ export function Dashboard({ data }: { data: StudyData }) {
         <Section
           eyebrow="Xu hướng theo thời gian"
           title="Điểm các môn lõi qua 4 năm"
-          subtitle="Đường đậm = cuối kỳ (MAY), đường mờ = giữa kỳ (DEC). Mọi điểm quy về % của thang điểm năm đó, nên các lớp nối liền thành một mạch để thấy xu hướng tổng thể."
+          subtitle="Đường đậm = cuối kỳ (MAY), đường mờ = giữa kỳ (DEC), chấm mờ = điểm từng unit trong năm. Mọi điểm quy về % của thang điểm năm đó để các lớp nối liền thành một mạch."
         >
-          <div className="space-y-4">
-            <CombinedTrend subjects={academics.trends} />
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {academics.trends.map((t) => (
-                <LineTrend key={t.key} name={t.name} points={t.points as RawPoint[]} />
-              ))}
-              <div className="break-avoid rounded-3xl border border-dashed border-black/10 bg-cream/50 p-4 text-sm leading-relaxed text-ink/55">
-                <p className="font-semibold text-ink/70">Ghi chú thang điểm</p>
-                <p className="mt-1">{academics.scaleNote}</p>
-              </div>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {academics.trends.map((t) => (
+              <LineTrend key={t.key} name={t.name} points={t.points as RawPoint[]} />
+            ))}
+            <div className="break-avoid rounded-3xl border border-dashed border-black/10 bg-cream/50 p-4 text-sm leading-relaxed text-ink/55">
+              <p className="font-semibold text-ink/70">Ghi chú thang điểm</p>
+              <p className="mt-1">{academics.scaleNote}</p>
             </div>
           </div>
         </Section>
