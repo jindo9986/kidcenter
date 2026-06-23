@@ -11,3 +11,7 @@
 # the synthesised assessment/roadmap stay LOCAL ONLY; they live in Supabase in
 # prod and are seeded from these files via scripts/seed.mjs.
 /content/*.json
+
+# Backup of the original report-card PDFs (sensitive source documents) — keep
+# them on this machine only, never in the public repo.
+/content/reports-pdf/
