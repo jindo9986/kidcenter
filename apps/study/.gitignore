@@ -1,0 +1,13 @@
+# Build artifacts
+/.next/
+/out/
+
+# Secrets & local env (Supabase URL/anon + service-role key for seeding)
+.env
+.env.local
+.env*.local
+
+# PRIVATE DATA — never commit (repo is public). The child's school records and
+# the synthesised assessment/roadmap stay LOCAL ONLY; they live in Supabase in
+# prod and are seeded from these files via scripts/seed.mjs.
+/content/*.json

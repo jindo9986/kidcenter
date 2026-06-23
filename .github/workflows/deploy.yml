@@ -38,6 +38,18 @@ jobs:
         run: |
           rm -rf apps/portfolio/out/quest
           cp -r apps/family/out apps/portfolio/out/quest
+      - name: Build study app (static export, served at /study)
+        # Auth-gated (Google login + parent-only RLS); data loads from Supabase at
+        # runtime, so no school records are baked into the static bundle.
+        env:
+          NEXT_PUBLIC_BASE_PATH: /study
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+        run: pnpm --filter @kidcenter/study build
+      - name: Assemble study into portfolio/out/study
+        run: |
+          rm -rf apps/portfolio/out/study
+          cp -r apps/study/out apps/portfolio/out/study
       - uses: actions/upload-pages-artifact@v3
         with:
           path: apps/portfolio/out
