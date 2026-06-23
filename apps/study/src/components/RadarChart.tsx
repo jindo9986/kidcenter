@@ -6,21 +6,20 @@ export interface RadarAxis {
   max: number;
 }
 
-// Pentagon/heptagon radar for the current (Grade-4) capability snapshot across every
-// summarised subject. The radial domain is [70,100]% (not [0,100]) so the shape shows
-// real differences between near-perfect scores instead of a flat blob near the edge.
+// Radar for the current (Grade-4) capability snapshot across every summarised
+// subject. The radial domain is the true [0,100]% — a score's distance from centre
+// is proportional to its actual value (8.5/10 sits at 85% of the radius, not halfway),
+// so the shape never exaggerates the gap between near-perfect scores.
 const SIZE = 420;
 const C = SIZE / 2;
 const R = 120;
 const LABEL_R = R + 22;
-const DOM_MIN = 70;
 
 function point(i: number, total: number, radius: number) {
   const ang = -Math.PI / 2 + (i / total) * Math.PI * 2;
   return [C + radius * Math.cos(ang), C + radius * Math.sin(ang)];
 }
-const radiusFor = (pct: number) =>
-  R * Math.min(1, Math.max(0, (pct - DOM_MIN) / (100 - DOM_MIN)));
+const radiusFor = (pct: number) => R * Math.min(1, Math.max(0, pct / 100));
 
 export function RadarChart({ data }: { data: RadarAxis[] }) {
   const n = data.length;
@@ -29,7 +28,7 @@ export function RadarChart({ data }: { data: RadarAxis[] }) {
 
   return (
     <svg viewBox={`0 0 ${SIZE} ${SIZE}`} className="mx-auto w-full max-w-md" role="img" aria-label="Bản đồ năng lực Lớp 4">
-      {/* rings at 85 / 100% */}
+      {/* reference rings at 5/10 and 10/10 */}
       {[0.5, 1].map((f) => (
         <polygon
           key={f}

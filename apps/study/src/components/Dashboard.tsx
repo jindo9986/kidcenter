@@ -116,7 +116,7 @@ export function Dashboard({ data }: { data: StudyData }) {
         <Section
           eyebrow="Năng lực hiện tại"
           title="Bản đồ năng lực · Lớp 4"
-          subtitle="Tất cả các môn được tổng kết cuối Lớp 4 (vùng [70–100%] để thấy rõ chênh lệch giữa các điểm gần trần)."
+          subtitle="Tất cả các môn được tổng kết cuối Lớp 4. Khoảng cách từ tâm tỉ lệ thật với điểm (10/10 ở vành ngoài, 5/10 ở vòng giữa)."
         >
           <div className="grid items-center gap-6 md:grid-cols-2">
             <div className="break-avoid rounded-3xl border border-black/5 bg-white p-5 shadow-sm">
