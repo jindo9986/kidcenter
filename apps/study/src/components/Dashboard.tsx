@@ -99,7 +99,7 @@ export function Dashboard({ data }: { data: StudyData }) {
         <Section
           eyebrow="Xu hướng theo thời gian"
           title="Điểm các môn lõi qua 4 năm"
-          subtitle="Đường đậm = cuối kỳ (MAY), đường mờ = giữa kỳ (DEC), quy về %. Điểm Lớp 1 vẽ tách vì dùng thang khác (0–6) nên không nối với Lớp 2–4 (0–10)."
+          subtitle="Đường đậm = cuối kỳ (MAY), đường mờ = giữa kỳ (DEC). Mọi điểm quy về % của thang điểm năm đó, nên các lớp nối liền thành một mạch để thấy xu hướng tổng thể."
         >
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {academics.trends.map((t) => (
@@ -116,11 +116,14 @@ export function Dashboard({ data }: { data: StudyData }) {
         <Section
           eyebrow="Năng lực hiện tại"
           title="Bản đồ năng lực · Lớp 4"
-          subtitle="Điểm cuối Lớp 4 theo môn (vùng [70–100%] để thấy rõ chênh lệch giữa các điểm gần trần)."
+          subtitle="Tất cả các môn được tổng kết cuối Lớp 4 (vùng [70–100%] để thấy rõ chênh lệch giữa các điểm gần trần)."
         >
           <div className="grid items-center gap-6 md:grid-cols-2">
             <div className="break-avoid rounded-3xl border border-black/5 bg-white p-5 shadow-sm">
               <RadarChart data={academics.current.radar} />
+              {academics.current.radarNote && (
+                <p className="mt-2 text-center text-xs leading-snug text-ink/45">{academics.current.radarNote}</p>
+              )}
             </div>
             <div className="space-y-4">
               <div className="break-avoid rounded-3xl border border-black/5 bg-white p-5 shadow-sm">

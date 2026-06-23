@@ -11,6 +11,7 @@ export interface Academics {
   current: {
     label: string;
     radar: RadarAxis[];
+    radarNote?: string;
     moet: { subject: string; score: string; level: string }[];
     vietnameseStrands: { name: string; level: string }[];
   };

@@ -6,12 +6,13 @@ export interface RadarAxis {
   max: number;
 }
 
-// Compact pentagon radar for the current (Grade-4) capability snapshot. The radial
-// domain is [70,100]% (not [0,100]) so the shape shows real differences between
-// near-perfect scores instead of a flat blob near the edge.
-const SIZE = 320;
+// Pentagon/heptagon radar for the current (Grade-4) capability snapshot across every
+// summarised subject. The radial domain is [70,100]% (not [0,100]) so the shape shows
+// real differences between near-perfect scores instead of a flat blob near the edge.
+const SIZE = 420;
 const C = SIZE / 2;
-const R = 110;
+const R = 120;
+const LABEL_R = R + 22;
 const DOM_MIN = 70;
 
 function point(i: number, total: number, radius: number) {
@@ -27,8 +28,8 @@ export function RadarChart({ data }: { data: RadarAxis[] }) {
   const poly = pts.map((p) => p.join(",")).join(" ");
 
   return (
-    <svg viewBox={`0 0 ${SIZE} ${SIZE}`} className="mx-auto w-full max-w-sm" role="img" aria-label="Bản đồ năng lực Lớp 4">
-      {/* rings at 70 / 85 / 100% */}
+    <svg viewBox={`0 0 ${SIZE} ${SIZE}`} className="mx-auto w-full max-w-md" role="img" aria-label="Bản đồ năng lực Lớp 4">
+      {/* rings at 85 / 100% */}
       {[0.5, 1].map((f) => (
         <polygon
           key={f}
@@ -41,23 +42,24 @@ export function RadarChart({ data }: { data: RadarAxis[] }) {
       {/* spokes + axis labels */}
       {data.map((d, i) => {
         const [ex, ey] = point(i, n, R);
-        const [lx, ly] = point(i, n, R + 22);
+        const [lx, ly] = point(i, n, LABEL_R);
+        const anchor = Math.abs(lx - C) < 10 ? "middle" : lx > C ? "start" : "end";
         return (
           <g key={d.axis}>
             <line x1={C} y1={C} x2={ex} y2={ey} stroke="var(--color-ink)" strokeOpacity="0.08" />
             <text
               x={lx}
               y={ly}
-              textAnchor={Math.abs(lx - C) < 8 ? "middle" : lx > C ? "start" : "end"}
+              textAnchor={anchor}
               dominantBaseline="middle"
-              fontSize="12"
+              fontSize="13"
               fontWeight="700"
               fill="var(--color-ink)"
-              opacity="0.75"
+              opacity="0.78"
             >
               {d.axis}
             </text>
-            <text x={lx} y={ly + 13} textAnchor={Math.abs(lx - C) < 8 ? "middle" : lx > C ? "start" : "end"} dominantBaseline="middle" fontSize="10" fill="var(--color-brand)">
+            <text x={lx} y={ly + 14} textAnchor={anchor} dominantBaseline="middle" fontSize="11" fill="var(--color-brand)">
               {d.score}/{d.max}
             </text>
           </g>
