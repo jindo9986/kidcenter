@@ -1,6 +1,7 @@
 "use client";
 
 import { LineTrend } from "@/components/LineTrend";
+import { CombinedTrend } from "@/components/CombinedTrend";
 import { RadarChart } from "@/components/RadarChart";
 import type { RawPoint } from "@/lib/normalize";
 import type { StudyData, Theme, FocusArea as FocusAreaT } from "@/lib/study-data";
@@ -48,7 +49,8 @@ function Pill({ children, tone = "ink" }: { children: React.ReactNode; tone?: "i
 export function Dashboard({ data }: { data: StudyData }) {
   const { academics, comments, assessment, roadmap } = data;
   const s = academics.student;
-  const top10 = academics.current.moet.filter((m) => m.score === "10/10").length;
+  const perfect = academics.current.subjects.filter((m) => m.score >= m.max).length;
+  const totalSubjects = academics.current.subjects.length;
 
   return (
     <main className="mx-auto max-w-5xl px-5 py-8 sm:px-8 sm:py-12">
@@ -83,7 +85,7 @@ export function Dashboard({ data }: { data: StudyData }) {
           {[
             { v: "4", l: "năm theo dõi (L1–L4)", tone: "text-brand" },
             { v: "10/10", l: "Khoa học cuối Lớp 4", tone: "text-teal" },
-            { v: `${top10}/6`, l: "môn đạt 10/10 (Lớp 4)", tone: "text-brand" },
+            { v: `${perfect}/${totalSubjects}`, l: "môn đạt điểm tối đa (Lớp 4)", tone: "text-brand" },
             { v: "Cao nhất", l: "phẩm chất Cambridge · 4 năm", tone: "text-accent" },
           ].map((k) => (
             <div key={k.l} className="rounded-2xl border border-black/5 bg-cream p-4 text-center">
@@ -101,13 +103,16 @@ export function Dashboard({ data }: { data: StudyData }) {
           title="Điểm các môn lõi qua 4 năm"
           subtitle="Đường đậm = cuối kỳ (MAY), đường mờ = giữa kỳ (DEC). Mọi điểm quy về % của thang điểm năm đó, nên các lớp nối liền thành một mạch để thấy xu hướng tổng thể."
         >
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {academics.trends.map((t) => (
-              <LineTrend key={t.key} name={t.name} points={t.points as RawPoint[]} />
-            ))}
-            <div className="break-avoid rounded-3xl border border-dashed border-black/10 bg-cream/50 p-4 text-sm leading-relaxed text-ink/55">
-              <p className="font-semibold text-ink/70">Ghi chú thang điểm</p>
-              <p className="mt-1">{academics.scaleNote}</p>
+          <div className="space-y-4">
+            <CombinedTrend subjects={academics.trends} />
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {academics.trends.map((t) => (
+                <LineTrend key={t.key} name={t.name} points={t.points as RawPoint[]} />
+              ))}
+              <div className="break-avoid rounded-3xl border border-dashed border-black/10 bg-cream/50 p-4 text-sm leading-relaxed text-ink/55">
+                <p className="font-semibold text-ink/70">Ghi chú thang điểm</p>
+                <p className="mt-1">{academics.scaleNote}</p>
+              </div>
             </div>
           </div>
         </Section>
@@ -116,29 +121,34 @@ export function Dashboard({ data }: { data: StudyData }) {
         <Section
           eyebrow="Năng lực hiện tại"
           title="Bản đồ năng lực · Lớp 4"
-          subtitle="Tất cả các môn được tổng kết cuối Lớp 4. Khoảng cách từ tâm tỉ lệ thật với điểm (10/10 ở vành ngoài, 5/10 ở vòng giữa)."
+          subtitle="Tất cả các môn được tổng kết cuối Lớp 4, dùng điểm thực (có lẻ). Khoảng cách từ tâm tỉ lệ thật với điểm (10/10 ở vành ngoài, 5/10 ở vòng giữa)."
         >
           <div className="grid items-center gap-6 md:grid-cols-2">
             <div className="break-avoid rounded-3xl border border-black/5 bg-white p-5 shadow-sm">
-              <RadarChart data={academics.current.radar} />
-              {academics.current.radarNote && (
-                <p className="mt-2 text-center text-xs leading-snug text-ink/45">{academics.current.radarNote}</p>
+              <RadarChart data={academics.current.subjects} />
+              {academics.current.subjectsNote && (
+                <p className="mt-2 text-center text-xs leading-snug text-ink/45">{academics.current.subjectsNote}</p>
               )}
             </div>
             <div className="space-y-4">
               <div className="break-avoid rounded-3xl border border-black/5 bg-white p-5 shadow-sm">
-                <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-brand">Điểm tổng kết Lớp 4</p>
+                <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-brand">Điểm cuối Lớp 4 theo môn</p>
                 <ul className="divide-y divide-black/5">
-                  {academics.current.moet.map((m) => (
-                    <li key={m.subject} className="flex items-center justify-between py-2">
-                      <span className="text-sm text-ink/75">{m.subject}</span>
+                  {academics.current.subjects.map((m) => (
+                    <li key={m.name} className="flex items-center justify-between gap-2 py-2">
+                      <span className="flex items-center gap-2 text-sm text-ink/75">
+                        {m.name}
+                        <span className="rounded bg-black/5 px-1.5 py-0.5 text-[10px] font-semibold uppercase text-ink/45">
+                          {m.source === "Cambridge" ? "Cam" : "MOET"}
+                        </span>
+                      </span>
                       <span
                         className={
                           "flex h-7 min-w-7 items-center justify-center rounded-full px-2 font-display text-sm font-bold tabular-nums " +
-                          (m.score === "10/10" ? "bg-brand text-white" : "bg-accent/20 text-ink")
+                          (m.score >= m.max ? "bg-brand text-white" : "bg-accent/20 text-ink")
                         }
                       >
-                        {m.score.replace("/10", "")}
+                        {m.score}
                       </span>
                     </li>
                   ))}

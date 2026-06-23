@@ -1,6 +1,5 @@
 import { supabase } from "@/lib/supabase";
 import type { RawPoint } from "@/lib/normalize";
-import type { RadarAxis } from "@/components/RadarChart";
 
 /* Types mirror the four content/*.json documents (the seed source). */
 
@@ -10,9 +9,8 @@ export interface Academics {
   trends: { key: string; name: string; points: RawPoint[] }[];
   current: {
     label: string;
-    radar: RadarAxis[];
-    radarNote?: string;
-    moet: { subject: string; score: string; level: string }[];
+    subjects: { name: string; axis: string; score: number; max: number; source: string }[];
+    subjectsNote?: string;
     vietnameseStrands: { name: string; level: string }[];
   };
   attributes: {
