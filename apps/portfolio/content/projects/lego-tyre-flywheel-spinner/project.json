@@ -16,8 +16,8 @@
       "en": "This is one of my favourite science projects — my collection of LEGO spinning tops. Every top was designed and built by me. It's special because it combines my love of LEGO with my curiosity about science."
     },
     {
-      "vi": "Ý tưởng bắt đầu khi con không tìm thấy con quay gỗ của mình. Thay vì mua cái mới, con tự hỏi: “Mình có thể làm một con quay bằng LEGO không?” Con chưa biết câu trả lời, nên con bắt đầu thử nghiệm. Sau khi làm nhiều mẫu, con nhận ra: làm một con quay tốt không chỉ là lắp ráp — mà còn là hiểu về khoa học.",
-      "en": "The idea started when I couldn't find my wooden spinning top. Instead of buying a new one, I asked myself: “Can I build a spinning top using LEGO?” I didn't know the answer, so I started experimenting. After many models, I realised a good spinning top isn't just about building — it's about understanding science."
+      "vi": "Ý tưởng bắt đầu vài tháng trước, khi con không tìm thấy con quay gỗ của mình. Thay vì mua cái mới, con tự hỏi một câu đơn giản: “Mình có thể làm một con quay bằng LEGO không?” Con chưa biết câu trả lời, nên con bắt đầu thử nghiệm. Thiết kế đầu tiên rất đơn giản nhưng nó quay được, và điều đó khiến con càng hào hứng cải tiến. Sau khi làm nhiều mẫu khác nhau, con nhận ra: làm một con quay tốt không chỉ là lắp ráp — mà còn là hiểu về khoa học.",
+      "en": "The idea started a few months ago when I couldn't find my wooden spinning top. Instead of buying a new one, I asked myself a simple question: “Can I build a spinning top using LEGO?” I didn't know the answer, so I started experimenting. My first design was very simple but it could spin, which made me even more excited to improve it. After building many different models, I realised that making a good spinning top isn't just about building — it's also about understanding science."
     }
   ],
   "science": {
@@ -27,24 +27,24 @@
         "icon": "🌀",
         "term": { "vi": "Mô men động lượng", "en": "Angular momentum" },
         "text": {
-          "vi": "Khi quay rất nhanh, con quay cố giữ hướng quay cũ — nhờ vậy nó đứng cân bằng thay vì đổ. Quay càng nhanh, càng khó bị lật.",
-          "en": "Spinning fast, the top tries to keep its direction — so it stays balanced instead of falling. The faster it spins, the harder it is to tip over."
+          "vi": "Khi quay rất nhanh, con quay cố giữ hướng quay cũ — nhờ vậy nó đứng cân bằng thay vì đổ. Quay càng nhanh, mô men động lượng càng lớn và càng khó bị lật.",
+          "en": "Spinning fast, the top tries to keep its direction — so it stays balanced instead of falling. The faster it spins, the larger its angular momentum and the harder it is to tip over."
         }
       },
       {
         "icon": "🪶",
         "term": { "vi": "Ma sát & lực cản không khí", "en": "Friction & air resistance" },
         "text": {
-          "vi": "Ma sát ở mũi quay và lực cản không khí làm con quay chậm dần. Khi chậm lại, nó mất thăng bằng rồi đổ.",
-          "en": "Friction at the tip and air resistance slow it down. As it slows, it loses balance and falls."
+          "vi": "Ma sát ở mũi quay và lực cản không khí làm con quay chậm dần. Khi chậm lại, mô men động lượng nhỏ dần và cuối cùng nó mất thăng bằng rồi đổ.",
+          "en": "Friction at the tip and air resistance slow it down. As it slows, the angular momentum shrinks and eventually it loses its balance and falls."
         }
       },
       {
         "icon": "🎯",
         "term": { "vi": "Tâm khối", "en": "Centre of mass" },
         "text": {
-          "vi": "Con quay chạy tốt nhất khi tâm khối nằm gần trục. Nếu lệch sang một bên, nó sẽ lắc và mất thăng bằng nhanh hơn.",
-          "en": "A top works best when its centre of mass sits near the axis. Off to one side, it wobbles and loses balance faster."
+          "vi": "Con quay chạy tốt nhất khi tâm khối nằm gần trục quay. Nếu tâm khối lệch sang một bên, con quay sẽ lắc và mất thăng bằng nhanh hơn.",
+          "en": "A top works best when its centre of mass sits near the spinning axis. If it's off to one side, the top wobbles and loses balance faster."
         }
       }
     ]
@@ -56,62 +56,102 @@
   },
   "prototypes": [
     {
-      "name": { "vi": "Phóng bằng dây", "en": "String Launcher" },
+      "name": { "vi": "Nguyên mẫu phóng bằng dây", "en": "String Launcher Prototype" },
       "parts": { "vi": "2 bánh răng · 2 bánh xe · 1 trục", "en": "2 gears · 2 wheels · 1 axle" },
       "image": "/projects/lego-tyre-flywheel-spinner/string-launcher.jpg",
       "spinTime": 49.03,
-      "body": {
-        "vi": "Một trong những mẫu đầu tiên. Bánh răng nhỏ để quấn dây phóng; bánh xe lớn ở mép ngoài giúp ổn định. Nặng và cân bằng tốt — đến nay vẫn là một trong những con quay khỏe nhất của con.",
-        "en": "One of my first tops. A small gear holds the string; a large wheel on the rim adds stability. Heavy and well balanced — still one of my strongest tops."
-      }
+      "body": [
+        {
+          "vi": "Đây là một trong những con quay LEGO đầu tiên của con. Nó được làm từ hai bánh răng, hai bánh xe và một trục. Bánh răng nhỏ dùng để quấn dây quanh nó, giúp con phóng con quay. Bánh xe lớn được đặt gần mép ngoài để con quay ổn định hơn. Trục nối tất cả các bộ phận lại với nhau và cho phép con quay xoay trơn tru.",
+          "en": "This was one of my first LEGO spinning tops. It was made from two gears, two wheels, and one axle. The small gear was used to wrap the string around it so I could launch the spinning top. The larger wheel was placed near the outside edge to make the spinning top more stable. The axle connected all the parts together and allowed the spinning top to rotate smoothly."
+        },
+        {
+          "vi": "Tuy là một thiết kế đơn giản, nó nặng và cân bằng tốt. Đến nay, đây vẫn là một trong những con quay khỏe nhất của con, vì trọng lượng được trải đều quanh mép ngoài.",
+          "en": "Although it was a simple design, it was heavy and well balanced. Even today, it is still one of my strongest spinning tops because its weight is spread evenly around the outside."
+        }
+      ]
     },
     {
-      "name": { "vi": "Nhiều bánh răng", "en": "Multi-Gear" },
+      "name": { "vi": "Nguyên mẫu nhiều bánh răng", "en": "Multi-Gear Prototype" },
       "parts": { "vi": "3 bánh răng · 1 bánh xe · 1 trục", "en": "3 gears · 1 wheel · 1 axle" },
       "image": "/projects/lego-tyre-flywheel-spinner/multi-gear.jpg",
       "spinTime": 48.07,
-      "body": {
-        "vi": "Con thêm ba bánh răng để có nhiều chỗ quấn dây, phóng dễ hơn. Nhưng mẫu này nhẹ hơn nên không giữ thăng bằng lâu bằng. Bài học: thêm nhiều bộ phận không phải lúc nào cũng tốt hơn.",
-        "en": "Three gears gave more room for the string, so it launched easier. But it was lighter and didn't stay balanced as long. Lesson: more parts isn't always better."
-      }
+      "body": [
+        {
+          "vi": "Ở thiết kế thứ hai, con muốn cải tiến để con quay dễ phóng hơn. Mẫu này dùng ba bánh răng, một bánh xe và một trục. Thay vì chỉ dùng một bánh răng để giữ dây, con thêm ba bánh răng. Điều này tạo nhiều chỗ để quấn dây hơn, giúp phóng dễ dàng hơn.",
+          "en": "For my second design, I wanted to improve the spinning tops to be easier to spin. This model used three gears, one wheel, and one axle. Instead of using only one gear to hold the string, I added three gears. This gave me more space to wrap the string, making it easier to launch."
+        },
+        {
+          "vi": "Tuy nhiên, trong quá trình thử nghiệm, con phát hiện thiết kế này nhẹ hơn mẫu đầu tiên. Dù dễ phóng hơn, nó lại không giữ thăng bằng được lâu vì trọng lượng phân bố không tốt bằng. Điều này dạy con rằng thêm nhiều bộ phận không phải lúc nào cũng tạo ra một thiết kế tốt hơn.",
+          "en": "However, during my experiments I discovered that this design was lighter than my first model. Although it was easier to launch, it did not stay balanced for as long because the weight was not distributed as well. This taught me that adding more parts does not always make a better design."
+        }
+      ]
     },
     {
-      "name": { "vi": "Phiên bản dây giật", "en": "Ripcord Version" },
+      "name": { "vi": "Phiên bản dây giật", "en": "Ripcord Launcher Version" },
       "parts": { "vi": "2 bánh xe · 1 bánh răng · 1 trục", "en": "2 wheels · 1 gear · 1 axle" },
       "image": "/projects/lego-tyre-flywheel-spinner/ripcord-version.jpg",
       "spinTime": 56.15,
-      "body": {
-        "vi": "Con bỏ dây và chuyển sang bộ phóng dây giật LEGO, làm trục dài hơn để nối thẳng. Ít mảnh hơn nhưng ổn định hơn vì trọng lượng được sắp xếp cẩn thận. Đây là mẫu quay lâu nhất.",
-        "en": "I dropped the string for the LEGO ripcord launcher, with a longer axle to connect directly. Fewer pieces but more stable — my longest-spinning top."
-      }
+      "body": [
+        {
+          "vi": "Tiếp theo, con làm một thiết kế hoàn toàn khác. Con quay này được làm từ hai bánh xe, một bánh răng và một trục. Đến lúc này, con đã ngừng dùng dây vì tìm được giải pháp tốt hơn — bộ phóng dây giật LEGO (Ripcord Launcher).",
+          "en": "Next, I built a completely different design. This spinning top was made from two wheels, one gear, and one axle. By this time, I had stopped using the string because I found a better solution — the LEGO Ripcord Launcher."
+        },
+        {
+          "vi": "Con thiết kế một trục dài hơn để bộ phóng dây giật có thể nối thẳng vào con quay. Điều này giúp phóng nhanh hơn và dễ hơn nhiều. Dù mẫu này ít mảnh hơn, nó lại ổn định hơn thiết kế thứ hai vì trọng lượng được sắp xếp cẩn thận hơn.",
+          "en": "I designed a longer axle so the ripcord launcher could connect directly to the spinning top. This made launching much faster and much easier. Even though this model had fewer pieces, it was more stable than my second design because the weight was arranged more carefully."
+        }
+      ]
     },
     {
-      "name": { "vi": "Siêu nhẹ", "en": "Lightweight" },
+      "name": { "vi": "Nguyên mẫu siêu nhẹ", "en": "Lightweight Prototype" },
       "parts": { "vi": "1 bánh xe · 1 trục", "en": "1 wheel · 1 axle" },
       "image": "/projects/lego-tyre-flywheel-spinner/lightweight.jpg",
-      "body": {
-        "vi": "Thiết kế đơn giản nhất. Rất nhẹ và dễ lắp, nhưng vì quá nhẹ nên tích được ít năng lượng quay và dừng sớm. Nó giúp con hiểu trọng lượng và cân bằng quan trọng đến mức nào.",
-        "en": "My simplest design. Very light and easy to build, but too light to store much spin energy, so it stopped early. It showed me how much weight and balance matter."
-      }
+      "body": [
+        {
+          "vi": "Một trong những thiết kế đơn giản nhất của con chỉ dùng một bánh xe và một trục. Nó rất nhẹ và dễ lắp. Tuy nhiên, vì có rất ít trọng lượng, nó không tích được nhiều năng lượng quay. Kết quả là nó dừng sớm hơn nhiều so với các mẫu khác. Dù không phải mẫu chạy tốt nhất, nó giúp con hiểu trọng lượng và sự cân bằng quan trọng đến mức nào.",
+          "en": "One of my simplest designs used only one wheel and one axle. It was very light and easy to build. However, because it had very little weight, it could not store as much spinning energy. As a result, it stopped spinning much sooner than my other designs. Although it was not my best performer, it helped me understand how important weight and balance are."
+        },
+        {
+          "vi": "Có thể bạn thắc mắc làm sao để quay nó, vì không có trục nào chìa ra khỏi con quay. Hãy dùng phần dưới của trục để xoay, và nhớ để con quay hướng lên trên. Sau đó tung con quay lên với một lực nhỏ.",
+          "en": "You may wonder how to spin it, because there is no axle sticking out of the spinning top. Well, use the lower part of the axle and spin it, and make sure the spinning top is facing up. Then throw the spinning top up with a small force."
+        }
+      ]
     },
     {
-      "name": { "vi": "Lốp + bánh răng", "en": "Tyre Gear" },
+      "name": { "vi": "Nguyên mẫu lốp + bánh răng", "en": "LEGO Tyre Gear Prototype" },
       "parts": { "vi": "1 lốp lớn · 1 bánh răng nhỏ · 1 trục", "en": "1 large tyre · 1 small gear · 1 axle" },
       "image": "/projects/lego-tyre-flywheel-spinner/tyre-gear.jpg",
       "spinTime": 44.36,
-      "body": {
-        "vi": "Lốp cao su lớn tạo vành ngoài, dồn phần lớn trọng lượng ra xa tâm nên quay lâu và cân bằng. Trục vàng ở đáy là mũi quay. Đơn giản, chắc và hiệu quả.",
-        "en": "A big rubber tyre forms the rim, putting most of the weight far from the centre for balance and long spins. The yellow axle is the tip. Simple, strong, efficient."
-      }
+      "body": [
+        {
+          "vi": "Con quay này được làm từ một lốp LEGO lớn, một bánh răng nhỏ và một trục. Chiếc lốp cao su lớn là phần quan trọng nhất của thiết kế. Nó tạo thành vành ngoài của con quay và dồn phần lớn trọng lượng ra xa tâm. Điều này giúp con quay giữ thăng bằng và quay lâu hơn.",
+          "en": "This spinning top is built from one large LEGO tyre, one small gear, and one axle. The large rubber tyre is the most important part of the design. It forms the outer rim of the spinning top and places most of the weight far from the centre. This helps the spinning top stay balanced and spin for a longer time."
+        },
+        {
+          "vi": "Trục màu vàng ở đáy đóng vai trò mũi quay. Đó là bộ phận duy nhất chạm đất khi con quay đang xoay. Thiết kế này đơn giản, chắc chắn và hiệu quả. Chỉ với vài mảnh LEGO, nó đạt được sự cân bằng tuyệt vời, xoay êm và thời gian quay dài.",
+          "en": "The yellow axle at the bottom acts as the spinning tip. It is the only part that touches the ground while the spinning top is rotating. This design is simple, strong, and efficient. By using only a few LEGO pieces, it achieves excellent balance, smooth rotation, and a long spinning time."
+        }
+      ]
     },
     {
-      "name": { "vi": "Một lốp", "en": "Single-Tyre" },
+      "name": { "vi": "Con quay một lốp", "en": "Single-Tyre Spinning Top" },
       "parts": { "vi": "1 lốp lớn · 2 bánh răng · 1 trục", "en": "1 large tyre · 2 gears · 1 axle" },
       "image": "/projects/lego-tyre-flywheel-spinner/single-tyre.jpg",
-      "body": {
-        "vi": "Lốp lớn dồn trọng lượng ra mép ngoài; một bánh răng lớn đỡ lốp, bánh răng nhỏ nối trục. Trục xuyên tâm làm trục quay và nối được với bộ phóng dây giật. Ít mảnh nhưng chạy rất tốt.",
-        "en": "The large tyre keeps weight on the rim; a big gear supports it and a small gear meets the axle. The axle is the spin axis and connects to the ripcord launcher. Few pieces, great performance."
-      }
+      "body": [
+        {
+          "vi": "Tiếp theo là con quay được làm từ một lốp LEGO lớn, hai bánh răng và một trục. Chiếc lốp cao su lớn tạo thành vành ngoài của con quay. Con chọn lốp vì phần lớn trọng lượng của nó nằm quanh mép ngoài. Điều này giúp con quay giữ thăng bằng và quay lâu hơn.",
+          "en": "Next is this spinning top built from one large LEGO tyre, two gears, and one axle. The large rubber tyre forms the outer rim of the spinning top. I chose a tyre because most of its weight is around the outside edge. This helps the spinning top stay balanced and spin for a longer time."
+        },
+        {
+          "vi": "Một bánh răng lớn đỡ lốp và giữ cho cấu trúc chắc chắn. Bên dưới là một bánh răng nhỏ nối với trục. Trục chạy xuyên qua tâm con quay. Đó là trục quay, đồng thời cho phép con quay nối với bộ phóng dây giật LEGO.",
+          "en": "A large gear supports the tyre and keeps the structure strong. Below it is a smaller gear that connects to the axle. The axle runs through the centre of the spinning top. It is the spinning axis and also allows the spinning top to connect to the LEGO ripcord launcher."
+        },
+        {
+          "vi": "Dù thiết kế này chỉ dùng vài mảnh LEGO, nó chạy rất tốt. Chiếc lốp lớn mang lại cho con quay sự ổn định tốt, xoay êm và thời gian quay dài hơn.",
+          "en": "Although this design uses only a few LEGO pieces, it performs very well. The large tyre gives the spinning top good stability, smooth rotation, and a longer spinning time."
+        }
+      ]
     }
   ],
   "sections": [
@@ -120,12 +160,12 @@
       "image": "/projects/lego-tyre-flywheel-spinner/ripcord-launcher.jpg",
       "body": [
         {
-          "vi": "Lắp con quay mới chỉ là một nửa thử thách — nửa còn lại là cách phóng. Ban đầu con quấn dây quanh một bánh răng, nhưng khó kéo nhanh và mượt; đôi khi dây tuột, con quay không đủ nhanh để đứng.",
-          "en": "Building the top was only half the challenge — the other half was launching it. At first I wrapped a string around a gear, but it was hard to pull quickly and smoothly; sometimes it slipped and the top wasn't fast enough to stand."
+          "vi": "Lắp con quay mới chỉ là một nửa thử thách — nửa còn lại là tìm cách phóng tốt. Ban đầu, con quấn một sợi dây quanh một bánh răng nhỏ. Cách này chạy được, nhưng khó kéo dây nhanh và mượt; đôi khi dây bị tuột, và đôi khi con quay không đủ nhanh để giữ thăng bằng.",
+          "en": "Building the spinning top was only half of the challenge. The other half was finding a good way to launch it. At first, I wrapped a string around a small gear. Although this method worked, it was difficult to pull the string quickly and smoothly. Sometimes the string slipped, and sometimes the spinning top did not spin fast enough to stay balanced."
         },
         {
-          "vi": "Con thêm trục dài hơn để nối vào bộ phóng dây giật LEGO. Nó làm con quay xoay nhanh hơn tay nhiều, nên các con quay ổn định hơn và quay lâu hơn — một trong những cải tiến lớn nhất của dự án.",
-          "en": "I added a longer axle to connect a LEGO ripcord launcher. It spins the top far faster than my hand, so the tops became more stable and spun longer — one of the biggest improvements in the project."
+          "vi": "Để khắc phục, con thiết kế lại các con quay bằng cách thêm một trục dài hơn, cho phép nối chúng với bộ phóng dây giật LEGO. Bộ phóng làm con quay xoay nhanh hơn nhiều so với dùng tay. Nhờ đó, các con quay ổn định hơn và quay lâu hơn — đây là một trong những cải tiến lớn nhất của dự án.",
+          "en": "To solve this problem, I redesigned my spinning tops by adding a longer axle, which let me connect them to a LEGO ripcord launcher. The ripcord launcher can spin the top much faster than I can by hand. As a result, the spinning tops became much more stable and could spin for a longer time. This was one of the biggest improvements in my project."
         }
       ]
     },
@@ -134,12 +174,12 @@
       "image": "/projects/lego-tyre-flywheel-spinner/parts.jpg",
       "body": [
         {
-          "vi": "Tốc độ quay không phải điều duy nhất quan trọng — cách sắp xếp trọng lượng cũng vậy. Những con quay dồn trọng lượng ra mép ngoài quay êm hơn và đứng lâu hơn; dồn vào giữa thì dừng sớm hơn nhiều.",
-          "en": "Spinning speed isn't the only thing that matters — where the weight sits matters just as much. Tops with weight around the outside spun more smoothly and stayed up longer; weight near the centre stopped much sooner."
+          "vi": "Trong khi thử nghiệm, con phát hiện tốc độ quay không phải là điều duy nhất quan trọng — cách sắp xếp các mảnh LEGO cũng quan trọng không kém. Con nhận thấy những con quay có nhiều trọng lượng quanh mép ngoài quay êm hơn và đứng lâu hơn. Ngược lại, những con quay dồn phần lớn trọng lượng vào giữa thì dừng sớm hơn nhiều.",
+          "en": "While testing my designs, I discovered that spinning speed is not the only thing that matters. The arrangement of the LEGO pieces is just as important. I noticed that spinning tops with more weight around the outside edge spun more smoothly and stayed upright for a longer time. On the other hand, spinning tops with most of their weight near the centre stopped much sooner."
         },
         {
-          "vi": "Sau khám phá đó, con luôn ưu tiên đặt bánh xe, lốp và bánh răng lớn quanh mép các thiết kế của mình.",
-          "en": "After that, I used wheels, tyres, and large gears around the edge of my designs whenever I could."
+          "vi": "Điều này xảy ra vì trọng lượng ở mép ngoài giúp con quay chống lại thay đổi trong chuyển động. Nhờ khám phá đó, con bắt đầu ưu tiên đặt bánh xe, lốp và bánh răng lớn quanh mép các thiết kế của mình bất cứ khi nào có thể.",
+          "en": "This happened because the weight around the outside helped the spinning top resist changes in its motion. Because of this discovery, I started using LEGO wheels, tyres, and large gears around the edge of my designs whenever possible."
         }
       ]
     }
@@ -164,17 +204,17 @@
     "heading": { "vi": "Điều con học được", "en": "What I learned" },
     "body": [
       {
-        "vi": "Điều thú vị nhất con học được là kỹ thuật chính là giải quyết vấn đề. Đôi khi chỉ đổi một mảnh LEGO, hay dịch một bánh xe một chút, là con quay chạy tốt hơn hẳn.",
-        "en": "The most interesting thing I learned is that engineering is all about solving problems. Sometimes changing just one LEGO piece, or moving a wheel a little, made the top work much better."
+        "vi": "Một trong những điều thú vị nhất con học được là kỹ thuật chính là giải quyết vấn đề. Mỗi lần một thiết kế thất bại, con lại học được điều gì đó hữu ích. Đôi khi chỉ đổi một mảnh LEGO, hay dịch một bánh xe một khoảng nhỏ, là con quay chạy tốt hơn hẳn. Điều này dạy con rằng quan sát kỹ, thử nghiệm và cải tiến đều là những phần quan trọng của kỹ thuật.",
+        "en": "One of the most interesting things I learned was that engineering is all about solving problems. Every time one design failed, I learned something useful. Sometimes changing just one LEGO piece or moving one wheel by a small distance made the spinning top work much better. This taught me that careful observation, testing, and improving are all important parts of engineering."
       },
       {
-        "vi": "Dự án giúp con hiểu về lực, chuyển động, ma sát, cân bằng, mô men động lượng và tư duy thiết kế. Quan trọng hơn, nó cho con thấy khoa học không chỉ nằm trong sách — mà là thứ ta khám phá bằng cách đặt câu hỏi, dựng mô hình, thử nghiệm và học từ sai lầm.",
-        "en": "It helped me understand force, motion, friction, balance, angular momentum, and design thinking. More importantly, it showed me science isn't only in books — it's something we explore by asking questions, building models, testing ideas, and learning from mistakes."
+        "vi": "Dự án cũng giúp con hiểu nhiều khái niệm khoa học: lực, chuyển động, ma sát, cân bằng, mô men động lượng và tư duy thiết kế kỹ thuật. Quan trọng hơn, nó cho con thấy khoa học không chỉ là thứ ta đọc trong sách — mà là thứ ta có thể khám phá bằng cách đặt câu hỏi, dựng mô hình, thử nghiệm và học từ những sai lầm.",
+        "en": "This project also helped me understand many science concepts, including force, motion, friction, balance, angular momentum, and engineering design. More importantly, it showed me that science is not only something we read about in books. Science is something we can explore by asking questions, building models, testing ideas, and learning from our mistakes."
       }
     ],
     "closing": {
-      "vi": "Trong tương lai, con muốn thiết kế những con quay LEGO tốt hơn nữa — và biết đâu tổ chức một cuộc thi con quay với các bạn.",
-      "en": "In the future, I'd like to design even better LEGO spinning tops — and maybe hold my own spinning-top competition with my friends."
+      "vi": "Trong tương lai, con muốn thiết kế những con quay LEGO tốt hơn nữa — và biết đâu tổ chức một cuộc thi con quay với các bạn. Con tin mỗi lần thử nghiệm đưa con tiến gần hơn một bước tới việc trở thành một kỹ sư và nhà khoa học giỏi hơn.",
+      "en": "In the future, I would like to design even better LEGO spinning tops — and maybe even organise my own spinning-top competition with my friends. I believe that every experiment brings me one step closer to becoming a better engineer and scientist."
     }
   }
 }

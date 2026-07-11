@@ -126,7 +126,7 @@ export default async function ProjectDetail({
         </div>
       </section>
 
-      {/* PROTOTYPES — small-image cards */}
+      {/* PROTOTYPES — image + full-text rows (alternating), faithful to the write-up */}
       <section className="mx-auto max-w-5xl px-6 py-14">
         <div className="text-center">
           <Eyebrow>
@@ -141,39 +141,53 @@ export default async function ProjectDetail({
             </p>
           )}
         </div>
-        <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 space-y-14 md:space-y-20">
           {p.prototypes.map((proto, i) => (
             <article
               key={i}
-              className="break-avoid overflow-hidden rounded-3xl border border-black/5 bg-white shadow-sm"
+              className={
+                "flex flex-col gap-6 md:items-center md:gap-10 " +
+                (i % 2 === 1 ? "md:flex-row-reverse" : "md:flex-row")
+              }
             >
-              <div className="relative aspect-square bg-gradient-to-br from-cream to-black/[0.03] p-3">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={asset(proto.image)}
-                  alt={en(proto.name)}
-                  loading="lazy"
-                  className="h-full w-full object-contain"
-                />
-                {proto.spinTime && (
-                  <span className="absolute right-3 top-3 rounded-full bg-brand px-2.5 py-1 text-xs font-bold text-white shadow">
-                    {proto.spinTime.toFixed(1)}s
+              <div className="md:w-1/3">
+                <div className="relative aspect-square rounded-3xl border border-black/5 bg-gradient-to-br from-cream to-black/[0.03] p-4 shadow-sm">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={asset(proto.image)}
+                    alt={en(proto.name)}
+                    loading="lazy"
+                    className="h-full w-full object-contain"
+                  />
+                  <span className="absolute left-3 top-3 flex h-8 w-8 items-center justify-center rounded-full bg-brand font-display text-sm font-bold text-white shadow">
+                    {i + 1}
                   </span>
-                )}
-                <span className="absolute left-3 top-3 flex h-6 w-6 items-center justify-center rounded-full bg-white/90 font-display text-xs font-bold text-brand shadow">
-                  {i + 1}
-                </span>
+                </div>
               </div>
-              <div className="p-5">
-                <h3 className="font-display text-lg font-bold leading-tight text-ink">
+              <div className="md:flex-1">
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="rounded-full bg-brand/10 px-2.5 py-0.5 text-xs font-bold uppercase tracking-wide text-brand">
+                    <Localized value={{ vi: `Nguyên mẫu ${i + 1}`, en: `Prototype ${i + 1}` }} />
+                  </span>
+                  {proto.spinTime && (
+                    <span className="rounded-full bg-accent/20 px-2.5 py-0.5 text-xs font-bold text-ink">
+                      ⏱ {proto.spinTime.toFixed(2)}s
+                    </span>
+                  )}
+                </div>
+                <h3 className="mt-2 font-display text-2xl font-bold leading-tight text-ink sm:text-[1.7rem]">
                   <Localized value={proto.name} />
                 </h3>
-                <p className="mt-1 text-xs font-semibold uppercase tracking-wide text-accent">
+                <p className="mt-1 text-sm font-semibold uppercase tracking-wide text-accent">
                   <Localized value={proto.parts} />
                 </p>
-                <p className="mt-2 text-sm leading-snug text-ink/70">
-                  <Localized value={proto.body} />
-                </p>
+                <div className="mt-3 space-y-3 leading-relaxed text-ink/75">
+                  {proto.body.map((para, j) => (
+                    <p key={j}>
+                      <Localized value={para} />
+                    </p>
+                  ))}
+                </div>
               </div>
             </article>
           ))}

@@ -168,7 +168,7 @@ const prototypeSchema = z.object({
   name: L,
   parts: L,
   image: z.string(),
-  body: L,
+  body: z.array(L),
   spinTime: z.number().optional(),
 });
 const featureSectionSchema = z.object({
