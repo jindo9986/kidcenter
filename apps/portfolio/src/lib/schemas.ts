@@ -163,16 +163,43 @@ export const mediaItemSchema = z.object({
 export const mediaSchema = z.array(mediaItemSchema);
 export type MediaItem = z.infer<typeof mediaItemSchema>;
 
-export const projectMetaSchema = z.object({
+const conceptSchema = z.object({ icon: z.string().optional(), term: L, text: L });
+const prototypeSchema = z.object({
+  name: L,
+  parts: L,
+  image: z.string(),
+  body: L,
+  spinTime: z.number().optional(),
+});
+const featureSectionSchema = z.object({
+  heading: L,
+  image: z.string().optional(),
+  body: z.array(L),
+});
+const dataRowSchema = z.object({
+  label: L,
+  value: z.number(),
+  highlight: z.boolean().optional(),
+});
+
+export const projectSchema = z.object({
   date: z.string(),
-  cover: z.string().optional(),
+  cover: z.string(),
   tag: L,
   title: L,
-  summary: L.optional(),
+  summary: L,
+  intro: z.array(L),
+  science: z.object({ heading: L, points: z.array(conceptSchema) }),
+  prototypesHeading: L,
+  prototypesLede: L.optional(),
+  prototypes: z.array(prototypeSchema),
+  sections: z.array(featureSectionSchema).optional(),
+  data: z.object({ heading: L, note: L, unit: L, rows: z.array(dataRowSchema) }),
+  learnings: z.object({ heading: L, body: z.array(L), closing: L }),
 });
-export type ProjectMeta = z.infer<typeof projectMetaSchema>;
-
-export type Project = ProjectMeta & {
-  slug: string;
-  bodyHtml: { vi: string; en: string };
-};
+export type ProjectMeta = z.infer<typeof projectSchema>;
+export type Prototype = z.infer<typeof prototypeSchema>;
+export type Concept = z.infer<typeof conceptSchema>;
+export type FeatureSection = z.infer<typeof featureSectionSchema>;
+export type DataRow = z.infer<typeof dataRowSchema>;
+export type Project = ProjectMeta & { slug: string };

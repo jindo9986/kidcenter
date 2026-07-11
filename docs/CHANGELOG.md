@@ -18,14 +18,15 @@ spinning-time data table), bilingual.
 
 ### Added
 - `/projects` list page + `/projects/[slug]` detail page (static export via generateStaticParams); "Projects" in the top nav.
-- First project content: `content/projects/lego-tyre-flywheel-spinner/` (meta + bilingual `vi.md`/`en.md`) + 10 optimised photos in `public/`.
-- `ProjectPreview` card; scoped `.project-prose` styling (Editorial Warm) since `@tailwindcss/typography` is not installed.
+- First project: `content/projects/lego-tyre-flywheel-spinner/project.json` — structured bilingual content (intro, physics concepts, 6 prototypes, feature sections, spinning-time data, takeaways) + 10 optimised photos in `public/`.
+- A designed detail page (Editorial Warm, mirrors Intro/Assessment): graph-paper hero, physics concept cards, a prototype grid with small square photos + spin-time badges, image+text feature rows, an inline spinning-time bar chart, and a brand closing band.
+- `ProjectPreview` card for the grid + `/profile` teaser.
 
 ### Changed
-- `projectMetaSchema` gains an optional `summary`; `/profile` projects section now uses `ProjectPreview` linking to the detail page.
+- `projectSchema` replaces the old markdown project model; `/profile` projects section links to the detail page via `ProjectPreview`.
 
 ### Removed
-- `ProjectCard` (superseded by `ProjectPreview` + the detail page).
+- `ProjectCard` and the markdown project body (superseded by structured content + the designed detail page).
 
 **Commit**: 7a7f22d
 

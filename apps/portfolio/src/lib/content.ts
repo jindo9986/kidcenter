@@ -12,7 +12,7 @@ import {
   teacherCommentsSchema,
   journeySchema,
   mediaSchema,
-  projectMetaSchema,
+  projectSchema,
   type Profile,
   type Achievement,
   type Academic,
@@ -26,8 +26,6 @@ import {
   type MediaItem,
   type Project,
 } from "./schemas";
-import { renderMarkdown } from "./markdown";
-
 const DEFAULT_DIR = path.join(process.cwd(), "content");
 
 function readJson(dir: string, file: string): unknown {
@@ -84,12 +82,17 @@ export function getProjects(dir: string = DEFAULT_DIR): Project[] {
   const slugs = fs
     .readdirSync(root)
     .filter((s) => fs.statSync(path.join(root, s)).isDirectory());
-  const projects = slugs.map((slug) => {
-    const pdir = path.join(root, slug);
-    const meta = projectMetaSchema.parse(readJson(pdir, "meta.json"));
-    const vi = renderMarkdown(fs.readFileSync(path.join(pdir, "vi.md"), "utf8"));
-    const en = renderMarkdown(fs.readFileSync(path.join(pdir, "en.md"), "utf8"));
-    return { ...meta, slug, bodyHtml: { vi, en } };
-  });
-  return projects.sort((a, b) => b.date.localeCompare(a.date));
+  return slugs
+    .map((slug) => ({
+      ...projectSchema.parse(readJson(path.join(root, slug), "project.json")),
+      slug,
+    }))
+    .sort((a, b) => b.date.localeCompare(a.date));
+}
+
+export function getProject(
+  slug: string,
+  dir: string = DEFAULT_DIR,
+): Project | undefined {
+  return getProjects(dir).find((p) => p.slug === slug);
 }

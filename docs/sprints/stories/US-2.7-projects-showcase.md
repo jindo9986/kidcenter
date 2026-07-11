@@ -41,16 +41,19 @@ own — the task is faithful HTML presentation, bilingual (VI/EN), not a rewrite
 ## Tasks
 
 - [x] Optimise + copy 10 photos into `public/projects/lego-tyre-flywheel-spinner/`
-- [x] Extend project schema (`summary`); author `meta.json` + `vi.md` + `en.md`
-- [x] `/projects` list + `/projects/[slug]` detail (generateStaticParams); nav link; profile teaser
-- [x] Build + lint + verify; scoped `.project-prose` styling (typography plugin not installed)
+- [x] Structured `projectSchema` + `project.json`; author bilingual content
+- [x] `/projects` list + designed `/projects/[slug]` detail (generateStaticParams); nav link; profile teaser
+- [x] Build + lint + verify
 
 ## Implementation notes
 
-- Reused the existing markdown project system (`getProjects()`, `meta.json` + `vi.md` +
-  `en.md`); added `ProjectPreview` for the grid/teaser and replaced the old `ProjectCard`.
-- `@tailwindcss/typography` is not installed, so `prose` classes generate nothing —
-  added a scoped `.project-prose` CSS block (Editorial Warm) in `globals.css` instead.
+- First shipped on a reused markdown model, then **redesigned** to a structured
+  `projectSchema` (`project.json`) so the detail page could be a designed layout rather
+  than a plain article — per DESIGN.md, mirroring the Intro/Assessment pages.
+- Detail page sections: graph-paper hero, physics concept cards, a prototype **grid with
+  small square photos** (~286px, was full-width) + spin-time badges, image+text feature
+  rows, an inline spinning-time **bar chart**, and a brand closing band.
+- `ProjectPreview` powers the grid + `/profile` teaser; replaced `ProjectCard`.
 - Photos optimised with `sips` (≤1100px, q72) into `public/`; raw sources stay in
   `docs/sources/` (untracked, not committed).
 
