@@ -19,7 +19,7 @@ spinning-time data table), bilingual.
 ### Added
 - `/projects` list page + `/projects/[slug]` detail page (static export via generateStaticParams); "Projects" in the top nav.
 - First project: `content/projects/lego-tyre-flywheel-spinner/project.json` — structured bilingual content that follows the child's write-up **verbatim** (intro, 6 prototypes, closing narrative, spinning-time table). Prototype photos are the **exact images extracted from the child's PDF, in order**, so each matches its prototype.
-- A designed detail page (Editorial Warm, mirrors Intro/Assessment): graph-paper hero, image+text prototype rows (the child's own headings + full text), the launcher photo, the closing narrative, and the spinning-time table exactly as written.
+- A designed detail page (Editorial Warm, mirrors Intro/Assessment): graph-paper hero, physics concept cards, numbered prototype rows (photo + parts chip + full text), the launcher photo + closing narrative, a spinning-time bar chart, and a brand closing band. The visual style is presentation only — every word is the child's, verbatim.
 - `ProjectPreview` card for the grid + `/profile` teaser.
 
 ### Changed

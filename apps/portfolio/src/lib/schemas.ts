@@ -163,12 +163,18 @@ export const mediaItemSchema = z.object({
 export const mediaSchema = z.array(mediaItemSchema);
 export type MediaItem = z.infer<typeof mediaItemSchema>;
 
+const conceptSchema = z.object({ icon: z.string().optional(), term: L, text: L });
 const prototypeSchema = z.object({
   name: L,
+  parts: L,
   image: z.string(),
   body: z.array(L),
 });
-const dataRowSchema = z.object({ label: L, value: z.string() });
+const dataRowSchema = z.object({
+  label: L,
+  value: z.string(),
+  highlight: z.boolean().optional(),
+});
 
 export const projectSchema = z.object({
   date: z.string(),
@@ -177,14 +183,23 @@ export const projectSchema = z.object({
   title: L,
   summary: L,
   intro: z.array(L),
+  physicsEyebrow: L,
+  physicsLead: L,
+  physics: z.array(conceptSchema),
+  prototypesEyebrow: L,
+  prototypesHeading: L,
+  prototypesLede: L.optional(),
   prototypes: z.array(prototypeSchema),
   launcherImage: z.string(),
-  after: z.array(L),
+  midProse: z.array(L),
+  dataEyebrow: L,
   dataHeading: L,
   dataColumns: z.array(L),
   dataRows: z.array(dataRowSchema),
+  closing: z.array(L),
 });
 export type ProjectMeta = z.infer<typeof projectSchema>;
 export type Prototype = z.infer<typeof prototypeSchema>;
+export type Concept = z.infer<typeof conceptSchema>;
 export type DataRow = z.infer<typeof dataRowSchema>;
 export type Project = ProjectMeta & { slug: string };

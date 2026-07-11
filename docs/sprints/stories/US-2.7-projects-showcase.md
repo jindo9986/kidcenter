@@ -48,11 +48,12 @@ own — the task is faithful HTML presentation, bilingual (VI/EN), not a rewrite
 ## Implementation notes
 
 - Structured `projectSchema` (`project.json`) drives a designed detail page (Editorial
-  Warm, mirrors Intro/Assessment): graph-paper hero, image+text prototype rows (~1/3-width
-  photos), launcher photo + closing narrative, and the spinning-time table.
-- **Fidelity rule:** the content follows the child's PDF **verbatim** — no invented
-  headings, cards, labels, badges, or summaries; nothing added or omitted. Earlier passes
-  that condensed/re-structured the text were reverted.
+  Warm, mirrors Intro/Assessment): graph-paper hero, physics concept cards, numbered
+  prototype rows (photo + parts chip + full text), launcher photo + closing narrative, a
+  spinning-time bar chart, and a brand closing band.
+- **Content vs. style:** the visual chrome (cards, eyebrows, number badges, parts chips,
+  bar chart, closing band) is presentation only — the actual prose is the child's PDF
+  text **verbatim**, split into those slots without changing, adding, or omitting words.
 - **Correct images:** the prototype photos were **extracted directly from the PDF in page
   order** (`pypdf`), guaranteeing each image matches its prototype — no manual guessing.
 - `ProjectPreview` powers the grid + `/profile` teaser; replaced `ProjectCard`.

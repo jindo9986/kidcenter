@@ -30,6 +30,14 @@ export async function generateMetadata({
   return { title: `${p.title.en} — Đào Đình Hữu (Tin)`, description: p.summary.en };
 }
 
+function Eyebrow({ value }: { value: L }) {
+  return (
+    <p className="mb-3 text-xs font-bold uppercase tracking-[0.22em] text-brand">
+      <Localized value={value} />
+    </p>
+  );
+}
+
 function ProtoImage({ src, alt }: { src: string; alt: string }) {
   return (
     <div className="relative aspect-square rounded-3xl border border-black/5 bg-gradient-to-br from-cream to-black/[0.03] p-4 shadow-sm">
@@ -48,6 +56,8 @@ export default async function ProjectDetail({
   const p = getProject(slug);
   if (!p) notFound();
 
+  const maxSpin = Math.max(...p.dataRows.map((r) => parseFloat(r.value)));
+
   return (
     <main className="bg-cream text-ink">
       <SiteNav />
@@ -64,9 +74,7 @@ export default async function ProjectDetail({
           >
             <Localized value={{ vi: "← Tất cả dự án", en: "← All projects" }} />
           </Link>
-          <p className="mb-3 text-xs font-bold uppercase tracking-[0.22em] text-brand">
-            <Localized value={p.tag} />
-          </p>
+          <Eyebrow value={p.tag} />
           <h1 className="font-display text-4xl font-extrabold leading-[1.05] text-ink sm:text-5xl">
             <Localized value={p.title} />
           </h1>
@@ -84,7 +92,7 @@ export default async function ProjectDetail({
         </div>
       </header>
 
-      {/* INTRO */}
+      {/* THE IDEA */}
       <section className="mx-auto max-w-2xl px-6 py-12">
         <div className="space-y-4 text-lg leading-relaxed text-ink/80">
           {p.intro.map((para, i) => (
@@ -95,9 +103,48 @@ export default async function ProjectDetail({
         </div>
       </section>
 
-      {/* PROTOTYPES — image + full text, alternating; the child's own headings + words */}
+      {/* THE PHYSICS — concept cards (verbatim text) */}
       <section className="border-y border-brand/10 bg-white">
-        <div className="mx-auto max-w-5xl space-y-14 px-6 py-14 md:space-y-20">
+        <div className="mx-auto max-w-5xl px-6 py-14">
+          <div className="mx-auto max-w-2xl text-center">
+            <Eyebrow value={p.physicsEyebrow} />
+            <p className="text-xl font-display font-bold leading-snug text-ink">
+              <Localized value={p.physicsLead} />
+            </p>
+          </div>
+          <div className="mt-8 grid gap-4 sm:grid-cols-3">
+            {p.physics.map((c, i) => (
+              <div
+                key={i}
+                className="break-avoid rounded-3xl border border-black/5 bg-cream p-6 shadow-sm"
+              >
+                {c.icon && <div className="text-3xl">{c.icon}</div>}
+                <h3 className="mt-3 font-display text-lg font-bold text-brand">
+                  <Localized value={c.term} />
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-ink/75">
+                  <Localized value={c.text} />
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* PROTOTYPES — image + full text rows, with number + parts chip */}
+      <section className="mx-auto max-w-5xl px-6 py-14">
+        <div className="text-center">
+          <Eyebrow value={p.prototypesEyebrow} />
+          <h2 className="font-display text-3xl font-bold text-ink sm:text-4xl">
+            <Localized value={p.prototypesHeading} />
+          </h2>
+          {p.prototypesLede && (
+            <p className="mx-auto mt-3 max-w-[600px] text-ink/60">
+              <Localized value={p.prototypesLede} />
+            </p>
+          )}
+        </div>
+        <div className="mt-12 space-y-14 md:space-y-20">
           {p.prototypes.map((proto, i) => (
             <article
               key={i}
@@ -107,12 +154,20 @@ export default async function ProjectDetail({
               }
             >
               <div className="md:w-1/3">
-                <ProtoImage src={proto.image} alt={en(proto.name)} />
+                <div className="relative">
+                  <ProtoImage src={proto.image} alt={en(proto.name)} />
+                  <span className="absolute -left-2 -top-2 flex h-9 w-9 items-center justify-center rounded-full bg-brand font-display text-sm font-bold text-white shadow-md">
+                    {i + 1}
+                  </span>
+                </div>
               </div>
               <div className="md:flex-1">
-                <h2 className="font-display text-2xl font-bold leading-tight text-ink sm:text-[1.7rem]">
+                <h3 className="font-display text-2xl font-bold leading-tight text-ink sm:text-[1.7rem]">
                   <Localized value={proto.name} />
-                </h2>
+                </h3>
+                <span className="mt-2 inline-block rounded-full bg-accent/20 px-3 py-1 text-xs font-bold uppercase tracking-wide text-ink">
+                  <Localized value={proto.parts} />
+                </span>
                 <div className="mt-3 space-y-3 leading-relaxed text-ink/80">
                   {proto.body.map((para, j) => (
                     <p key={j}>
@@ -126,63 +181,77 @@ export default async function ProjectDetail({
         </div>
       </section>
 
-      {/* AFTER — launcher photo + the closing narrative (verbatim) */}
-      <section className="mx-auto max-w-2xl px-6 py-12">
-        <div className="mx-auto mb-8 max-w-xs">
-          <ProtoImage src={p.launcherImage} alt="LEGO ripcord launcher" />
-        </div>
-        <div className="space-y-4 text-lg leading-relaxed text-ink/80">
-          {p.after.map((para, i) => {
-            const last = i === p.after.length - 1;
-            return (
-              <p
-                key={i}
-                className={last ? "pt-2 text-center font-display text-xl font-bold text-brand" : undefined}
-              >
+      {/* LAUNCHER + CLOSING NARRATIVE (verbatim) */}
+      <section className="border-t border-brand/10 bg-white">
+        <div className="mx-auto max-w-3xl px-6 py-14">
+          <div className="flex flex-col gap-6 md:flex-row md:items-center md:gap-10">
+            <div className="md:w-2/5">
+              <ProtoImage src={p.launcherImage} alt="LEGO ripcord launcher" />
+            </div>
+            <div className="leading-relaxed text-ink/80 md:flex-1">
+              <p>
+                <Localized value={p.midProse[0]} />
+              </p>
+            </div>
+          </div>
+          <div className="mt-8 space-y-4 text-lg leading-relaxed text-ink/80">
+            {p.midProse.slice(1).map((para, i) => (
+              <p key={i}>
                 <Localized value={para} />
               </p>
-            );
-          })}
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* DATA — the spinning-time table, exactly as written */}
-      <section className="border-t border-brand/10 bg-cream">
-        <div className="mx-auto max-w-2xl px-6 py-12">
-          <h2 className="font-display text-2xl font-bold text-ink sm:text-3xl">
-            <Localized value={p.dataHeading} />
-          </h2>
-          <div className="mt-5 overflow-x-auto rounded-2xl border border-black/5 bg-white p-2 shadow-sm">
-            <table className="w-full border-collapse text-left text-sm">
-              <thead>
-                <tr>
-                  {p.dataColumns.map((c, i) => (
-                    <th
-                      key={i}
-                      className={
-                        "border-b-2 border-brand/20 px-3 py-2 font-display font-bold text-ink " +
-                        (i === p.dataColumns.length - 1 ? "text-right" : "")
-                      }
-                    >
-                      <Localized value={c} />
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {p.dataRows.map((r, i) => (
-                  <tr key={i} className="border-b border-black/5 last:border-0">
-                    <td className="px-3 py-2 text-ink/80">
-                      <Localized value={r.label} />
-                    </td>
-                    <td className="px-3 py-2 text-right font-semibold tabular-nums text-ink">
-                      {r.value}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+      {/* DATA — spinning-time bar chart (exact values, PDF order) */}
+      <section className="border-y border-brand/10 bg-cream">
+        <div className="mx-auto max-w-3xl px-6 py-14">
+          <div className="text-center">
+            <Eyebrow value={p.dataEyebrow} />
+            <h2 className="font-display text-3xl font-bold text-ink sm:text-4xl">
+              <Localized value={p.dataHeading} />
+            </h2>
+            <p className="mx-auto mt-3 max-w-[560px] text-sm text-ink/60">
+              <Localized value={p.dataColumns[1]} />
+            </p>
           </div>
+          <div className="mt-8 space-y-3">
+            {p.dataRows.map((r, i) => (
+              <div key={i} className="flex items-center gap-3">
+                <div className="w-36 shrink-0 text-right text-sm text-ink/70 sm:w-52">
+                  <Localized value={r.label} />
+                </div>
+                <div className="relative h-7 flex-1 overflow-hidden rounded-full bg-black/[0.05]">
+                  <div
+                    className={
+                      "flex h-full items-center justify-end rounded-full pr-2 text-xs font-bold text-white " +
+                      (r.highlight ? "bg-accent" : "bg-brand")
+                    }
+                    style={{ width: `${Math.max(14, (parseFloat(r.value) / maxSpin) * 100)}%` }}
+                  >
+                    {r.value}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CLOSING — brand band (verbatim learnings + thanks) */}
+      <section className="bg-brand text-white">
+        <div className="mx-auto max-w-2xl px-6 py-14 text-center">
+          <div className="space-y-4 text-left text-lg leading-relaxed text-white/85">
+            {p.closing.slice(0, -1).map((para, i) => (
+              <p key={i}>
+                <Localized value={para} />
+              </p>
+            ))}
+          </div>
+          <p className="mt-8 font-display text-xl font-bold italic text-accent">
+            <Localized value={p.closing[p.closing.length - 1]} />
+          </p>
         </div>
       </section>
     </main>
