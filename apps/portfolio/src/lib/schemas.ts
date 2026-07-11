@@ -168,6 +168,7 @@ export const projectMetaSchema = z.object({
   cover: z.string().optional(),
   tag: L,
   title: L,
+  summary: L.optional(),
 });
 export type ProjectMeta = z.infer<typeof projectMetaSchema>;
 

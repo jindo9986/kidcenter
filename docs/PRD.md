@@ -23,6 +23,7 @@ epics and user stories.
 | FR-7  | The portfolio exports to a professional PDF and has rich meta/OG                       | EPIC-2 | ✅ shipped (v0.1.0) |
 | FR-8  | An evidence-backed independent assessment page                                         | EPIC-2 | ✅ shipped (v0.3.0) |
 | FR-9  | A 3-page IA (Intro / Profile / Assessment) with a research framing                     | EPIC-2 | ✅ shipped (v0.3.0) |
+| FR-20 | A Projects area showcasing the child's own project work                                | EPIC-2 | ✅ shipped (v0.5.0) |
 | FR-10 | A task/points domain with balances derived from a ledger                               | EPIC-3 | ✅ shipped (v0.2.0) |
 | FR-11 | Supabase schema + RLS + Google auth + email allowlist                                  | EPIC-3 | ✅ shipped (v0.2.0) |
 | FR-12 | Parent admin: activities CMS, approvals, points, rewards                               | EPIC-3 | ✅ shipped (v0.2.0) |
@@ -60,6 +61,7 @@ epics and user stories.
 - US-2.4 — PDF export + meta / OG / favicons
 - US-2.5 — Independent AI Assessment page
 - US-2.6 — 3-page IA (Intro / Profile / Assessment), research framing
+- US-2.7 — Projects showcase (/projects + detail; first project: LEGO spinning tops)
 
 ### EPIC-3 — Family Quest
 

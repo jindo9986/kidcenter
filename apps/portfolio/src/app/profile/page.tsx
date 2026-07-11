@@ -34,7 +34,7 @@ import { TeacherInsights } from "@/components/TeacherInsights";
 import { TeacherComments } from "@/components/TeacherComments";
 import { Timeline } from "@/components/Timeline";
 import { Gallery } from "@/components/Gallery";
-import { ProjectCard } from "@/components/ProjectCard";
+import { ProjectPreview } from "@/components/ProjectPreview";
 import { Localized } from "@/components/Localized";
 import { LangToggle } from "@/components/LangToggle";
 import { PrintButton } from "@/components/PrintButton";
@@ -244,7 +244,7 @@ export default function Home() {
           >
             <div className="grid gap-4 sm:grid-cols-2">
               {projects.map((p) => (
-                <ProjectCard key={p.slug} project={p} />
+                <ProjectPreview key={p.slug} project={p} />
               ))}
             </div>
           </Section>

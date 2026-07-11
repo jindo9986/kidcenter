@@ -10,6 +10,27 @@ window. Reverse-chronological.
 
 ---
 
+## [0.5.0] — 2026-07-11 — Portfolio Projects area + first project — v0.5.0
+
+Added a dedicated Projects area to the portfolio and presented the child's self-authored
+LEGO "Tyre Flywheel Spinner" science project (his own words + 6 prototype photos + a
+spinning-time data table), bilingual.
+
+### Added
+- `/projects` list page + `/projects/[slug]` detail page (static export via generateStaticParams); "Projects" in the top nav.
+- First project content: `content/projects/lego-tyre-flywheel-spinner/` (meta + bilingual `vi.md`/`en.md`) + 10 optimised photos in `public/`.
+- `ProjectPreview` card; scoped `.project-prose` styling (Editorial Warm) since `@tailwindcss/typography` is not installed.
+
+### Changed
+- `projectMetaSchema` gains an optional `summary`; `/profile` projects section now uses `ProjectPreview` linking to the detail page.
+
+### Removed
+- `ProjectCard` (superseded by `ProjectPreview` + the detail page).
+
+**Commit**: 438cf7b
+
+---
+
 ## [0.4.0] — 2026-06-23 — Study Dashboard (internal G1–4 academic analytics) — v0.4.0
 
 New `apps/study`: an internal, parent-only dashboard aggregating four years of report

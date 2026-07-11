@@ -55,7 +55,7 @@ and the pre-commit checklist. Every code-shipping commit updates docs in the sam
 koni-docs:
   plugins: []
   docs_path: docs/
-  active_sprint: sprint-2026-W26
+  active_sprint: sprint-2026-W28
   version_file: VERSION
 ```
 
@@ -63,9 +63,9 @@ CLI: `npx @koniverse/koni-docs status` (regen STATUS.md), `sync` (propagate stor
 status), `validate` (ID-graph integrity).
 
 ## Active Context <!-- koni-docs:auto-update -->
-- Sprint: sprint-2026-W26 (closed)
+- Sprint: sprint-2026-W28 (closed)
 - Active Stories: — (all shipped)
-- Last Version: v0.4.0
+- Last Version: v0.5.0
 - Recent Decisions: D11 (private data never in the public repo)
 - Recent Lessons: §3 (charts state true proportions)
 <!-- /koni-docs:auto-update -->

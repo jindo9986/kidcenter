@@ -1,0 +1,13 @@
+{
+  "date": "2026-06",
+  "cover": "/projects/lego-tyre-flywheel-spinner/cover.jpg",
+  "tag": { "vi": "Khoa học & Kỹ thuật", "en": "Science & Engineering" },
+  "title": {
+    "vi": "Con quay LEGO (Tyre Flywheel Spinner)",
+    "en": "LEGO Tyre Flywheel Spinner"
+  },
+  "summary": {
+    "vi": "Bé tự thiết kế và chế tạo bộ con quay bằng LEGO — tìm hiểu mô men động lượng, tâm khối và ma sát qua 6 nguyên mẫu, kèm bảng đo thời gian quay.",
+    "en": "A self-designed collection of LEGO spinning tops — exploring angular momentum, centre of mass and friction across 6 prototypes, with a spinning-time data table."
+  }
+}

@@ -9,6 +9,7 @@ import type { L } from "@/lib/schemas";
 const ITEMS: { href: string; label: L }[] = [
   { href: "/", label: { vi: "Giới thiệu", en: "Intro" } },
   { href: "/profile", label: { vi: "Hồ sơ", en: "Profile" } },
+  { href: "/projects", label: { vi: "Dự án", en: "Projects" } },
   { href: "/assessment", label: { vi: "Đánh giá AI", en: "Assessment" } },
 ];
 
@@ -19,7 +20,10 @@ export function SiteNavLinks() {
   return (
     <nav className="flex items-center gap-1 overflow-x-auto">
       {ITEMS.map((it) => {
-        const active = path === it.href;
+        const active =
+          it.href === "/"
+            ? path === "/"
+            : path === it.href || path.startsWith(it.href + "/");
         return (
           <Link
             key={it.href}
