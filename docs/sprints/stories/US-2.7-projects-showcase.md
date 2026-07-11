@@ -47,15 +47,17 @@ own — the task is faithful HTML presentation, bilingual (VI/EN), not a rewrite
 
 ## Implementation notes
 
-- First shipped on a reused markdown model, then **redesigned** to a structured
-  `projectSchema` (`project.json`) so the detail page could be a designed layout rather
-  than a plain article — per DESIGN.md, mirroring the Intro/Assessment pages.
-- Detail page sections: graph-paper hero, physics concept cards, a prototype **grid with
-  small square photos** (~286px, was full-width) + spin-time badges, image+text feature
-  rows, an inline spinning-time **bar chart**, and a brand closing band.
+- Structured `projectSchema` (`project.json`) drives a designed detail page (Editorial
+  Warm, mirrors Intro/Assessment): graph-paper hero, image+text prototype rows (~1/3-width
+  photos), launcher photo + closing narrative, and the spinning-time table.
+- **Fidelity rule:** the content follows the child's PDF **verbatim** — no invented
+  headings, cards, labels, badges, or summaries; nothing added or omitted. Earlier passes
+  that condensed/re-structured the text were reverted.
+- **Correct images:** the prototype photos were **extracted directly from the PDF in page
+  order** (`pypdf`), guaranteeing each image matches its prototype — no manual guessing.
 - `ProjectPreview` powers the grid + `/profile` teaser; replaced `ProjectCard`.
-- Photos optimised with `sips` (≤1100px, q72) into `public/`; raw sources stay in
-  `docs/sources/` (untracked, not committed).
+- Photos optimised with `sips` into `public/`; raw sources stay in `docs/sources/`
+  (untracked, not committed).
 
 ## Changelog entry
 
