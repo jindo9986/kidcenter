@@ -11,7 +11,7 @@ prd_ref: [FR-20]
 arch_ref: [AD-5, AD-6]
 depends_on: [US-2.1]
 assignee: jindo9986
-commit: 7a7f22d, d1139d2
+commit: 7a7f22d, d1139d2, 33bb8cc
 created: 2026-07-11
 updated: 2026-07-11
 ---

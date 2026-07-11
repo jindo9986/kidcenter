@@ -28,7 +28,7 @@ spinning-time data table), bilingual.
 ### Removed
 - `ProjectCard` and the markdown project body (superseded by structured content + the designed detail page).
 
-**Commit**: 7a7f22d, d1139d2
+**Commit**: 7a7f22d, d1139d2, 33bb8cc
 
 ---
 
