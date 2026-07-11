@@ -27,7 +27,7 @@ spinning-time data table), bilingual.
 ### Removed
 - `ProjectCard` (superseded by `ProjectPreview` + the detail page).
 
-**Commit**: 438cf7b
+**Commit**: 7a7f22d
 
 ---
 
