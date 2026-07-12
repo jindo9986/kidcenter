@@ -10,6 +10,15 @@ window. Reverse-chronological.
 
 ---
 
+## [0.7.3] — 2026-07-11 — Cache-bust the rotated parts photo — v0.7.3
+
+### Fixed
+- The parts photo was rotated to landscape but kept the same filename, so browsers and the Pages CDN kept serving the cached portrait version — the exact trap recorded in LESSONS §5. Renamed `parts.jpg` → `parts-flatlay.jpg` so the URL changes and every client fetches the landscape image.
+
+**Commit**: PENDING
+
+---
+
 ## [0.7.2] — 2026-07-11 — Materials section: no cropping + new copy — v0.7.2
 
 ### Fixed
