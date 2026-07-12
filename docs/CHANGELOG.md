@@ -18,7 +18,7 @@ Show the raw LEGO parts turning into the finished spinning tops.
 - `materials` block in `projectSchema` + the two raw-parts photos.
 - A "materials → finished" section on the project page: raw parts on one side, the six finished prototypes cross-fading on the other, with an animated arrow between them. CSS-only (no JS), and `prefers-reduced-motion` falls back to a single still image.
 
-**Commit**: PENDING
+**Commit**: a129ea7
 
 ---
 
