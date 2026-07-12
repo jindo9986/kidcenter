@@ -11,6 +11,7 @@ goal: "Add a Projects area to the portfolio and present the first project (LEGO 
 | US | Title | Epic | Pri | Points | Status | Story file |
 |---|---|---|---|---|---|---|
 | US-2.7 | Projects showcase — /projects + first project | EPIC-2 | P1 | 5 | ✅ done | [link](stories/US-2.7-projects-showcase.md) |
+| US-2.8 | Project dates + timeline | EPIC-2 | P2 | 2 | ✅ done | [link](stories/US-2.8-project-dates-timeline.md) |
 
 ## Sprint goal recap
 

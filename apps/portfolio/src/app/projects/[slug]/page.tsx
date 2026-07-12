@@ -38,6 +38,20 @@ function Eyebrow({ value }: { value: L }) {
   );
 }
 
+const MONTHS_EN = [
+  "January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December",
+];
+
+/** "2026-06-24" → { vi: "24/06/2026", en: "24 June 2026" } */
+function fmtDate(iso: string): L {
+  const [y, m, d] = iso.split("-");
+  return {
+    vi: `${d}/${m}/${y}`,
+    en: `${parseInt(d, 10)} ${MONTHS_EN[parseInt(m, 10) - 1]} ${y}`,
+  };
+}
+
 function ProtoImage({ src, alt }: { src: string; alt: string }) {
   return (
     <div className="relative aspect-square rounded-3xl border border-black/5 bg-gradient-to-br from-cream to-black/[0.03] p-4 shadow-sm">
@@ -81,6 +95,11 @@ export default async function ProjectDetail({
           <p className="mx-auto mt-5 max-w-[620px] text-lg leading-relaxed text-ink/70">
             <Localized value={p.summary} />
           </p>
+          {p.dateLabel && (
+            <p className="mt-4 inline-block rounded-full bg-white/70 px-3 py-1 text-sm font-semibold text-ink/60 shadow-sm">
+              📅 <Localized value={p.dateLabel} />
+            </p>
+          )}
         </div>
         <div className="mx-auto max-w-3xl px-6 pb-10">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -254,6 +273,41 @@ export default async function ProjectDetail({
           </p>
         </div>
       </section>
+
+      {/* TIMELINE — dated milestones (project metadata, not the child's text) */}
+      {p.timeline && p.timeline.length > 0 && (
+        <section className="mx-auto max-w-2xl px-6 py-14">
+          <div className="text-center">
+            <Eyebrow value={{ vi: "Dòng thời gian", en: "Timeline" }} />
+            <h2 className="font-display text-3xl font-bold text-ink sm:text-4xl">
+              <Localized value={{ vi: "Quá trình thực hiện", en: "How it unfolded" }} />
+            </h2>
+          </div>
+          <ol className="relative mt-8 space-y-7 border-l-2 border-brand/15 pl-7">
+            {p.timeline.map((m, i) => (
+              <li key={i} className="relative">
+                <span className="absolute -left-[35px] top-1.5 h-3.5 w-3.5 rounded-full bg-brand ring-4 ring-cream" />
+                <p className="text-xs font-bold uppercase tracking-wide text-brand">
+                  <Localized value={fmtDate(m.date)} />
+                </p>
+                <p className="mt-0.5 font-display text-lg font-bold leading-snug text-ink">
+                  <Localized value={m.title} />
+                </p>
+                {m.note && (
+                  <p className="mt-0.5 text-sm leading-snug text-ink/60">
+                    <Localized value={m.note} />
+                  </p>
+                )}
+              </li>
+            ))}
+          </ol>
+          {p.timelineNote && (
+            <p className="mt-7 border-t border-black/5 pt-4 text-xs italic leading-relaxed text-ink/45">
+              <Localized value={p.timelineNote} />
+            </p>
+          )}
+        </section>
+      )}
     </main>
   );
 }

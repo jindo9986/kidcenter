@@ -1,5 +1,38 @@
 {
-  "date": "2026-06",
+  "date": "2026-07",
+  "dateStart": "2026-06-24",
+  "dateEnd": "2026-07-10",
+  "dateLabel": { "vi": "Tháng 6 – 7, 2026", "en": "June – July 2026" },
+  "timeline": [
+    {
+      "date": "2026-06-24",
+      "title": { "vi": "Chụp ảnh các nguyên mẫu con quay", "en": "Prototype spinning tops photographed" },
+      "note": { "vi": "8 ảnh — sáu nguyên mẫu xuất hiện trong bài viết", "en": "8 photos — the six prototypes that appear in the write-up" }
+    },
+    {
+      "date": "2026-06-25",
+      "title": { "vi": "Chụp bộ phóng dây giật LEGO", "en": "LEGO ripcord launcher photographed" },
+      "note": { "vi": "Con quay gắn trực tiếp vào bộ phóng", "en": "Tops attached directly to the launcher" }
+    },
+    {
+      "date": "2026-06-26",
+      "title": { "vi": "Bé giới thiệu bộ sưu tập", "en": "Presenting the collection" },
+      "note": { "vi": "Ảnh bìa của dự án", "en": "The project's cover photo" }
+    },
+    {
+      "date": "2026-07-10",
+      "title": { "vi": "Hoàn thành bài viết dự án", "en": "Project write-up completed" },
+      "note": { "vi": "Bản PDF do bé tự viết", "en": "The PDF written by the child" }
+    },
+    {
+      "date": "2026-07-11",
+      "title": { "vi": "Đăng lên portfolio", "en": "Published on the portfolio" }
+    }
+  ],
+  "timelineNote": {
+    "vi": "Các mốc lấy từ ngày chụp ảnh (EXIF) và ngày tạo file bài viết. Bé viết “ý tưởng bắt đầu vài tháng trước”, nên thời điểm bắt đầu chế tạo còn sớm hơn.",
+    "en": "Milestones come from the photos' capture dates (EXIF) and the write-up's file date. The child writes that “the idea started a few months ago”, so building began earlier."
+  },
   "cover": "/projects/lego-tyre-flywheel-spinner/cover.jpg",
   "tag": { "vi": "Khoa học & Kỹ thuật", "en": "Science & Engineering" },
   "title": { "vi": "LEGO Tyre Flywheel Spinner", "en": "LEGO Tyre Flywheel Spinner" },

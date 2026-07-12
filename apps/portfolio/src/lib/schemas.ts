@@ -176,8 +176,21 @@ const dataRowSchema = z.object({
   highlight: z.boolean().optional(),
 });
 
+// A dated milestone in the project's history. Dates are evidence-based (photo EXIF,
+// document timestamps) so a cross-project timeline can be built later.
+const milestoneSchema = z.object({
+  date: z.string(), // YYYY-MM-DD
+  title: L,
+  note: L.optional(),
+});
+
 export const projectSchema = z.object({
-  date: z.string(),
+  date: z.string(), // sort key (YYYY-MM)
+  dateStart: z.string().optional(), // YYYY-MM-DD — first dated evidence
+  dateEnd: z.string().optional(), // YYYY-MM-DD — completed / written up
+  dateLabel: L.optional(), // human label shown on the card + hero
+  timeline: z.array(milestoneSchema).optional(),
+  timelineNote: L.optional(), // provenance / caveat for the dates
   cover: z.string(),
   tag: L,
   title: L,
@@ -202,4 +215,5 @@ export type ProjectMeta = z.infer<typeof projectSchema>;
 export type Prototype = z.infer<typeof prototypeSchema>;
 export type Concept = z.infer<typeof conceptSchema>;
 export type DataRow = z.infer<typeof dataRowSchema>;
+export type Milestone = z.infer<typeof milestoneSchema>;
 export type Project = ProjectMeta & { slug: string };

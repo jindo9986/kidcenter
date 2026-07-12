@@ -22,9 +22,16 @@ export function ProjectPreview({ project }: { project: Project }) {
         </div>
       )}
       <div className="p-5">
-        <span className="mb-2 inline-block rounded-full bg-brand/10 px-2 py-0.5 text-xs font-semibold text-brand">
-          <Localized value={project.tag} />
-        </span>
+        <div className="mb-2 flex flex-wrap items-center gap-2">
+          <span className="inline-block rounded-full bg-brand/10 px-2 py-0.5 text-xs font-semibold text-brand">
+            <Localized value={project.tag} />
+          </span>
+          {project.dateLabel && (
+            <span className="text-xs font-semibold text-ink/45">
+              <Localized value={project.dateLabel} />
+            </span>
+          )}
+        </div>
         <h3 className="font-display text-lg font-bold leading-tight text-ink">
           <Localized value={project.title} />
         </h3>

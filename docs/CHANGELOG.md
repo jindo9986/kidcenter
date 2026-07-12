@@ -10,6 +10,20 @@ window. Reverse-chronological.
 
 ---
 
+## [0.6.0] — 2026-07-11 — Project dates + timeline — v0.6.0
+
+Projects now carry real, evidence-based dates so a timeline of the child's project work
+can be built over time.
+
+### Added
+- `projectSchema` gains `dateStart` / `dateEnd` / `dateLabel` and a `timeline` of dated milestones (+ a provenance note).
+- Detail page: a date chip in the hero and a **Timeline** section; the `/projects` card shows the date.
+- LEGO project milestones, all evidence-based: prototype photos 2026-06-24, ripcord-launcher photos 06-25, presenting the collection 06-26, write-up PDF 07-10, published 07-11. Dates come from photo EXIF + the write-up's file timestamp; the note records that the child says building started "a few months" earlier, so no start date is invented.
+
+**Commit**: PENDING
+
+---
+
 ## [0.5.0] — 2026-07-11 — Portfolio Projects area + first project — v0.5.0
 
 Added a dedicated Projects area to the portfolio and presented the child's self-authored
