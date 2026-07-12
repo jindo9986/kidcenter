@@ -18,7 +18,7 @@ window. Reverse-chronological.
 ### Removed
 - The `.morph-stack` cross-fade CSS and the second parts photo (no longer used).
 
-**Commit**: PENDING
+**Commit**: 89d6522
 
 ---
 
