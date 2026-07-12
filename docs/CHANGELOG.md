@@ -18,7 +18,7 @@ window. Reverse-chronological.
 ### Changed
 - The Materials section now leads with its own heading + description: the project began with components made for an entirely different purpose (LEGO wheels, tyres, gears and axles built for vehicle models) that were re-engineered into spinning tops through iterative design. Bilingual; the section eyebrow was dropped as redundant.
 
-**Commit**: PENDING
+**Commit**: 9daf05b
 
 ---
 
