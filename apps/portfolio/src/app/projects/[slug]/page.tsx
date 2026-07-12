@@ -153,23 +153,28 @@ export default async function ProjectDetail({
       {/* MATERIALS → FINISHED — the loose parts, then the finished spinning tops */}
       {p.materials && (
         <section className="mx-auto max-w-5xl px-6 pt-14">
-          <div className="text-center">
-            <Eyebrow value={p.materials.eyebrow} />
+          <div className="mx-auto max-w-2xl text-center">
+            {p.materials.eyebrow && <Eyebrow value={p.materials.eyebrow} />}
             <h2 className="font-display text-3xl font-bold text-ink sm:text-4xl">
               <Localized value={p.materials.heading} />
             </h2>
+            {p.materials.note && (
+              <p className="mt-4 text-lg leading-relaxed text-ink/75">
+                <Localized value={p.materials.note} />
+              </p>
+            )}
           </div>
 
-          <div className="mt-8 flex flex-col items-center gap-4 md:flex-row md:gap-6">
-            {/* raw parts */}
+          <div className="mt-9 flex flex-col items-center gap-4 md:flex-row md:gap-6">
+            {/* raw parts — object-contain so nothing is cropped */}
             <figure className="w-full md:flex-1">
-              <div className="overflow-hidden rounded-3xl border border-black/5 shadow-sm">
+              <div className="flex aspect-[4/3] items-center justify-center overflow-hidden rounded-3xl border border-black/5 bg-gradient-to-br from-cream to-black/[0.03] p-2 shadow-sm">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={asset(p.materials.image)}
                   alt={en(p.materials.fromLabel)}
                   loading="lazy"
-                  className="aspect-[4/3] w-full object-cover"
+                  className="max-h-full max-w-full rounded-2xl object-contain"
                 />
               </div>
               <figcaption className="mt-2 text-center text-sm font-bold uppercase tracking-wide text-ink/50">
@@ -186,13 +191,13 @@ export default async function ProjectDetail({
 
             {/* finished builds */}
             <figure className="w-full md:flex-1">
-              <div className="overflow-hidden rounded-3xl border border-black/5 shadow-sm">
+              <div className="flex aspect-[4/3] items-center justify-center overflow-hidden rounded-3xl border border-black/5 bg-gradient-to-br from-cream to-black/[0.03] p-2 shadow-sm">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={asset(p.materials.finishedImage)}
                   alt={en(p.materials.toLabel)}
                   loading="lazy"
-                  className="aspect-[4/3] w-full object-cover"
+                  className="max-h-full max-w-full rounded-2xl object-contain"
                 />
               </div>
               <figcaption className="mt-2 text-center text-sm font-bold uppercase tracking-wide text-brand">
@@ -200,12 +205,6 @@ export default async function ProjectDetail({
               </figcaption>
             </figure>
           </div>
-
-          {p.materials.note && (
-            <p className="mx-auto mt-6 max-w-xl text-center text-sm leading-relaxed text-ink/60">
-              <Localized value={p.materials.note} />
-            </p>
-          )}
         </section>
       )}
 

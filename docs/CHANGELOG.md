@@ -10,6 +10,18 @@ window. Reverse-chronological.
 
 ---
 
+## [0.7.2] — 2026-07-11 — Materials section: no cropping + new copy — v0.7.2
+
+### Fixed
+- The materials photos were `object-cover` inside a 4:3 box, which zoomed in and clipped the corners of the landscape parts photo. Both photos now use `object-contain` inside an equal-height framed box, so nothing is cropped.
+
+### Changed
+- The Materials section now leads with its own heading + description: the project began with components made for an entirely different purpose (LEGO wheels, tyres, gears and axles built for vehicle models) that were re-engineered into spinning tops through iterative design. Bilingual; the section eyebrow was dropped as redundant.
+
+**Commit**: PENDING
+
+---
+
 ## [0.7.1] — 2026-07-11 — Simplify the materials visual — v0.7.1
 
 ### Changed

@@ -52,15 +52,14 @@
     }
   ],
   "materials": {
-    "eyebrow": { "vi": "Nguyên liệu", "en": "The materials" },
-    "heading": { "vi": "Từ những mảnh LEGO rời…", "en": "From loose LEGO pieces…" },
+    "heading": { "vi": "Nguyên liệu", "en": "The Materials" },
     "image": "/projects/lego-tyre-flywheel-spinner/parts.jpg",
     "finishedImage": "/projects/lego-tyre-flywheel-spinner/finished.jpg",
     "fromLabel": { "vi": "Nguyên liệu", "en": "Raw parts" },
     "toLabel": { "vi": "Thành phẩm", "en": "Finished tops" },
     "note": {
-      "vi": "Bánh xe, lốp, bánh răng và trục — tất cả con quay trong dự án đều được lắp từ những mảnh này.",
-      "en": "Wheels, tyres, gears and axles — every spinning top in this project was built from these pieces."
+      "vi": "Dự án bắt đầu từ những chi tiết vốn được làm ra cho một mục đích hoàn toàn khác. Bánh xe, lốp, bánh răng và trục LEGO — vốn thiết kế chủ yếu cho các mô hình xe — đã được tái thiết kế thành cơ cấu con quay, thông qua thử nghiệm sáng tạo và cải tiến qua từng vòng lặp.",
+      "en": "This project began with components intended for an entirely different purpose. LEGO wheels, tyres, gears, and axles—designed primarily for vehicle models—were re-engineered into spinning-top mechanisms through creative experimentation and iterative design."
     }
   },
   "physicsEyebrow": { "vi": "Vật lý", "en": "The physics" },

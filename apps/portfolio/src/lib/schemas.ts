@@ -199,7 +199,7 @@ export const projectSchema = z.object({
   // "Raw materials → finished product": the parts laid out, then the finished builds.
   materials: z
     .object({
-      eyebrow: L,
+      eyebrow: L.optional(),
       heading: L,
       image: z.string(), // the loose parts
       finishedImage: z.string(), // the finished spinning tops
