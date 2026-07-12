@@ -15,7 +15,7 @@ window. Reverse-chronological.
 ### Fixed
 - The parts photo was rotated to landscape but kept the same filename, so browsers and the Pages CDN kept serving the cached portrait version — the exact trap recorded in LESSONS §5. Renamed `parts.jpg` → `parts-flatlay.jpg` so the URL changes and every client fetches the landscape image.
 
-**Commit**: PENDING
+**Commit**: e6821dc
 
 ---
 
