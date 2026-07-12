@@ -150,6 +150,86 @@ export default async function ProjectDetail({
         </div>
       </section>
 
+      {/* MATERIALS → FINISHED — cross-fading photos (raw parts on the left, the
+          finished spinning tops cycling on the right) */}
+      {p.materials && (
+        <section className="mx-auto max-w-5xl px-6 pt-14">
+          <div className="text-center">
+            <Eyebrow value={p.materials.eyebrow} />
+            <h2 className="font-display text-3xl font-bold text-ink sm:text-4xl">
+              <Localized value={p.materials.heading} />
+            </h2>
+          </div>
+
+          <div className="mt-8 flex flex-col items-center gap-4 md:flex-row md:gap-6">
+            {/* raw parts */}
+            <figure className="w-full md:flex-1">
+              <div
+                className="morph-stack relative aspect-[4/3] overflow-hidden rounded-3xl border border-black/5 bg-gradient-to-br from-cream to-black/[0.03] shadow-sm"
+                style={
+                  {
+                    "--morph-duration": `${p.materials.images.length * 4}s`,
+                  } as React.CSSProperties
+                }
+              >
+                {p.materials.images.map((src, i) => (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    key={i}
+                    src={asset(src)}
+                    alt={en(p.materials!.fromLabel)}
+                    loading="lazy"
+                    style={{ animationDelay: `${i * 4}s` }}
+                  />
+                ))}
+              </div>
+              <figcaption className="mt-2 text-center text-sm font-bold uppercase tracking-wide text-ink/50">
+                <Localized value={p.materials.fromLabel} />
+              </figcaption>
+            </figure>
+
+            {/* arrow (points down on mobile, right on desktop) */}
+            <div className="shrink-0 rotate-90 md:rotate-0">
+              <span className="morph-arrow inline-block font-display text-4xl font-bold text-accent">
+                →
+              </span>
+            </div>
+
+            {/* finished builds */}
+            <figure className="w-full md:flex-1">
+              <div
+                className="morph-stack relative aspect-[4/3] overflow-hidden rounded-3xl border border-black/5 bg-gradient-to-br from-cream to-black/[0.03] shadow-sm"
+                style={
+                  {
+                    "--morph-duration": `${p.prototypes.length * 2}s`,
+                  } as React.CSSProperties
+                }
+              >
+                {p.prototypes.map((proto, i) => (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    key={i}
+                    src={asset(proto.image)}
+                    alt={en(proto.name)}
+                    loading="lazy"
+                    style={{ animationDelay: `${i * 2}s` }}
+                  />
+                ))}
+              </div>
+              <figcaption className="mt-2 text-center text-sm font-bold uppercase tracking-wide text-brand">
+                <Localized value={p.materials.toLabel} />
+              </figcaption>
+            </figure>
+          </div>
+
+          {p.materials.note && (
+            <p className="mx-auto mt-6 max-w-xl text-center text-sm leading-relaxed text-ink/60">
+              <Localized value={p.materials.note} />
+            </p>
+          )}
+        </section>
+      )}
+
       {/* PROTOTYPES — image + full text rows, with number + parts chip */}
       <section className="mx-auto max-w-5xl px-6 py-14">
         <div className="text-center">

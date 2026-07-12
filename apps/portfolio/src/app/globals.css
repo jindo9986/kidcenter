@@ -36,6 +36,62 @@ html[data-locale="en"] [data-lang="vi"] {
   display: none;
 }
 
+/* Project "materials → finished" cross-fade (CSS-only; each image fades in turn) */
+.morph-stack > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0.75rem;
+  object-fit: contain;
+  opacity: 0;
+  animation: morph-cycle var(--morph-duration, 12s) linear infinite;
+}
+@keyframes morph-cycle {
+  0%,
+  1% {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  4%,
+  14% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  17%,
+  100% {
+    opacity: 0;
+    transform: scale(1.02);
+  }
+}
+.morph-arrow {
+  animation: morph-nudge 2.2s ease-in-out infinite;
+}
+@keyframes morph-nudge {
+  0%,
+  100% {
+    transform: translateX(0);
+    opacity: 0.55;
+  }
+  50% {
+    transform: translateX(7px);
+    opacity: 1;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .morph-stack > img {
+    animation: none;
+    opacity: 0;
+  }
+  .morph-stack > img:first-child {
+    opacity: 1;
+  }
+  .morph-arrow {
+    animation: none;
+    opacity: 1;
+  }
+}
+
 /* Print / PDF export */
 @media print {
   .no-print {

@@ -196,6 +196,18 @@ export const projectSchema = z.object({
   title: L,
   summary: L,
   intro: z.array(L),
+  // "Raw materials → finished product" visual: parts photos on one side, the
+  // finished builds cross-fading on the other.
+  materials: z
+    .object({
+      eyebrow: L,
+      heading: L,
+      images: z.array(z.string()),
+      fromLabel: L,
+      toLabel: L,
+      note: L.optional(),
+    })
+    .optional(),
   physicsEyebrow: L,
   physicsLead: L,
   physics: z.array(conceptSchema),

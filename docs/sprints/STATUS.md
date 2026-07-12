@@ -1,8 +1,8 @@
 # Sprint Status
 
 > **AUTO-GENERATED** by `koni-docs status`. Do not hand-edit (RULE-5).
-> Last generated: 2026-07-12 04:33:30 UTC
-> Total stories: 23
+> Last generated: 2026-07-12 04:51:07 UTC
+> Total stories: 24
 
 ## 📋 Backlog (2)
 
@@ -23,7 +23,7 @@ _No stories_
 
 _No stories_
 
-## ✅ Done (21)
+## ✅ Done (22)
 
 | ID | Title | Epic | Pri | Points | Sprint | Assignee |
 |---|---|---|---|---|---|---|
@@ -39,6 +39,7 @@ _No stories_
 | US-2.6 | 3-page IA (Intro / Profile / Assessment) with research framing | EPIC-2 | P1 | 3 | sprint-2026-W24 | jindo9986 |
 | US-2.7 | Projects showcase — /projects list + detail, first project (LEGO spinning tops) | EPIC-2 | P1 | 5 | sprint-2026-W28 | jindo9986 |
 | US-2.8 | Project dates + timeline (evidence-based) | EPIC-2 | P2 | 2 | sprint-2026-W28 | jindo9986 |
+| US-2.9 | Materials → finished visual (cross-fade effect) | EPIC-2 | P2 | 2 | sprint-2026-W28 | jindo9986 |
 | US-3.1 | Task/points domain logic (TDD) | EPIC-3 | P0 | 3 | sprint-2026-W23 | jindo9986 |
 | US-3.2 | Supabase schema + RLS + Google auth + provisioning | EPIC-3 | P0 | 5 | sprint-2026-W23 | jindo9986 |
 | US-3.3 | Email allowlist management | EPIC-3 | P1 | 2 | sprint-2026-W23 | jindo9986 |
@@ -65,7 +66,7 @@ _No stories_
 - 🟢 **Ready**: 0
 - 🟡 **In Progress**: 0
 - 👀 **Review**: 0
-- ✅ **Done**: 21
+- ✅ **Done**: 22
 - 🚫 **Blocked**: 0
 - 🗑️ **Deprecated**: 0
 

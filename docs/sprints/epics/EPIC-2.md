@@ -11,6 +11,7 @@ prd_ref:
   - FR-9
   - FR-20
   - FR-21
+  - FR-22
 arch_ref:
   - AD-5
   - AD-6
@@ -50,6 +51,7 @@ content-driven (JSON + zod) and has no backend.
 | FR-9 | [US-2.6](../stories/US-2.6-three-page-research-ia.md) | ✅ done (v0.3.0) |
 | FR-20 | [US-2.7](../stories/US-2.7-projects-showcase.md) | ✅ done (v0.5.0) |
 | FR-21 | [US-2.8](../stories/US-2.8-project-dates-timeline.md) | ✅ done (v0.6.0) |
+| FR-22 | [US-2.9](../stories/US-2.9-materials-to-finished.md) | ✅ done (v0.7.0) |
 
 ## Stories
 
@@ -63,6 +65,7 @@ content-driven (JSON + zod) and has no backend.
 | US-2.6 | 3-page IA (Intro/Profile/Assessment) | P1 | 3 | ✅ done |
 | US-2.7 | Projects showcase (/projects + first project) | P1 | 5 | ✅ done |
 | US-2.8 | Project dates + timeline (evidence-based) | P2 | 2 | ✅ done |
+| US-2.9 | Materials → finished visual | P2 | 2 | ✅ done |
 
 ## Cross-cutting invariants
 

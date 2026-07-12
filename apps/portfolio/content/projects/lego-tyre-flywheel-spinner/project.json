@@ -51,6 +51,20 @@
       "en": "The idea started a few months ago when I could not find my wooden spinning top. Instead of buying a new one, I asked myself a simple question: “Can I build a spinning top using LEGO?” I did not know the answer, so I started experimenting. My first design was very simple, but it could spin. That made me even more excited to improve it. After building many different models, I realised that making a good spinning top is not just about building—it is also about understanding science."
     }
   ],
+  "materials": {
+    "eyebrow": { "vi": "Nguyên liệu", "en": "The materials" },
+    "heading": { "vi": "Từ những mảnh LEGO rời…", "en": "From loose LEGO pieces…" },
+    "images": [
+      "/projects/lego-tyre-flywheel-spinner/parts.jpg",
+      "/projects/lego-tyre-flywheel-spinner/parts-2.jpg"
+    ],
+    "fromLabel": { "vi": "Nguyên liệu", "en": "Raw parts" },
+    "toLabel": { "vi": "Thành phẩm", "en": "Finished tops" },
+    "note": {
+      "vi": "Bánh xe, lốp, bánh răng và trục — tất cả con quay trong dự án đều được lắp từ những mảnh này.",
+      "en": "Wheels, tyres, gears and axles — every spinning top in this project was built from these pieces."
+    }
+  },
   "physicsEyebrow": { "vi": "Vật lý", "en": "The physics" },
   "physicsLead": {
     "vi": "Con quay trông đơn giản, nhưng bên trong ẩn chứa nhiều ý tưởng vật lý thú vị.",

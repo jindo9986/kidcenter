@@ -10,6 +10,18 @@ window. Reverse-chronological.
 
 ---
 
+## [0.7.0] — 2026-07-11 — Materials → finished visual — v0.7.0
+
+Show the raw LEGO parts turning into the finished spinning tops.
+
+### Added
+- `materials` block in `projectSchema` + the two raw-parts photos.
+- A "materials → finished" section on the project page: raw parts on one side, the six finished prototypes cross-fading on the other, with an animated arrow between them. CSS-only (no JS), and `prefers-reduced-motion` falls back to a single still image.
+
+**Commit**: PENDING
+
+---
+
 ## [0.6.0] — 2026-07-11 — Project dates + timeline — v0.6.0
 
 Projects now carry real, evidence-based dates so a timeline of the child's project work
