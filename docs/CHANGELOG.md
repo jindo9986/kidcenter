@@ -10,6 +10,18 @@ window. Reverse-chronological.
 
 ---
 
+## [0.7.1] — 2026-07-11 — Simplify the materials visual — v0.7.1
+
+### Changed
+- The "materials → finished" visual is now a single landscape photo of the loose parts next to the photo of the child with all the finished tops on the table (the parts photo was rotated to landscape). Dropped the per-prototype cross-fade cycle; only the arrow keeps its subtle nudge.
+
+### Removed
+- The `.morph-stack` cross-fade CSS and the second parts photo (no longer used).
+
+**Commit**: PENDING
+
+---
+
 ## [0.7.0] — 2026-07-11 — Materials → finished visual — v0.7.0
 
 Show the raw LEGO parts turning into the finished spinning tops.

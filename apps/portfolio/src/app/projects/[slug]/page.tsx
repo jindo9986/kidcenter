@@ -150,8 +150,7 @@ export default async function ProjectDetail({
         </div>
       </section>
 
-      {/* MATERIALS → FINISHED — cross-fading photos (raw parts on the left, the
-          finished spinning tops cycling on the right) */}
+      {/* MATERIALS → FINISHED — the loose parts, then the finished spinning tops */}
       {p.materials && (
         <section className="mx-auto max-w-5xl px-6 pt-14">
           <div className="text-center">
@@ -164,24 +163,14 @@ export default async function ProjectDetail({
           <div className="mt-8 flex flex-col items-center gap-4 md:flex-row md:gap-6">
             {/* raw parts */}
             <figure className="w-full md:flex-1">
-              <div
-                className="morph-stack relative aspect-[4/3] overflow-hidden rounded-3xl border border-black/5 bg-gradient-to-br from-cream to-black/[0.03] shadow-sm"
-                style={
-                  {
-                    "--morph-duration": `${p.materials.images.length * 4}s`,
-                  } as React.CSSProperties
-                }
-              >
-                {p.materials.images.map((src, i) => (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
-                    key={i}
-                    src={asset(src)}
-                    alt={en(p.materials!.fromLabel)}
-                    loading="lazy"
-                    style={{ animationDelay: `${i * 4}s` }}
-                  />
-                ))}
+              <div className="overflow-hidden rounded-3xl border border-black/5 shadow-sm">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={asset(p.materials.image)}
+                  alt={en(p.materials.fromLabel)}
+                  loading="lazy"
+                  className="aspect-[4/3] w-full object-cover"
+                />
               </div>
               <figcaption className="mt-2 text-center text-sm font-bold uppercase tracking-wide text-ink/50">
                 <Localized value={p.materials.fromLabel} />
@@ -197,24 +186,14 @@ export default async function ProjectDetail({
 
             {/* finished builds */}
             <figure className="w-full md:flex-1">
-              <div
-                className="morph-stack relative aspect-[4/3] overflow-hidden rounded-3xl border border-black/5 bg-gradient-to-br from-cream to-black/[0.03] shadow-sm"
-                style={
-                  {
-                    "--morph-duration": `${p.prototypes.length * 2}s`,
-                  } as React.CSSProperties
-                }
-              >
-                {p.prototypes.map((proto, i) => (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
-                    key={i}
-                    src={asset(proto.image)}
-                    alt={en(proto.name)}
-                    loading="lazy"
-                    style={{ animationDelay: `${i * 2}s` }}
-                  />
-                ))}
+              <div className="overflow-hidden rounded-3xl border border-black/5 shadow-sm">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={asset(p.materials.finishedImage)}
+                  alt={en(p.materials.toLabel)}
+                  loading="lazy"
+                  className="aspect-[4/3] w-full object-cover"
+                />
               </div>
               <figcaption className="mt-2 text-center text-sm font-bold uppercase tracking-wide text-brand">
                 <Localized value={p.materials.toLabel} />

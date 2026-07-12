@@ -30,14 +30,14 @@ for the write-up.
 ## Acceptance criteria
 
 - [x] **AC-1** — A "materials → finished" section shows the raw parts on one side and the finished builds on the other, with an arrow between them.
-- [x] **AC-2** — Both panels cross-fade through their photos (parts every 4s; the six prototypes every 2s), CSS-only — no JS, works under static export.
-- [x] **AC-3** — `prefers-reduced-motion` disables the animation and shows a single still image.
+- [x] **AC-2** — The parts photo is landscape and sits beside the photo of the child with all the finished tops on the table (v0.7.1: the per-prototype cross-fade was dropped as too busy).
+- [x] **AC-3** — The only motion is the arrow's nudge, which `prefers-reduced-motion` disables.
 
 ## Tasks
 
 - [x] Restore + optimise the two parts photos into `public/`
 - [x] `materials` block in `projectSchema` + `project.json`
-- [x] `.morph-stack` / `.morph-arrow` CSS keyframes + the section on the detail page
+- [x] `.morph-arrow` CSS + the section on the detail page (v0.7.1: simplified to two still photos)
 
 ## Changelog entry
 

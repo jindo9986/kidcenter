@@ -196,13 +196,13 @@ export const projectSchema = z.object({
   title: L,
   summary: L,
   intro: z.array(L),
-  // "Raw materials → finished product" visual: parts photos on one side, the
-  // finished builds cross-fading on the other.
+  // "Raw materials → finished product": the parts laid out, then the finished builds.
   materials: z
     .object({
       eyebrow: L,
       heading: L,
-      images: z.array(z.string()),
+      image: z.string(), // the loose parts
+      finishedImage: z.string(), // the finished spinning tops
       fromLabel: L,
       toLabel: L,
       note: L.optional(),
