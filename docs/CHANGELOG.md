@@ -20,7 +20,7 @@ can be built over time.
 - Detail page: a date chip in the hero and a **Timeline** section; the `/projects` card shows the date.
 - LEGO project milestones, all evidence-based: prototype photos 2026-06-24, ripcord-launcher photos 06-25, presenting the collection 06-26, write-up PDF 07-10, published 07-11. Dates come from photo EXIF + the write-up's file timestamp; the note records that the child says building started "a few months" earlier, so no start date is invented.
 
-**Commit**: PENDING
+**Commit**: ecef1df
 
 ---
 

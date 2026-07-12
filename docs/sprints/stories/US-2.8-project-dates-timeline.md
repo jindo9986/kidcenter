@@ -10,7 +10,7 @@ version_shipped: 0.6.0
 prd_ref: [FR-21]
 depends_on: [US-2.7]
 assignee: jindo9986
-commit: PENDING
+commit: ecef1df
 created: 2026-07-11
 updated: 2026-07-11
 ---
