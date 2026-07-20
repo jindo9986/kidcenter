@@ -25,7 +25,7 @@ deliberately separate from it.
 ### Notes
 - Only the totals and the one Structure/Organization sub-score were supplied; the remaining criteria are left empty rather than invented. A school rubric mark is never converted to or compared against the NGRT's SAS/stanine scale.
 
-**Commit**: pending
+**Commit**: 797bddc
 
 ---
 
