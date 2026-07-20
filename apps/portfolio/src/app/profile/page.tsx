@@ -12,6 +12,7 @@ import {
   getJourney,
   getGallery,
   getProjects,
+  getReadingBenchmark,
 } from "@/lib/content";
 import type { L } from "@/lib/schemas";
 
@@ -35,6 +36,7 @@ import { TeacherComments } from "@/components/TeacherComments";
 import { Timeline } from "@/components/Timeline";
 import { Gallery } from "@/components/Gallery";
 import { ProjectPreview } from "@/components/ProjectPreview";
+import { ReadingBenchmark } from "@/components/ReadingBenchmark";
 import { Localized } from "@/components/Localized";
 import { LangToggle } from "@/components/LangToggle";
 import { PrintButton } from "@/components/PrintButton";
@@ -76,6 +78,7 @@ export default function Home() {
   const journey = getJourney();
   const gallery = getGallery();
   const projects = getProjects();
+  const readingBenchmark = getReadingBenchmark();
 
   // Headline stats, derived from the data so they always stay accurate.
   const isQGorQT = (c: string) => c === "international" || c === "national";
@@ -109,6 +112,7 @@ export default function Home() {
     { id: "radar", label: { vi: "Năng lực", en: "Skills" } },
     { id: "achievements", label: { vi: "Thành tích", en: "Achievements" } },
     { id: "academic", label: { vi: "Học tập", en: "Academics" } },
+    { id: "reading", label: { vi: "Đọc tiếng Anh", en: "Reading" } },
     { id: "character", label: { vi: "Phẩm chất", en: "Attributes" } },
     ...(gallery.length > 0
       ? [{ id: "gallery", label: { vi: "Tranh vẽ", en: "Artwork" } }]
@@ -224,6 +228,17 @@ export default function Home() {
           }}
         >
           <Academic data={academic} />
+        </Section>
+
+        <Section
+          id="reading"
+          title={{ vi: "Đối chiếu độc lập: Đọc tiếng Anh", en: "External benchmark: English reading" }}
+          subtitle={{
+            vi: "Kết quả đầy đủ — cả điểm mạnh lẫn phần đang cải thiện",
+            en: "Reported in full — both the strength and the area being worked on",
+          }}
+        >
+          <ReadingBenchmark data={readingBenchmark} />
         </Section>
 
         <Section

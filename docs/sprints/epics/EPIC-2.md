@@ -12,6 +12,7 @@ prd_ref:
   - FR-20
   - FR-21
   - FR-22
+  - FR-23
 arch_ref:
   - AD-5
   - AD-6
@@ -52,6 +53,7 @@ content-driven (JSON + zod) and has no backend.
 | FR-20 | [US-2.7](../stories/US-2.7-projects-showcase.md) | ✅ done (v0.5.0) |
 | FR-21 | [US-2.8](../stories/US-2.8-project-dates-timeline.md) | ✅ done (v0.6.0) |
 | FR-22 | [US-2.9](../stories/US-2.9-materials-to-finished.md) | ✅ done (v0.7.0) |
+| FR-23 | [US-2.10](../stories/US-2.10-reading-benchmark.md) | ✅ done (v0.8.0) |
 
 ## Stories
 
@@ -66,6 +68,7 @@ content-driven (JSON + zod) and has no backend.
 | US-2.7 | Projects showcase (/projects + first project) | P1 | 5 | ✅ done |
 | US-2.8 | Project dates + timeline (evidence-based) | P2 | 2 | ✅ done |
 | US-2.9 | Materials → finished visual | P2 | 2 | ✅ done |
+| US-2.10 | NGRT reading benchmark (honest) | P1 | 3 | ✅ done |
 
 ## Cross-cutting invariants
 

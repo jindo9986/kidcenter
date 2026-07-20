@@ -184,6 +184,38 @@ const milestoneSchema = z.object({
   note: L.optional(),
 });
 
+// External reading benchmark (NGRT). Reported in full — both the strong and the
+// weak component — so the page never overstates the result.
+export const readingBenchmarkSchema = z.object({
+  test: L,
+  provider: z.string(),
+  date: z.string(),
+  ageAtTest: z.string(),
+  context: L,
+  overall: z.object({
+    sas: z.string(),
+    pr: z.string(),
+    stanine: z.string(),
+    readingAge: z.string(),
+    band: L,
+  }),
+  parts: z.array(
+    z.object({
+      name: L,
+      stanine: z.string(),
+      band: L,
+      tone: z.enum(["strong", "growth"]),
+      note: L,
+    }),
+  ),
+  breakdown: z.object({
+    heading: L,
+    rows: z.array(z.object({ type: L, score: z.string(), pct: z.number() })),
+  }),
+  takeaway: L,
+});
+export type ReadingBenchmark = z.infer<typeof readingBenchmarkSchema>;
+
 export const projectSchema = z.object({
   date: z.string(), // sort key (YYYY-MM)
   dateStart: z.string().optional(), // YYYY-MM-DD — first dated evidence

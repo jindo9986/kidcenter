@@ -26,6 +26,7 @@ epics and user stories.
 | FR-20 | A Projects area showcasing the child's own project work                                | EPIC-2 | ✅ shipped (v0.5.0) |
 | FR-21 | Projects carry evidence-based dates + a timeline of milestones                         | EPIC-2 | ✅ shipped (v0.6.0) |
 | FR-22 | A project shows its raw materials becoming the finished product                        | EPIC-2 | ✅ shipped (v0.7.0) |
+| FR-23 | External assessments are reported honestly in full, never cherry-picked                | EPIC-2 | ✅ shipped (v0.8.0) |
 | FR-10 | A task/points domain with balances derived from a ledger                               | EPIC-3 | ✅ shipped (v0.2.0) |
 | FR-11 | Supabase schema + RLS + Google auth + email allowlist                                  | EPIC-3 | ✅ shipped (v0.2.0) |
 | FR-12 | Parent admin: activities CMS, approvals, points, rewards                               | EPIC-3 | ✅ shipped (v0.2.0) |
@@ -66,6 +67,7 @@ epics and user stories.
 - US-2.7 — Projects showcase (/projects + detail; first project: LEGO spinning tops)
 - US-2.8 — Project dates + timeline (evidence-based)
 - US-2.9 — Materials → finished visual (cross-fade effect)
+- US-2.10 — NGRT reading benchmark (honest public + full internal)
 
 ### EPIC-3 — Family Quest
 

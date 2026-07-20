@@ -13,6 +13,27 @@ export interface Academics {
     subjectsNote?: string;
     vietnameseStrands: { name: string; level: string }[];
   };
+  readingBenchmark?: {
+    test: string;
+    date: string;
+    ageAtTest: string;
+    form: string;
+    note: string;
+    overall: {
+      sas: number;
+      pr: number;
+      stanine: number;
+      readingAge: string;
+      readingAbilityScale: number;
+      band: string;
+    };
+    parts: { name: string; stanine: number; band: string; tone: "strong" | "growth" }[];
+    breakdown: { type: string; score: string; pct: number }[];
+    profileLabel: string;
+    profileText: string;
+    glNextSteps: string[];
+    parentReading: string;
+  };
   attributes: {
     cambridge: string[];
     cambridgeNote: string;

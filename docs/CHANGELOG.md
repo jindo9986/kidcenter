@@ -10,6 +10,20 @@ window. Reverse-chronological.
 
 ---
 
+## [0.8.0] — 2026-07-20 — NGRT reading benchmark (honest public + full internal) — v0.8.0
+
+Added the child's external English reading benchmark to both surfaces, reported honestly
+rather than cherry-picked.
+
+### Added
+- Portfolio `/profile` → "External benchmark: English reading": overall SAS 100 / PR 50 / stanine 5 / reading age 10:05, **both** components (Passage Comprehension stanine 7 above average AND Sentence Completion stanine 2 below average), the comprehension breakdown by question type, an honest takeaway, and the norm context (standardised on UK native speakers; sat as an EAL learner). GL's clinical profile label and intervention recommendations are deliberately **not** published.
+- Study dashboard → full NGRT report incl. GL's profile label, GL's recommended next steps, and a "how to read this" note for the parent.
+- Study roadmap → new focus area "Vốn từ & nhận diện từ (tiếng Anh)", grounded in the NGRT gap between comprehension and word-level reading.
+
+**Commit**: PENDING
+
+---
+
 ## [0.7.3] — 2026-07-11 — Cache-bust the rotated parts photo — v0.7.3
 
 ### Fixed

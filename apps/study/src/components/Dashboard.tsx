@@ -166,6 +166,120 @@ export function Dashboard({ data }: { data: StudyData }) {
           </div>
         </Section>
 
+        {/* 2b. EXTERNAL READING BENCHMARK (NGRT) — full report, incl. GL's own
+            profile + next steps. Internal only; the public portfolio shows the
+            scores but not the clinical label. */}
+        {academics.readingBenchmark && (
+          <Section
+            eyebrow="Đối chiếu độc lập"
+            title="NGRT — Đọc tiếng Anh"
+            subtitle={`${academics.readingBenchmark.test} · ${academics.readingBenchmark.date} · tuổi ${academics.readingBenchmark.ageAtTest} · form ${academics.readingBenchmark.form}`}
+          >
+            <div className="grid gap-4 md:grid-cols-2">
+              {/* overall + parts */}
+              <div className="break-avoid rounded-3xl border border-black/5 bg-white p-5 shadow-sm">
+                <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+                  {[
+                    { v: academics.readingBenchmark.overall.sas, l: "SAS" },
+                    { v: academics.readingBenchmark.overall.pr, l: "Bách phân vị" },
+                    { v: academics.readingBenchmark.overall.stanine, l: "Stanine" },
+                    { v: academics.readingBenchmark.overall.readingAge, l: "Tuổi đọc" },
+                  ].map((s) => (
+                    <div key={s.l} className="rounded-2xl border border-black/5 bg-cream p-3 text-center">
+                      <p className="font-display text-xl font-extrabold text-brand">{s.v}</p>
+                      <p className="mt-0.5 text-[11px] leading-snug text-ink/55">{s.l}</p>
+                    </div>
+                  ))}
+                </div>
+                <p className="mt-2 text-center text-xs font-semibold text-ink/55">
+                  {academics.readingBenchmark.overall.band}
+                </p>
+                <div className="mt-4 space-y-2">
+                  {academics.readingBenchmark.parts.map((part, i) => {
+                    const strong = part.tone === "strong";
+                    return (
+                      <div
+                        key={i}
+                        className={
+                          "flex items-center justify-between gap-3 rounded-2xl border p-3 " +
+                          (strong ? "border-teal/30 bg-teal/5" : "border-accent/40 bg-accent/10")
+                        }
+                      >
+                        <div>
+                          <p className="text-sm font-semibold text-ink">{part.name}</p>
+                          <p className={"text-xs font-bold uppercase " + (strong ? "text-teal" : "text-accent")}>
+                            {part.band}
+                          </p>
+                        </div>
+                        <span
+                          className={
+                            "flex h-8 w-8 shrink-0 items-center justify-center rounded-full font-display text-sm font-bold text-white " +
+                            (strong ? "bg-teal" : "bg-accent")
+                          }
+                        >
+                          {part.stanine}
+                        </span>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* breakdown */}
+              <div className="break-avoid rounded-3xl border border-black/5 bg-white p-5 shadow-sm">
+                <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-brand">
+                  Đọc hiểu đoạn văn · theo loại câu hỏi
+                </p>
+                <div className="space-y-2">
+                  {academics.readingBenchmark.breakdown.map((r, i) => (
+                    <div key={i} className="flex items-center gap-2">
+                      <span className="w-40 shrink-0 text-xs text-ink/70">{r.type}</span>
+                      <span className="relative h-4 flex-1 overflow-hidden rounded-full bg-black/[0.05]">
+                        <span className="block h-full rounded-full bg-brand/70" style={{ width: `${r.pct}%` }} />
+                      </span>
+                      <span className="w-10 shrink-0 text-right text-xs font-semibold tabular-nums text-ink/70">
+                        {r.score}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* GL's own profile + next steps, and how to read it */}
+            <div className="mt-4 grid gap-4 md:grid-cols-2">
+              <div className="break-avoid rounded-3xl border-l-4 border-accent bg-white p-5 shadow-sm">
+                <p className="text-sm font-bold text-ink">
+                  Hồ sơ đọc theo GL: {academics.readingBenchmark.profileLabel}
+                </p>
+                <p className="mt-2 text-sm leading-relaxed text-ink/75">
+                  {academics.readingBenchmark.profileText}
+                </p>
+                <p className="mt-3 text-xs font-semibold uppercase tracking-wide text-brand">
+                  GL khuyến nghị
+                </p>
+                <ul className="mt-1 space-y-1">
+                  {academics.readingBenchmark.glNextSteps.map((s, i) => (
+                    <li key={i} className="flex gap-2 text-sm text-ink/75">
+                      <span className="mt-0.5 select-none text-brand/40">›</span>
+                      <span>{s}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="break-avoid rounded-3xl border border-black/5 bg-cream p-5">
+                <p className="mb-1 text-sm font-semibold uppercase tracking-wide text-brand">
+                  Đọc kết quả này thế nào
+                </p>
+                <p className="leading-relaxed text-ink/75">{academics.readingBenchmark.parentReading}</p>
+                <p className="mt-3 text-xs italic leading-relaxed text-ink/50">
+                  {academics.readingBenchmark.note}
+                </p>
+              </div>
+            </div>
+          </Section>
+        )}
+
         {/* 3. ATTRIBUTES */}
         <Section eyebrow="Phẩm chất & thái độ" title="Ổn định qua các năm">
           <div className="grid gap-4 sm:grid-cols-3">
