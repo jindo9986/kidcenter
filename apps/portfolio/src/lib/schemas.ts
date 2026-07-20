@@ -184,9 +184,10 @@ const milestoneSchema = z.object({
   note: L.optional(),
 });
 
-// External reading benchmark (NGRT). Reported in full — both the strong and the
-// weak component — so the page never overstates the result.
-export const readingBenchmarkSchema = z.object({
+// English assessment. Two clearly-separated sources: an external standardised
+// benchmark (NGRT) and the school's own rubric. Both reported in full — including
+// the below-average component — so neither is overstated or blended together.
+const readingBenchmarkSchema = z.object({
   test: L,
   provider: z.string(),
   date: z.string(),
@@ -214,7 +215,32 @@ export const readingBenchmarkSchema = z.object({
   }),
   takeaway: L,
 });
+
+const productiveSkillsSchema = z.object({
+  source: L,
+  note: L,
+  rubricNote: L,
+  skills: z.array(
+    z.object({
+      name: L,
+      icon: z.string().optional(),
+      score: z.number(),
+      max: z.number(),
+      criteria: z.array(
+        z.object({ name: L, score: z.number(), max: z.number(), perfect: z.boolean().optional() }),
+      ),
+    }),
+  ),
+  takeaway: L,
+});
+
+export const englishAssessmentSchema = z.object({
+  reading: readingBenchmarkSchema,
+  productive: productiveSkillsSchema,
+});
+export type EnglishAssessment = z.infer<typeof englishAssessmentSchema>;
 export type ReadingBenchmark = z.infer<typeof readingBenchmarkSchema>;
+export type ProductiveSkills = z.infer<typeof productiveSkillsSchema>;
 
 export const projectSchema = z.object({
   date: z.string(), // sort key (YYYY-MM)

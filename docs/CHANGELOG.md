@@ -10,6 +10,25 @@ window. Reverse-chronological.
 
 ---
 
+## [0.9.0] — 2026-07-20 — Speaking & Writing (school rubric) — v0.9.0
+
+Added the Speaking and Writing results marked in the same round as the NGRT, kept
+deliberately separate from it.
+
+### Added
+- Portfolio `/profile` → the section is now "English proficiency" (`#english`) with two clearly-labelled blocks: the **NGRT** (external standardised test, GL Education) and **Speaking & Writing** marked against Vinschool The Harmony's own First English Language rubric — Speaking **16/20**, Writing **17/20** with *Structure / Organization* a perfect **5/5**. Bars are zero-based, so 16/20 reads as 80%.
+- Study dashboard → the same results as their own section, plus the link back to the NGRT gap (comprehension ahead, word-level vocabulary behind).
+
+### Changed
+- `reading-benchmark.json` → `english-assessment.json`, restructured as `{ reading, productive }`; `ReadingBenchmark` → `EnglishAssessment`.
+
+### Notes
+- Only the totals and the one Structure/Organization sub-score were supplied; the remaining criteria are left empty rather than invented. A school rubric mark is never converted to or compared against the NGRT's SAS/stanine scale.
+
+**Commit**: pending
+
+---
+
 ## [0.8.0] — 2026-07-20 — NGRT reading benchmark (honest public + full internal) — v0.8.0
 
 Added the child's external English reading benchmark to both surfaces, reported honestly

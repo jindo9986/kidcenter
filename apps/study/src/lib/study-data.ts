@@ -34,6 +34,21 @@ export interface Academics {
     glNextSteps: string[];
     parentReading: string;
   };
+  /** Speaking & Writing, marked in the same round but against the school's own
+   *  First English Language rubric — a different scale from the NGRT, never blended. */
+  productiveSkills?: {
+    source: string;
+    note: string;
+    rubricNote: string;
+    skills: {
+      name: string;
+      icon?: string;
+      score: number;
+      max: number;
+      criteria: { name: string; score: number; max: number; perfect?: boolean }[];
+    }[];
+    takeaway: string;
+  };
   attributes: {
     cambridge: string[];
     cambridgeNote: string;

@@ -13,7 +13,7 @@ import {
   journeySchema,
   mediaSchema,
   projectSchema,
-  readingBenchmarkSchema,
+  englishAssessmentSchema,
   type Profile,
   type Achievement,
   type Academic,
@@ -26,7 +26,7 @@ import {
   type JourneyMilestone,
   type MediaItem,
   type Project,
-  type ReadingBenchmark,
+  type EnglishAssessment,
 } from "./schemas";
 const DEFAULT_DIR = path.join(process.cwd(), "content");
 
@@ -78,8 +78,8 @@ export function getGallery(dir: string = DEFAULT_DIR): MediaItem[] {
   return mediaSchema.parse(readJson(dir, "gallery.json"));
 }
 
-export function getReadingBenchmark(dir: string = DEFAULT_DIR): ReadingBenchmark {
-  return readingBenchmarkSchema.parse(readJson(dir, "reading-benchmark.json"));
+export function getEnglishAssessment(dir: string = DEFAULT_DIR): EnglishAssessment {
+  return englishAssessmentSchema.parse(readJson(dir, "english-assessment.json"));
 }
 
 export function getProjects(dir: string = DEFAULT_DIR): Project[] {

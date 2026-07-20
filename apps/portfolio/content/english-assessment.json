@@ -1,0 +1,161 @@
+{
+  "reading": {
+    "test": {
+      "vi": "NGRT — New Group Reading Test",
+      "en": "NGRT — New Group Reading Test"
+    },
+    "provider": "GL Education (UK)",
+    "date": "2026-06-30",
+    "ageAtTest": "10:04",
+    "context": {
+      "vi": "Bài kiểm tra đọc hiểu tiếng Anh của GL Education, chuẩn hoá trên học sinh bản ngữ Anh tại Anh Quốc. Tin làm bài với tư cách người học tiếng Anh như ngoại ngữ.",
+      "en": "A GL Education English reading test, standardised on native English-speaking pupils in the UK. Tin sits it as an English-as-an-additional-language learner."
+    },
+    "overall": {
+      "sas": "100",
+      "pr": "50",
+      "stanine": "5",
+      "readingAge": "10:05",
+      "band": {
+        "vi": "Trung bình (so với chuẩn bản ngữ Anh)",
+        "en": "Average (against UK native-speaker norms)"
+      }
+    },
+    "parts": [
+      {
+        "name": {
+          "vi": "Đọc hiểu đoạn văn",
+          "en": "Passage Comprehension"
+        },
+        "stanine": "7",
+        "band": {
+          "vi": "Trên trung bình",
+          "en": "Above average"
+        },
+        "tone": "strong",
+        "note": {
+          "vi": "Hiểu và suy luận từ văn bản dài — điểm mạnh rõ rệt.",
+          "en": "Understanding and reasoning from longer texts — a clear strength."
+        }
+      },
+      {
+        "name": {
+          "vi": "Hoàn thành câu (từ vựng & ngữ pháp)",
+          "en": "Sentence Completion"
+        },
+        "stanine": "2",
+        "band": {
+          "vi": "Dưới trung bình",
+          "en": "Below average"
+        },
+        "tone": "growth",
+        "note": {
+          "vi": "Nhận diện từ, từ vựng và cấu trúc câu — đây là phần Tin đang tập trung cải thiện.",
+          "en": "Word recognition, vocabulary and sentence structure — the area Tin is working on."
+        }
+      }
+    ],
+    "breakdown": {
+      "heading": {
+        "vi": "Chi tiết phần Đọc hiểu đoạn văn",
+        "en": "Passage Comprehension breakdown"
+      },
+      "rows": [
+        {
+          "type": {
+            "vi": "Truy xuất thông tin",
+            "en": "Retrieval"
+          },
+          "score": "5/5",
+          "pct": 100
+        },
+        {
+          "type": {
+            "vi": "Hiểu theo ngữ cảnh",
+            "en": "Context comprehension"
+          },
+          "score": "7/10",
+          "pct": 70
+        },
+        {
+          "type": {
+            "vi": "Suy luận & diễn dịch",
+            "en": "Inference and deduction"
+          },
+          "score": "4/6",
+          "pct": 67
+        },
+        {
+          "type": {
+            "vi": "Tổ chức văn bản",
+            "en": "Organisation of texts"
+          },
+          "score": "2/3",
+          "pct": 67
+        },
+        {
+          "type": {
+            "vi": "Văn hoá – xã hội – lịch sử",
+            "en": "Social, cultural and historical"
+          },
+          "score": "1/1",
+          "pct": 100
+        }
+      ]
+    },
+    "takeaway": {
+      "vi": "Bức tranh rất rõ: khả năng đọc hiểu và suy luận của Tin trên mức trung bình bản ngữ, trong khi vốn từ và nhận diện từ ở cấp độ câu còn là điểm cần bồi đắp. Tin và bố mẹ đang tập trung vào đúng phần đó.",
+      "en": "The picture is clear: Tin's comprehension and reasoning sit above the native-speaker average, while vocabulary and word-level recognition remain the area to build. That is exactly where the current focus goes."
+    }
+  },
+  "productive": {
+    "source": {
+      "vi": "Đánh giá của trường theo rubric riêng — chương trình First English Language, Vinschool The Harmony",
+      "en": "School assessment against Vinschool The Harmony's own rubric — First English Language programme"
+    },
+    "note": {
+      "vi": "Kiểm tra cùng đợt với NGRT. Đây là thang đánh giá nội bộ của trường, không phải bài chuẩn hoá quốc tế — không quy đổi hay so sánh trực tiếp với thang NGRT.",
+      "en": "Assessed in the same round as the NGRT. This is the school's internal rubric, not a standardised international test — it is not converted to or compared directly with the NGRT scale."
+    },
+    "rubricNote": {
+      "vi": "Mỗi kỹ năng gồm 4 tiêu chí, mỗi tiêu chí tối đa 5 điểm (tổng 20).",
+      "en": "Each skill is marked on 4 criteria, 5 points each (20 total)."
+    },
+    "skills": [
+      {
+        "name": {
+          "vi": "Nói",
+          "en": "Speaking"
+        },
+        "icon": "🗣️",
+        "score": 16,
+        "max": 20,
+        "criteria": []
+      },
+      {
+        "name": {
+          "vi": "Viết",
+          "en": "Writing"
+        },
+        "icon": "✍️",
+        "score": 17,
+        "max": 20,
+        "criteria": [
+          {
+            "name": {
+              "vi": "Bố cục / Tổ chức bài",
+              "en": "Structure / Organization"
+            },
+            "score": 5,
+            "max": 5,
+            "perfect": true
+          }
+        ]
+      }
+    ],
+    "takeaway": {
+      "vi": "Ở kỹ năng sản sinh ngôn ngữ, Tin đạt mức khá vững: Nói 16/20 và Viết 17/20, trong đó Bố cục/Tổ chức bài đạt điểm tuyệt đối 5/5 — khớp với thế mạnh về cấu trúc và lập luận thấy ở phần đọc hiểu.",
+      "en": "On productive skills Tin is solid: Speaking 16/20 and Writing 17/20, with a perfect 5/5 for Structure / Organization — consistent with the structural, reasoning strength seen in his comprehension result."
+    }
+  }
+}

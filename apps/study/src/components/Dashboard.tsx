@@ -280,6 +280,72 @@ export function Dashboard({ data }: { data: StudyData }) {
           </Section>
         )}
 
+        {/* 2b. PRODUCTIVE SKILLS — school rubric, deliberately a separate section
+            so it is never read as part of the standardised NGRT result. */}
+        {academics.productiveSkills && (
+          <Section
+            eyebrow="Nói & Viết — rubric của trường"
+            title="Kỹ năng sản sinh ngôn ngữ"
+            subtitle={academics.productiveSkills.source}
+          >
+            <div className="grid gap-4 sm:grid-cols-2">
+              {academics.productiveSkills.skills.map((skill, i) => {
+                const pct = Math.round((skill.score / skill.max) * 100);
+                return (
+                  <div
+                    key={i}
+                    className="break-avoid rounded-3xl border border-black/5 bg-white p-5 shadow-sm"
+                  >
+                    <div className="flex items-baseline justify-between gap-2">
+                      <p className="font-display text-lg font-bold text-ink">
+                        {skill.icon && <span className="mr-1.5">{skill.icon}</span>}
+                        {skill.name}
+                      </p>
+                      <p className="font-display text-2xl font-extrabold text-brand">
+                        {skill.score}
+                        <span className="text-base font-bold text-ink/40">/{skill.max}</span>
+                      </p>
+                    </div>
+                    {/* zero-based bar — true proportion of the rubric maximum */}
+                    <span className="mt-3 block h-3 overflow-hidden rounded-full bg-black/[0.06]">
+                      <span
+                        className="block h-full rounded-full bg-brand"
+                        style={{ width: `${pct}%` }}
+                      />
+                    </span>
+                    <p className="mt-1 text-right text-xs font-semibold text-ink/45">{pct}%</p>
+                    {skill.criteria.length > 0 && (
+                      <ul className="mt-3 space-y-1.5 border-t border-black/5 pt-3">
+                        {skill.criteria.map((c, j) => (
+                          <li key={j} className="flex items-center justify-between gap-3 text-sm">
+                            <span className="text-ink/70">{c.name}</span>
+                            <span
+                              className={
+                                "shrink-0 rounded-full px-2.5 py-0.5 text-xs font-bold tabular-nums " +
+                                (c.perfect ? "bg-accent/25 text-ink" : "bg-black/5 text-ink/70")
+                              }
+                            >
+                              {c.score}/{c.max}
+                              {c.perfect && " ★"}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+            <p className="mt-3 text-xs text-ink/50">{academics.productiveSkills.rubricNote}</p>
+            <div className="mt-4 break-avoid rounded-3xl border border-black/5 bg-cream p-5">
+              <p className="leading-relaxed text-ink/75">{academics.productiveSkills.takeaway}</p>
+              <p className="mt-3 text-xs italic leading-relaxed text-ink/50">
+                {academics.productiveSkills.note}
+              </p>
+            </div>
+          </Section>
+        )}
+
         {/* 3. ATTRIBUTES */}
         <Section eyebrow="Phẩm chất & thái độ" title="Ổn định qua các năm">
           <div className="grid gap-4 sm:grid-cols-3">

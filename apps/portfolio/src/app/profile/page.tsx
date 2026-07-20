@@ -12,7 +12,7 @@ import {
   getJourney,
   getGallery,
   getProjects,
-  getReadingBenchmark,
+  getEnglishAssessment,
 } from "@/lib/content";
 import type { L } from "@/lib/schemas";
 
@@ -36,7 +36,7 @@ import { TeacherComments } from "@/components/TeacherComments";
 import { Timeline } from "@/components/Timeline";
 import { Gallery } from "@/components/Gallery";
 import { ProjectPreview } from "@/components/ProjectPreview";
-import { ReadingBenchmark } from "@/components/ReadingBenchmark";
+import { EnglishAssessment } from "@/components/EnglishAssessment";
 import { Localized } from "@/components/Localized";
 import { LangToggle } from "@/components/LangToggle";
 import { PrintButton } from "@/components/PrintButton";
@@ -78,7 +78,7 @@ export default function Home() {
   const journey = getJourney();
   const gallery = getGallery();
   const projects = getProjects();
-  const readingBenchmark = getReadingBenchmark();
+  const englishAssessment = getEnglishAssessment();
 
   // Headline stats, derived from the data so they always stay accurate.
   const isQGorQT = (c: string) => c === "international" || c === "national";
@@ -112,7 +112,7 @@ export default function Home() {
     { id: "radar", label: { vi: "Năng lực", en: "Skills" } },
     { id: "achievements", label: { vi: "Thành tích", en: "Achievements" } },
     { id: "academic", label: { vi: "Học tập", en: "Academics" } },
-    { id: "reading", label: { vi: "Đọc tiếng Anh", en: "Reading" } },
+    { id: "english", label: { vi: "Tiếng Anh", en: "English" } },
     { id: "character", label: { vi: "Phẩm chất", en: "Attributes" } },
     ...(gallery.length > 0
       ? [{ id: "gallery", label: { vi: "Tranh vẽ", en: "Artwork" } }]
@@ -231,14 +231,14 @@ export default function Home() {
         </Section>
 
         <Section
-          id="reading"
-          title={{ vi: "Đối chiếu độc lập: Đọc tiếng Anh", en: "External benchmark: English reading" }}
+          id="english"
+          title={{ vi: "Năng lực tiếng Anh", en: "English proficiency" }}
           subtitle={{
-            vi: "Kết quả đầy đủ — cả điểm mạnh lẫn phần đang cải thiện",
-            en: "Reported in full — both the strength and the area being worked on",
+            vi: "Bài chuẩn hoá quốc tế (Đọc) + đánh giá của trường (Nói & Viết) — báo cáo đầy đủ",
+            en: "An international standardised test (Reading) + the school's own assessment (Speaking & Writing) — reported in full",
           }}
         >
-          <ReadingBenchmark data={readingBenchmark} />
+          <EnglishAssessment data={englishAssessment} />
         </Section>
 
         <Section
