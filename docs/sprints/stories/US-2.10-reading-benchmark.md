@@ -10,7 +10,7 @@ version_shipped: 0.8.0
 prd_ref: [FR-23]
 depends_on: [US-2.2, US-4.1]
 assignee: jindo9986
-commit: PENDING
+commit: b7cab6d
 created: 2026-07-20
 updated: 2026-07-20
 ---

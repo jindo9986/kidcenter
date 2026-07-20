@@ -20,7 +20,7 @@ rather than cherry-picked.
 - Study dashboard → full NGRT report incl. GL's profile label, GL's recommended next steps, and a "how to read this" note for the parent.
 - Study roadmap → new focus area "Vốn từ & nhận diện từ (tiếng Anh)", grounded in the NGRT gap between comprehension and word-level reading.
 
-**Commit**: PENDING
+**Commit**: b7cab6d
 
 ---
 
