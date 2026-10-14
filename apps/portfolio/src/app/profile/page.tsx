@@ -273,8 +273,8 @@ export default function Home() {
             id="gallery"
             title={{ vi: "Năng lực sáng tạo", en: "Creative Work" }}
             subtitle={{
-              vi: "Tranh đoạt giải & ký họa khủng long → quan sát khoa học bằng hình ảnh",
-              en: "Award-winning art & dinosaur sketches → visual scientific observation",
+              vi: "Tranh đoạt giải, tĩnh vật & ký họa khủng long → quan sát khoa học bằng hình ảnh",
+              en: "Award-winning art, still life & dinosaur sketches → visual scientific observation",
             }}
           >
             <Gallery items={gallery} />

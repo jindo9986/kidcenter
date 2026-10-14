@@ -10,6 +10,23 @@ window. Reverse-chronological.
 
 ---
 
+## [0.9.2] — 2026-10-14 — Still life added to Creative Work — v0.9.2
+
+The first non-dinosaur, non-award drawing in the gallery.
+
+### Added
+- Portfolio `/profile` → "Năng lực sáng tạo" gains **`art-still-life-vase-2026.jpg`**: a still life of chrysanthemums in a vase with an apple, ink pen over coloured pencil, signed *ĐinhHữu 5B2*. Caption bilingual; rendered by the existing `Gallery` — no component change.
+
+### Changed
+- The section subtitle promised only "Tranh đoạt giải & ký họa khủng long" / "Award-winning art & dinosaur sketches". A still life is neither, so the subtitle now reads "Tranh đoạt giải, tĩnh vật & ký họa khủng long" / "Award-winning art, still life & dinosaur sketches".
+
+### Notes
+- Source photo was 1920×2560 / 1.4 MB with the desk, two pens and a sleeve in frame. Cropped to the sheet, resized to **750×1078** (303 KB) to match the four dinosaur sketches at 750×1000, and re-encoded **without EXIF** so the static host cannot mis-rotate it (LESSONS §5). The gallery centre-crops to a square, so the retained paper edges fall outside the thumbnail.
+
+**Commit**: _pending_
+
+---
+
 ## [0.9.1] — 2026-10-14 — Latest awards + apex domain as canonical — v0.9.1
 
 Three new 2026 awards, plus the domain fix that stops the apex from breaking on every
@@ -28,7 +45,7 @@ deploy.
 ### Notes
 - The apex is canonical; `www` 301s to it (GitHub Pages does this automatically from the CNAME). A browser holding the *previous* permanent `apex → www` redirect can still see a loop until its site data is cleared — server-side the chain is clean.
 
-**Commit**: _pending_
+**Commit**: 57b2ab3
 
 ---
 
