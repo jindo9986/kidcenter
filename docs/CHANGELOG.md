@@ -10,6 +10,25 @@ window. Reverse-chronological.
 
 ---
 
+## [0.10.0] — 2026-10-14 — Gallery lightbox — v0.10.0
+
+Artwork can finally be seen whole. The grid square-crops thumbnails, so until now a
+portrait drawing was only ever visible as its middle third.
+
+### Added
+- Portfolio `/profile` → "Năng lực sáng tạo": clicking any piece opens a **lightbox** showing the full uncropped image over an ink scrim, with its bilingual caption, an `n / total` counter, and prev/next navigation that wraps around. Keyboard: **←/→** to move, **Esc** to close. Click-away closes. Focus returns to the thumbnail that opened it.
+- `Gallery` is now a client component built on the native `<dialog>` + `showModal()`, which supplies the focus trap, Esc handling and top-layer stacking without a z-index fight or a dependency. First modal pattern in the repo.
+- `globals.css` → a restrained 180ms ease-out fade/scale on open for the panel and its `::backdrop`, disabled under `prefers-reduced-motion` (DESIGN.md → Motion, "short").
+
+### Notes
+- The lightbox carries `no-print`, so the PDF export is untouched.
+- Thumbnails became `<button>`s: keyboard-reachable, with a `focus-visible` indigo ring, a `cursor-zoom-in` affordance and a 3% hover scale. Their accessible names are bilingual via `sr-only` + `Localized`, so a screen reader reads only the active locale.
+- Source images are 750 px wide, so "full size" tops out there — on a large screen the lightbox upscales ~1.2×. Raising this means shipping separate high-res variants loaded only on open; not done here.
+
+**Commit**: _pending_
+
+---
+
 ## [0.9.2] — 2026-10-14 — Still life added to Creative Work — v0.9.2
 
 The first non-dinosaur, non-award drawing in the gallery.
@@ -23,7 +42,7 @@ The first non-dinosaur, non-award drawing in the gallery.
 ### Notes
 - Source photo was 1920×2560 / 1.4 MB with the desk, two pens and a sleeve in frame. Cropped to the sheet, resized to **750×1078** (303 KB) to match the four dinosaur sketches at 750×1000, and re-encoded **without EXIF** so the static host cannot mis-rotate it (LESSONS §5). The gallery centre-crops to a square, so the retained paper edges fall outside the thumbnail.
 
-**Commit**: _pending_
+**Commit**: ab9bf59
 
 ---
 

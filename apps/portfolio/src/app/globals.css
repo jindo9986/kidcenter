@@ -58,6 +58,31 @@ html[data-locale="en"] [data-lang="vi"] {
   }
 }
 
+/* Gallery lightbox: a restrained fade/scale on open (DESIGN.md Motion, short) */
+dialog[open] {
+  animation: lightbox-in 180ms ease-out;
+}
+dialog[open]::backdrop {
+  animation: lightbox-backdrop-in 180ms ease-out;
+}
+@keyframes lightbox-in {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+}
+@keyframes lightbox-backdrop-in {
+  from {
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  dialog[open],
+  dialog[open]::backdrop {
+    animation: none;
+  }
+}
+
 /* Print / PDF export */
 @media print {
   .no-print {
