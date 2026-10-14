@@ -10,6 +10,22 @@ window. Reverse-chronological.
 
 ---
 
+## [0.10.1] — 2026-10-14 — Dream School prize painting — v0.10.1
+
+The painting behind the 0.9.1 award entry, now visible.
+
+### Added
+- Portfolio `/profile` → "Năng lực sáng tạo" leads with **`art-dream-school-2026.jpg`**: Tin holding his 1st-prize entry for the *Ngôi trường mơ ước* contest — a Vinschool science lab with a mounted *Tyrannosaurus*, pupils observing it, and Biology/Physics/Chemistry texts. Placed first as the most recent prize piece; the gallery is now 7 items.
+
+### Notes
+- Source photo was 2880×2160 with a lift panel, a TV and the living room in frame. Cropped to Tin and the painting, resized to **1000×1222** (274 KB) — the same 1000 px width as `art-tet-2025.jpg`, and higher than the 750 px pieces, so the lightbox has real detail to show. Re-encoded without EXIF (LESSONS §5).
+- The file arrived at `public/media/life/DreamSchool.jpg`. `media/life/` feeds the hard-coded photo strip on the home page, not `content/gallery.json`, so the processed image sits at `media/` root under the `art-` naming the gallery uses.
+- This is the same piece as the *1st Place — Dream School painting contest (2026-2027)* award added in 0.9.1; the caption says 2026 to match how `art-tet-2025` is labelled, while the award keeps the school year.
+
+**Commit**: _pending_
+
+---
+
 ## [0.10.0] — 2026-10-14 — Gallery lightbox — v0.10.0
 
 Artwork can finally be seen whole. The grid square-crops thumbnails, so until now a
@@ -25,7 +41,7 @@ portrait drawing was only ever visible as its middle third.
 - Thumbnails became `<button>`s: keyboard-reachable, with a `focus-visible` indigo ring, a `cursor-zoom-in` affordance and a 3% hover scale. Their accessible names are bilingual via `sr-only` + `Localized`, so a screen reader reads only the active locale.
 - Source images are 750 px wide, so "full size" tops out there — on a large screen the lightbox upscales ~1.2×. Raising this means shipping separate high-res variants loaded only on open; not done here.
 
-**Commit**: _pending_
+**Commit**: 6ec6913
 
 ---
 
