@@ -7,6 +7,7 @@ import { asset } from "@/lib/asset";
 import { Localized } from "@/components/Localized";
 import { SiteNav } from "@/components/SiteNav";
 import { PrintLink } from "@/components/PrintLink";
+import { ZoomButton } from "@/components/ZoomButton";
 
 export const metadata: Metadata = {
   title: "Independent AI Assessment — Đào Đình Hữu (Tin)",
@@ -147,8 +148,10 @@ function PhotoMasonry({ photos }: { photos: { src: string; alt: string; caption:
           key={p.src}
           className="mb-3 break-inside-avoid overflow-hidden rounded-2xl bg-white shadow-sm"
         >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={asset(p.src)} alt={p.alt} loading="lazy" className="w-full" />
+          <ZoomButton src={p.src} caption={p.caption} group="life">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={asset(p.src)} alt={p.alt} loading="lazy" className="w-full" />
+          </ZoomButton>
           <figcaption className="px-3 py-2 text-xs leading-snug text-ink/55">
             <Localized value={p.caption} />
           </figcaption>
@@ -495,8 +498,10 @@ export default function AssessmentPage() {
           <div className="mx-auto mt-10 grid max-w-4xl grid-cols-2 gap-3 sm:grid-cols-4">
             {dinoArt.map((a) => (
               <figure key={a.src} className="break-avoid overflow-hidden rounded-2xl bg-cream shadow-sm">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={asset(a.src)} alt={en(a.caption)} loading="lazy" className="aspect-square w-full object-cover" />
+                <ZoomButton src={a.src} caption={a.caption} group="dino-art">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={asset(a.src)} alt={en(a.caption)} loading="lazy" className="aspect-square w-full object-cover" />
+                </ZoomButton>
               </figure>
             ))}
           </div>
@@ -744,8 +749,10 @@ export default function AssessmentPage() {
         <div className="mx-auto mt-8 grid max-w-4xl grid-cols-3 gap-3">
           {awardPhotos.map((p) => (
             <figure key={p.src} className="overflow-hidden rounded-2xl bg-white shadow-sm">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={asset(p.src)} alt={p.alt} loading="lazy" className="aspect-[3/4] w-full object-cover" />
+              <ZoomButton src={p.src} group="award-photos">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={asset(p.src)} alt={p.alt} loading="lazy" className="aspect-[3/4] w-full object-cover" />
+              </ZoomButton>
             </figure>
           ))}
         </div>

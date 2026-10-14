@@ -5,6 +5,7 @@ import type { L } from "@/lib/schemas";
 import { asset } from "@/lib/asset";
 import { Localized } from "@/components/Localized";
 import { SiteNav } from "@/components/SiteNav";
+import { ZoomButton } from "@/components/ZoomButton";
 
 export const metadata: Metadata = {
   title: "Hi, I'm Tin — Đào Đình Hữu",
@@ -87,8 +88,10 @@ function PhotoMasonry({ photos }: { photos: { src: string; alt: string; caption:
     <div className="mx-auto mt-8 max-w-5xl gap-3 [column-fill:_balance] columns-2 sm:columns-3">
       {photos.map((p) => (
         <figure key={p.src} className="mb-3 break-inside-avoid overflow-hidden rounded-2xl bg-white shadow-sm">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={asset(p.src)} alt={p.alt} loading="lazy" className="w-full" />
+          <ZoomButton src={p.src} caption={p.caption} group="life">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={asset(p.src)} alt={p.alt} loading="lazy" className="w-full" />
+          </ZoomButton>
           <figcaption className="px-3 py-2 text-xs leading-snug text-ink/55">
             <Localized value={p.caption} />
           </figcaption>
@@ -245,8 +248,14 @@ export default function IntroPage() {
         />
         <div className="mx-auto mt-8 grid max-w-3xl items-center gap-6 sm:grid-cols-2">
           <figure className="overflow-hidden rounded-3xl bg-white shadow-md">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={asset("/media/life/life-reading-science.jpg")} alt="Reading a science book" loading="lazy" className="aspect-[4/3] w-full object-cover" />
+            <ZoomButton
+              src="/media/life/life-reading-science.jpg"
+              caption={{ vi: "Đọc sách khoa học", en: "Reading a science book" }}
+              group="reading"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={asset("/media/life/life-reading-science.jpg")} alt="Reading a science book" loading="lazy" className="aspect-[4/3] w-full object-cover" />
+            </ZoomButton>
           </figure>
           <p className="text-lg leading-relaxed text-ink/75">
             <Localized
@@ -297,8 +306,10 @@ export default function IntroPage() {
         <div className="mx-auto mt-8 grid max-w-4xl grid-cols-2 gap-3 sm:grid-cols-4">
           {dinoPhotos.map((p) => (
             <figure key={p.src} className="break-avoid overflow-hidden rounded-2xl bg-white shadow-sm">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={asset(p.src)} alt={p.alt} loading="lazy" className="aspect-square w-full object-cover" />
+              <ZoomButton src={p.src} caption={p.caption} group="dino-photos">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={asset(p.src)} alt={p.alt} loading="lazy" className="aspect-square w-full object-cover" />
+              </ZoomButton>
               <figcaption className="px-2.5 py-1.5 text-[11px] leading-snug text-ink/55">
                 <Localized value={p.caption} />
               </figcaption>
@@ -350,8 +361,10 @@ export default function IntroPage() {
         <div className="mx-auto mt-8 grid max-w-4xl grid-cols-3 gap-3">
           {awardPhotos.map((p) => (
             <figure key={p.src} className="overflow-hidden rounded-2xl bg-white/10 shadow-sm">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={asset(p.src)} alt={p.alt} loading="lazy" className="aspect-[3/4] w-full object-cover" />
+              <ZoomButton src={p.src} group="award-photos">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={asset(p.src)} alt={p.alt} loading="lazy" className="aspect-[3/4] w-full object-cover" />
+              </ZoomButton>
             </figure>
           ))}
         </div>

@@ -10,6 +10,32 @@ window. Reverse-chronological.
 
 ---
 
+## [0.12.0] — 2026-10-14 — Zoom on every page, one delegated lightbox — v0.12.0
+
+The lightbox shipped in 0.10.0 only worked inside the profile gallery. Every other
+photo on the site — the life wall, the dinosaur grids, the award photos, the project
+build shots — was a dead image. Now all of them zoom, and there is exactly one
+lightbox implementation instead of one per surface.
+
+### Added
+- **`Lightbox`** — mounted once in the root layout, driven by event delegation on `document`. Clicking anything carrying `data-zoom` collects every `data-zoom` sharing its `data-zoom-group`, in DOM order, and that becomes the prev/next set.
+- **`ZoomButton`** — wraps an image to make it zoomable. Deliberately **not** a client component: it only emits a `<button data-zoom*>`, so pages that show photos stay server components. Bilingual accessible name via `sr-only` + `Localized`; `cursor-zoom-in`; `focus-visible` indigo ring.
+- Zoom now works on **`/`** (14 images: life wall, reading photo, dinosaur grid, award photos), **`/assessment`** (17: life wall, dinosaur art, award photos), **`/projects/[slug]`** (10: cover, materials before/after, prototypes) and **`/profile`** (19: the gallery).
+
+### Changed
+- `Gallery` dropped its own lightbox and its `"use client"` — it is a **server component again**, rendering `ZoomButton` instead of hand-rolling a dialog, state, scroll-lock and focus restore. The grouped layout and single-flat-list navigation are unchanged.
+- Gallery videos gained `controls` (previously muted and unplayable, since the click used to open the lightbox).
+
+### Notes
+- Groups are scoped per visual cluster, not per page, so the arrows stay meaningful. Verified on `/assessment`: `life` → 1/10, `dino-art` → 1/4, `award-photos` → 1/3 — clicking a dinosaur sketch does not drop you into a 17-image set.
+- Avatars (hero portraits) and project-card covers are deliberately **not** zoomable: the first are decorative crops, the second are links, and hijacking their click would break navigation.
+- Verified on `/projects/[slug]`: open → 1/10, ArrowRight → 2/10, clicking the image itself keeps it open, click-away closes and restores `html.style.overflow`.
+- A single lightbox means one `<dialog>` in the DOM per page rather than one per gallery, and the `no-print` class keeps it out of the PDF export as before.
+
+**Commit**: _pending_
+
+---
+
 ## [0.11.0] — 2026-10-14 — Sketchbook: 12 works, gallery grouped by subject — v0.11.0
 
 Twelve ink and pencil sketches arrive at once, taking the gallery from 7 pieces to 19.
@@ -31,7 +57,7 @@ grouped by subject.
 - Group sizes are 2 / 4 / 5 / 4 / 4. On the 3-column grid the three groups of four leave a single tile on a second row; kept as-is rather than padding or reordering the work to suit the grid.
 - `group` is optional, so `tests/fixtures/content/gallery.json` still parses and the ungrouped case still renders as the old flat grid.
 
-**Commit**: _pending_
+**Commit**: 8c07381
 
 ---
 

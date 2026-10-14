@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Lightbox } from "@/components/Lightbox";
 
 const TITLE = "Đào Đình Hữu (Tin)";
 const DESC =
@@ -39,7 +40,11 @@ export default function RootLayout({
       <head>
         <script dangerouslySetInnerHTML={{ __html: noFlash }} />
       </head>
-      <body className="flex min-h-full flex-col">{children}</body>
+      <body className="flex min-h-full flex-col">
+        {children}
+        {/* One delegated lightbox serves every page (see ZoomButton). */}
+        <Lightbox />
+      </body>
     </html>
   );
 }

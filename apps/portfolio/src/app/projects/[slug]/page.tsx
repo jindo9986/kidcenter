@@ -6,6 +6,7 @@ import type { L } from "@/lib/schemas";
 import { asset } from "@/lib/asset";
 import { SiteNav } from "@/components/SiteNav";
 import { Localized } from "@/components/Localized";
+import { ZoomButton } from "@/components/ZoomButton";
 
 const en = (v: L) => v.en;
 
@@ -52,11 +53,21 @@ function fmtDate(iso: string): L {
   };
 }
 
-function ProtoImage({ src, alt }: { src: string; alt: string }) {
+function ProtoImage({
+  src,
+  alt,
+  caption,
+}: {
+  src: string;
+  alt: string;
+  caption?: L;
+}) {
   return (
     <div className="relative aspect-square rounded-3xl border border-black/5 bg-gradient-to-br from-cream to-black/[0.03] p-4 shadow-sm">
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={asset(src)} alt={alt} loading="lazy" className="h-full w-full object-contain" />
+      <ZoomButton src={src} caption={caption} group="project">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={asset(src)} alt={alt} loading="lazy" className="h-full w-full object-contain" />
+      </ZoomButton>
     </div>
   );
 }
@@ -102,12 +113,14 @@ export default async function ProjectDetail({
           )}
         </div>
         <div className="mx-auto max-w-3xl px-6 pb-10">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={asset(p.cover)}
-            alt={en(p.title)}
-            className="w-full rounded-[28px] border border-black/5 object-cover shadow-md"
-          />
+          <ZoomButton src={p.cover} caption={p.title} group="project">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={asset(p.cover)}
+              alt={en(p.title)}
+              className="w-full rounded-[28px] border border-black/5 object-cover shadow-md"
+            />
+          </ZoomButton>
         </div>
       </header>
 
@@ -169,13 +182,19 @@ export default async function ProjectDetail({
             {/* raw parts — object-contain so nothing is cropped */}
             <figure className="w-full md:flex-1">
               <div className="flex aspect-[4/3] items-center justify-center overflow-hidden rounded-3xl border border-black/5 bg-gradient-to-br from-cream to-black/[0.03] p-2 shadow-sm">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={asset(p.materials.image)}
-                  alt={en(p.materials.fromLabel)}
-                  loading="lazy"
-                  className="max-h-full max-w-full rounded-2xl object-contain"
-                />
+                <ZoomButton
+                  src={p.materials.image}
+                  caption={p.materials.fromLabel}
+                  group="project"
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={asset(p.materials.image)}
+                    alt={en(p.materials.fromLabel)}
+                    loading="lazy"
+                    className="max-h-full max-w-full rounded-2xl object-contain"
+                  />
+                </ZoomButton>
               </div>
               <figcaption className="mt-2 text-center text-sm font-bold uppercase tracking-wide text-ink/50">
                 <Localized value={p.materials.fromLabel} />
@@ -192,13 +211,19 @@ export default async function ProjectDetail({
             {/* finished builds */}
             <figure className="w-full md:flex-1">
               <div className="flex aspect-[4/3] items-center justify-center overflow-hidden rounded-3xl border border-black/5 bg-gradient-to-br from-cream to-black/[0.03] p-2 shadow-sm">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={asset(p.materials.finishedImage)}
-                  alt={en(p.materials.toLabel)}
-                  loading="lazy"
-                  className="max-h-full max-w-full rounded-2xl object-contain"
-                />
+                <ZoomButton
+                  src={p.materials.finishedImage}
+                  caption={p.materials.toLabel}
+                  group="project"
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={asset(p.materials.finishedImage)}
+                    alt={en(p.materials.toLabel)}
+                    loading="lazy"
+                    className="max-h-full max-w-full rounded-2xl object-contain"
+                  />
+                </ZoomButton>
               </div>
               <figcaption className="mt-2 text-center text-sm font-bold uppercase tracking-wide text-brand">
                 <Localized value={p.materials.toLabel} />
@@ -232,7 +257,7 @@ export default async function ProjectDetail({
             >
               <div className="md:w-1/3">
                 <div className="relative">
-                  <ProtoImage src={proto.image} alt={en(proto.name)} />
+                  <ProtoImage src={proto.image} alt={en(proto.name)} caption={proto.name} />
                   <span className="absolute -left-2 -top-2 flex h-9 w-9 items-center justify-center rounded-full bg-brand font-display text-sm font-bold text-white shadow-md">
                     {i + 1}
                   </span>
