@@ -10,6 +10,31 @@ window. Reverse-chronological.
 
 ---
 
+## [0.11.0] — 2026-10-14 — Sketchbook: 12 works, gallery grouped by subject — v0.11.0
+
+Twelve ink and pencil sketches arrive at once, taking the gallery from 7 pieces to 19.
+At that size a single flat grid stops reading as a body of work, so the gallery is now
+grouped by subject.
+
+### Added
+- Portfolio `/profile` → "Năng lực sáng tạo" gains **12 sketches** (7 → 19): a stone bridge over a stream, a cliffside cottage with a boat and dolphins, a window onto the sea (signed *5/8/2026*), a boat at a jetty, a corner café, the *Lợi – Kỳ* locksmith shopfront, a vine-covered window with a cat, an old wooden door with a cactus, door no. 1418 under a frangipani, a bouquet on a chair with a small bird, daisies in a watering can, and three potted plants. Eleven in ink pen (one with grey wash), one in pencil. Captions bilingual and specific to each piece.
+- `mediaItemSchema` gains an optional **`group`** (`award` · `landscape` · `architecture` · `stilllife` · `dino`). `Gallery` renders one grid per group under a serif heading with a count pill — the same treatment `Achievements` already uses for its categories. Group order is fixed in the component, not in the data.
+
+### Changed
+- The section subtitle now reads "Tranh đoạt giải và sổ ký họa: phong cảnh, kiến trúc, tĩnh vật, khủng long" / "Prize paintings and sketchbook: landscape, architecture, still life, dinosaurs" — the old wording named only three of the five groups.
+- Thumbnails now carry `loading="lazy"` + `decoding="async"`, and gallery videos `preload="metadata"`. With 19 images the grid was otherwise fetching ~4.4 MB eagerly on a section that sits well below the fold.
+- `Gallery`'s `step`/`close` dropped their `useCallback`s. `ordered` is derived during render, so the manual memoization could not be preserved and the React Compiler refused to optimize the component (`react-hooks/preserve-manual-memoization`); the compiler memoizes the plain functions instead.
+
+### Notes
+- The lightbox still walks **one flat list** in display order, so ←/→ crosses group boundaries rather than trapping the viewer inside a group. Verified: 2/19 (last prize painting) → ArrowRight → 3/19 (first landscape).
+- Sources were 12 scans of 1636–2312 px, 0.5–2 MB each (~14 MB). Content bounds were auto-detected per sheet, then each was resized to a 1100 px long edge and re-encoded without EXIF: **2.6 MB total**, 75–335 KB each. Two needed real work — `Ky_hoa_4` carried near-black scanner bands (set a few pixels *inside* the edge, so an edge-inward trim missed them; the detector scans the outer 15% instead), and four wasted 30–40% of the sheet on blank margin.
+- Group sizes are 2 / 4 / 5 / 4 / 4. On the 3-column grid the three groups of four leave a single tile on a second row; kept as-is rather than padding or reordering the work to suit the grid.
+- `group` is optional, so `tests/fixtures/content/gallery.json` still parses and the ungrouped case still renders as the old flat grid.
+
+**Commit**: _pending_
+
+---
+
 ## [0.10.1] — 2026-10-14 — Dream School prize painting — v0.10.1
 
 The painting behind the 0.9.1 award entry, now visible.
@@ -22,7 +47,7 @@ The painting behind the 0.9.1 award entry, now visible.
 - The file arrived at `public/media/life/DreamSchool.jpg`. `media/life/` feeds the hard-coded photo strip on the home page, not `content/gallery.json`, so the processed image sits at `media/` root under the `art-` naming the gallery uses.
 - This is the same piece as the *1st Place — Dream School painting contest (2026-2027)* award added in 0.9.1; the caption says 2026 to match how `art-tet-2025` is labelled, while the award keeps the school year.
 
-**Commit**: _pending_
+**Commit**: 2cbc314
 
 ---
 

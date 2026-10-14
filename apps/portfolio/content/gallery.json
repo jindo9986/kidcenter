@@ -1,9 +1,25 @@
 [
-  { "type": "image", "src": "/media/art-dream-school-2026.jpg", "caption": { "vi": "Tranh đoạt Giải Nhất — Ngôi trường mơ ước 2026", "en": "1st-prize painting — Dream School 2026" } },
-  { "type": "image", "src": "/media/art-tet-2025.jpg", "caption": { "vi": "Tranh đoạt Giải Nhất — Tết Xum Vầy 2025", "en": "1st-prize painting — Tết Xum Vầy 2025" } },
-  { "type": "image", "src": "/media/art-still-life-vase-2026.jpg", "caption": { "vi": "Tĩnh vật: bình hoa cúc và quả táo (bút kim + chì màu)", "en": "Still life: chrysanthemums and an apple (ink pen + coloured pencil)" } },
-  { "type": "image", "src": "/media/dino-trex.jpg", "caption": { "vi": "Khủng long T-Rex (bút chì)", "en": "T-Rex (pencil)" } },
-  { "type": "image", "src": "/media/dino-head.jpg", "caption": { "vi": "Đầu khủng long (bút chì)", "en": "Dinosaur head (pencil)" } },
-  { "type": "image", "src": "/media/dino-trex-grid.jpg", "caption": { "vi": "T-Rex trên giấy ô ly (bút chì)", "en": "T-Rex on grid paper (pencil)" } },
-  { "type": "image", "src": "/media/dino-sketches.jpg", "caption": { "vi": "Phác họa khủng long (bút chì)", "en": "Dinosaur sketches (pencil)" } }
+  { "group": "award", "type": "image", "src": "/media/art-dream-school-2026.jpg", "caption": { "vi": "Tranh đoạt Giải Nhất — Ngôi trường mơ ước 2026", "en": "1st-prize painting — Dream School 2026" } },
+  { "group": "award", "type": "image", "src": "/media/art-tet-2025.jpg", "caption": { "vi": "Tranh đoạt Giải Nhất — Tết Xum Vầy 2025", "en": "1st-prize painting — Tết Xum Vầy 2025" } },
+
+  { "group": "landscape", "type": "image", "src": "/media/sketch-stone-bridge.jpg", "caption": { "vi": "Cầu đá bắc qua suối (bút kim)", "en": "Stone bridge over a stream (ink pen)" } },
+  { "group": "landscape", "type": "image", "src": "/media/sketch-seaside-cottage.jpg", "caption": { "vi": "Nhà bên vách biển, thuyền và cá heo (bút kim)", "en": "Cottage on the cliff, a boat and dolphins (ink pen)" } },
+  { "group": "landscape", "type": "image", "src": "/media/sketch-window-sea.jpg", "caption": { "vi": "Cửa sổ mở ra biển — 5/8/2026 (bút kim)", "en": "Window onto the sea — 5 Aug 2026 (ink pen)" } },
+  { "group": "landscape", "type": "image", "src": "/media/sketch-boat-jetty.jpg", "caption": { "vi": "Thuyền bên cầu ván — hai nghiên cứu (chì)", "en": "Boat at the jetty — two studies (pencil)" } },
+
+  { "group": "architecture", "type": "image", "src": "/media/sketch-street-cafe.jpg", "caption": { "vi": "Quán cà phê góc phố (bút kim + wash xám)", "en": "Corner café (ink pen + grey wash)" } },
+  { "group": "architecture", "type": "image", "src": "/media/sketch-loi-ky-shopfront.jpg", "caption": { "vi": "Tiệm sửa khóa Lợi – Kỳ (bút kim)", "en": "Lợi – Kỳ locksmith shopfront (ink pen)" } },
+  { "group": "architecture", "type": "image", "src": "/media/sketch-vine-window.jpg", "caption": { "vi": "Cửa sổ dây leo, chú mèo nằm phơi nắng (bút kim)", "en": "Vine-covered window, a cat in the sun (ink pen)" } },
+  { "group": "architecture", "type": "image", "src": "/media/sketch-wooden-door.jpg", "caption": { "vi": "Cửa gỗ cũ và chậu xương rồng (bút kim)", "en": "Old wooden door and a cactus pot (ink pen)" } },
+  { "group": "architecture", "type": "image", "src": "/media/sketch-frangipani-door.jpg", "caption": { "vi": "Cửa nhà số 1418 dưới tán hoa sứ (bút kim)", "en": "Door no. 1418 under a frangipani (ink pen)" } },
+
+  { "group": "stilllife", "type": "image", "src": "/media/art-still-life-vase-2026.jpg", "caption": { "vi": "Tĩnh vật: bình hoa cúc và quả táo (bút kim + chì màu)", "en": "Still life: chrysanthemums and an apple (ink pen + coloured pencil)" } },
+  { "group": "stilllife", "type": "image", "src": "/media/sketch-chair-bouquet.jpg", "caption": { "vi": "Bình hoa trên ghế gỗ, có chú chim nhỏ (bút kim)", "en": "Bouquet on a wooden chair, with a small bird (ink pen)" } },
+  { "group": "stilllife", "type": "image", "src": "/media/sketch-watering-can.jpg", "caption": { "vi": "Hoa cúc trong bình tưới (bút kim)", "en": "Daisies in a watering can (ink pen)" } },
+  { "group": "stilllife", "type": "image", "src": "/media/sketch-potted-plants.jpg", "caption": { "vi": "Ba chậu cây trên nóc tủ (bút kim)", "en": "Three potted plants on a cabinet (ink pen)" } },
+
+  { "group": "dino", "type": "image", "src": "/media/dino-trex.jpg", "caption": { "vi": "Khủng long T-Rex (bút chì)", "en": "T-Rex (pencil)" } },
+  { "group": "dino", "type": "image", "src": "/media/dino-head.jpg", "caption": { "vi": "Đầu khủng long (bút chì)", "en": "Dinosaur head (pencil)" } },
+  { "group": "dino", "type": "image", "src": "/media/dino-trex-grid.jpg", "caption": { "vi": "T-Rex trên giấy ô ly (bút chì)", "en": "T-Rex on grid paper (pencil)" } },
+  { "group": "dino", "type": "image", "src": "/media/dino-sketches.jpg", "caption": { "vi": "Phác họa khủng long (bút chì)", "en": "Dinosaur sketches (pencil)" } }
 ]

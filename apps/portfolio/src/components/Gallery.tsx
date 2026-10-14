@@ -1,27 +1,52 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
-import type { MediaItem } from "@/lib/schemas";
+import { useEffect, useRef, useState } from "react";
+import type { GalleryGroup, L, MediaItem } from "@/lib/schemas";
 import { asset } from "@/lib/asset";
 import { Localized } from "./Localized";
 
-/** Gallery grid + a lightbox for viewing each piece full-size.
- *  The grid square-crops thumbnails; the lightbox shows the whole image. */
+const GROUP_ORDER: GalleryGroup[] = [
+  "award",
+  "landscape",
+  "architecture",
+  "stilllife",
+  "dino",
+];
+
+const GROUP_LABEL: Record<GalleryGroup, L> = {
+  award: { vi: "Tranh đoạt giải", en: "Prize paintings" },
+  landscape: { vi: "Phong cảnh", en: "Landscape" },
+  architecture: { vi: "Kiến trúc & phố", en: "Architecture & street" },
+  stilllife: { vi: "Tĩnh vật", en: "Still life" },
+  dino: { vi: "Ký họa khủng long", en: "Dinosaur studies" },
+};
+
+/** Gallery grouped by subject, plus a lightbox for viewing each piece full-size.
+ *  The grid square-crops thumbnails; the lightbox shows the whole image and
+ *  walks every group in the order they are displayed. */
 export function Gallery({ items }: { items: MediaItem[] }) {
-  // null = closed; otherwise the index being viewed.
+  // Buckets in display order; anything ungrouped trails as a plain grid.
+  const buckets = GROUP_ORDER.map((key) => ({
+    key,
+    items: items.filter((i) => i.group === key),
+  })).filter((b) => b.items.length > 0);
+  const ungrouped = items.filter((i) => !i.group);
+
+  // One flat list so prev/next crosses group boundaries.
+  const ordered = [...buckets.flatMap((b) => b.items), ...ungrouped];
+
+  // null = closed; otherwise the index into `ordered`.
   const [index, setIndex] = useState<number | null>(null);
   const dialogRef = useRef<HTMLDialogElement>(null);
-  // Restore focus to the thumbnail that opened the lightbox.
   const openerRef = useRef<HTMLButtonElement | null>(null);
 
-  const close = useCallback(() => setIndex(null), []);
-  const step = useCallback(
-    (delta: number) =>
-      setIndex((i) =>
-        i === null ? i : (i + delta + items.length) % items.length,
-      ),
-    [items.length],
-  );
+  // Plain functions: the React Compiler memoizes these, and hand-written
+  // useCallback here cannot be preserved because `ordered` is derived in render.
+  const close = () => setIndex(null);
+  const step = (delta: number) =>
+    setIndex((i) =>
+      i === null ? i : (i + delta + ordered.length) % ordered.length,
+    );
 
   // Drive the native dialog from state so Esc, focus trap and the top layer
   // all come for free.
@@ -57,53 +82,41 @@ export function Gallery({ items }: { items: MediaItem[] }) {
     }
   }
 
-  const current = index === null ? null : items[index];
+  const open = (i: number, button: HTMLButtonElement) => {
+    openerRef.current = button;
+    setIndex(i);
+  };
+
+  const current = index === null ? null : ordered[index];
+
+  // Each bucket's offset into `ordered`, so a tile knows its global index.
+  const starts = buckets.map((_, i) =>
+    buckets.slice(0, i).reduce((n, b) => n + b.items.length, 0),
+  );
 
   return (
     <>
-      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-        {items.map((item, i) => (
-          <figure
-            key={i}
-            className="break-avoid overflow-hidden rounded-2xl bg-white shadow-sm"
-          >
-            <button
-              type="button"
-              onClick={(e) => {
-                openerRef.current = e.currentTarget;
-                setIndex(i);
-              }}
-              className="group block w-full cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
-            >
-              <span className="sr-only">
-                <Localized
-                  value={{
-                    vi: `Xem ảnh lớn: ${item.caption.vi}`,
-                    en: `View larger: ${item.caption.en}`,
-                  }}
-                />
+      <div className="grid gap-5">
+        {buckets.map((b, bi) => (
+          <section key={b.key} className="break-avoid">
+            <div className="mb-2 flex items-center gap-2">
+              <h3 className="font-display text-lg font-bold text-ink">
+                <Localized value={GROUP_LABEL[b.key]} />
+              </h3>
+              <span className="rounded-full bg-brand/10 px-2 py-0.5 text-xs font-bold text-brand">
+                {b.items.length}
               </span>
-              {item.type === "image" ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                  src={asset(item.src)}
-                  alt=""
-                  className="aspect-square w-full object-cover transition-transform duration-200 ease-out group-hover:scale-[1.03]"
-                />
-              ) : (
-                <video
-                  src={asset(item.src)}
-                  className="aspect-square w-full object-cover"
-                  muted
-                  playsInline
-                />
-              )}
-            </button>
-            <figcaption className="p-2 text-center text-xs text-ink/60">
-              <Localized value={item.caption} />
-            </figcaption>
-          </figure>
+            </div>
+            <Grid items={b.items} start={starts[bi]} onOpen={open} />
+          </section>
         ))}
+        {ungrouped.length > 0 && (
+          <Grid
+            items={ungrouped}
+            start={ordered.length - ungrouped.length}
+            onOpen={open}
+          />
+        )}
       </div>
 
       <dialog
@@ -151,7 +164,7 @@ export function Gallery({ items }: { items: MediaItem[] }) {
               <LightboxButton onClick={() => step(-1)} glyph="‹"
                 label={{ vi: "Ảnh trước", en: "Previous image" }} />
               <span className="min-w-16 text-center text-sm font-semibold tabular-nums text-paper/70">
-                {index! + 1} / {items.length}
+                {index! + 1} / {ordered.length}
               </span>
               <LightboxButton onClick={() => step(1)} glyph="›"
                 label={{ vi: "Ảnh tiếp theo", en: "Next image" }} />
@@ -162,6 +175,63 @@ export function Gallery({ items }: { items: MediaItem[] }) {
         )}
       </dialog>
     </>
+  );
+}
+
+function Grid({
+  items,
+  start,
+  onOpen,
+}: {
+  items: MediaItem[];
+  start: number;
+  onOpen: (index: number, button: HTMLButtonElement) => void;
+}) {
+  return (
+    <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+      {items.map((item, i) => (
+        <figure
+          key={item.src}
+          className="break-avoid overflow-hidden rounded-2xl bg-white shadow-sm"
+        >
+          <button
+            type="button"
+            onClick={(e) => onOpen(start + i, e.currentTarget)}
+            className="group block w-full cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
+          >
+            <span className="sr-only">
+              <Localized
+                value={{
+                  vi: `Xem ảnh lớn: ${item.caption.vi}`,
+                  en: `View larger: ${item.caption.en}`,
+                }}
+              />
+            </span>
+            {item.type === "image" ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={asset(item.src)}
+                alt=""
+                loading="lazy"
+                decoding="async"
+                className="aspect-square w-full object-cover transition-transform duration-200 ease-out group-hover:scale-[1.03]"
+              />
+            ) : (
+              <video
+                src={asset(item.src)}
+                className="aspect-square w-full object-cover"
+                muted
+                playsInline
+                preload="metadata"
+              />
+            )}
+          </button>
+          <figcaption className="p-2 text-center text-xs text-ink/60">
+            <Localized value={item.caption} />
+          </figcaption>
+        </figure>
+      ))}
+    </div>
   );
 }
 

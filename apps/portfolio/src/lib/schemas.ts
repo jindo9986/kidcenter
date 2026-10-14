@@ -155,10 +155,23 @@ export const journeyItemSchema = z.object({
 export const journeySchema = z.array(journeyItemSchema);
 export type JourneyMilestone = z.infer<typeof journeyItemSchema>;
 
+/** Gallery grouping, so a growing body of work stays readable instead of
+ *  becoming one long wall of tiles. Optional — ungrouped items render as a
+ *  plain grid, which is what the older single-group gallery was. */
+export const galleryGroupEnum = z.enum([
+  "award",
+  "landscape",
+  "architecture",
+  "stilllife",
+  "dino",
+]);
+export type GalleryGroup = z.infer<typeof galleryGroupEnum>;
+
 export const mediaItemSchema = z.object({
   type: z.enum(["image", "video"]),
   src: z.string(),
   caption: L,
+  group: galleryGroupEnum.optional(),
 });
 export const mediaSchema = z.array(mediaItemSchema);
 export type MediaItem = z.infer<typeof mediaItemSchema>;
