@@ -1,6 +1,8 @@
 [
   { "category": "international", "medal": "silver", "year": "2025", "title": { "vi": "Huy chương Bạc Olympic Khoa học HKISO", "en": "Silver Medal — HKISO Science Olympiad" } },
   { "category": "international", "medal": "silver", "year": "2025", "title": { "vi": "Huy chương Bạc Olympic Khoa học SIMSO", "en": "Silver Medal — SIMSO Science Olympiad" } },
+  { "category": "international", "medal": "bronze", "year": "2026", "title": { "vi": "Huy chương Đồng Olympic Toán học HKIMO", "en": "Bronze Medal — HKIMO Math Olympiad" } },
+  { "category": "international", "medal": "none", "year": "2026", "title": { "vi": "Giải Khuyến khích Olympic Khoa học HKISO", "en": "Honourable Mention — HKISO Science Olympiad" } },
 
   { "category": "national", "medal": "gold", "year": "2026", "title": { "vi": "Huy chương Vàng Olympic Khoa học HKISO", "en": "Gold Medal — HKISO Science Olympiad" } },
   { "category": "national", "medal": "gold", "year": "2026", "title": { "vi": "Huy chương Vàng Olympic Khoa học STEMCO", "en": "Gold Medal — STEMCO Science Olympiad" } },
@@ -15,6 +17,7 @@
 
   { "category": "local", "medal": "silver", "year": "2026", "title": { "vi": "Huy chương Bạc Olympic Khoa học ASMO (TP Hà Nội)", "en": "Silver Medal — ASMO Science Olympiad (Hanoi City)" } },
   { "category": "local", "medal": "bronze", "year": "2025", "title": { "vi": "Huy chương Đồng Olympic Khoa học ASMO (vòng Thành phố)", "en": "Bronze Medal — ASMO Science Olympiad (City round)" } },
+  { "category": "local", "medal": "gold", "year": "2026-2027", "title": { "vi": "Giải Nhất — Cuộc thi vẽ tranh Ngôi trường mơ ước", "en": "1st Place — Dream School painting contest" } },
   { "category": "local", "medal": "gold", "year": "2024-2025", "title": { "vi": "Giải Nhất — Cuộc thi vẽ tranh Xuân yêu thương", "en": "1st Place — Loving Spring painting contest" } },
   { "category": "local", "medal": "gold", "year": "2023-2024", "title": { "vi": "Giải Nhất — Tuyển chọn đội tuyển bơi của trường", "en": "1st Place — School swim team trials" } },
   { "category": "local", "medal": "gold", "year": "2025-2026", "title": { "vi": "Giải Nhất Edurun — đơn nam khối 4", "en": "1st Place — Edurun, Boys' Singles (Grade 4)" } },

@@ -137,3 +137,22 @@ sign-in; `display_name` comes from Google. No manual member rows, no PINs. Addin
 = add their Gmail to the allowlist with a role.
 
 See [CONTEXT D6](CONTEXT.md).
+
+## 11. The CNAME inside the deploy artifact overrides the Pages domain setting
+
+**What happened (v0.9.1)**: the apex `huudaodinh.site` was unreachable. Setting the custom
+domain to the apex in Settings → Pages fixed it, but only until the next deploy.
+
+**Why**: two sources of truth for the custom domain. `apps/portfolio/public/CNAME` said
+`www.huudaodinh.site` and ships inside the uploaded artifact, so GitHub re-read it on every
+`actions/deploy-pages` run and reset the domain to `www` — leaving the apex 301ing to `www`.
+A `/CNAME` committed at the repo root by the Settings UI does **not** help: it is not part of
+the artifact.
+
+**How to avoid**: the artifact's CNAME is the setting. Change the domain in
+`apps/portfolio/public/CNAME`, not in the Pages UI, and keep `metadataBase` on the same host.
+Flipping the canonical host also inverts a **permanent** redirect, so a browser that cached
+the old `apex → www` 301 will loop against the new `www → apex` one — verify with `curl`
+(clean) before believing a browser (cached).
+
+See LESSONS §8 for the other custom-domain-root trap.

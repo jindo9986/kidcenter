@@ -10,6 +10,28 @@ window. Reverse-chronological.
 
 ---
 
+## [0.9.1] — 2026-10-14 — Latest awards + apex domain as canonical — v0.9.1
+
+Three new 2026 awards, plus the domain fix that stops the apex from breaking on every
+deploy.
+
+### Added
+- Portfolio `/profile` → "Thành tích" gains three awards (21 → 24): **Bronze Medal — HKIMO Math Olympiad (2026)** and **Honourable Mention — HKISO Science Olympiad (2026)** under *Giải Quốc tế*, and **1st Place — Dream School painting contest (2026-2027)** under *Cấp Trường & Thành phố*. All bilingual, rendered by the existing `Achievements` grouping — no new components.
+
+### Fixed
+- The "HC Olympic · QG & QT" headline stat counted every national/international entry regardless of medal. An honourable mention carries `medal: "none"`, so it would have read **14** under a label that says *huy chương*. Now filters `medal !== "none"` → a true **13**. See LESSONS §3.
+- `apps/portfolio/public/CNAME` said `www.huudaodinh.site` while the Pages custom domain was set to the apex. Because the CNAME inside the deploy artifact wins, every deploy reset the domain to `www` and left the apex 301ing away. The artifact CNAME is now `huudaodinh.site`. See LESSONS §11.
+
+### Changed
+- `metadataBase` → `https://huudaodinh.site`, so `og:url` / `og:image` match the canonical host instead of pointing at `www`.
+
+### Notes
+- The apex is canonical; `www` 301s to it (GitHub Pages does this automatically from the CNAME). A browser holding the *previous* permanent `apex → www` redirect can still see a loop until its site data is cleared — server-side the chain is clean.
+
+**Commit**: _pending_
+
+---
+
 ## [0.9.0] — 2026-07-20 — Speaking & Writing (school rubric) — v0.9.0
 
 Added the Speaking and Writing results marked in the same round as the NGRT, kept

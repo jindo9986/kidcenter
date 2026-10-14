@@ -26,7 +26,9 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - name: Build portfolio (static export)
-        # Custom domain (www.huudaodinh.site) serves at the root, so no basePath.
+        # Custom domain (huudaodinh.site) serves at the root, so no basePath.
+        # The apex is canonical; www 301s to it. The CNAME that decides this ships
+        # in the artifact (apps/portfolio/public/CNAME) — keep the two in sync.
         run: pnpm --filter @kidcenter/portfolio build
       - name: Build family app (static export, served at /quest)
         env:

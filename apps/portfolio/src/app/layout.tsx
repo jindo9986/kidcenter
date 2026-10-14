@@ -6,7 +6,7 @@ const DESC =
   "A curious 10-year-old who loves science, maths and art — observing, investigating and understanding the world through scientific inquiry and visual thinking.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.huudaodinh.site"),
+  metadataBase: new URL("https://huudaodinh.site"),
   title: TITLE,
   description: DESC,
   openGraph: {

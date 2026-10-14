@@ -82,7 +82,10 @@ export default function Home() {
 
   // Headline stats, derived from the data so they always stay accurate.
   const isQGorQT = (c: string) => c === "international" || c === "national";
-  const medalCount = achievements.filter((a) => isQGorQT(a.category)).length;
+  // Only real medals count here — honourable mentions carry medal "none".
+  const medalCount = achievements.filter(
+    (a) => isQGorQT(a.category) && a.medal !== "none",
+  ).length;
   const goldCount = achievements.filter(
     (a) => isQGorQT(a.category) && a.medal === "gold",
   ).length;
