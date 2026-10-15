@@ -10,6 +10,22 @@ window. Reverse-chronological.
 
 ---
 
+## [0.13.1] — 2026-10-16 — Fix: one Pages publisher (site outage) — v0.13.1
+
+The 0.13.0 deploy reported success and took the site down. Infrastructure fix, no app
+code changed.
+
+### Fixed
+- Pages was still `build_type: legacy` with source `main//`, so **every push ran two publishers**: the `Deploy Portfolio to GitHub Pages` workflow *and* a `pages-build-deployment` run that ran Jekyll over the repo root. Both reported success. For three deploys the Actions artifact landed last; on the fourth the Jekyll build finished later (1m19s vs 1m01s) and overwrote it — the apex served a Jekyll page built from `README.md` and `/profile/`, `/assessment/`, `/projects/`, `/quest/`, `/study/` all 404'd. Set to `build_type: workflow` and republished; all seven routes and all five sport images verified 200. See LESSONS §12.
+
+### Notes
+- The setting lives in the Settings UI but is reachable from the API: `gh api -X PUT repos/:owner/:repo/pages -f build_type=workflow`. An earlier report in this project claimed only the UI could change it; that was wrong.
+- After the fix, `curl` still returned the broken page for ~10 minutes — Fastly serves `cache-control: max-age=600`, so a 404 sweep read like the republish had failed. Verify Pages deploys with a cache-buster and trust `last-modified` over the status code.
+
+**Commit**: _pending_
+
+---
+
 ## [0.13.0] — 2026-10-15 — Sport section on the profile — v0.13.0
 
 The achievements list already recorded an Edurun 1st place, a badminton 2nd and two
@@ -26,7 +42,7 @@ swimming places, but the profile had no sport photos at all. It has a section no
 - Sources were 837–2560 px, 163–332 KB. Resized to a 1100 px long edge and re-encoded without EXIF: **739 KB total**, 106–176 KB each.
 - **Three of the five photos include people other than Tin** — four classmates and two adults on the Edurun team podium, five children on the badminton podium, and his mother in the last one. The repo is public and the site is indexed. Published as supplied; dropping or cropping any of them is a one-line change to `sport.json`.
 
-**Commit**: _pending_
+**Commit**: 4062d7e
 
 ---
 

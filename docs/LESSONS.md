@@ -156,3 +156,33 @@ the old `apex → www` 301 will loop against the new `www → apex` one — veri
 (clean) before believing a browser (cached).
 
 See LESSONS §8 for the other custom-domain-root trap.
+
+## 12. Two Pages build mechanisms race; the legacy Jekyll build can win
+
+**What happened (v0.13.0)**: the site went down after a *successful* deploy. The apex
+served a Jekyll page generated from `README.md` ("KidCenter 🧒", Jekyll v3.10.0) and every
+real route 404'd — `/profile/`, `/assessment/`, `/quest/`, `/study/`.
+
+**Why**: Pages was still configured as `build_type: legacy` with source `main//`, so every
+push triggered **two** publishers — the `Deploy Portfolio to GitHub Pages` workflow
+(`actions/deploy-pages`) *and* a `pages-build-deployment` run that ran Jekyll over the repo
+root. Both reported success. For three deploys the Actions artifact happened to land last;
+on the fourth the Jekyll build finished later (1m19s vs 1m01s) and overwrote it. Nothing in
+the workflow log hints at this: it says "Reported success!" either way.
+
+**How to avoid**: the publisher must be singular. Set it from the API, which works despite
+the setting living in the Settings UI:
+
+```
+gh api -X PUT repos/:owner/:repo/pages -f build_type=workflow
+gh workflow run "Deploy Portfolio to GitHub Pages" --ref main
+```
+
+Check `gh api repos/:owner/:repo/pages -q .build_type` — `workflow` means only the Actions
+artifact publishes; `legacy` means Jekyll is still racing you.
+
+**When verifying a Pages deploy, defeat the CDN first.** Fastly caches with
+`max-age=600`, so for ten minutes after a fix `curl` still returns the broken page and a
+404 sweep reads like the deploy failed. Append a cache-buster (`?cb=$(date +%s)`) and trust
+`last-modified`, not the status code. Pairs with LESSONS §11 — both are "the deploy
+succeeded and the site is still wrong".
