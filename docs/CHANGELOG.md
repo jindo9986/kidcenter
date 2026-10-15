@@ -10,6 +10,26 @@ window. Reverse-chronological.
 
 ---
 
+## [0.13.3] — 2026-10-16 — English marks labelled ESL — v0.13.3
+
+The four-year record showed "Tiếng Anh / English" scoring 10 · 9 · 9 · 10. Read cold
+that implies first-language English. It is the Cambridge **ESL** syllabus, and the site
+now says so everywhere the mark appears.
+
+### Changed
+- `academic.json` → the subject is **"Tiếng Anh ESL (Cambridge)" / "English ESL (Cambridge)"** in all four years. `Academic` strips the `(Cambridge)` suffix for compact row labels, so the table reads "Tiếng Anh ESL" / "English ESL".
+- `/profile` → the Academic Record subtitle now spells it out: "môn Tiếng Anh học theo giáo trình ESL (English as a Second Language)" / "English is taught as ESL (English as a Second Language)". The abbreviation is expanded once, where the scores are.
+- `story.json` → the Grade 4 subject list and the subject-strength stars on `/assessment` restate the same mark, so both now read "Tiếng Anh (ESL)" / "English (ESL)".
+- `profile.json` → the "Solid, well-rounded academics" strength cited "Maths and English included"; now "Maths and English (ESL) included".
+
+### Notes
+- This squares the academic table with the `#english` section, which already framed the NGRT honestly ("standardised on native English-speaking pupils in the UK. Tin sits it as an English-as-an-additional-language learner"). The two no longer imply different things about the same child.
+- ESL is the syllabus label, not a qualifier on the mark: a 10 in Cambridge ESL is still a 10 in Cambridge ESL. The point is that a reader can now tell *which* English is being scored.
+
+**Commit**: _pending_
+
+---
+
 ## [0.13.2] — 2026-10-16 — Name the swimming medal — v0.13.2
 
 ### Changed
@@ -21,7 +41,7 @@ window. Reverse-chronological.
 - "Breaststroke" is carried over from the achievement record; the brief said only "bơi lội". If the medal was for a different stroke the caption needs one word changed.
 - Order is unchanged — the swim photo stays last, which is also oldest (2023-2024 against Edurun 2026 and badminton 2025-2026).
 
-**Commit**: _pending_
+**Commit**: 7c034c0
 
 ---
 

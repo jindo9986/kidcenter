@@ -333,7 +333,7 @@
     "grade4": [
       { "subject": { "vi": "Toán", "en": "Mathematics" }, "score": "10" },
       { "subject": { "vi": "Khoa học", "en": "Science" }, "score": "10" },
-      { "subject": { "vi": "Tiếng Anh", "en": "English" }, "score": "10" },
+      { "subject": { "vi": "Tiếng Anh (ESL)", "en": "English (ESL)" }, "score": "10" },
       { "subject": { "vi": "Tiếng Việt", "en": "Vietnamese" }, "score": "10" },
       { "subject": { "vi": "Lịch sử & Địa lý", "en": "History & Geography" }, "score": "10" },
       { "subject": { "vi": "Tin học", "en": "ICT" }, "score": "9.3" }
@@ -341,7 +341,7 @@
     "strengths": [
       { "name": { "vi": "Khoa học", "en": "Science" }, "stars": 5 },
       { "name": { "vi": "Toán", "en": "Mathematics" }, "stars": 5 },
-      { "name": { "vi": "Tiếng Anh", "en": "English" }, "stars": 5 },
+      { "name": { "vi": "Tiếng Anh (ESL)", "en": "English (ESL)" }, "stars": 5 },
       { "name": { "vi": "Tiếng Việt", "en": "Vietnamese" }, "stars": 5 },
       { "name": { "vi": "Lịch sử & Địa lý", "en": "History & Geography" }, "stars": 5 },
       { "name": { "vi": "Tin học", "en": "ICT" }, "stars": 5 }

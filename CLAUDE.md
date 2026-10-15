@@ -65,7 +65,7 @@ status), `validate` (ID-graph integrity).
 ## Active Context <!-- koni-docs:auto-update -->
 - Sprint: sprint-2026-W28 (closed)
 - Active Stories: — (all shipped)
-- Last Version: v0.13.2
+- Last Version: v0.13.3
 - Recent Decisions: D11 (private data never in the public repo)
 - Recent Lessons: §12 (one Pages publisher only — legacy Jekyll can overwrite Actions)
 <!-- /koni-docs:auto-update -->

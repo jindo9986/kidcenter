@@ -232,8 +232,8 @@ export default function Home() {
           id="academic"
           title={{ vi: "Kết quả học tập", en: "Academic Record" }}
           subtitle={{
-            vi: "Chương trình Cambridge · Vinschool The Harmony",
-            en: "Cambridge programme · Vinschool The Harmony",
+            vi: "Chương trình Cambridge · Vinschool The Harmony · môn Tiếng Anh học theo giáo trình ESL (English as a Second Language)",
+            en: "Cambridge programme · Vinschool The Harmony · English is taught as ESL (English as a Second Language)",
           }}
         >
           <Academic data={academic} />
