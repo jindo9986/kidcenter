@@ -10,6 +10,26 @@ window. Reverse-chronological.
 
 ---
 
+## [0.13.0] — 2026-10-15 — Sport section on the profile — v0.13.0
+
+The achievements list already recorded an Edurun 1st place, a badminton 2nd and two
+swimming places, but the profile had no sport photos at all. It has a section now.
+
+### Added
+- Portfolio `/profile` → new **"Thể thao" / "Sport"** section (`#sport`), between Creative Work and Journey, with five photos: breaking the tape at **Edurun 2026 "Paving the Way"**, the solo 1st-place podium, the Edurun team podium (bib 666483), the **Vinschool The Harmony Badminton Championship 2025-2026** podium, and the medal brought home to mum. Captions bilingual; the nav item appears only when the data is non-empty, like Artwork/Journey/Comments.
+- **`content/sport.json`** + **`getSport()`**, reusing the existing `mediaSchema` — no new schema. The loader tolerates a missing file and returns `[]`.
+- **`PhotoWall`** — a masonry of photos at their **natural aspect ratio**, wired to the site-wide lightbox under its own zoom group.
+
+### Notes
+- `Gallery` square-crops thumbnails, which is right for artwork but wrong here: the set mixes 3 landscape and 2 portrait shots, and a square crop would cut the finish-line banner and the podium numbers. `PhotoWall` crops nothing.
+- The sport photos are their own zoom group, so prev/next stays inside the five rather than spilling into the 19-piece gallery. Verified: 1/5 → ArrowRight → 2/5, with `gallery` still reporting 19.
+- Sources were 837–2560 px, 163–332 KB. Resized to a 1100 px long edge and re-encoded without EXIF: **739 KB total**, 106–176 KB each.
+- **Three of the five photos include people other than Tin** — four classmates and two adults on the Edurun team podium, five children on the badminton podium, and his mother in the last one. The repo is public and the site is indexed. Published as supplied; dropping or cropping any of them is a one-line change to `sport.json`.
+
+**Commit**: _pending_
+
+---
+
 ## [0.12.0] — 2026-10-14 — Zoom on every page, one delegated lightbox — v0.12.0
 
 The lightbox shipped in 0.10.0 only worked inside the profile gallery. Every other
@@ -32,7 +52,7 @@ lightbox implementation instead of one per surface.
 - Verified on `/projects/[slug]`: open → 1/10, ArrowRight → 2/10, clicking the image itself keeps it open, click-away closes and restores `html.style.overflow`.
 - A single lightbox means one `<dialog>` in the DOM per page rather than one per gallery, and the `no-print` class keeps it out of the PDF export as before.
 
-**Commit**: _pending_
+**Commit**: 00db569
 
 ---
 

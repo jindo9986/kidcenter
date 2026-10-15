@@ -78,6 +78,13 @@ export function getGallery(dir: string = DEFAULT_DIR): MediaItem[] {
   return mediaSchema.parse(readJson(dir, "gallery.json"));
 }
 
+/** Sport photos. Optional: the file may not exist. */
+export function getSport(dir: string = DEFAULT_DIR): MediaItem[] {
+  const file = path.join(dir, "sport.json");
+  if (!fs.existsSync(file)) return [];
+  return mediaSchema.parse(readJson(dir, "sport.json"));
+}
+
 export function getEnglishAssessment(dir: string = DEFAULT_DIR): EnglishAssessment {
   return englishAssessmentSchema.parse(readJson(dir, "english-assessment.json"));
 }

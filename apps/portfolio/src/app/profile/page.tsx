@@ -11,6 +11,7 @@ import {
   getTeacherComments,
   getJourney,
   getGallery,
+  getSport,
   getProjects,
   getEnglishAssessment,
 } from "@/lib/content";
@@ -35,6 +36,7 @@ import { TeacherInsights } from "@/components/TeacherInsights";
 import { TeacherComments } from "@/components/TeacherComments";
 import { Timeline } from "@/components/Timeline";
 import { Gallery } from "@/components/Gallery";
+import { PhotoWall } from "@/components/PhotoWall";
 import { ProjectPreview } from "@/components/ProjectPreview";
 import { EnglishAssessment } from "@/components/EnglishAssessment";
 import { Localized } from "@/components/Localized";
@@ -77,6 +79,7 @@ export default function Home() {
   const teacherComments = getTeacherComments();
   const journey = getJourney();
   const gallery = getGallery();
+  const sport = getSport();
   const projects = getProjects();
   const englishAssessment = getEnglishAssessment();
 
@@ -119,6 +122,9 @@ export default function Home() {
     { id: "character", label: { vi: "Phẩm chất", en: "Attributes" } },
     ...(gallery.length > 0
       ? [{ id: "gallery", label: { vi: "Tranh vẽ", en: "Artwork" } }]
+      : []),
+    ...(sport.length > 0
+      ? [{ id: "sport", label: { vi: "Thể thao", en: "Sport" } }]
       : []),
     ...(journey.length > 0
       ? [{ id: "journey", label: { vi: "Hành trình", en: "Journey" } }]
@@ -278,6 +284,19 @@ export default function Home() {
             }}
           >
             <Gallery items={gallery} />
+          </Section>
+        )}
+
+        {sport.length > 0 && (
+          <Section
+            id="sport"
+            title={{ vi: "Thể thao", en: "Sport" }}
+            subtitle={{
+              vi: "Chạy và cầu lông — thi đấu ở cấp trường",
+              en: "Running and badminton — competing at school level",
+            }}
+          >
+            <PhotoWall items={sport} group="sport" />
           </Section>
         )}
 
