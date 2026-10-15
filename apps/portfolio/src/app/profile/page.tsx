@@ -292,8 +292,8 @@ export default function Home() {
             id="sport"
             title={{ vi: "Thể thao", en: "Sport" }}
             subtitle={{
-              vi: "Chạy và cầu lông — thi đấu ở cấp trường",
-              en: "Running and badminton — competing at school level",
+              vi: "Chạy, cầu lông và bơi lội — thi đấu ở cấp trường",
+              en: "Running, badminton and swimming — competing at school level",
             }}
           >
             <PhotoWall items={sport} group="sport" />

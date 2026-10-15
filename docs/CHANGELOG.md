@@ -10,6 +10,21 @@ window. Reverse-chronological.
 
 ---
 
+## [0.13.2] — 2026-10-16 — Name the swimming medal — v0.13.2
+
+### Changed
+- The last sport photo was captioned only "Mang huy chương về khoe mẹ" / "Showing the medal to mum" — it names no event. It is the **bronze in the school breaststroke, Grade 2 (2023-2024)**, which is already in `achievements.json` as *Giải Ba — Bơi ếch nam (cấp trường)* for the same year. Caption now says so in both languages, so the photo and the award record point at each other.
+- `sport-medal-with-mum.jpg` → **`sport-swim-bronze.jpg`**: the other four assets are named for their event, not their subject.
+- Section subtitle → "Chạy, cầu lông và bơi lội" / "Running, badminton and swimming". Swimming was represented in the photos but missing from the summary line.
+
+### Notes
+- "Breaststroke" is carried over from the achievement record; the brief said only "bơi lội". If the medal was for a different stroke the caption needs one word changed.
+- Order is unchanged — the swim photo stays last, which is also oldest (2023-2024 against Edurun 2026 and badminton 2025-2026).
+
+**Commit**: _pending_
+
+---
+
 ## [0.13.1] — 2026-10-16 — Fix: one Pages publisher (site outage) — v0.13.1
 
 The 0.13.0 deploy reported success and took the site down. Infrastructure fix, no app
@@ -22,7 +37,7 @@ code changed.
 - The setting lives in the Settings UI but is reachable from the API: `gh api -X PUT repos/:owner/:repo/pages -f build_type=workflow`. An earlier report in this project claimed only the UI could change it; that was wrong.
 - After the fix, `curl` still returned the broken page for ~10 minutes — Fastly serves `cache-control: max-age=600`, so a 404 sweep read like the republish had failed. Verify Pages deploys with a cache-buster and trust `last-modified` over the status code.
 
-**Commit**: _pending_
+**Commit**: 8bc17a9
 
 ---
 
